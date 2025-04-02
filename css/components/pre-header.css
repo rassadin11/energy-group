@@ -1,0 +1,20 @@
+.pre-header {
+  background: var(--bs-blue);
+  padding: 0.625rem 0;
+  color: var(--bs-white);
+  font-size: 14px;
+  padding: 10px 0;
+}
+.pre-header__city {
+  color: var(--bs-yellow);
+  line-height: 1.25rem;
+}
+.pre-header__text {
+  line-height: 1.25rem;
+  background: transparent;
+  border: none;
+  color: var(--bs-white);
+}
+.pre-header__text span {
+  border-bottom: 1px dashed var(--bs-white);
+}/*# sourceMappingURL=pre-header.css.map */

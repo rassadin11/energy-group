@@ -1,0 +1,42 @@
+:root {
+  --disabled-color: rgba(6, 27, 49, 0.7);
+  --mobile-icon-color: rgba(6, 27, 49, 0.5);
+  --background: #f6f7f8;
+}
+
+body {
+  font-family: "Overpass";
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--bs-blue);
+  line-height: 1.2;
+}
+
+p {
+  -ms-hyphens: auto;
+  hyphens: auto;
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.border-bottom-dashed {
+  border-bottom: 1px dashed var(--bs-yellow);
+}
+
+.semibold {
+  font-weight: 600;
+}/*# sourceMappingURL=main.css.map */
