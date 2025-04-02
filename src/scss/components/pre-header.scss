@@ -1,0 +1,23 @@
+.pre-header {
+  background: var(--bs-blue);
+  padding: 0.625rem 0;
+  color: var(--bs-white);
+  font-size: 14px;
+  padding: 10px 0;
+
+  &__city {
+    color: var(--bs-yellow);
+    line-height: 1.25rem;
+  }
+
+  &__text {
+    line-height: 1.25rem;
+    background: transparent;
+    border: none;
+    color: var(--bs-white);
+
+    span {
+      border-bottom: 1px dashed var(--bs-white);
+    }
+  }
+}
