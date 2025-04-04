@@ -6,16 +6,16 @@
 <body>
   @include('partials/pre-header.html')
   @include('partials/header.html')
-  <div class="swiffy-slider main-slider slider-item-show1 mt-5 position-relative">
+  <div class="swiffy-slider main-slider slider-item-show1 mt-lg-5 position-relative">
     <ul class="slider-container main-slider">
-      <li class="position-relative py-10">
+      <li class="position-relative py-md-10 py-8 pb-5">
         <img src="./img/slider0.jpg" class="main-slider__image position-absolute w-100 z-n1">
 
-        <div class="container position-relative d-flex flex-column h-100">
-          <h2 class="main-slider__title">Аренда <br />
-            дизельных генераторов от 30 до 500 кВт</h2>
+        <div class="container position-relative d-flex flex-column h-100 slide-wrapper">
+          <h2 class="main-slider__title">Аренда <br>
+            дизельных генераторов от&nbsp;30&nbsp;до&nbsp;500&nbsp;кВт</h2>
 
-          <div class="mt-5 flex-fill">
+          <div class="mt-md-5 mt-2 flex-fill">
             <div class="d-grid gap-3 main-slider__info ">
               <div class="main-slider__item d-flex align-items-center gap-3">
                 <svg class="tick">
@@ -27,19 +27,76 @@
                 <svg class="tick">
                   <use xlink:href="./img/sprite.svg#tick"></use>
                 </svg>
-                <span>Подача в течение 2-х часов</span>
+                <span>Подача в&nbsp;течение 2-х часов</span>
               </div>
               <div class="main-slider__item d-flex align-items-center gap-3">
                 <svg class="tick">
                   <use xlink:href="./img/sprite.svg#tick"></use>
                 </svg>
-                <span>Генераторы в наличии</span>
+                <span>Генераторы в&nbsp;наличии</span>
               </div>
               <div class="main-slider__item d-flex align-items-center gap-3">
                 <svg class="tick">
                   <use xlink:href="./img/sprite.svg#tick"></use>
                 </svg>
                 <span>Бесплатное обслуживание</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-md-0 mt-4">
+            <button class="btn btn-warning py-3 main-slider__button">
+              Каталог
+            </button>
+          </div>
+        </div>
+      </li>
+      <li class="position-relative py-md-10 py-8 pb-5">
+        <img src="./img/slider1.jpg" class="main-slider__image position-absolute w-100 z-n1">
+
+        <div class="container position-relative d-flex justify-content-between h-100">
+          <div class="d-flex flex-column">
+            <h2 class="main-slider__title mb-0">Поставка <br> дизельных генераторов
+              от&nbsp;30&nbsp;до&nbsp;2500&nbsp;кВт
+            </h2>
+            <p class="main-slider__item mt-3">Официальный дилер генераторов на&nbsp;двигателе:</p>
+
+            <div class="main-slider__marks mt-md-5 mt-3 flex-fill d-flex flex-wrap">
+              <p class="main-slider__mark">Cummins</p>
+              <p class="main-slider__mark">Perkins</p>
+              <p class="main-slider__mark">Doosan</p>
+              <p class="main-slider__mark">Baudouin</p>
+              <p class="main-slider__mark">Weichai</p>
+              <p class="main-slider__mark">Yuchai</p>
+            </div>
+            <div class="mt-md-0 mt-7">
+              <button class="btn btn-warning py-3 main-slider__button">
+                Каталог
+              </button>
+            </div>
+          </div>
+          <img src="./img/slider1_image.png" alt="slider image" class="main-slider__second-image d-none d-lg-block">
+        </div>
+      </li>
+      <li class="position-relative py-md-10 py-8 pb-5">
+        <img src="./img/slider2.jpg" class="main-slider__image position-absolute w-100 z-n1">
+
+        <div class="container position-relative d-flex flex-column h-100">
+          <h2 class="main-slider__title">Производство <br /> блок-контейнеров типа «Север»</h2>
+
+          <div class="mt-md-5 mt-2 flex-fill">
+            <div class="d-grid gap-3 main-slider__info">
+              <div class="main-slider__item d-flex align-items-center gap-3">
+                <svg class="tick">
+                  <use xlink:href="./img/sprite.svg#tick"></use>
+                </svg>
+                <span>Контейнер ПБК Север марки «Energy»</span>
+              </div>
+              <div class="main-slider__item d-flex align-items-center gap-3">
+                <svg class="tick">
+                  <use xlink:href="./img/sprite.svg#tick"></use>
+                </svg>
+                <span>Контейнер СБК Север марки «Energy»</span>
               </div>
             </div>
           </div>
@@ -51,29 +108,17 @@
           </div>
         </div>
       </li>
-      <li class="position-relative">
-        <img src="./img/slider1.jpg" class="slider-image position-absolute w-100 z-n1">
-
-        <div class="container">
-          <h2>test text</h2>
-        </div>
-      </li>
-      <li class="position-relative">
-        <img src="./img/slider2.jpg" class="slider-image position-absolute w-100 z-n1">
-
-        <div class="container">
-          <h2>test text</h2>
-        </div>
-      </li>
     </ul>
 
     <div class="container position-absolute default-arrows py-10 slider-nav-visible">
-      <button type="button" class="slider-nav"></button>
-      <button type="button" class="slider-nav slider-nav-next"></button>
+      <div class="arrows-wrapper d-none d-md-flex">
+        <button type="button" class="slider-nav position-relative me-5"></button>
+        <button type="button" class="slider-nav slider-nav-next position-relative"></button>
+      </div>
     </div>
 
     <div class="container position-absolute default-pagination py-10">
-      <div class="slider-indicators">
+      <div class="slider-indicators gap-2">
         <button class="active"></button>
         <button></button>
         <button></button>

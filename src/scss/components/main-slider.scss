@@ -7,8 +7,27 @@
 .main-slider {
   min-height: 500px;
 
+  @media (max-width: 768px) {
+    min-height: auto;
+  }
+
+  &:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #1e1e1e;
+    z-index: -1;
+  }
+
   & > * {
     min-height: 500px;
+
+    @media (max-width: 768px) {
+      min-height: 100%;
+    }
   }
 
   &__title {
@@ -17,15 +36,41 @@
     text-transform: uppercase;
     color: var(--bs-white);
     max-width: 612px;
+
+    @media (max-width: 768px) {
+      font-size: 32px;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 24px;
+      max-width: 75%;
+
+      br {
+        display: none;
+      }
+    }
+
+    @media (max-width: 500px) {
+      max-width: 83%;
+      line-height: 1.3;
+    }
   }
 
   &__item {
     color: rgba(255, 255, 255, 0.7);
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
   }
 
   &__info {
     grid-template-columns: 1fr 1fr;
     max-width: 550px;
+
+    @media (max-width: 550px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__image {
@@ -34,29 +79,167 @@
     top: 0;
   }
 
+  &__marks {
+    gap: 9px;
+  }
+
+  &__mark {
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    padding: 4px 10px;
+    height: fit-content;
+    color: rgba(255, 255, 255, 0.7);
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+  }
+
+  &__second-image {
+    opacity: 1 !important;
+    position: absolute;
+    right: 1rem;
+    top: -0.5rem;
+
+    @media (max-width: 1200px) {
+      height: 75%;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+
+    &:before {
+      content: "";
+      background: #1e1e1e;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  }
+
   &__button {
     padding-left: 4rem;
     padding-right: 4rem;
+
+    @media (max-width: 768px) {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
   }
 }
 
-.slider-container.main-slider > *:first-child {
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    background: linear-gradient(90deg, #061b31 0%, rgba(6, 27, 49, 0) 100%);
+.slider-container.main-slider:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: linear-gradient(90deg, #061b31 0%, rgba(6, 27, 49, 0) 100%);
+}
+
+.slider-container.main-slider > *:nth-child(2) img {
+  opacity: 0.1;
+}
+
+.slider-container.main-slider > *:last-child .main-slider__info {
+  grid-template-columns: 1fr;
+}
+
+.main-slider {
+  .arrows-wrapper > button {
+    padding: 17px 20px;
+    border: 1px solid var(--bs-white);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:after {
+      cursor: pointer;
+    }
+
+    &:hover {
+      border: 1px solid var(--bs-yellow);
+      background: var(--bs-yellow);
+
+      &:after {
+        background: var(--bs-primary);
+      }
+    }
   }
+
+  .slider-nav.slider-nav-next {
+    right: inherit;
+  }
+
+  .slider-nav:after {
+    width: 8px !important;
+    padding: 0 !important;
+    height: 14px !important;
+  }
+}
+
+.arrows-wrapper {
+  position: absolute;
+  bottom: 4rem;
+  right: 7px;
+  pointer-events: auto;
 }
 
 .default-arrows {
-  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  pointer-events: none;
+  z-index: 102;
+
+  & > button {
+    height: fit-content !important;
+  }
 }
 
 .default-pagination {
   top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 101;
+  pointer-events: none;
+}
+
+.slide-wrapper {
+  z-index: 100;
+}
+
+.main-slider .slider-indicators {
+  bottom: 5.5rem;
+  pointer-events: auto;
+  display: flex !important;
+  width: fit-content;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    bottom: 2.7rem;
+    right: 1rem;
+    margin: 0;
+    margin-left: auto;
+  }
+
+  & > button {
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 40px;
+    transition: all 0.3s ease;
+    border: none;
+
+    &.active {
+      width: 16px;
+      height: 4px;
+      background: var(--bs-white);
+    }
+  }
 }
