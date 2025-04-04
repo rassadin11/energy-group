@@ -1,0 +1,62 @@
+.tick {
+  fill: var(--bs-yellow);
+  width: 15px;
+  height: 15px;
+}
+
+.main-slider {
+  min-height: 500px;
+
+  & > * {
+    min-height: 500px;
+  }
+
+  &__title {
+    font-weight: 900;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: var(--bs-white);
+    max-width: 612px;
+  }
+
+  &__item {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  &__info {
+    grid-template-columns: 1fr 1fr;
+    max-width: 550px;
+  }
+
+  &__image {
+    object-fit: cover;
+    height: 100%;
+    top: 0;
+  }
+
+  &__button {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+.slider-container.main-slider > *:first-child {
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: linear-gradient(90deg, #061b31 0%, rgba(6, 27, 49, 0) 100%);
+  }
+}
+
+.default-arrows {
+  top: 0;
+}
+
+.default-pagination {
+  top: 0;
+}

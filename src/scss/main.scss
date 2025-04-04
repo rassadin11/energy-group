@@ -4,9 +4,11 @@
 @import "fonts";
 @import "settings";
 
+@import "./components/swiffy.scss";
 @import "../resources/bootstrap/bootstrap.scss";
 @import "./components/main.scss";
 
 // подключения компонентов страницы
 @import "./components/pre-header.scss";
 @import "./components/header";
+@import "./components/main-slider.scss";

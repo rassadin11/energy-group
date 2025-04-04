@@ -6,6 +6,81 @@
 <body>
   @include('partials/pre-header.html')
   @include('partials/header.html')
+  <div class="swiffy-slider main-slider slider-item-show1 mt-5 position-relative">
+    <ul class="slider-container main-slider">
+      <li class="position-relative py-10">
+        <img src="./img/slider0.jpg" class="main-slider__image position-absolute w-100 z-n1">
+
+        <div class="container position-relative d-flex flex-column h-100">
+          <h2 class="main-slider__title">Аренда <br />
+            дизельных генераторов от 30 до 500 кВт</h2>
+
+          <div class="mt-5 flex-fill">
+            <div class="d-grid gap-3 main-slider__info ">
+              <div class="main-slider__item d-flex align-items-center gap-3">
+                <svg class="tick">
+                  <use xlink:href="./img/sprite.svg#tick"></use>
+                </svg>
+                <span>Сервисная служба 24/7</span>
+              </div>
+              <div class="main-slider__item d-flex align-items-center gap-3">
+                <svg class="tick">
+                  <use xlink:href="./img/sprite.svg#tick"></use>
+                </svg>
+                <span>Подача в течение 2-х часов</span>
+              </div>
+              <div class="main-slider__item d-flex align-items-center gap-3">
+                <svg class="tick">
+                  <use xlink:href="./img/sprite.svg#tick"></use>
+                </svg>
+                <span>Генераторы в наличии</span>
+              </div>
+              <div class="main-slider__item d-flex align-items-center gap-3">
+                <svg class="tick">
+                  <use xlink:href="./img/sprite.svg#tick"></use>
+                </svg>
+                <span>Бесплатное обслуживание</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <button class="btn btn-warning py-3 main-slider__button">
+              Каталог
+            </button>
+          </div>
+        </div>
+      </li>
+      <li class="position-relative">
+        <img src="./img/slider1.jpg" class="slider-image position-absolute w-100 z-n1">
+
+        <div class="container">
+          <h2>test text</h2>
+        </div>
+      </li>
+      <li class="position-relative">
+        <img src="./img/slider2.jpg" class="slider-image position-absolute w-100 z-n1">
+
+        <div class="container">
+          <h2>test text</h2>
+        </div>
+      </li>
+    </ul>
+
+    <div class="container position-absolute default-arrows py-10 slider-nav-visible">
+      <button type="button" class="slider-nav"></button>
+      <button type="button" class="slider-nav slider-nav-next"></button>
+    </div>
+
+    <div class="container position-absolute default-pagination py-10">
+      <div class="slider-indicators">
+        <button class="active"></button>
+        <button></button>
+        <button></button>
+      </div>
+    </div>
+  </div>
+
   <main class="main container">
     <p>test text</p>
   </main>

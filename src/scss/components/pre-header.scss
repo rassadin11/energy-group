@@ -4,6 +4,8 @@
   color: var(--bs-white);
   font-size: 14px;
   padding: 10px 0;
+  position: relative;
+  z-index: 1000;
 
   &__city {
     color: var(--bs-yellow);

@@ -1,5 +1,5 @@
 <header class="header">
-  <div class="container header__wrapper position-relative">
+  <div class="container header__wrapper">
     <div class="d-flex gap-xl-6 gap-2 align-items-center justify-content-lg-start justify-content-between">
       <p class="header__logo">
         <img src="./img/svg/logo.svg" />
@@ -16,7 +16,7 @@
       </div>
       <div class="header__contacts ms-lg-1 d-none d-md-block ">
         <p class="header__contact d-flex align-items-center justify-content-between"><a
-            href="tel:88005117379">8 800 511-73-79 </a>
+            href="tel:88005117379">8 800 511-73-79</a>
           <svg class="arrow">
             <use xlink:href="./img/sprite.svg#arrow"></use>
           </svg>
@@ -52,73 +52,130 @@
         </svg>
       </div>
     </div>
-    <div class="d-lg-flex d-none gap-6 align-items-center mt-4">
-      <a href="#" class="d-block header__catalogue rounded-3 py-4 d-flex gap-3">
+    <div class="header-menu-wrapper d-flex gap-lg-6 gap-4 align-items-lg-center mt-lg-4 mt-0 px-lg-0 py-lg-0 px-4 py-5">
+      <a href="#" class="d-lg-block d-none header__catalogue rounded-3 py-4 d-flex gap-3">
         <svg class="svg-catalogue">
           <use xlink:href="./img/sprite.svg#catalogue"></use>
         </svg>
         <span>Каталог</span>
       </a>
-      <nav class="header__nav navbar-nav">
-        <ul class="header-menu d-flex gap-8 ps-3">
-          <li class="header-menu__item nav-item menu__dropdown position-relative" data-initial-layout="true"
-            data-layout="1" data-position="header"><span class="nav-link">Услуги</span>
+      <div class="d-lg-none d-flex justify-content-between align-items-center contacts-header position-relative pb-5">
+        <p class="semibold mobile-menu-title">Меню</p>
+        <svg class="mobile-cross cross-menu">
+          <use xlink:href="./img/svg/sprite.svg#mobile-cross"></use>
+        </svg>
+      </div>
+      <div class="d-lg-none d-flex justify-content-between align-items-center gap-3">
+        <div class="search-container position-relative py-3 pe-3">
+          <svg class="search-icon position-absolute">
+            <use xlink:href="./img/sprite.svg#search"></use>
+          </svg>
+          <input type="text" class="search-input" placeholder="Поиск">
+        </div>
+      </div>
+      <nav class="header__nav navbar-nav overlay-menu">
+        <ul class="header-menu d-flex gap-lg-8 ps-lg-3 ps-0">
+          <li class="header-menu__item nav-item menu__dropdown position-relative">
+            <span class="nav-link py-lg-2 py-3 d-lg-block d-flex justify-content-between align-items-center">
+              <span>Услуги</span>
+              <svg class="small-arrow d-lg-none d-block">
+                <use xlink:href="./img/svg/sprite.svg#small-arrow"></use>
+              </svg>
+            </span>
             <ul class="dropdown-menu position-absolute tab-list py-0 overflow-hidden">
               <li class="dropdown-item">
-                <a href="#" class="py-3 d-block" data-layout="1"
+                <a href="#" class="py-lg-3 py-2 d-block" data-layout="1"
                   data-position="element"><span>Электроснабжение</span></a>
               </li>
               <li class="dropdown-item">
-                <a href="#" class="py-3 d-block" data-layout="1" data-position="element"><span>Ремонт и ТО</span></a>
+                <a href="#" class="py-lg-3 py-2 d-block" data-layout="1" data-position="element"><span>Ремонт
+                    и&nbsp;ТО</span></a>
               </li>
               <li class="dropdown-item">
-                <a href="#" class="py-3 d-block" data-layout="1" data-position="element"><span>Пуско-накладочные
+                <a href="#" class="py-lg-3 py-2 d-block" data-layout="1" data-position="element"><span>Пуско-накладочные
                     работы</span></a>
               </li>
               <li class="dropdown-item">
-                <a href="#" class="py-3 d-block" data-layout="1" data-position="element"><span>Расчёт мощности
+                <a href="#" class="py-lg-3 py-2 d-block" data-layout="1" data-position="element"><span>Расчёт мощности
                     генератора</span></a>
               </li>
             </ul>
           </li>
-          <li class="header-menu__item nav-item"><a href="#" class="nav-link"
+          <li class="header-menu__item nav-item"><a href="#" class="nav-link py-lg-2 py-3"
               data-initial-layout="true"><span>Аренда</span></a></li>
-          <li class="header-menu__item nav-item menu__dropdown position-relative"><span class="nav-link"
-              data-initial-layout="true" data-layout="2" data-position="header"><span>О
-                компании</span></span>
+          <li class="header-menu__item nav-item menu__dropdown position-relative">
+            <span class="nav-link py-lg-2 py-3 d-lg-block d-flex justify-content-between align-items-center">
+              <span>О
+                компании</span>
+              <svg class="small-arrow d-lg-none d-block">
+                <use xlink:href="./img/svg/sprite.svg#small-arrow"></use>
+              </svg>
+            </span>
             <ul class="dropdown-menu position-absolute tab-list py-0 overflow-hidden">
               <li class="dropdown-item">
-                <a href="#" class="py-3 d-block" data-layout="2" data-position="element"><span>Вопрос-ответ</span></a>
+                <a href="#" class="py-lg-3 py-2 d-block" data-layout="2"
+                  data-position="element"><span>Вопрос-ответ</span></a>
               </li>
               <li class="dropdown-item">
-                <a href="#" class="py-3 d-block" data-layout="2" data-position="element"><span>Статьи</span></a>
+                <a href="#" class="py-lg-3 py-2 d-block" data-layout="2" data-position="element"><span>Статьи</span></a>
               </li>
               <li class="dropdown-item">
-                <a href="#" class="py-3 d-block" data-layout="2" data-position="element"><span>Сертификаты и
+                <a href="#" class="py-lg-3 py-2 d-block" data-layout="2" data-position="element"><span>Сертификаты и
                     награды</span></a>
               </li>
               <li class="dropdown-item">
-                <a href="#" class="py-3 d-block" data-layout="2" data-position="element"><span>Видео</span></a>
+                <a href="#" class="py-lg-3 py-2 d-block" data-layout="2" data-position="element"><span>Видео</span></a>
               </li>
               <li class="dropdown-item">
-                <a href="#" class="py-3 d-block" data-layout="2" data-position="element"><span>Новости</span></a>
+                <a href="#" class="py-lg-3 py-2 d-block" data-layout="2"
+                  data-position="element"><span>Новости</span></a>
               </li>
               <li class="dropdown-item">
-                <a href="#" class="py-3 d-block" data-layout="2" data-position="element"><span>Документы</span></a>
+                <a href="#" class="py-lg-3 py-2 d-block" data-layout="2"
+                  data-position="element"><span>Документы</span></a>
               </li>
             </ul>
           </li>
-          <li class="header-menu__item nav-item"><a href="#" class="nav-link" data-initial-layout="true"><span>Наши
+          <li class="header-menu__item nav-item"><a href="#" class="nav-link py-lg-2 py-3"
+              data-initial-layout="true"><span>Наши
                 проекты</span></a></li>
-          <li class="header-menu__item nav-item"><a href="#" class="nav-link"
+          <li class="header-menu__item nav-item"><a href="#" class="nav-link py-lg-2 py-3"
               data-initial-layout="true"><span>Отзывы</span></a></li>
-          <li class="header-menu__item nav-item"><a href="#" class="nav-link" data-initial-layout="true"><span>Опросный
+          <li class="header-menu__item nav-item"><a href="#" class="nav-link py-lg-2 py-3"
+              data-initial-layout="true"><span>Опросный
                 лист</span></a></li>
-          <li class="header-menu__item nav-item"><a href="#" class="nav-link"
+          <li class="header-menu__item nav-item"><a href="#" class="nav-link py-lg-2 py-3"
               data-initial-layout="true"><span>Контакты</span></a>
           </li>
         </ul>
       </nav>
+      <div class="d-md-none mobile-header__contacts mt-4">
+        <div class="header__contacts py-3">
+          <p class=" header__contact"><a href="mail:generator-energy.ru@ya.ru">generator-energy.ru@ya.ru</a></p>
+          <p class="header__description disabled-color">Ответим в течение часа</p>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="header__contacts py-3">
+            <p class=" header__contact"><a href="mail:generator-energy.ru@ya.ru">8 800 511-73-79</a></p>
+            <p class="header__description disabled-color">Бесплатный по РФ</p>
+          </div>
+          <div class="header__socials d-flex gap-2">
+            <div class="socials-header__whatsapp rounded-3">
+              <svg class="whatsapp">
+                <use xlink:href="./img/sprite.svg#whatsapp"></use>
+              </svg>
+            </div>
+            <div class="socials-header__telegram rounded-3">
+              <svg class="telegram">
+                <use xlink:href="./img/sprite.svg#telegram"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="d-lg-none d-block mt-4 py-3 text-center btn btn-primary w-100">
+        Вам перезвонить?
+      </button>
     </div>
 
     <!-- overlays -->
@@ -170,20 +227,6 @@
         </div>
       </div>
 
-      <button class="d-block mt-4 py-3 text-center btn btn-primary w-100">
-        Вам перезвонить?
-      </button>
-    </div>
-
-    <div class="header-search__overlay overlay-menu pt-5 pb-4 px-4 d-flex flex-column">
-      <div class="d-flex justify-content-between align-items-center contacts-header position-relative pb-5">
-        <p class="semibold mobile-menu-title">Меню</p>
-        <svg class="mobile-cross cross-menu">
-          <use xlink:href="./img/svg/sprite.svg#mobile-cross"></use>
-        </svg>
-      </div>
-      <ul class="overlay-menu__list p-0 flex-fill">
-      </ul>
       <button class="d-block mt-4 py-3 text-center btn btn-primary w-100">
         Вам перезвонить?
       </button>
