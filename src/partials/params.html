@@ -1,0 +1,240 @@
+<section class="params my-md-10 my-8 py-2 container">
+    <div class="d-flex justify-content-between align-items-end">
+        <div>
+            <h2 class="title fw-bold mb-4">
+                Подберите генератор самостоятельно
+            </h2>
+            <p class="title-description">
+                По точным параметрам
+            </p>
+        </div>
+        <button class="d-none btn params-show-popup gap-3 d-md-flex align-items-center py-2 me-1">
+            <svg class="params">
+                <use xlink:href="./img/svg/sprite.svg#parameters"></use>
+            </svg>
+            <span class="semibold">Все параметры</span>
+        </button>
+    </div>
+
+    <div class="params-block py-md-6 px-md-7 p-4 d-flex gap-4 justify-content-between mt-md-7 mt-4">
+        <div class="params-block__item buttons rounded-4">
+            <button class="params-block__button active rounded-2 px-6 py-xl-0 py-3 h-100">Дизельный</button>
+            <button class="params-block__button rounded-2 px-6 h-100 py-xl-0 py-3">Бензиновый</button>
+        </div>
+        <div class="params-block__item d-grid flex-fill gap-md-1 gap-2">
+            <div class="select-container">
+                <select class="custom-select w-100 rounded-2" required>
+                    <option value="" hidden selected disabled>Мощность</option>
+                    <option value="35-40">35-40 кВт</option>
+                    <option value="40-45">40-45 кВт</option>
+                    <option value="45-50">45-50 кВт</option>
+                </select>
+                <span class="select-label position-absolute">Мощность</span>
+                <span class="select-arrow">
+                    <svg class="arrow">
+                        <use xlink:href="./img/svg/sprite.svg#arrow"></use>
+                    </svg>
+                </span>
+            </div>
+            <div class="select-container">
+                <select class="custom-select w-100 rounded-2" required>
+                    <option value="" hidden selected disabled>Напряжение, В</option>
+                    <option value="35-40">35-40 кВт</option>
+                    <option value="40-45">40-45 кВт</option>
+                    <option value="45-50">45-50 кВт</option>
+                </select>
+                <span class="select-label position-absolute">Напряжение, В</span>
+                <span class="select-arrow">
+                    <svg class="arrow">
+                        <use xlink:href="./img/svg/sprite.svg#arrow"></use>
+                    </svg>
+                </span>
+            </div>
+            <div class="select-container">
+                <select class="custom-select w-100 rounded-2" required>
+                    <option value="" hidden selected disabled>Цена</option>
+                    <option value="35-40">35-40 кВт</option>
+                    <option value="40-45">40-45 кВт</option>
+                    <option value="45-50">45-50 кВт</option>
+                </select>
+                <span class="select-label position-absolute">Цена</span>
+                <span class="select-arrow">
+                    <svg class="arrow">
+                        <use xlink:href="./img/svg/sprite.svg#arrow"></use>
+                    </svg>
+                </span>
+            </div>
+            <div class="select-container">
+                <select class="custom-select w-100 rounded-2" required>
+                    <option value="" hidden selected disabled>Производитель</option>
+                    <option value="35-40">35-40 кВт</option>
+                    <option value="40-45">40-45 кВт</option>
+                    <option value="45-50">45-50 кВт</option>
+                </select>
+                <span class="select-label position-absolute">Производитель</span>
+                <span class="select-arrow">
+                    <svg class="arrow">
+                        <use xlink:href="./img/svg/sprite.svg#arrow"></use>
+                    </svg>
+                </span>
+            </div>
+        </div>
+        <div class="params-block__item">
+            <button class="btn btn-warning h-100 py-12 px-5 c-white config">
+                Подобрать
+            </button>
+        </div>
+        <button
+            class="d-md-none d-flex justify-content-center btn params-show-popup gap-3 d-flex align-items-center py-2">
+            <svg class="params">
+                <use xlink:href="./img/svg/sprite.svg#parameters"></use>
+            </svg>
+            <span class="semibold">Все параметры</span>
+        </button>
+    </div>
+</section>
+
+<div class="position-fixed params-overlay-wrap">
+    <div class="params-overlay__wrapper position-fixed"></div>
+    <div class="params-overlay px-md-8 py-md-8 py-5 px-4 position-fixed rounded-4 w-100">
+        <div
+            class="d-flex justify-content-between align-items-center position-relative params-overlay__header pb-lg-0 pb-5">
+            <p class="semibold overlay-title">Подобрать генератор
+            </p>
+            <svg class="mobile-cross cross-place">
+                <use xlink:href="./img/svg/sprite.svg#mobile-cross"></use>
+            </svg>
+        </div>
+
+        <div class="flex-fill mb-md-0 mb-3">
+            <div class="params-overlay__buttons mt-lg-9 mt-md-7 mt-6">
+                <div class="params-overlay__button-wrapper buttons rounded-4 d-grid py-1">
+                    <button class="params-block__button active rounded-2 px-6 py-md-4 py-12 h-100">Дизельный</button>
+                    <button class="params-block__button rounded-2 px-6 py-md-4 py-12 h-100">Бензиновый</button>
+                </div>
+            </div>
+
+            <div class="params-overlay__block mt-lg-9 mt-md-7 mt-6">
+                <p class="semibold">Цена</p>
+
+                <div class="block-params__inputs mt-2 d-grid gap-md-5 gap-3">
+                    <div class="overlay-params__input-wrapper position-relative" data-sign="₽">
+                        <input type="number" placeholder="от 170 000"
+                            class="w-100 block-params__input px-3 pe-md-9 pe-7 py-4 rounded-3">
+                    </div>
+                    <div class="overlay-params__input-wrapper position-relative" data-sign="₽">
+                        <input type="number" placeholder="до 22 560 000"
+                            class="w-100 block-params__input px-3 pe-md-9 pe-7 py-4 rounded-3">
+                    </div>
+                </div>
+            </div>
+
+            <div class="params-overlay__block mt-lg-8 mt-md-7 mt-6">
+                <p class="semibold">Номинальная мощность</p>
+
+                <div class="block-params__inputs mt-2 d-grid gap-md-5 gap-3">
+                    <div class="overlay-params__input-wrapper position-relative" data-sign="кВт">
+                        <input type="number" placeholder="от 8"
+                            class="w-100 block-params__input px-3 pe-md-9 pe-7 py-4 rounded-3">
+                    </div>
+                    <div class="overlay-params__input-wrapper position-relative" data-sign="кВт">
+                        <input type="number" placeholder="до 2 500"
+                            class="w-100 block-params__input px-3 pe-md-9 pe-7 py-4 rounded-3">
+                    </div>
+                </div>
+            </div>
+
+            <div class="params-overlay__block mt-lg-9 mt-md-7 mt-6 d-grid params-overlay__selects gap-md-6 gap-3">
+                <div class="select-container overlay">
+                    <select class="custom-select p-md-4 p-3 overlay w-100 rounded-2" required>
+                        <option value="" hidden selected disabled>Выходное напряжение, В</option>
+                        <option value="35-40">35-40 кВт</option>
+                        <option value="40-45">40-45 кВт</option>
+                        <option value="45-50">45-50 кВт</option>
+                    </select>
+                    <span class="select-label overlay position-absolute">Выходное напряжение, В</span>
+                    <span class="select-arrow">
+                        <svg class="arrow">
+                            <use xlink:href="./img/svg/sprite.svg#arrow"></use>
+                        </svg>
+                    </span>
+                </div>
+                <div class="select-container overlay">
+                    <select class="custom-select p-md-4 p-3 overlay w-100 rounded-2" required>
+                        <option value="" hidden selected disabled>Напряжение</option>
+                        <option value="35-40">35-40 кВт</option>
+                        <option value="40-45">40-45 кВт</option>
+                        <option value="45-50">45-50 кВт</option>
+                    </select>
+                    <span class="select-label overlay position-absolute">Напряжение</span>
+                    <span class="select-arrow">
+                        <svg class="arrow">
+                            <use xlink:href="./img/svg/sprite.svg#arrow"></use>
+                        </svg>
+                    </span>
+                </div>
+                <div class="select-container overlay">
+                    <select class="custom-select p-md-4 p-3 overlay w-100 rounded-2" required>
+                        <option value="" hidden selected disabled>Степень амортизации</option>
+                        <option value="35-40">35-40 кВт</option>
+                        <option value="40-45">40-45 кВт</option>
+                        <option value="45-50">45-50 кВт</option>
+                    </select>
+                    <span class="select-label overlay position-absolute">Степень амортизации</span>
+                    <span class="select-arrow">
+                        <svg class="arrow">
+                            <use xlink:href="./img/svg/sprite.svg#arrow"></use>
+                        </svg>
+                    </span>
+                </div>
+                <div class="select-container overlay">
+                    <select class="custom-select p-md-4 p-3 overlay w-100 rounded-2" required>
+                        <option value="" hidden selected disabled>Исполнение</option>
+                        <option value="35-40">35-40 кВт</option>
+                        <option value="40-45">40-45 кВт</option>
+                        <option value="45-50">45-50 кВт</option>
+                    </select>
+                    <span class="select-label overlay position-absolute">Исполнение</span>
+                    <span class="select-arrow">
+                        <svg class="arrow">
+                            <use xlink:href="./img/svg/sprite.svg#arrow"></use>
+                        </svg>
+                    </span>
+                </div>
+                <div class="select-container overlay">
+                    <select class="custom-select p-md-4 p-3 overlay w-100 rounded-2" required>
+                        <option value="" hidden selected disabled>Страна происхождения</option>
+                        <option value="35-40">35-40 кВт</option>
+                        <option value="40-45">40-45 кВт</option>
+                        <option value="45-50">45-50 кВт</option>
+                    </select>
+                    <span class="select-label overlay position-absolute">Страна происхождения</span>
+                    <span class="select-arrow">
+                        <svg class="arrow">
+                            <use xlink:href="./img/svg/sprite.svg#arrow"></use>
+                        </svg>
+                    </span>
+                </div>
+                <div class="select-container overlay">
+                    <select class="custom-select p-md-4 p-3 overlay w-100 rounded-2" required>
+                        <option value="" hidden selected disabled>Двигатель</option>
+                        <option value="35-40">35-40 кВт</option>
+                        <option value="40-45">40-45 кВт</option>
+                        <option value="45-50">45-50 кВт</option>
+                    </select>
+                    <span class="select-label overlay position-absolute">Двигатель</span>
+                    <span class="select-arrow">
+                        <svg class="arrow">
+                            <use xlink:href="./img/svg/sprite.svg#arrow"></use>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="params-overlay__block results d-flex justify-content-between mt-md-9 mt-4">
+            <button class="btn btn-danger py-4 px-5 c-white">Сбросить</button>
+            <button class="btn btn-warning py-4 px-5 c-white">Подобрать</button>
+        </div>
+    </div>
+</div>
