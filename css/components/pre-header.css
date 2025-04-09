@@ -10,6 +10,7 @@
 .pre-header__city {
   color: var(--bs-yellow);
   line-height: 1.25rem;
+  cursor: pointer;
 }
 .pre-header__text {
   line-height: 1.25rem;
