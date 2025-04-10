@@ -499,6 +499,10 @@ const menuOverlay = document.querySelector('.header-menu-wrapper');
 const crossMenu = document.querySelector('.cross-menu');
 burger.addEventListener('click', () => {
   menuOverlay.classList.toggle('active');
+  backgroundPopup.classList.remove('active');
+  searchOverlay.classList.remove('active');
+  contactsOverlay.classList.remove('active');
+  placeOverlay.classList.remove('active');
   document.body.classList.add('overflow-hidden');
 });
 crossMenu.addEventListener('click', () => {

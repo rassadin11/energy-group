@@ -18233,7 +18233,7 @@ a {
     background: var(--bs-white);
     z-index: 1000;
     width: 100vw;
-    min-height: calc(var(--vh, 1vh) * 100);
+    height: calc(var(--vh, 1vh) * 100);
     overflow-x: auto;
     -webkit-transform: translate(-100%, 0);
     -ms-transform: translate(-100%, 0);
