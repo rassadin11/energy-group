@@ -593,6 +593,12 @@ itemFooter.forEach(item => {
     item.querySelector('ul').classList.toggle('active');
   });
 });
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+window.addEventListener('resize', () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
 lightGallery(document.getElementById('animated-thumbnails'), {
   thumbnail: true,
   selector: '.blagodar-image__wrapper'
