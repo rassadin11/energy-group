@@ -1,0 +1,36 @@
+.projects .popular-slider__block {
+  border: 1px solid #e7e9eb;
+}
+.projects .popular-slider__arrows-wrapper {
+  top: -1rem;
+  right: 0;
+}
+@media (max-width: 1350px) {
+  .projects .swiffy-slider.projects-slider-wrapper {
+    --swiffy-slider-item-count: 2.5;
+  }
+}
+@media (max-width: 992px) {
+  .projects .swiffy-slider.projects-slider-wrapper {
+    --swiffy-slider-item-count: 2.1;
+  }
+}
+@media (max-width: 650px) {
+  .projects .swiffy-slider.projects-slider-wrapper {
+    --swiffy-slider-item-count: 1.8;
+  }
+}
+@media (max-width: 550px) {
+  .projects .swiffy-slider.projects-slider-wrapper {
+    --swiffy-slider-item-count: 1.35;
+  }
+}
+@media (max-width: 768px) {
+  .projects .about-wrapper__description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+  }
+}/*# sourceMappingURL=projects.css.map */
