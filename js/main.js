@@ -352,7 +352,12 @@ const backgroundPopup = document.querySelector('.background-popup');
 const crossSearch = document.querySelector('.cross-search');
 searchButton.addEventListener('click', () => {
   searchOverlay.classList.toggle('active');
-  backgroundPopup.classList.toggle('active');
+  if (searchOverlay.classList.contains('active')) {
+    backgroundPopup.classList.add('active');
+  } else {
+    backgroundPopup.classList.remove('active');
+  }
+  document.body.classList.toggle('overflow-hidden');
   document.querySelector('.header-menu-wrapper').classList.remove('active');
   document.querySelector('.overlay-contacts').classList.remove('active');
   if (headerWrapper.classList.contains('active')) {
@@ -366,6 +371,7 @@ searchButton.addEventListener('click', () => {
 crossSearch.addEventListener('click', () => {
   searchOverlay.classList.remove('active');
   backgroundPopup.classList.remove('active');
+  document.body.classList.remove('overflow-hidden');
   setTimeout(() => {
     headerWrapper.classList.remove('active');
   }, 300);
@@ -378,7 +384,12 @@ const contactsOverlay = document.querySelector('.overlay-contacts');
 const crossContact = document.querySelector('.cross-contact');
 contactsButton.addEventListener('click', () => {
   contactsOverlay.classList.toggle('active');
-  backgroundPopup.classList.toggle('active');
+  document.body.classList.toggle('overflow-hidden');
+  if (contactsOverlay.classList.contains('active')) {
+    backgroundPopup.classList.add('active');
+  } else {
+    backgroundPopup.classList.remove('active');
+  }
   document.querySelector('.header-menu-wrapper').classList.remove('active');
   searchOverlay.classList.remove('active');
   if (headerWrapper.classList.contains('active')) {
@@ -392,6 +403,7 @@ contactsButton.addEventListener('click', () => {
 crossContact.addEventListener('click', () => {
   contactsOverlay.classList.remove('active');
   backgroundPopup.classList.remove('active');
+  document.body.classList.remove('overflow-hidden');
   setTimeout(() => {
     headerWrapper.classList.remove('active');
   }, 300);
@@ -403,7 +415,12 @@ const placeOverlay = document.querySelector('.overlay-place');
 const crossPlace = placeOverlay.querySelector('.cross-place');
 placeButton.addEventListener('click', () => {
   placeOverlay.classList.toggle('active');
-  backgroundPopup.classList.toggle('active');
+  document.body.classList.toggle('overflow-hidden');
+  if (placeOverlay.classList.contains('active')) {
+    backgroundPopup.classList.add('active');
+  } else {
+    backgroundPopup.classList.remove('active');
+  }
   document.querySelector('.header-menu-wrapper').classList.remove('active');
   searchOverlay.classList.remove('active');
   if (headerWrapper.classList.contains('active')) {
@@ -417,6 +434,7 @@ placeButton.addEventListener('click', () => {
 crossPlace.addEventListener('click', () => {
   placeOverlay.classList.remove('active');
   backgroundPopup.classList.remove('active');
+  document.body.classList.remove('overflow-hidden');
   setTimeout(() => {
     headerWrapper.classList.remove('active');
   }, 300);
@@ -452,10 +470,12 @@ const cityCross = cityPopup.querySelector('.cross-place');
 headerCity.addEventListener('click', () => {
   cityPopup.classList.add('active');
   contactsBlackBackground.classList.add('active');
+  document.body.classList.add('overflow-hidden');
 });
 cityCross.addEventListener('click', () => {
   cityPopup.classList.remove('active');
   contactsBlackBackground.classList.remove('active');
+  document.body.classList.remove('overflow-hidden');
 });
 contactsBlackBackground.addEventListener('click', () => {
   contactsWhiteBackground.style.height = 0 + 'px';
@@ -463,6 +483,7 @@ contactsBlackBackground.addEventListener('click', () => {
   extraPhone.classList.remove('active');
   cityPopup.classList.remove('active');
   arrowExtra.classList.remove('active');
+  document.body.classList.remove('overflow-hidden');
 });
 
 // menu-burger
@@ -472,9 +493,11 @@ const menuOverlay = document.querySelector('.header-menu-wrapper');
 const crossMenu = document.querySelector('.cross-menu');
 burger.addEventListener('click', () => {
   menuOverlay.classList.toggle('active');
+  document.body.classList.add('overflow-hidden');
 });
 crossMenu.addEventListener('click', () => {
   menuOverlay.classList.remove('active');
+  document.body.classList.remove('overflow-hidden');
   setTimeout(() => {
     resetDropdown();
   }, 300);
@@ -486,6 +509,7 @@ backgroundPopup.addEventListener('click', () => {
   backgroundPopup.classList.remove('active');
   contactsOverlay.classList.remove('active');
   menuOverlay.classList.remove('active');
+  document.body.classList.remove('overflow-hidden');
   setTimeout(() => {
     headerWrapper.classList.remove('active');
   }, 300);
