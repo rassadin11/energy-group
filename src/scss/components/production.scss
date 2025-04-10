@@ -1,0 +1,46 @@
+.production__image {
+  border-radius: 1.5rem 1.5rem 0 0;
+  min-height: 328px;
+}
+
+.blocks-production {
+  grid-template-columns: 1fr 1fr;
+  margin-top: -2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    margin-top: -1.5rem;
+  }
+
+  &__block {
+    background: var(--bs-white);
+    border: 1px solid rgba(6, 27, 49, 0.1);
+    border-radius: 1.5rem;
+
+    img {
+      width: 50%;
+      object-fit: cover;
+      border-radius: 0.5rem;
+
+      @media (max-width: 768px) {
+        max-height: 142px;
+      }
+    }
+
+    p {
+      font-size: 1.25rem;
+
+      @media (max-width: 550px) {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 550px) {
+      & > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+  }
+}

@@ -57,6 +57,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "@fancyapps/ui": "^5.0.36",
     "@popperjs/core": "^2.11.8",
     "aos": "^2.3.4",
     "gh-pages": "^6.3.0",
