@@ -360,12 +360,13 @@ searchButton.addEventListener('click', () => {
   document.body.classList.toggle('overflow-hidden');
   document.querySelector('.header-menu-wrapper').classList.remove('active');
   document.querySelector('.overlay-contacts').classList.remove('active');
-  if (headerWrapper.classList.contains('active')) {
+  document.querySelector('.overlay-place').classList.remove('active');
+  if (searchOverlay.classList.contains('active')) {
+    headerWrapper.classList.add('active');
+  } else {
     setTimeout(() => {
       headerWrapper.classList.remove('active');
     }, 300);
-  } else {
-    headerWrapper.classList.toggle('active');
   }
 });
 crossSearch.addEventListener('click', () => {
@@ -392,12 +393,14 @@ contactsButton.addEventListener('click', () => {
   }
   document.querySelector('.header-menu-wrapper').classList.remove('active');
   searchOverlay.classList.remove('active');
-  if (headerWrapper.classList.contains('active')) {
+  document.querySelector('.header-menu-wrapper').classList.remove('active');
+  document.querySelector('.overlay-place').classList.remove('active');
+  if (contactsOverlay.classList.contains('active')) {
+    headerWrapper.classList.add('active');
+  } else {
     setTimeout(() => {
       headerWrapper.classList.remove('active');
     }, 300);
-  } else {
-    headerWrapper.classList.toggle('active');
   }
 });
 crossContact.addEventListener('click', () => {
@@ -423,12 +426,15 @@ placeButton.addEventListener('click', () => {
   }
   document.querySelector('.header-menu-wrapper').classList.remove('active');
   searchOverlay.classList.remove('active');
-  if (headerWrapper.classList.contains('active')) {
+  document.querySelector('.header-menu-wrapper').classList.remove('active');
+  document.querySelector('.overlay-contacts').classList.remove('active');
+  document.querySelector('.overlay-search').classList.remove('active');
+  if (placeOverlay.classList.contains('active')) {
+    headerWrapper.classList.add('active');
+  } else {
     setTimeout(() => {
       headerWrapper.classList.remove('active');
     }, 300);
-  } else {
-    headerWrapper.classList.toggle('active');
   }
 });
 crossPlace.addEventListener('click', () => {
@@ -505,9 +511,10 @@ crossMenu.addEventListener('click', () => {
 
 // reset overlays on click on backgroundPopup
 backgroundPopup.addEventListener('click', () => {
-  searchOverlay.classList.remove('active');
   backgroundPopup.classList.remove('active');
+  searchOverlay.classList.remove('active');
   contactsOverlay.classList.remove('active');
+  placeOverlay.classList.remove('active');
   menuOverlay.classList.remove('active');
   document.body.classList.remove('overflow-hidden');
   setTimeout(() => {

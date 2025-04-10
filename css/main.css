@@ -17914,8 +17914,10 @@ a {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   max-width: 100vw;
+  max-height: 0;
 }
 .catalogue-header__overlay.active {
+  max-height: auto;
   opacity: 1;
   visibility: visible;
 }
@@ -18232,8 +18234,7 @@ a {
     z-index: 1000;
     width: 100vw;
     min-height: calc(var(--vh, 1vh) * 100);
-    overflow-y: hidden;
-    overflow-x: scroll;
+    overflow-x: auto;
     -webkit-transform: translate(-100%, 0);
     -ms-transform: translate(-100%, 0);
     transform: translate(-100%, 0);
