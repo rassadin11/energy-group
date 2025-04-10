@@ -1,9 +1,16 @@
 .projects .popular-slider__block {
   border: 1px solid #e7e9eb;
 }
+.projects .title {
+  padding-left: 2.5rem !important;
+}
+@media (max-width: 1300px) {
+  .projects .title {
+    padding: 0 !important;
+  }
+}
 .projects .popular-slider__arrows-wrapper {
   top: -1rem;
-  right: 0;
 }
 @media (max-width: 1350px) {
   .projects .swiffy-slider.projects-slider-wrapper {

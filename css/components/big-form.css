@@ -53,6 +53,25 @@
   outline: none;
   min-width: 298px;
 }
+.big-form__input.white {
+  background: var(--bs-white);
+  color: #7c8692;
+}
+.big-form__input.white::-webkit-input-placeholder {
+  color: #7c8692;
+}
+.big-form__input.white::-moz-placeholder {
+  color: #7c8692;
+}
+.big-form__input.white:-ms-input-placeholder {
+  color: #7c8692;
+}
+.big-form__input.white::-ms-input-placeholder {
+  color: #7c8692;
+}
+.big-form__input.white::placeholder {
+  color: #7c8692;
+}
 @media (max-width: 992px) {
   .big-form__input {
     min-width: 220px;

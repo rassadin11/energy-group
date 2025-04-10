@@ -572,6 +572,35 @@ countryBlocks.forEach(item => {
     }
   });
 });
+
+// footer accordeon
+
+const itemFooter = document.querySelectorAll('.item-footer');
+itemFooter.forEach(item => {
+  item.querySelector('.item-footer__title').addEventListener('click', () => {
+    const list = item.querySelector('ul');
+    let heightCounter = 0;
+    if (item.classList.contains('active')) {
+      list.style.maxHeight = 0;
+    } else {
+      list.querySelectorAll('li').forEach(elem => heightCounter += elem.clientHeight);
+      heightCounter += (list.querySelectorAll('li').length - 1) * 8;
+      list.style.maxHeight = heightCounter + 'px';
+    }
+    item.classList.toggle('active');
+    item.querySelector('.item-footer__title').classList.toggle('active');
+    item.querySelector('.arrow').classList.toggle('active');
+    item.querySelector('ul').classList.toggle('active');
+  });
+});
+lightGallery(document.getElementById('animated-thumbnails'), {
+  thumbnail: true,
+  selector: '.blagodar-image__wrapper'
+});
+lightGallery(document.getElementById('gallery-videos-demo'), {
+  plugins: [lgVideo],
+  enableDrag: true
+});
 })();
 
 /******/ })()
