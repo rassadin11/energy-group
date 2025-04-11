@@ -728,7 +728,8 @@ lightGallery(document.getElementById('gallery-videos-demo'), {
 });
 for (let i = 1; i <= 4; i++) {
   lightGallery(document.getElementById(`open-video-${i}`), {
-    selector: 'this'
+    selector: 'this',
+    iframeMaxHeight: '90%'
   });
 }
 
