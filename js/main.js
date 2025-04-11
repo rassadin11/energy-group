@@ -724,8 +724,13 @@ lightGallery(document.getElementById('animated-thumbnails'), {
 });
 lightGallery(document.getElementById('gallery-videos-demo'), {
   plugins: [lgVideo],
-  enableDrag: true
+  selector: '.popular-slider__block'
 });
+for (let i = 1; i <= 4; i++) {
+  lightGallery(document.getElementById(`open-video-${i}`), {
+    selector: 'this'
+  });
+}
 
 // fix header on mobile
 
