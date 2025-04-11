@@ -4,6 +4,26 @@
   border-radius: 1.5rem;
 }
 
+input:focus::-webkit-input-placeholder {
+  visibility: hidden;
+}
+
+input:focus::-moz-placeholder {
+  visibility: hidden;
+}
+
+input:focus:-ms-input-placeholder {
+  visibility: hidden;
+}
+
+input:focus::-ms-input-placeholder {
+  visibility: hidden;
+}
+
+input:focus::placeholder {
+  visibility: hidden;
+}
+
 @media (max-width: 768px) {
   .big-form .container.px-0 {
     padding-left: 0 !important;

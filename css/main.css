@@ -19256,7 +19256,6 @@ input[type=number] {
 }
 
 .block-manufacturers__company {
-  padding: 5px 10px;
   background: var(--bs-white);
   border-radius: 10px;
   color: rgba(6, 27, 49, 0.7);
@@ -19264,6 +19263,10 @@ input[type=number] {
   z-index: 100000;
   margin-right: 0.3rem;
   margin-top: -0.1rem;
+}
+.block-manufacturers__company a {
+  padding: 5px 10px;
+  display: inline-block;
 }
 @media (max-width: 768px) {
   .block-manufacturers__companies {
@@ -19501,6 +19504,9 @@ input[type=number] {
   border-radius: 50%;
   border: 1px solid #e2e2e2;
 }
+.popular-slider__arrows-wrapper .slider-nav:hover::after {
+  background-color: var(--bs-yellow);
+}
 .popular-slider__arrows-wrapper .slider-nav::after {
   background-color: #7c8692;
 }
@@ -19705,6 +19711,26 @@ input[type=number] {
   background: #061b31;
   color: var(--bs-white);
   border-radius: 1.5rem;
+}
+
+input:focus::-webkit-input-placeholder {
+  visibility: hidden;
+}
+
+input:focus::-moz-placeholder {
+  visibility: hidden;
+}
+
+input:focus:-ms-input-placeholder {
+  visibility: hidden;
+}
+
+input:focus::-ms-input-placeholder {
+  visibility: hidden;
+}
+
+input:focus::placeholder {
+  visibility: hidden;
 }
 
 @media (max-width: 768px) {

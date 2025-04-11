@@ -137,6 +137,9 @@
   border-radius: 50%;
   border: 1px solid #e2e2e2;
 }
+.popular-slider__arrows-wrapper .slider-nav:hover::after {
+  background-color: var(--bs-yellow);
+}
 .popular-slider__arrows-wrapper .slider-nav::after {
   background-color: #7c8692;
 }
