@@ -18645,6 +18645,7 @@ a {
   cursor: pointer;
   outline: none;
   height: 50px;
+  color: #000 !important;
 }
 .custom-select.has-value {
   padding-top: 17px !important;
