@@ -63,13 +63,17 @@
   border: none;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
 }
 .params-block__button.active {
   background: #061b31;
   color: var(--bs-white);
+}
+@media (max-width: 1200px) {
+  .params-block__button {
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+  }
 }
 
 .params-show-popup {
