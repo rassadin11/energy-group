@@ -725,6 +725,19 @@ lightGallery(document.getElementById('gallery-videos-demo'), {
   plugins: [lgVideo],
   enableDrag: true
 });
+
+// fix header on mobile
+
+const mainSlider = document.querySelector('.main-slider');
+const headers = document.querySelector('.headers');
+if (document.body.clientWidth <= 992) {
+  mainSlider.style.paddingTop = headers.clientHeight + 'px';
+}
+window.onresize = () => {
+  if (document.body.clientWidth <= 992) {
+    mainSlider.style.paddingTop = headers.clientHeight + 'px';
+  }
+};
 })();
 
 /******/ })()

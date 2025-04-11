@@ -51,4 +51,17 @@ a {
 
 .semibold {
   font-weight: 600;
+}
+
+@media (max-width: 992px) {
+  .headers {
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .headers .header {
+    background-color: var(--bs-white);
+  }
 }/*# sourceMappingURL=main.css.map */
