@@ -291,7 +291,7 @@ catalogueOverlay.addEventListener('mouseleave', () => {
 
 // catalogue overlay mobile
 
-const mobileTitle = document.querySelector('.mobile-menu__title');
+const mobileTitle = document.querySelector('.mobile-catalogue__title');
 const attrLayouts = document.querySelectorAll("[data-layout]");
 const initialMenu = document.querySelectorAll('[data-initial-layout]');
 const mobileMenu = {};
@@ -316,7 +316,6 @@ attrLayouts.forEach(item => {
     mobileMenu[`${+layouts[headerPosition]}`] = [itemTitle];
   }
 });
-console.log(mobileMenu);
 
 // на второй итерации составляем меню
 attrLayouts.forEach(item => {
@@ -343,6 +342,90 @@ attrLayouts.forEach(item => {
     }
   }
 });
+
+// click catalogue mobile
+
+function menuGenerator(elements, mainMenuField) {
+  mobileTitle.innerHTML = elements[0];
+  mainMenuField.innerHTML = '';
+  for (let i = 1; i < elements.length; i++) {
+    if (elements[i].length === 2) {
+      mainMenuField.insertAdjacentHTML(`beforeend`, `
+                <li class="header-menu__item nav-item menu__dropdown position-relative" data-layout="${elements[i][1]}">
+                    <span class="nav-link py-lg-2 py-3 d-lg-block d-flex justify-content-between align-items-center">
+                        <span>${elements[i][0]}</span>
+                        <svg class="small-arrow d-lg-none d-block">
+                            <use xlink:href="./img/svg/sprite.svg#small-arrow"></use>
+                        </svg>
+                    </span>
+                </li>
+            `);
+    } else {
+      mainMenuField.insertAdjacentHTML(`beforeend`, `
+                <li class="nav-item">
+                    <a href="#" class="py-lg-3 py-2 d-block"><span>${elements[i][0]}</span></a>
+                </li>
+            `);
+    }
+  }
+}
+
+// составляем само меню при нажатии на кнопки
+
+let m_history = [];
+const arrowBack = document.querySelector('.mobile-catalogue-arrow');
+const overlayMenu = document.querySelector('.overlay-menu');
+const mobileCatalogue = document.querySelector('.mobile-catalogue__content');
+function computeMobileMenu() {
+  const catalogueItem = document.querySelector(".mobile-catalogue");
+  const dataLayout = document.querySelectorAll('[data-layout]');
+  catalogueItem.addEventListener('click', () => {
+    overlayMenu.classList.add('d-none');
+    mobileCatalogue.classList.remove('d-none');
+    m_history.push(0);
+    let elements;
+    if (!m_history.length) {
+      arrowBack.classList.remove('active');
+    } else {
+      arrowBack.classList.add('active');
+      elements = mobileMenu[m_history.at(-1)];
+    }
+    menuGenerator(elements, mobileCatalogue.querySelector('.header-menu'));
+    computeMobileMenu();
+  });
+  dataLayout.forEach(item => {
+    item.addEventListener('click', () => {
+      mobileCatalogue.querySelector('.header-menu').innerHTML = '';
+      m_history.push(+item.dataset.layout);
+      let elements;
+      if (!m_history.length) {
+        arrowBack.classList.remove('active');
+      } else {
+        arrowBack.classList.add('active');
+        elements = mobileMenu[m_history.at(-1)];
+      }
+      menuGenerator(elements, mobileCatalogue.querySelector('.header-menu'));
+      computeMobileMenu();
+    });
+  });
+}
+arrowBack.addEventListener('click', () => {
+  if (m_history.length) {
+    m_history.pop();
+    let elements;
+    console.log(m_history);
+    if (!m_history.length) {
+      arrowBack.classList.remove('active');
+      overlayMenu.classList.remove('d-none');
+      mobileCatalogue.classList.add('d-none');
+    } else {
+      elements = mobileMenu[m_history.at(-1)];
+    }
+    menuGenerator(elements, mobileCatalogue.querySelector('.header-menu'));
+    computeMobileMenu();
+  }
+});
+computeMobileMenu();
 
 // search
 

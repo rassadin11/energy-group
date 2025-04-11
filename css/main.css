@@ -18248,6 +18248,16 @@ a {
   }
 }
 
+.mobile-catalogue-arrow {
+  display: none;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.mobile-catalogue-arrow.active {
+  display: block;
+}
+
 .header-menu__item {
   cursor: pointer;
 }
@@ -18560,6 +18570,10 @@ a {
     display: grid;
     -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 100%;
   }
 }
 .params-block__item:nth-child(2) {
