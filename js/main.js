@@ -552,8 +552,10 @@ arrowExtra.addEventListener('click', () => {
   extraPhone.classList.toggle('active');
 });
 
-// place popup pc
+// ширина скроллбара
+const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 
+// place popup pc
 const headerCity = document.querySelector('.pre-header__city');
 const cityPopup = document.querySelector('.header-pc__overlay');
 const cityCross = cityPopup.querySelector('.cross-place');
@@ -561,11 +563,13 @@ headerCity.addEventListener('click', () => {
   cityPopup.classList.add('active');
   contactsBlackBackground.classList.add('active');
   document.body.classList.add('overflow-hidden');
+  document.body.style.paddingRight = `${scrollbarWidth}px`;
 });
 cityCross.addEventListener('click', () => {
   cityPopup.classList.remove('active');
   contactsBlackBackground.classList.remove('active');
   document.body.classList.remove('overflow-hidden');
+  document.body.style.paddingRight = `${0}px`;
 });
 contactsBlackBackground.addEventListener('click', () => {
   contactsWhiteBackground.style.height = 0 + 'px';
@@ -574,6 +578,7 @@ contactsBlackBackground.addEventListener('click', () => {
   cityPopup.classList.remove('active');
   arrowExtra.classList.remove('active');
   document.body.classList.remove('overflow-hidden');
+  document.body.style.paddingRight = `${0}px`;
 });
 
 // menu-burger
@@ -648,17 +653,20 @@ paramsButton.forEach(btn => {
     paramsWrapper.classList.add('active');
     paramsOverlay.classList.add('active');
     document.body.classList.add('overflow-hidden');
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
   });
 });
 paramsWrapper.addEventListener('click', () => {
   paramsWrapper.classList.remove('active');
   paramsOverlay.classList.remove('active');
   document.body.classList.remove('overflow-hidden');
+  document.body.style.paddingRight = `${0}px`;
 });
 paramsCross.addEventListener('click', () => {
   paramsWrapper.classList.remove('active');
   paramsOverlay.classList.remove('active');
   document.body.classList.remove('overflow-hidden');
+  document.body.style.paddingRight = `${0}px`;
 });
 
 // params-block__button inside overlay
