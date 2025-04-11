@@ -3,9 +3,16 @@
     border: 1px solid #e7e9eb;
   }
 
+  .title {
+    padding-left: 2.5rem !important;
+
+    @media (max-width: 1300px) {
+      padding: 0 !important;
+    }
+  }
+
   .popular-slider__arrows-wrapper {
     top: -1rem;
-    right: 0;
   }
 
   .swiffy-slider.projects-slider-wrapper {

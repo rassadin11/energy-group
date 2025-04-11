@@ -4,6 +4,7 @@
 @import "fonts";
 @import "settings";
 
+@import "./components/lightgallery.scss";
 @import "./components/swiffy.scss";
 @import "../resources/bootstrap/bootstrap.scss";
 @import "./components/main.scss";
@@ -23,4 +24,6 @@
 @import "./components/big-form.scss";
 @import "./components/news-slider.scss";
 @import "./components/projects.scss";
+@import "./components/video.scss";
 @import "./components/blagodar.scss";
+@import "./components/footer.scss";

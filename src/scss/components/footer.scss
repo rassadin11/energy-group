@@ -1,0 +1,154 @@
+.footer {
+  background: #061b31;
+  color: rgba(255, 255, 255, 0.7);
+
+  @media (max-width: 600px) {
+    .header__logo {
+      width: 138px;
+    }
+
+    ul {
+      font-size: 14px;
+    }
+  }
+
+  a {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  &__item {
+    a {
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      & .tel a {
+        font-size: 1rem !important;
+      }
+    }
+
+    .telegram {
+      background: transparent;
+    }
+
+    & .white a {
+      color: var(--bs-white);
+      font-size: 18px;
+    }
+
+    & .mail a {
+      color: var(--bs-yellow);
+      font-size: 18px;
+    }
+  }
+
+  &-wrapper {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+
+      &:last-child {
+        text-align: center;
+
+        & > *:first-child {
+          order: 2;
+        }
+
+        a {
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}
+
+.item-footer {
+  @media (max-width: 600px) {
+    &:not(:first-child) {
+      margin-top: 0.5rem;
+    }
+
+    ul {
+      max-height: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__title {
+    color: var(--bs-white);
+
+    @media (max-width: 600px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0 !important;
+      transition: margin-bottom 0.3s ease;
+
+      &.active {
+        margin-bottom: 0.75rem !important;
+      }
+
+      .arrow {
+        display: block !important;
+      }
+    }
+  }
+
+  &__socials {
+    @media (max-width: 600px) {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  &__social {
+    height: 48px;
+    width: 48px;
+    background: rgba(255, 255, 255, 0.06);
+
+    @media (max-width: 600px) {
+      width: 100%;
+      display: block;
+    }
+
+    svg {
+      color: var(--bs-white);
+    }
+  }
+}
+
+.footer-button {
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+}
+
+.youtube {
+  width: 20px;
+  height: 16px;
+}
+
+.vk {
+  width: 18px;
+  height: 18px;
+}
+
+.footer-text {
+  color: rgba(255, 255, 255, 0.4);
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
+}

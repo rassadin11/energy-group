@@ -51,7 +51,11 @@
 
 .block-manufacturers {
   &__company {
-    padding: 5px 10px;
+    a {
+      padding: 5px 10px;
+      display: inline-block;
+    }
+
     background: var(--bs-white);
     border-radius: 10px;
     color: rgba(6, 27, 49, 0.7);

@@ -4,8 +4,11 @@
 @include('partials/head.html')
 
 <body>
-  @include('partials/pre-header.html')
-  @include('partials/header.html')
+  <div class="headers">
+    @include('partials/pre-header.html')
+    @include('partials/header.html')
+  </div>
+
   @include('partials/main-slider.html')
 
   <main class="main">
@@ -20,7 +23,10 @@
     @include('partials/big-form.html')
     @include('partials/news-slider.html')
     @include('partials/projects.html')
+    @include('partials/video.html')
     @include('partials/blagodar.html')
+    @include('partials/small-form.html')
+    @include('partials/diesel.html')
   </main>
   @include('partials/footer.html')
   <!-- @include('html/h1.html') пример include -->

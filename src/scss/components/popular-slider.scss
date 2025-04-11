@@ -45,13 +45,15 @@
     background: transparent;
     margin-left: 1rem;
     padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-right: 1.3rem;
     margin-right: 1rem;
 
     @media (max-width: 1300px) {
       padding: 0;
       margin-right: 0;
       margin-left: 0;
+      padding-right: 1rem !important;
+      padding-left: 1rem !important;
     }
 
     @media (max-width: 992px) {
@@ -132,16 +134,18 @@
     top: -3rem;
     right: 2.5rem;
 
-    @media (max-width: 1300px) {
-      right: 0;
-    }
-
     .slider-nav {
       padding: 13px 16px;
       background: var(--bs-white);
       filter: none;
       border-radius: 50%;
       border: 1px solid #e2e2e2;
+
+      &:hover {
+        &::after {
+          background-color: var(--bs-yellow);
+        }
+      }
     }
 
     .slider-nav::after {

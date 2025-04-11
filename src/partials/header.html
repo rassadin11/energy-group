@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header pb-md-5">
   <div class="container header__wrapper">
     <div class="d-flex align-items-center justify-content-between">
       <a href="#" class="header__logo d-block">
@@ -40,16 +40,16 @@
       </div>
 
       <div class="header__socials d-md-flex gap-2 ms-lg-4 d-none ">
-        <div class="socials-header__whatsapp rounded-3">
+        <a href="#" class="socials-header__whatsapp rounded-3 d-block">
           <svg class="whatsapp">
             <use xlink:href="./img/sprite.svg#whatsapp"></use>
           </svg>
-        </div>
-        <div class="socials-header__telegram rounded-3">
+        </a>
+        <a href="#" class="socials-header__telegram rounded-3 d-block">
           <svg class="telegram">
             <use xlink:href="./img/sprite.svg#telegram"></use>
           </svg>
-        </div>
+        </a>
       </div>
 
       <!-- mobile icons -->
@@ -74,14 +74,14 @@
         <svg class="svg-catalogue">
           <use xlink:href="./img/sprite.svg#catalogue"></use>
         </svg>
-        <span>Каталог</span>
+        <span data-layout="0" data-initial-layout data-position="header"><span>Каталог</span></span>
       </a>
 
       <div class="pt-5 w-100 position-absolute catalogue-header__overlay">
         <div class="d-flex py-5 justify-content-between">
           <div class="catalogue-header__item">
-            <a href="#" class="catalogue-header__title pb-5 semibold d-inline-block" data-layout="1" data-initial-layout
-              data-position="header">
+            <a href="#" class="catalogue-header__title pb-5 semibold d-inline-block" data-layout="0, 1"
+              data-initial-layout data-position="element, header">
               <span>Генераторы</span>
             </a>
             <div class="catalogue-header__block-wrapper d-flex pt-7">
@@ -130,8 +130,8 @@
             </div>
           </div>
           <div class="catalogue-header__item">
-            <a href="#" class="catalogue-header__title pb-5 semibold d-inline-block" data-initial-layout data-layout="5"
-              data-position="header">
+            <a href="#" class="catalogue-header__title pb-5 semibold d-inline-block" data-initial-layout
+              data-layout="0, 5" data-position="element, header">
               <span>Источники бесперебойного питания</span>
             </a>
             <div class="catalogue-header__block-wrapper d-flex pt-7">
@@ -150,7 +150,12 @@
         </div>
       </div>
       <div class="d-lg-none d-flex justify-content-between align-items-center contacts-header position-relative pb-5">
-        <p class="semibold mobile-menu-title">Меню</p>
+        <div class="d-flex align-items-center gap-2">
+          <svg class="arrow mobile-catalogue-arrow m-0">
+            <use xlink:href="./img/svg/sprite.svg#arrow"></use>
+          </svg>
+          <p class="semibold mobile-menu-title">Меню</p>
+        </div>
         <svg class="mobile-cross cross-menu">
           <use xlink:href="./img/svg/sprite.svg#mobile-cross"></use>
         </svg>
@@ -210,26 +215,23 @@
             </span>
             <ul class="dropdown-menu position-absolute tab-list py-0 overflow-hidden">
               <li class="dropdown-item">
-                <a href="#" class="py-lg-3 py-2 d-block" data-layout="2"
-                  data-position="element"><span>Вопрос-ответ</span></a>
+                <a href="#" class="py-lg-3 py-2 d-block"><span>Вопрос-ответ</span></a>
               </li>
               <li class="dropdown-item">
-                <a href="#" class="py-lg-3 py-2 d-block" data-layout="2" data-position="element"><span>Статьи</span></a>
+                <a href="#" class="py-lg-3 py-2 d-block"><span>Статьи</span></a>
               </li>
               <li class="dropdown-item">
-                <a href="#" class="py-lg-3 py-2 d-block" data-layout="2" data-position="element"><span>Сертификаты и
+                <a href="#" class="py-lg-3 py-2 d-block"><span>Сертификаты и
                     награды</span></a>
               </li>
               <li class="dropdown-item">
-                <a href="#" class="py-lg-3 py-2 d-block" data-layout="2" data-position="element"><span>Видео</span></a>
+                <a href="#" class="py-lg-3 py-2 d-block"><span>Видео</span></a>
               </li>
               <li class="dropdown-item">
-                <a href="#" class="py-lg-3 py-2 d-block" data-layout="2"
-                  data-position="element"><span>Новости</span></a>
+                <a href="#" class="py-lg-3 py-2 d-block"><span>Новости</span></a>
               </li>
               <li class="dropdown-item">
-                <a href="#" class="py-lg-3 py-2 d-block" data-layout="2"
-                  data-position="element"><span>Документы</span></a>
+                <a href="#" class="py-lg-3 py-2 d-block"><span>Документы</span></a>
               </li>
             </ul>
           </li>
@@ -242,61 +244,10 @@
           </li>
         </ul>
       </nav>
-      <div class="mobile-catalogue__content flex-fill d-lg-none d-block">
+      <div class="mobile-catalogue__content flex-fill d-none">
         <p class="mobile-catalogue__title semibold py-3">Каталог</p>
         <ul class="header-menu d-flex gap-lg-8 ps-lg-3 ps-0">
-          <li class="header-menu__item nav-item menu__dropdown position-relative">
-            <span class="nav-link py-lg-2 py-3 d-lg-block d-flex justify-content-between align-items-center">
-              <span>Генераторы</span>
-              <svg class="small-arrow d-lg-none d-block">
-                <use xlink:href="./img/svg/sprite.svg#small-arrow"></use>
-              </svg>
-            </span>
-            <ul class="dropdown-menu position-absolute tab-list py-0 overflow-hidden">
-              <li class="dropdown-item">
-                <a href="#" class="py-lg-3 py-2 d-block" data-layout="1"
-                  data-position="element"><span>Электроснабжение</span></a>
-              </li>
-              <li class="dropdown-item">
-                <a href="#" class="py-lg-3 py-2 d-block" data-layout="1" data-position="element"><span>Ремонт
-                    и&nbsp;ТО</span></a>
-              </li>
-              <li class="dropdown-item">
-                <a href="#" class="py-lg-3 py-2 d-block" data-layout="1" data-position="element"><span>Пуско-накладочные
-                    работы</span></a>
-              </li>
-              <li class="dropdown-item">
-                <a href="#" class="py-lg-3 py-2 d-block" data-layout="1" data-position="element"><span>Расчёт мощности
-                    генератора</span></a>
-              </li>
-            </ul>
-          </li>
-          <li class="header-menu__item nav-item menu__dropdown position-relative">
-            <span class="nav-link py-lg-2 py-3 d-lg-block d-flex justify-content-between align-items-center">
-              <span>Источники бесперебойного питания</span>
-              <svg class="small-arrow d-lg-none d-block">
-                <use xlink:href="./img/svg/sprite.svg#small-arrow"></use>
-              </svg>
-            </span>
-            <ul class="dropdown-menu position-absolute tab-list py-0 overflow-hidden">
-              <li class="dropdown-item">
-                <a href="#" class="py-lg-3 py-2 d-block" data-layout="1"
-                  data-position="element"><span>Электроснабжение</span></a>
-              </li>
-              <li class="dropdown-item">
-                <a href="#" class="py-lg-3 py-2 d-block" data-layout="1" data-position="element"><span>Ремонт
-                    и&nbsp;ТО</span></a>
-              </li>
-              <li class="dropdown-item">
-                <a href="#" class="py-lg-3 py-2 d-block" data-layout="1" data-position="element"><span>Пуско-накладочные
-                    работы</span></a>
-              </li>
-              <li class="dropdown-item">
-                <a href="#" class="py-lg-3 py-2 d-block" data-layout="1" data-position="element"><span>Расчёт мощности
-                    генератора</span></a>
-              </li>
-            </ul>
-          </li>
+
         </ul>
       </div>
       <div class="d-md-none mobile-header__contacts mt-4">
