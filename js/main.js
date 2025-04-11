@@ -722,10 +722,6 @@ lightGallery(document.getElementById('animated-thumbnails'), {
   thumbnail: true,
   selector: '.blagodar-image__wrapper'
 });
-lightGallery(document.getElementById('gallery-videos-demo'), {
-  plugins: [lgVideo],
-  selector: '.popular-slider__block'
-});
 for (let i = 1; i <= 4; i++) {
   lightGallery(document.getElementById(`open-video-${i}`), {
     selector: 'this',
