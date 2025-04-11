@@ -229,10 +229,11 @@ function activateDropdownMenu() {
     dropdowns.forEach(item => {
       const dropdownMenu = item.querySelector('.dropdown-menu');
       item.addEventListener('mouseover', e => {
-        if (e.target.classList.contains('nav-link')) {
-          dropdownMenu.classList.add('active');
-          headerWrapper.classList.add('active');
-        }
+        dropdowns.forEach(elem => {
+          elem.querySelector('.dropdown-menu').classList.remove('active');
+        });
+        dropdownMenu.classList.add('active');
+        headerWrapper.classList.add('active');
       });
       item.addEventListener('mouseleave', () => {
         // закрываем меню
