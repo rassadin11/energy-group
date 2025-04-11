@@ -737,11 +737,11 @@ for (let i = 1; i <= 4; i++) {
 const mainSlider = document.querySelector('.main-slider');
 const headers = document.querySelector('.headers');
 if (document.body.clientWidth <= 992) {
-  mainSlider.style.paddingTop = headers.clientHeight + 32 + 'px';
+  mainSlider.style.paddingTop = headers.clientHeight + 'px';
 }
 window.onresize = () => {
   if (document.body.clientWidth <= 992) {
-    mainSlider.style.paddingTop = headers.clientHeight + 32 + 'px';
+    mainSlider.style.paddingTop = headers.clientHeight + 'px';
   }
 };
 })();
