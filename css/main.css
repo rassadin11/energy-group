@@ -395,7 +395,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10500;
+  z-index: 1050;
   text-align: left;
   opacity: 0.001;
   outline: none;
@@ -519,7 +519,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 }
 
 .lg-outer .lg-item.lg-current {
-  z-index: 10600;
+  z-index: 1060;
 }
 
 .lg-outer .lg-object {
@@ -583,7 +583,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 10400;
+  z-index: 1040;
   background-color: #000;
   opacity: 0;
   will-change: auto;
@@ -17915,7 +17915,7 @@ a {
 @media (max-width: 992px) {
   .headers {
     position: fixed;
-    z-index: 10000;
+    z-index: 1000;
     top: 0;
     left: 0;
     width: 100%;
