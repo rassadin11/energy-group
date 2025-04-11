@@ -51,6 +51,8 @@
     padding: 0;
     margin-right: 0;
     margin-left: 0;
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
   }
 }
 @media (max-width: 992px) {
@@ -126,11 +128,6 @@
 .popular-slider__arrows-wrapper {
   top: -3rem;
   right: 2.5rem;
-}
-@media (max-width: 1300px) {
-  .popular-slider__arrows-wrapper {
-    right: 0;
-  }
 }
 .popular-slider__arrows-wrapper .slider-nav {
   padding: 13px 16px;

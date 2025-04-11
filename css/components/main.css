@@ -34,6 +34,16 @@ a {
   padding-right: 1rem !important;
   margin: 0 auto;
 }
+@media (max-width: 1300px) {
+  .container.slider {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .container.slider > .tabs-header, .container.slider > .title, .container.slider > .title-description {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+  }
+}
 
 .border-bottom-dashed {
   border-bottom: 1px dashed var(--bs-yellow);

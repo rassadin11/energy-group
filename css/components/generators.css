@@ -101,6 +101,12 @@
 }
 
 @media (max-width: 992px) {
+  .slider .xs-x-scroll > div {
+    scroll-snap-align: center;
+  }
+  .xs-x-scroll.tab-cards {
+    padding: 0 1rem;
+  }
   .xs-x-scroll {
     overflow-x: auto;
     -webkit-box-orient: horizontal;
