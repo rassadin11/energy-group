@@ -63,6 +63,9 @@
   border: none;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .params-block__button.active {
   background: #061b31;
