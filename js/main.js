@@ -738,6 +738,12 @@ for (let i = 1; i <= 4; i++) {
     iframeMaxHeight: '90%'
   });
 }
+for (let i = 1; i <= 4; i++) {
+  lightGallery(document.getElementById(`open-video-block-${i}`), {
+    selector: 'this',
+    iframeMaxHeight: '90%'
+  });
+}
 
 // fix header on mobile
 
