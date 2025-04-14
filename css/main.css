@@ -18582,6 +18582,9 @@ a {
   right: 1rem;
   top: -0.5rem;
 }
+.main-slider__second-image.first {
+  height: 100%;
+}
 @media (max-width: 1200px) {
   .main-slider__second-image {
     height: 75%;
