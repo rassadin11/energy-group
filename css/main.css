@@ -18624,10 +18624,6 @@ a {
   background: linear-gradient(90deg, #061b31 0%, rgba(6, 27, 49, 0) 100%);
 }
 
-.slider-container.main-slider > *:nth-child(2) img {
-  opacity: 0.1;
-}
-
 .slider-container.main-slider > *:last-child .main-slider__info {
   -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
@@ -18658,6 +18654,9 @@ a {
   width: 8px !important;
   padding: 0 !important;
   height: 14px !important;
+}
+.main-slider > *:first-child > .main-slider__image {
+  opacity: 0.1;
 }
 
 .arrows-wrapper {

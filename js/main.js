@@ -538,18 +538,20 @@ const contactsBlackBackground = document.querySelector('.contacts-wrapper__black
 const arrowExtra = document.querySelector('.toggle-extra');
 const extraPhone = contactsWrapper.querySelector('.extra-phone');
 let contactsPopupHeight = 0;
-arrowExtra.addEventListener('click', () => {
+contactsWrapper.addEventListener('mouseover', () => {
   contactsPopupHeight = 0;
-  if (!contactsBlackBackground.classList.contains('active')) {
-    contactsPopupHeight += contactsWrapper.querySelector('.header__contacts').offsetHeight;
-    contactsPopupHeight += extraPhone.offsetHeight;
-    contactsWhiteBackground.style.height = contactsPopupHeight + 40 + 'px';
-  } else {
-    contactsWhiteBackground.style.height = 0 + 'px';
-  }
-  contactsBlackBackground.classList.toggle('active');
-  arrowExtra.classList.toggle('active');
-  extraPhone.classList.toggle('active');
+  contactsPopupHeight += contactsWrapper.querySelector('.header__contacts').offsetHeight;
+  contactsPopupHeight += extraPhone.offsetHeight;
+  contactsWhiteBackground.style.height = contactsPopupHeight + 40 + 'px';
+  contactsBlackBackground.classList.add('active');
+  arrowExtra.classList.add('active');
+  extraPhone.classList.add('active');
+});
+contactsWrapper.addEventListener('mouseleave', () => {
+  contactsWhiteBackground.style.height = 0 + 'px';
+  contactsBlackBackground.classList.remove('active');
+  arrowExtra.classList.remove('active');
+  extraPhone.classList.remove('active');
 });
 
 // ширина скроллбара
