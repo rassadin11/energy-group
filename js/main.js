@@ -811,6 +811,7 @@ customDropdowns.forEach(dropdown => {
       selectedValue.textContent = option.textContent;
       selectedValue.classList.add('d-block');
       selectedValue.classList.add('mt-2');
+      selectedValue.classList.add('pt-1');
       selectedValue.classList.add('fw-semibold');
       selectDisplay.classList.add('selected');
 
