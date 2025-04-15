@@ -811,7 +811,7 @@ customDropdowns.forEach(dropdown => {
       selectedValue.textContent = option.textContent;
       selectedValue.classList.add('d-block');
       selectedValue.classList.add('mt-2');
-      if (selectDisplay.classList.contains('overlay')) {
+      if (!selectDisplay.classList.contains('overlay')) {
         selectedValue.classList.add('pt-1');
       }
       selectedValue.classList.add('fw-semibold');
