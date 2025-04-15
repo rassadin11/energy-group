@@ -18833,7 +18833,7 @@ a {
 .select-container {
   position: relative;
 }
-.select-container.overlay .arrow {
+.select-container .overlay .arrow {
   color: var(--bs-yellow);
 }
 
@@ -18875,20 +18875,23 @@ a {
 }
 
 .select-label {
-  left: 10px;
-  top: 15px;
+  left: 1rem;
+  top: 7px;
   color: rgba(6, 27, 49, 0.5);
   font-size: 0.75rem;
   opacity: 0;
   pointer-events: none;
 }
-.select-label.overlay {
-  left: 1.1rem;
-}
 @media (max-width: 768px) {
-  .select-label.overlay {
+  .select-label {
     left: 0.75rem;
   }
+}
+.select-label.active {
+  opacity: 1;
+}
+.select-label.overlay {
+  left: 1.1rem;
 }
 
 select:focus {
@@ -18904,16 +18907,6 @@ select:focus {
   top: 8px;
 }
 
-.select-arrow {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -18923,6 +18916,61 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+.search-input {
+  outline: none;
+}
+
+.select-container .dropdown-container-wrapper.active {
+  z-index: 1000;
+}
+.select-container .dropdown-container {
+  display: none;
+  border: 1px solid #e2e2e2;
+  background: var(--bs-white);
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+.select-container .dropdown-container.overlay {
+  border-top: none;
+}
+.select-container .dropdown-container.active {
+  display: block;
+}
+.select-container .dropdown-option {
+  cursor: pointer;
+}
+.select-container .dropdown-option:hover {
+  background: var(--bs-border-color);
+}
+.select-container .dropdown-options {
+  max-height: 100px;
+  overflow: auto;
+}
+.select-container .search-box {
+  border-bottom: 1px solid #e2e2e2;
+}
+.select-container .select-display.active {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.select-container .arrow {
+  position: absolute;
+  right: 1rem;
+  top: 46%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  pointer-events: none;
+  width: 13px;
+  height: 8px;
+}
+.select-container .arrow.active {
+  top: 40%;
+  -webkit-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  transform: rotate(-180deg);
 }
 
 .params-overlay {
