@@ -19222,6 +19222,7 @@ input[type=number] {
   color: rgba(6, 27, 49, 0.7);
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
+  word-break: break-word;
 }
 
 .energy {
