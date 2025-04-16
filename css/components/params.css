@@ -194,8 +194,6 @@ input[type=number] {
   display: none;
   border: 1px solid #e2e2e2;
   background: var(--bs-white);
-  border-top-left-radius: 0 !important;
-  border-top-right-radius: 0 !important;
 }
 .select-container .dropdown-container.overlay {
   border-top: none;
@@ -215,10 +213,6 @@ input[type=number] {
 }
 .select-container .search-box {
   border-bottom: 1px solid #e2e2e2;
-}
-.select-container .select-display.active {
-  border-bottom-left-radius: 0 !important;
-  border-bottom-right-radius: 0 !important;
 }
 .select-container .arrow {
   position: absolute;

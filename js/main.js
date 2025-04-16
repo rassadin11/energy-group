@@ -837,6 +837,47 @@ customDropdowns.forEach(dropdown => {
     });
   });
 });
+const allGenerators = document.querySelectorAll('.generators');
+allGenerators.forEach(generator => {
+  const generatorButtons = generator.querySelectorAll('.tabs-header__buttons .btn');
+  const buttons = generator.querySelectorAll('.nav-tabs .nav-item');
+  let activeTab = 0;
+  let activeBtn = 0;
+  if (generatorButtons) {
+    buttons.forEach((button, idx) => {
+      button.addEventListener('click', () => {
+        activeTab = idx;
+        generatorButtons.forEach((button, idx) => {
+          if (!idx) button.classList.add('active');else button.classList.remove('active');
+        });
+        activeBtn = 0;
+        showContent();
+      });
+    });
+    generatorButtons.forEach((button, idx) => {
+      button.addEventListener('click', () => {
+        generatorButtons.forEach(item => item.classList.remove("active"));
+        button.classList.add('active');
+        activeBtn = idx;
+
+        // validate tabs
+
+        showContent();
+      });
+    });
+  }
+  function showContent() {
+    const tabs = generator.querySelectorAll(`.tab-content .tab-pane:nth-child(${activeTab + 1}) .tab-cards`);
+    tabs.forEach(tab => {
+      tab.classList.add('d-none');
+      tab.classList.remove('d-flex');
+      tab.classList.remove('d-lg-grid');
+    });
+    tabs[activeBtn].classList.remove('d-none');
+    tabs[activeBtn].classList.add('d-flex');
+    tabs[activeBtn].classList.add('d-lg-grid');
+  }
+});
 })();
 
 /******/ })()

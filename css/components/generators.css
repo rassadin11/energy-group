@@ -1,6 +1,17 @@
 .generators {
   background: #f6f7f8;
 }
+@media (max-width: 1300px) {
+  .generators .tab-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+@media (max-width: 992px) {
+  .generators .tab-content {
+    padding: 0;
+  }
+}
 
 .tabs-header__button {
   font-size: 14px;
@@ -47,6 +58,26 @@
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+.tab-cards.type {
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.type-generator-first {
+  max-width: 280px;
+}
+
+.type-generator-second {
+  max-width: 237px;
+}
+
+.type-generator-third {
+  max-width: 233px;
+}
+
+.c-yellow {
+  color: var(--bs-yellow) !important;
+}
 
 .tab-card {
   background: var(--bs-white);
@@ -70,18 +101,17 @@
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.tab-card:hover {
-  border: 2px solid transparent;
+.tab-card:not(.type):hover {
   background-color: #061b31;
   color: var(--bs-white);
 }
-.tab-card:hover .tab-card__background-image {
+.tab-card:not(.type):hover .tab-card__background-image {
   opacity: 0.15;
 }
-.tab-card:hover .tab-card__variants p {
+.tab-card:not(.type):hover .tab-card__variants p {
   color: var(--bs-white);
 }
-.tab-card:hover .tab-card__variants p:hover {
+.tab-card:not(.type):hover .tab-card__variants p:hover {
   color: var(--bs-yellow);
   text-decoration: underline;
 }
@@ -128,7 +158,7 @@
     padding: 0;
   }
   .xs-x-scroll > div:last-of-type {
-    overflow-y: scroll;
+    overflow-y: hidden;
   }
   .xs-x-scroll > div:not(:last-of-type) {
     overflow-y: hidden;
