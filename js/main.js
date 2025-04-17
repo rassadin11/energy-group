@@ -221,7 +221,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // dropdown
-
 const dropdowns = document.querySelectorAll('.menu__dropdown');
 const headerWrapper = document.querySelector('.header__wrapper');
 function activateDropdownMenu() {
