@@ -101,6 +101,10 @@
     right: 1rem;
     top: -0.5rem;
 
+    &.first {
+      height: 100%;
+    }
+
     @media (max-width: 1200px) {
       height: 75%;
       top: 50%;
@@ -142,10 +146,6 @@
   background: linear-gradient(90deg, #061b31 0%, rgba(6, 27, 49, 0) 100%);
 }
 
-.slider-container.main-slider > *:nth-child(2) img {
-  opacity: 0.1;
-}
-
 .slider-container.main-slider > *:last-child .main-slider__info {
   grid-template-columns: 1fr;
 }
@@ -181,6 +181,10 @@
     padding: 0 !important;
     height: 14px !important;
   }
+}
+
+.main-slider__image.low-opacity {
+  opacity: 0.1;
 }
 
 .arrows-wrapper {

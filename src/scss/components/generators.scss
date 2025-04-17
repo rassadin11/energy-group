@@ -1,5 +1,16 @@
 .generators {
   background: #f6f7f8;
+
+  .tab-content {
+    @media (max-width: 1300px) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    @media (max-width: 992px) {
+      padding: 0;
+    }
+  }
 }
 
 .tabs-header__button {
@@ -48,6 +59,26 @@
 
 .tab-cards {
   grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  &.type {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.type-generator-first {
+  max-width: 280px;
+}
+
+.type-generator-second {
+  max-width: 237px;
+}
+
+.type-generator-third {
+  max-width: 233px;
+}
+
+.c-yellow {
+  color: var(--bs-yellow) !important;
 }
 
 .tab-card {
@@ -70,8 +101,7 @@
     transition: all 0.3s ease;
   }
 
-  &:hover {
-    border: 2px solid transparent;
+  &:not(.type):hover {
     background-color: #061b31;
     color: var(--bs-white);
 
@@ -95,6 +125,7 @@
     p {
       color: rgba(6, 27, 49, 0.7);
       transition: color 0.3s ease;
+      word-break: break-word;
     }
   }
 }
@@ -132,7 +163,7 @@
   }
 
   .xs-x-scroll > div:last-of-type {
-    overflow-y: scroll;
+    overflow-y: hidden;
   }
 
   .xs-x-scroll > div:not(:last-of-type) {

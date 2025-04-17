@@ -4,107 +4,88 @@
             class="tabs-header d-flex flex-md-row flex-column justify-content-md-between justify-content-start align-items-md-start align-items-start mt-md-7 mt-0 gap-md-11 gap-4 me-2">
             <ul class="nav nav-tabs d-flex gap-lg-11 gap-md-8 gap-3 flex-fill" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link ps-0 active big-tab pb-lg-6 pb-md-5 pb-4" id="news-tab" data-bs-toggle="tab"
-                        data-bs-target="#news-tab-pane" type="button" role="tab" aria-controls="news-tab-pane"
-                        aria-selected="true">Новости</button>
+                    <button class="nav-link big-tab active pb-lg-6 pb-md-5 pb-4" id="video-tab" data-bs-toggle="tab"
+                        data-bs-target="#video-tab-pane" type="button" role="tab" aria-controls="video-tab-pane"
+                        aria-selected="false" tabindex="-1">Видео</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link big-tab pb-lg-6 pb-md-5 pb-4" id="article-tab" data-bs-toggle="tab"
                         data-bs-target="#article-tab-pane" type="button" role="tab" aria-controls="article-tab-pane"
                         aria-selected="false" tabindex="-1">Статьи</button>
                 </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link big-tab pb-lg-6 pb-md-5 pb-4" id="video-tab" data-bs-toggle="tab"
-                        data-bs-target="#video-tab-pane" type="button" role="tab" aria-controls="video-tab-pane"
-                        aria-selected="false" tabindex="-1">Видео</button>
-                </li>
             </ul>
         </div>
 
         <div class="tab-content mt-md-7" id="myTabContent">
-            <div class="tab-pane fade show active" id="news-tab-pane" role="tabpanel" aria-labelledby="news-tab"
+            <div class="tab-pane fade show active" id="video-tab-pane" role="tabpanel" aria-labelledby="video-tab"
                 tabindex="0">
                 <div class="swiffy-slider popular-slider-wrapper slider-item-show4">
-                    <ul class="slider-container popular-slider py-lg-9 py-md-7 py-4">
-                        <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
-                            <img src="./img/generators_block.jpg" alt="" class="object-fit-cover">
+                    <ul class="slider-container video popular-slider py-lg-9 py-md-7 py-4" id="gallery-videos-demo">
+                        <li class="news-slider">
+                            <a href="#" id="open-video-1" data-iframe="true"
+                                data-src="https://rutube.ru/play/embed/85a6ab2db98dfda4735d247bd21fc0eb"
+                                class="popular-slider__block d-flex flex-column gap-2 justify-content-end position-relative overflow-hidden p-4 ">
+                                <img src="https://rutube.ru/api/video/85a6ab2db98dfda4735d247bd21fc0eb/thumbnail/?redirect=1"
+                                    alt="Rutube Video" class="object-fit-cover position-absolute w-100 h-100"><svg
+                                    class="position-absolute player top-50 start-50 translate-middle z-3">
+                                    <use xlink:href="./img/svg/sprite.svg#player"></use>
+                                </svg>
 
-                            <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
-                                <p class="semibold">Опциональный заголовок, который можно отключать</p>
-                                <p class="about-wrapper__description flex-fill">Описание новости, статьи или видео
-                                    в одну, две или 3 строки, но желательно не больше
-                                </p>
-                                <p class="news-slider__date mt-md-4 mt-1 pb-3">
-                                    15.02.2025
-                                </p>
-                            </div>
+                                <p class="popular-slider__price semibold position-relative z-1">Заголовок</p>
+                                <p class="position-relative z-1 big-form__description">Краткое описание о&nbsp;видео или
+                                    отзыве
+                                    в&nbsp;2-3 строки</p>
+                            </a>
                         </li>
-                        <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
-                            <img src="./img/news_02.jpg" alt="" class="object-fit-cover">
+                        <li class="news-slider">
+                            <a href="#" id="open-video-2" data-iframe="true"
+                                data-src="https://rutube.ru/play/embed/85a6ab2db98dfda4735d247bd21fc0eb"
+                                class="popular-slider__block d-flex flex-column gap-2 justify-content-end position-relative overflow-hidden p-4 ">
+                                <img src="https://rutube.ru/api/video/85a6ab2db98dfda4735d247bd21fc0eb/thumbnail/?redirect=1"
+                                    alt="Rutube Video" class="object-fit-cover position-absolute w-100 h-100"><svg
+                                    class="position-absolute player top-50 start-50 translate-middle z-3">
+                                    <use xlink:href="./img/svg/sprite.svg#player"></use>
+                                </svg>
 
-                            <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
-                                <p class="semibold">Новость, которую мы заслужили, спасибо</p>
-                                <p class="about-wrapper__description flex-fill">Краткое описание
-                                </p>
-                                <p class="news-slider__date mt-md-4 mt-1 pb-3">
-                                    14.02.2025
-                                </p>
-                            </div>
+                                <p class="popular-slider__price semibold position-relative z-1">Заголовок</p>
+                                <p class="position-relative z-1 big-form__description">Краткое описание о&nbsp;видео или
+                                    отзыве
+                                    в&nbsp;2-3 строки</p>
+                            </a>
                         </li>
-                        <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
-                            <img src="./img/news_03.jpg" alt="" class="object-fit-cover">
+                        <li class="news-slider">
+                            <a href="#" id="open-video-3" data-iframe="true"
+                                data-src="https://rutube.ru/play/embed/85a6ab2db98dfda4735d247bd21fc0eb"
+                                class="popular-slider__block d-flex flex-column gap-2 justify-content-end position-relative overflow-hidden p-4 ">
+                                <img src="https://rutube.ru/api/video/85a6ab2db98dfda4735d247bd21fc0eb/thumbnail/?redirect=1"
+                                    alt="Rutube Video" class="object-fit-cover position-absolute w-100 h-100"><svg
+                                    class="position-absolute player top-50 start-50 translate-middle z-3">
+                                    <use xlink:href="./img/svg/sprite.svg#player"></use>
+                                </svg>
 
-                            <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
-                                <p class="semibold">Energy Group лидер по продажам автономной электрической энергии</p>
-                                <p class="about-wrapper__description flex-fill">Никто не продавал больше и не будет,
-                                    потому что мы уже продали
-                                </p>
-                                <p class="news-slider__date mt-md-4 mt-1 pb-3">
-                                    13.02.2025
-                                </p>
-                            </div>
+                                <p class="popular-slider__price semibold position-relative z-1">Заголовок</p>
+                                <p class="position-relative z-1 big-form__description">Краткое описание о&nbsp;видео или
+                                    отзыве
+                                    в&nbsp;2-3 строки</p>
+                            </a>
                         </li>
-                        <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
-                            <img src="./img/news_04.jpg" alt="" class="object-fit-cover">
+                        <li class="news-slider">
+                            <a href="#" id="open-video-4" data-iframe="true"
+                                data-src="https://rutube.ru/play/embed/85a6ab2db98dfda4735d247bd21fc0eb"
+                                class="popular-slider__block d-flex flex-column gap-2 justify-content-end position-relative overflow-hidden p-4 ">
+                                <img src="https://rutube.ru/api/video/85a6ab2db98dfda4735d247bd21fc0eb/thumbnail/?redirect=1"
+                                    alt="Rutube Video" class="object-fit-cover position-absolute w-100 h-100"><svg
+                                    class="position-absolute player top-50 start-50 translate-middle z-3">
+                                    <use xlink:href="./img/svg/sprite.svg#player"></use>
+                                </svg>
 
-                            <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
-                                <p class="semibold">Одна строка</p>
-                                <p class="about-wrapper__description flex-fill">Замечательная новость о компании или
-                                    оборудовании которое она продает
-                                </p>
-                                <p class="news-slider__date mt-5">
-                                    12.02.2025
-                                </p>
-                            </div>
-                        </li>
-                        <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
-                            <img src="./img/news_04.jpg" alt="" class="object-fit-cover">
-
-                            <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
-                                <p class="semibold">Одна строка</p>
-                                <p class="about-wrapper__description flex-fill">Замечательная новость о компании или
-                                    оборудовании которое она продает
-                                </p>
-                                <p class="news-slider__date mt-5">
-                                    12.02.2025
-                                </p>
-                            </div>
-                        </li>
-                        <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
-                            <img src="./img/news_04.jpg" alt="" class="object-fit-cover">
-
-                            <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
-                                <p class="semibold">Одна строка</p>
-                                <p class="about-wrapper__description flex-fill">Замечательная новость о компании или
-                                    оборудовании которое она продает
-                                </p>
-                                <p class="news-slider__date mt-5">
-                                    12.02.2025
-                                </p>
-                            </div>
+                                <p class="popular-slider__price semibold position-relative z-1">Заголовок</p>
+                                <p class="position-relative z-1 big-form__description">Краткое описание о&nbsp;видео или
+                                    отзыве
+                                    в&nbsp;2-3 строки</p>
+                            </a>
                         </li>
                     </ul>
-
                     <div class="d-none d-lg-block position-absolute popular-slider__arrows-wrapper slider-nav-visible">
                         <div class="popular-slider__arrows d-none d-md-flex">
                             <button type="button" class="slider-nav position-relative me-3"></button>
@@ -114,97 +95,6 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="article-tab-pane" role="tabpanel" aria-labelledby="article-tab" tabindex="0">
-                <div class="swiffy-slider popular-slider-wrapper slider-item-show4">
-                    <ul class="slider-container popular-slider py-lg-9 py-md-7 py-4">
-                        <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
-                            <img src="./img/generators_block.jpg" alt="" class="object-fit-cover">
-
-                            <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
-                                <p class="semibold">Опциональный заголовок, который можно отключать</p>
-                                <p class="about-wrapper__description flex-fill">Описание новости, статьи или видео
-                                    в одну, две или 3 строки, но желательно не больше
-                                </p>
-                                <p class="news-slider__date mt-md-4 mt-1 pb-3">
-                                    15.02.2025
-                                </p>
-                            </div>
-                        </li>
-                        <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
-                            <img src="./img/news_02.jpg" alt="" class="object-fit-cover">
-
-                            <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
-                                <p class="semibold">Новость, которую мы заслужили, спасибо</p>
-                                <p class="about-wrapper__description flex-fill">Краткое описание
-                                </p>
-                                <p class="news-slider__date mt-md-4 mt-1 pb-3">
-                                    14.02.2025
-                                </p>
-                            </div>
-                        </li>
-                        <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
-                            <img src="./img/news_03.jpg" alt="" class="object-fit-cover">
-
-                            <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
-                                <p class="semibold">Energy Group лидер по продажам автономной электрической энергии</p>
-                                <p class="about-wrapper__description flex-fill">Никто не продавал больше и не будет,
-                                    потому что мы уже продали
-                                </p>
-                                <p class="news-slider__date mt-md-4 mt-1 pb-3">
-                                    13.02.2025
-                                </p>
-                            </div>
-                        </li>
-                        <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
-                            <img src="./img/news_04.jpg" alt="" class="object-fit-cover">
-
-                            <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
-                                <p class="semibold">Одна строка</p>
-                                <p class="about-wrapper__description flex-fill">Замечательная новость о компании или
-                                    оборудовании которое она продает
-                                </p>
-                                <p class="news-slider__date mt-5">
-                                    12.02.2025
-                                </p>
-                            </div>
-                        </li>
-                        <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
-                            <img src="./img/news_04.jpg" alt="" class="object-fit-cover">
-
-                            <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
-                                <p class="semibold">Одна строка</p>
-                                <p class="about-wrapper__description flex-fill">Замечательная новость о компании или
-                                    оборудовании которое она продает
-                                </p>
-                                <p class="news-slider__date mt-5">
-                                    12.02.2025
-                                </p>
-                            </div>
-                        </li>
-                        <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
-                            <img src="./img/news_04.jpg" alt="" class="object-fit-cover">
-
-                            <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
-                                <p class="semibold">Одна строка</p>
-                                <p class="about-wrapper__description flex-fill">Замечательная новость о компании или
-                                    оборудовании которое она продает
-                                </p>
-                                <p class="news-slider__date mt-5">
-                                    12.02.2025
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-
-                    <div class="d-none d-lg-block position-absolute popular-slider__arrows-wrapper slider-nav-visible">
-                        <div class="popular-slider__arrows d-none d-md-flex">
-                            <button type="button" class="slider-nav position-relative me-3"></button>
-                            <button type="button" class="slider-nav slider-nav-next position-relative"></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="video-tab-pane" role="tabpanel" aria-labelledby="video-tab" tabindex="0">
-
                 <div class="swiffy-slider popular-slider-wrapper slider-item-show4">
                     <ul class="slider-container popular-slider py-lg-9 py-md-7 py-4">
                         <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">

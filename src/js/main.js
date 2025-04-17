@@ -1,7 +1,6 @@
 import './components/slider.js';
 
 // dropdown
-
 const dropdowns = document.querySelectorAll('.menu__dropdown');
 const headerWrapper = document.querySelector('.header__wrapper')
 
@@ -375,25 +374,29 @@ const contactsBlackBackground = document.querySelector('.contacts-wrapper__black
 const arrowExtra = document.querySelector('.toggle-extra')
 const extraPhone = contactsWrapper.querySelector('.extra-phone');
 let contactsPopupHeight = 0;
-arrowExtra.addEventListener('click', () => {
+
+contactsWrapper.addEventListener('mouseover', () => {
     contactsPopupHeight = 0;
+    contactsPopupHeight += contactsWrapper.querySelector('.header__contacts').offsetHeight;
+    contactsPopupHeight += extraPhone.offsetHeight;
+    contactsWhiteBackground.style.height = contactsPopupHeight + 40 + 'px'
 
-    if (!contactsBlackBackground.classList.contains('active')) {
-        contactsPopupHeight += contactsWrapper.querySelector('.header__contacts').offsetHeight;
-        contactsPopupHeight += extraPhone.offsetHeight;
-
-        contactsWhiteBackground.style.height = contactsPopupHeight + 40 + 'px'
-    } else {
-        contactsWhiteBackground.style.height = 0 + 'px'
-    }
-
-    contactsBlackBackground.classList.toggle('active')
-    arrowExtra.classList.toggle('active')
-    extraPhone.classList.toggle('active')
+    contactsBlackBackground.classList.add('active')
+    arrowExtra.classList.add('active')
+    extraPhone.classList.add('active')
 })
 
-// place popup pc
+contactsWrapper.addEventListener('mouseleave', () => {
+    contactsWhiteBackground.style.height = 0 + 'px'
+    contactsBlackBackground.classList.remove('active')
+    arrowExtra.classList.remove('active')
+    extraPhone.classList.remove('active')
+})
 
+// ширина скроллбара
+const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+// place popup pc
 const headerCity = document.querySelector('.pre-header__city');
 const cityPopup = document.querySelector('.header-pc__overlay');
 const cityCross = cityPopup.querySelector('.cross-place')
@@ -401,12 +404,14 @@ headerCity.addEventListener('click', () => {
     cityPopup.classList.add('active')
     contactsBlackBackground.classList.add('active')
     document.body.classList.add('overflow-hidden')
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
 })
 
 cityCross.addEventListener('click', () => {
     cityPopup.classList.remove('active')
     contactsBlackBackground.classList.remove('active')
     document.body.classList.remove('overflow-hidden')
+    document.body.style.paddingRight = `${0}px`;
 })
 
 contactsBlackBackground.addEventListener('click', () => {
@@ -416,6 +421,7 @@ contactsBlackBackground.addEventListener('click', () => {
     cityPopup.classList.remove('active')
     arrowExtra.classList.remove('active')
     document.body.classList.remove('overflow-hidden')
+    document.body.style.paddingRight = `${0}px`;
 })
 
 // menu-burger
@@ -501,6 +507,7 @@ paramsButton.forEach(btn => {
         paramsWrapper.classList.add('active')
         paramsOverlay.classList.add('active')
         document.body.classList.add('overflow-hidden')
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
     })
 })
 
@@ -508,12 +515,14 @@ paramsWrapper.addEventListener('click', () => {
     paramsWrapper.classList.remove('active')
     paramsOverlay.classList.remove('active')
     document.body.classList.remove('overflow-hidden')
+    document.body.style.paddingRight = `${0}px`;
 })
 
 paramsCross.addEventListener('click', () => {
     paramsWrapper.classList.remove('active')
     paramsOverlay.classList.remove('active')
     document.body.classList.remove('overflow-hidden')
+    document.body.style.paddingRight = `${0}px`;
 })
 
 // params-block__button inside overlay
@@ -596,6 +605,13 @@ for (let i = 1; i <= 4; i++) {
     });
 }
 
+for (let i = 1; i <= 4; i++) {
+    lightGallery(document.getElementById(`open-video-block-${i}`), {
+        selector: 'this',
+        iframeMaxHeight: '90%'
+    });
+}
+
 // fix header on mobile
 
 const mainSlider = document.querySelector('.main-slider')
@@ -610,3 +626,140 @@ window.onresize = () => {
         mainSlider.style.paddingTop = headers.clientHeight + 'px';
     }
 }
+
+// ... existing code ...
+
+// Custom dropdown with search
+const customDropdowns = document.querySelectorAll('.custom-dropdown');
+
+customDropdowns.forEach(dropdown => {
+    const selectDisplay = dropdown.querySelector('.select-display');
+    const selectedValue = dropdown.querySelector('.selected-value');
+    const dropdownContainer = dropdown.querySelector('.dropdown-container');
+    const searchInput = dropdown.querySelector('.search-input');
+    const options = dropdown.querySelectorAll('.dropdown-option');
+    const hiddenInput = dropdown.querySelector('input[type="hidden"]');
+    const selectLabel = dropdown.querySelector('.select-label')
+    const arrowSelect = dropdown.querySelector('.arrow')
+    const dropdownWrapper = dropdown.querySelector('.dropdown-container-wrapper')
+
+    // Toggle dropdown on click
+    selectDisplay.addEventListener('click', () => {
+        selectDisplay.classList.toggle('active');
+        arrowSelect.classList.toggle('active');
+        dropdownWrapper.classList.toggle('active')
+        dropdownContainer.classList.toggle('active');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) {
+            selectDisplay.classList.remove('active');
+            arrowSelect.classList.remove('active');
+            dropdownWrapper.classList.remove('active')
+            dropdownContainer.classList.remove('active');
+        }
+    });
+
+    // Filter options based on search input
+    searchInput.addEventListener('input', () => {
+        const searchText = searchInput.value.toLowerCase();
+
+        options.forEach(option => {
+            const optionText = option.textContent.toLowerCase();
+
+            if (optionText.includes(searchText)) {
+                option.style.display = 'block';
+            } else {
+                option.style.display = 'none';
+            }
+        });
+    });
+
+    // Select option on click
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            // Update display value
+            selectedValue.textContent = option.textContent;
+            selectedValue.classList.add('d-block')
+            selectedValue.classList.add('mt-2')
+
+            if (!selectDisplay.classList.contains('overlay')) {
+                selectedValue.classList.add('pt-1')
+            }
+
+            selectedValue.classList.add('fw-semibold')
+            selectDisplay.classList.add('selected');
+
+            // Update hidden input value
+            hiddenInput.value = option.getAttribute('data-value');
+
+            // Close dropdown
+            dropdownContainer.classList.remove('active');
+
+            // Clear search input
+            searchInput.value = '';
+            selectDisplay.classList.remove('active');
+            arrowSelect.classList.remove('active');
+            dropdownWrapper.classList.remove('active')
+            selectLabel.classList.add('active');
+
+            // Show all options again
+            options.forEach(opt => {
+                opt.style.display = 'block';
+            });
+        });
+    });
+});
+
+const allGenerators = document.querySelectorAll('.generators')
+
+allGenerators.forEach(generator => {
+    const generatorButtons = generator.querySelectorAll('.tabs-header__buttons .btn')
+    const buttons = generator.querySelectorAll('.nav-tabs .nav-item')
+
+    let activeTab = 0;
+    let activeBtn = 0;
+
+    if (generatorButtons) {
+        buttons.forEach((button, idx) => {
+            button.addEventListener('click', () => {
+                activeTab = idx;
+
+                generatorButtons.forEach((button, idx) => {
+                    if (!idx) button.classList.add('active')
+                    else button.classList.remove('active')
+                })
+
+                activeBtn = 0;
+                showContent();
+            })
+        })
+
+        generatorButtons.forEach((button, idx) => {
+            button.addEventListener('click', () => {
+                generatorButtons.forEach(item => item.classList.remove("active"))
+                button.classList.add('active')
+                activeBtn = idx;
+
+                // validate tabs
+
+                showContent();
+            })
+        })
+    }
+
+    function showContent() {
+        const tabs = generator.querySelectorAll(`.tab-content .tab-pane:nth-child(${activeTab + 1}) .tab-cards`)
+
+        tabs.forEach(tab => {
+            tab.classList.add('d-none')
+            tab.classList.remove('d-flex')
+            tab.classList.remove('d-lg-grid')
+        })
+
+        tabs[activeBtn].classList.remove('d-none')
+        tabs[activeBtn].classList.add('d-flex')
+        tabs[activeBtn].classList.add('d-lg-grid')
+    }
+})
