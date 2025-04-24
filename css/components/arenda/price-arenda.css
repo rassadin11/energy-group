@@ -1,0 +1,42 @@
+.price-arenda__wrapper {
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 992px) {
+  .price-arenda__wrapper {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+
+.small-title {
+  font-size: 2rem;
+  line-height: 1.25;
+}
+.small-title.modify {
+  font-size: 1.95rem;
+}
+@media (max-width: 768px) {
+  .small-title {
+    font-size: 1.25rem !important;
+  }
+}
+
+.gray-text {
+  line-height: 28px;
+  opacity: 0.5;
+}
+
+.price-arenda__item img {
+  border-radius: 1.5rem;
+}
+@media (max-width: 992px) {
+  .price-arenda__item img {
+    max-width: 70%;
+  }
+}
+@media (max-width: 768px) {
+  .price-arenda__item img {
+    max-width: 100%;
+  }
+}/*# sourceMappingURL=price-arenda.css.map */

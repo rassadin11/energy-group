@@ -1,0 +1,135 @@
+.arenda-form__wrapper {
+  max-width: 824px;
+  margin: 0 auto;
+}
+.arenda-form__wrapper .big-form__input {
+  min-width: 0;
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--bs-white);
+}
+.arenda-form__wrapper .big-form__input::-webkit-input-placeholder {
+  color: var(--bs-white);
+}
+.arenda-form__wrapper .big-form__input::-moz-placeholder {
+  color: var(--bs-white);
+}
+.arenda-form__wrapper .big-form__input:-ms-input-placeholder {
+  color: var(--bs-white);
+}
+.arenda-form__wrapper .big-form__input::-ms-input-placeholder {
+  color: var(--bs-white);
+}
+.arenda-form__wrapper .big-form__input::placeholder {
+  color: var(--bs-white);
+}
+.arenda-form__wrapper form {
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.arenda-form__wrapper form input {
+  height: 56px;
+}
+@media (max-width: 992px) {
+  .arenda-form__wrapper form input {
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .arenda-form__wrapper form input {
+    height: 40px;
+  }
+}
+@media (max-width: 992px) {
+  .arenda-form__wrapper form {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+  .arenda-form__wrapper form > div:nth-child(3),
+  .arenda-form__wrapper form div:nth-child(4),
+  .arenda-form__wrapper form div:nth-child(5),
+  .arenda-form__wrapper form div:nth-child(6) {
+    -ms-grid-column-span: 2;
+    grid-column: span 2;
+  }
+  .arenda-form__wrapper form > div:nth-child(4),
+  .arenda-form__wrapper form div:nth-child(5),
+  .arenda-form__wrapper form div:nth-child(6) {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  .arenda-form__wrapper form > button, .arenda-form__wrapper form > label {
+    -ms-grid-column-span: 2;
+    grid-column: span 2;
+  }
+}
+@media (max-width: 768px) {
+  .arenda-form__wrapper form {
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .arenda-form .small-title {
+    text-align: center;
+  }
+}
+
+.custom-checkbox {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.custom-checkbox .checkmark {
+  min-width: 1rem;
+  min-height: 1rem;
+  background-color: var(--bs-white);
+  border-radius: 2px;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+.custom-checkbox input:checked + .checkmark {
+  background-color: var(--bs-yellow);
+}
+
+.checkbox-text {
+  line-height: 1.25rem;
+}
+.checkbox-text a:hover {
+  text-decoration: underline;
+}
+.checkbox-text.modify {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+@media (max-width: 550px) {
+  .checkbox-text.modify {
+    font-size: 10px;
+  }
+}
+
+.custom-checkbox .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 5.5px;
+  top: 2.5px;
+  width: 5px;
+  height: 9px;
+  border: solid var(--bs-black);
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.custom-checkbox input:checked + .checkmark::after {
+  opacity: 1;
+}/*# sourceMappingURL=form.css.map */

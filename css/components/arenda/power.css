@@ -1,0 +1,116 @@
+@media (max-width: 768px) {
+  .power .title {
+    width: 75%;
+  }
+}
+
+.power-card {
+  border: 1px solid #e0e0e0;
+}
+.power-card__energy {
+  background: #f6f7f8;
+}
+@media (max-width: 992px) {
+  .power-card__energy {
+    background: transparent;
+    border-bottom: 1px solid #f0f0f0;
+  }
+}
+.power-card__energy-first {
+  white-space: nowrap;
+  font-size: 1.5rem;
+}
+@media (max-width: 600px) {
+  .power-card__energy-first {
+    font-size: 1.25rem;
+  }
+}
+.power-card__energy-second {
+  font-size: 18px;
+  color: #7c8692;
+}
+@media (max-width: 600px) {
+  .power-card__energy-second {
+    font-size: 1rem;
+  }
+}
+.power-card__wrapper {
+  border-right: 1px solid #f0f0f0;
+}
+.power-card__price {
+  padding-left: 40px;
+}
+.power-card__price-text {
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .power-card__price-text {
+    font-size: 1.25rem;
+  }
+}
+.power-card__image {
+  min-width: 168px;
+}
+@media (max-width: 992px) {
+  .power-card__image {
+    min-width: 40%;
+  }
+}
+@media (max-width: 550px) {
+  .power-card__image {
+    width: 138px;
+    min-height: 145px;
+  }
+}
+
+.params-power {
+  gap: 3rem;
+}
+@media (max-width: 1300px) {
+  .params-power {
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .params-power {
+    gap: 0.5rem;
+  }
+}
+.params-power__block p:nth-child(odd) {
+  opacity: 0.5;
+  margin-right: 14px;
+}
+@media (max-width: 768px) {
+  .params-power__block p:nth-child(odd) {
+    margin-top: 6px;
+  }
+}
+@media (max-width: 600px) {
+  .params-power__block p {
+    font-size: 0.75rem;
+    margin-right: 0 !important;
+  }
+}
+@media (max-width: 1200px) {
+  .params-power .params-power__block:last-child {
+    display: none !important;
+  }
+}
+@media (max-width: 992px) {
+  .params-power .params-power__block:last-child {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+}
+@media (max-width: 768px) {
+  .params-power .params-power__block:last-child {
+    display: none !important;
+  }
+}
+
+.power-params.d-lg-grid {
+  -ms-grid-columns: 1fr auto;
+  grid-template-columns: 1fr auto;
+}/*# sourceMappingURL=power.css.map */
