@@ -1,0 +1,45 @@
+.tabs {
+  .accordion-button {
+    box-shadow: none !important;
+    background-color: #fafafa !important;
+    font-size: 18px !important;
+    transition: all 0.3s ease;
+
+    &:not(.collapsed)::after {
+      background-color: var(--bs-yellow);
+    }
+
+    @media (max-width: 768px) {
+      font-size: 0.75rem !important;
+    }
+  }
+
+  .accordion-body {
+    font-size: 18px !important;
+    opacity: 0.5;
+
+    @media (max-width: 768px) {
+      font-size: 0.75rem !important;
+    }
+  }
+
+  .accordion-button::after {
+    min-height: 48px;
+    min-width: 48px;
+    display: block;
+    background-position: center;
+    border-radius: 50%;
+    background-color: var(--bs-white);
+    transition: all 0.3s ease;
+
+    @media (max-width: 768px) {
+      min-width: 20px;
+      min-height: 20px;
+      background-size: 10px;
+    }
+  }
+
+  .accordion-item {
+    border-radius: 1.5rem;
+  }
+}

@@ -69,13 +69,17 @@ const catalogueOverlay = document.querySelector('.catalogue-header__overlay');
 const headerMenu = document.querySelector('.header-menu-wrapper')
 
 headerMenu.addEventListener('mouseover', (e) => {
-    if (e.target === catalogueButton) {
+    if (catalogueButton.contains(e.target) || catalogueOverlay.contains(e.target) || catalogueButton.contains(e.target)) {
         catalogueOverlay.classList.add('active');
+    } else {
+        catalogueOverlay.classList.remove('active');
     }
 })
 
-headerMenu.addEventListener('mouseleave', (e) => {
-    catalogueOverlay.classList.remove('active');
+headerMenu.addEventListener('click', (e) => {
+    if (catalogueButton.contains(e.target)) {
+        catalogueOverlay.classList.toggle('active');
+    }
 })
 
 catalogueOverlay.addEventListener('mouseleave', () => {
@@ -497,33 +501,37 @@ paramsButtons.forEach(elem => {
 
 // params overlay
 
-const paramsWrapper = document.querySelector('.params-overlay__wrapper')
-const paramsOverlay = document.querySelector('.params-overlay')
-const paramsCross = paramsOverlay.querySelector('.cross-place')
-const paramsButton = document.querySelectorAll('.params-show-popup')
+try {
+    const paramsWrapper = document.querySelector('.params-overlay__wrapper')
+    const paramsOverlay = document.querySelector('.params-overlay')
+    const paramsCross = paramsOverlay.querySelector('.cross-place')
+    const paramsButton = document.querySelectorAll('.params-show-popup')
 
-paramsButton.forEach(btn => {
-    btn.addEventListener('click', () => {
-        paramsWrapper.classList.add('active')
-        paramsOverlay.classList.add('active')
-        document.body.classList.add('overflow-hidden')
-        document.body.style.paddingRight = `${scrollbarWidth}px`;
+    paramsButton.forEach(btn => {
+        btn.addEventListener('click', () => {
+            paramsWrapper.classList.add('active')
+            paramsOverlay.classList.add('active')
+            document.body.classList.add('overflow-hidden')
+            document.body.style.paddingRight = `${scrollbarWidth}px`;
+        })
     })
-})
 
-paramsWrapper.addEventListener('click', () => {
-    paramsWrapper.classList.remove('active')
-    paramsOverlay.classList.remove('active')
-    document.body.classList.remove('overflow-hidden')
-    document.body.style.paddingRight = `${0}px`;
-})
+    paramsWrapper.addEventListener('click', () => {
+        paramsWrapper.classList.remove('active')
+        paramsOverlay.classList.remove('active')
+        document.body.classList.remove('overflow-hidden')
+        document.body.style.paddingRight = `${0}px`;
+    })
 
-paramsCross.addEventListener('click', () => {
-    paramsWrapper.classList.remove('active')
-    paramsOverlay.classList.remove('active')
-    document.body.classList.remove('overflow-hidden')
-    document.body.style.paddingRight = `${0}px`;
-})
+    paramsCross.addEventListener('click', () => {
+        paramsWrapper.classList.remove('active')
+        paramsOverlay.classList.remove('active')
+        document.body.classList.remove('overflow-hidden')
+        document.body.style.paddingRight = `${0}px`;
+    })
+} catch (e) {
+    console.warn('error')
+}
 
 // params-block__button inside overlay
 
@@ -611,23 +619,31 @@ for (let i = 1; i <= 4; i++) {
         iframeMaxHeight: '90%'
     });
 }
+if (document.getElementById(`calculator-video-block`)) {
+    lightGallery(document.getElementById(`calculator-video-block`), {
+        selector: 'this',
+        iframeMaxHeight: '90%'
+    });
+}
 
 // fix header on mobile
 
-const mainSlider = document.querySelector('.main-slider')
-const headers = document.querySelector('.headers')
+try {
+    const mainSlider = document.querySelector('main')
+    const headers = document.querySelector('.headers')
 
-if (document.body.clientWidth <= 992) {
-    mainSlider.style.paddingTop = headers.clientHeight + 'px';
-}
-
-window.onresize = () => {
     if (document.body.clientWidth <= 992) {
         mainSlider.style.paddingTop = headers.clientHeight + 'px';
     }
-}
 
-// ... existing code ...
+    window.onresize = () => {
+        if (document.body.clientWidth <= 992) {
+            mainSlider.style.paddingTop = headers.clientHeight + 'px';
+        }
+    }
+} catch (e) {
+    console.warn('slider error')
+}
 
 // Custom dropdown with search
 const customDropdowns = document.querySelectorAll('.custom-dropdown');
@@ -682,13 +698,18 @@ customDropdowns.forEach(dropdown => {
             // Update display value
             selectedValue.textContent = option.textContent;
             selectedValue.classList.add('d-block')
-            selectedValue.classList.add('mt-2')
+
+            if (!selectedValue.classList.contains('no-title')) {
+                selectedValue.classList.add('mt-2')
+                selectedValue.classList.add('fw-semibold')
+            } else {
+                selectedValue.classList.remove('default')
+            }
 
             if (!selectDisplay.classList.contains('overlay')) {
                 selectedValue.classList.add('pt-1')
             }
 
-            selectedValue.classList.add('fw-semibold')
             selectDisplay.classList.add('selected');
 
             // Update hidden input value
@@ -763,3 +784,217 @@ allGenerators.forEach(generator => {
         tabs[activeBtn].classList.add('d-lg-grid')
     }
 })
+
+// arenda slider
+
+if (document.querySelector('.usluga:not(.city-slider__wrapper) .swiffy-slider')) {
+    const usluga = document.querySelector('.usluga:not(.city-slider__wrapper)')
+
+    const nextButton = usluga.querySelector('.slider-nav.slider-nav-next')
+    const prevButton = usluga.querySelector('.slider-nav:not(.slider-nav-next)')
+    const amountOfSlides = usluga.querySelectorAll('.swiffy-slider li').length
+    let activeSlider = 1;
+
+    nextButton.classList.add('active')
+    prevButton.classList.add('remove')
+
+    const container = usluga.querySelector(".slider-container");
+    const items = container.querySelectorAll("li");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting && entry.target.dataset.mid) {
+                    activeSlider = +entry.target.dataset.mid;
+
+                    if (activeSlider === amountOfSlides) {
+                        nextButton.disabled = true;
+                        nextButton.classList.remove('active')
+                    } else if (activeSlider === 1) {
+                        prevButton.disabled = true;
+                        prevButton.classList.remove('active')
+                    } else {
+                        nextButton.disabled = false;
+                        nextButton.classList.add('active')
+                        prevButton.disabled = false;
+                        prevButton.classList.add('active')
+                    }
+                }
+            });
+        },
+        {
+            root: container,
+            threshold: 0.6,
+        }
+    );
+
+    items.forEach((item) => observer.observe(item));
+
+    nextButton.addEventListener('click', () => {
+        if (activeSlider + 1 === amountOfSlides) {
+            nextButton.disabled = true;
+            nextButton.classList.remove('active')
+        } else {
+            nextButton.disabled = false;
+            nextButton.classList.add('active')
+        }
+
+        if (activeSlider + 1 > 1) {
+            prevButton.disabled = false;
+            prevButton.classList.add('active')
+        }
+    })
+
+    prevButton.addEventListener('click', () => {
+        if (activeSlider - 1 === 1) {
+            prevButton.disabled = true;
+            prevButton.classList.remove('active')
+        } else {
+            prevButton.disabled = false;
+            prevButton.classList.add('active')
+        }
+
+        if (activeSlider - 1 < amountOfSlides) {
+            nextButton.disabled = false;
+            nextButton.classList.add('active')
+        }
+    })
+}
+
+// for city slider
+let activeCitySlider = 1;
+let isObserver = true;
+
+const buttons = document.querySelectorAll('.city-slider__buttons button')
+
+if (document.querySelector('.usluga.city-slider__wrapper .swiffy-slider')) {
+    const usluga = document.querySelector('.usluga.city-slider__wrapper')
+
+    const nextButton = usluga.querySelector('.slider-nav.slider-nav-next')
+    const prevButton = usluga.querySelector('.slider-nav:not(.slider-nav-next)')
+    const amountOfSlides = usluga.querySelectorAll('.swiffy-slider li').length
+
+    nextButton.classList.add('active')
+    prevButton.classList.add('remove')
+
+    const container = usluga.querySelector(".slider-container");
+    const items = container.querySelectorAll("li");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting && entry.target.dataset.mid) {
+                    if (!isObserver) return;
+
+                    activeCitySlider = +entry.target.dataset.mid;
+
+                    if (activeCitySlider === amountOfSlides) {
+                        nextButton.disabled = true;
+                        nextButton.classList.remove('active')
+                        prevButton.disabled = false;
+                        prevButton.classList.add('active')
+                    } else if (activeCitySlider === 1) {
+                        prevButton.disabled = true;
+                        prevButton.classList.remove('active')
+                        nextButton.disabled = false;
+                        nextButton.classList.add('active')
+                    } else {
+                        nextButton.disabled = false;
+                        nextButton.classList.add('active')
+                        prevButton.disabled = false;
+                        prevButton.classList.add('active')
+                    }
+
+                    activateButton(activeCitySlider - 1)
+                }
+            });
+        },
+        {
+            root: container,
+            threshold: 0.6,
+        }
+    );
+
+    items.forEach((item) => observer.observe(item));
+
+    nextButton.addEventListener('click', () => {
+        if (activeCitySlider + 1 === amountOfSlides) {
+            nextButton.disabled = true;
+            nextButton.classList.remove('active')
+        } else {
+            nextButton.disabled = false;
+            nextButton.classList.add('active')
+        }
+
+        if (activeCitySlider + 1 > 1) {
+            prevButton.disabled = false;
+            prevButton.classList.add('active')
+        }
+    })
+
+    prevButton.addEventListener('click', () => {
+        if (activeCitySlider - 1 === 1) {
+            prevButton.disabled = true;
+            prevButton.classList.remove('active')
+        } else {
+            prevButton.disabled = false;
+            prevButton.classList.add('active')
+        }
+
+        if (activeCitySlider - 1 < amountOfSlides) {
+            nextButton.disabled = false;
+            nextButton.classList.add('active')
+        }
+
+    })
+
+    buttons.forEach(item => {
+        item.addEventListener('click', () => {
+            buttons.forEach(elem => elem.classList.remove('active'))
+            item.classList.add('active')
+
+            isObserver = false;
+
+            const activeNumber = +item.dataset.sliderCity - 1;
+            activeCitySlider = activeNumber;
+
+            const slider = document.querySelector('.usluga.city-slider__wrapper .slider-container');
+            const slides = slider.querySelectorAll('.city-slider__item');
+
+            const slideWidth = slides[0].offsetWidth;
+
+            slider.scrollTo({
+                left: slideWidth * activeNumber,
+                behavior: 'smooth'
+            });
+
+            // for arrows
+
+            if (activeCitySlider + 1 === amountOfSlides) {
+                nextButton.disabled = true;
+                nextButton.classList.remove('active')
+                prevButton.disabled = false;
+                prevButton.classList.add('active')
+            } else if (activeCitySlider + 1 === 1) {
+                prevButton.disabled = true;
+                prevButton.classList.remove('active')
+                nextButton.disabled = false;
+                nextButton.classList.add('active')
+            } else {
+                nextButton.disabled = false;
+                nextButton.classList.add('active')
+                prevButton.disabled = false;
+                prevButton.classList.add('active')
+            }
+
+            setTimeout(() => {
+                isObserver = true;
+            }, 1000)
+        })
+    })
+}
+
+function activateButton(activeBtn) {
+    buttons.forEach(elem => elem.classList.remove('active'))
+    buttons[activeBtn].classList.add('active')
+}

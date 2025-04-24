@@ -1,0 +1,78 @@
+<section class="calculator">
+    <div class="container pt-md-9 mt-md-6 mt-8 pt-2">
+        <div class="d-grid calculator-block p-lg-7 p-md-6 p-5 gap-lg-4 gap-5">
+            <h2 class="calculator-item__title fw-bold mb-md-2 mb-0">Калькулятор аренды генератора</h2>
+            <div class="calculator-input__wrapper d-grid gap-md-6 gap-12">
+                <div class="calculator-input__container d-flex flex-column gap-md-12 gap-3 mt-1">
+                    <p>Мощность кВт</p>
+                    <input type="text" class="search-input py-3 px-5 rounded-3 w-100" placeholder="100">
+                </div>
+                <div class="calculator-input__container d-flex flex-column gap-md-12 gap-3 mt-1">
+                    <p>Мощность кВт</p>
+                    <input type="text" class="search-input py-3 px-5 rounded-3 w-100" placeholder="10">
+                </div>
+            </div>
+            <div class="select-container custom-dropdown calculator mt-md-2">
+                <p class="mb-12">Срок аренды</p>
+                <div
+                    class="select-display custom-select py-md-3 px-5 py-4 overlay w-100 rounded-2 position-relative selected d-flex align-items-center">
+                    <span class="selected-value no-title default">50 дней</span>
+                    <span class="select-arrow">
+                        <svg class="arrow">
+                            <use xlink:href="./img/svg/sprite.svg#arrow"></use>
+                        </svg>
+                    </span>
+                </div>
+                <div class="dropdown-container-wrapper pb-4 position-absolute w-100">
+                    <div class="dropdown-container w-100 rounded-2 overlay">
+                        <div class="search-box">
+                            <input type="text" class="search-input w-100 rounded-2 px-3 py-2"
+                                placeholder="Поиск по параметру">
+                        </div>
+                        <div class="dropdown-options mb-1">
+                            <div class="dropdown-option py-2 px-3" data-value="35-40">10 дней</div>
+                            <div class="dropdown-option py-2 px-3" data-value="40-45">50 дней</div>
+                            <div class="dropdown-option py-2 px-3" data-value="45-50">100 дней</div>
+                        </div>
+                        <input type="hidden" name="engine" value="">
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="calculator__info info-calculator d-flex flex-column gap-3 py-md-6 px-md-5 p-5 position-relative overflow-hidden mt-md-2">
+                <div
+                    class="info-calculator__block d-flex justify-content-md-between align-items-md-center flex-md-row flex-column gap-md-0 gap-1">
+                    <p class="info-calculator__text">Стоимость аренды (в&nbsp;сутки):</p>
+                    <p class="info-calculator__price semibold">от&nbsp;3 500&nbsp;₽</p>
+                </div>
+                <div
+                    class="info-calculator__block d-flex justify-content-md-between align-items-md-center flex-md-row flex-column gap-md-0 gap-1">
+                    <p class="info-calculator__text">Скидка:</p>
+                    <p class="info-calculator__price semibold">10%</p>
+                </div>
+                <div
+                    class="info-calculator__block d-flex justify-content-md-between align-items-md-center flex-md-row flex-column gap-md-0 gap-1">
+                    <p class="info-calculator__text">Расход топлива:</p>
+                    <p class="info-calculator__price semibold">от&nbsp;37 л/час.</p>
+                </div>
+            </div>
+
+            <div class="calculator__buttons buttons-calculator d-grid gap-md-5 gap-12 mt-lg-4 mt-12">
+                <button class="btn btn-warning semibold py-md-3 py-2">Заказать</button>
+                <button class="btn btn-light semibold py-md-3 py-2">Получить КП</button>
+            </div>
+
+            <a href="#" id="calculator-video-block" data-iframe="true"
+                data-src="https://rutube.ru/play/embed/85a6ab2db98dfda4735d247bd21fc0eb"
+                class="popular-slider__block d-flex flex-column gap-2 justify-content-end position-relative overflow-hidden calculator-item__video mt-lg-0 mt-md-2"
+                data-lg-id="a2b4241c-4845-4d4b-a96b-8df284a8bde5">
+                <img src="https://rutube.ru/api/video/85a6ab2db98dfda4735d247bd21fc0eb/thumbnail/?redirect=1"
+                    alt="Rutube Video" class="object-fit-cover position-absolute w-100 h-100">
+                <svg class="position-absolute player top-50 start-50 translate-middle z-3">
+                    <use xlink:href="./img/svg/sprite.svg#player"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>

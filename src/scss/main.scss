@@ -9,7 +9,7 @@
 @import "../resources/bootstrap/bootstrap.scss";
 @import "./components/main.scss";
 
-// подключения компонентов страницы
+// подключения компонентов главной страницы
 @import "./components/pre-header.scss";
 @import "./components/header";
 @import "./components/main-slider.scss";
@@ -27,3 +27,17 @@
 @import "./components/video.scss";
 @import "./components/blagodar.scss";
 @import "./components/footer.scss";
+
+// arenda page
+@import "./components/arenda/arenda-generators.scss";
+@import "./components/arenda/calculator.scss";
+@import "./components/arenda/power.scss";
+@import "./components/arenda/usluga.scss";
+@import "./components/arenda/price-arenda.scss";
+@import "./components/arenda/brends.scss";
+@import "./components/arenda/questions.scss";
+@import "./components/arenda/form.scss";
+@import "./components/arenda/energy-section.scss";
+@import "./components/arenda/reviews.scss";
+@import "./components/arenda/city-slider.scss";
+@import "./components/arenda/tabs.scss";
