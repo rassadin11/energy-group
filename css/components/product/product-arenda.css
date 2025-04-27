@@ -1,0 +1,44 @@
+.product-arenda__wrapper {
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border: 1px solid #e0e0e0;
+  font-size: 18px;
+}
+@media (max-width: 1200px) {
+  .product-arenda__wrapper {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 !important;
+    border: none;
+    gap: 1.25rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .product-arenda__wrapper {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    gap: 10px !important;
+  }
+}
+@media (max-width: 550px) {
+  .product-arenda__wrapper {
+    font-size: 0.75rem;
+  }
+}
+
+.arenda-product__item:not(:last-child) {
+  border-right: 1px solid #e0e0e0;
+}
+@media (max-width: 1200px) {
+  .arenda-product__item {
+    border-radius: 0.5rem;
+    border: 1px solid #e0e0e0;
+    padding: 1.25rem;
+  }
+}
+@media (max-width: 768px) {
+  .arenda-product__item {
+    -ms-grid-columns: 61% 39%;
+    grid-template-columns: 61% 39%;
+  }
+}/*# sourceMappingURL=product-arenda.css.map */

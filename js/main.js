@@ -1072,6 +1072,27 @@ function activateButton(activeBtn) {
   buttons.forEach(elem => elem.classList.remove('active'));
   buttons[activeBtn].classList.add('active');
 }
+
+// for product page
+
+function tooltipsPosition() {
+  if (document.querySelector('.product')) {
+    const borderRight = document.querySelector('.product .product__wrapper').getBoundingClientRect().right;
+    const customTooltips = document.querySelectorAll('.custom-tooltip');
+    customTooltips.forEach(tool => {
+      tool.style.right = 'inherit';
+      tool.style.left = '80%';
+      if (tool.getBoundingClientRect().right > borderRight) {
+        tool.style.left = 'inherit';
+        tool.style.right = '0';
+      }
+    });
+  }
+}
+window.onresize = () => {
+  tooltipsPosition();
+};
+tooltipsPosition();
 })();
 
 /******/ })()

@@ -19606,6 +19606,11 @@ input[type=number] {
   top: -3rem;
   right: 2.5rem;
 }
+@media (max-width: 992px) {
+  .popular-slider__arrows-wrapper {
+    display: none !important;
+  }
+}
 .popular-slider__arrows-wrapper .slider-nav {
   padding: 13px 16px;
   background: var(--bs-white);
@@ -20247,7 +20252,7 @@ input:focus::placeholder {
 }
 @media (min-width: 767px) {
   .arenda-generators__item:first-child {
-    padding: 2.5rem !important;
+    padding: 1.75rem !important;
   }
 }
 .arenda-generators__wrapper {
@@ -20259,6 +20264,11 @@ input:focus::placeholder {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
+}
+.arenda-generators__text {
+  opacity: 0.5;
+  font-size: 18px;
+  line-height: 32px;
 }
 
 .item-arenda__title {
@@ -20295,13 +20305,45 @@ input:focus::placeholder {
 .item-arenda__image {
   width: 100%;
   height: 100%;
-  max-height: 427px;
   border-radius: 1.5rem;
 }
 @media (max-width: 768px) {
   .item-arenda__image {
     min-height: 229px;
     max-height: 300px;
+  }
+}
+
+@media (max-width: 992px) {
+  .arenda-generators.product .arenda-generators__wrapper {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+  .arenda-generators.product .arenda-generators__wrapper > *:first-child {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+  .arenda-generators.product .arenda-generators__wrapper > *:last-child {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+@media (max-width: 992px) and (max-width: 992px) {
+  .arenda-generators.product .arenda-generators__wrapper .arenda-generators__item img {
+    max-height: 350px;
+  }
+}
+@media (max-width: 992px) and (max-width: 550px) {
+  .arenda-generators.product .arenda-generators__wrapper .arenda-generators__item img {
+    max-height: 250px;
+  }
+}
+@media (max-width: 768px) {
+  .arenda-generators.product .arenda-generators__wrapper .arenda-generators__text {
+    font-size: 14px;
+    line-height: 24px;
   }
 }
 
@@ -21372,4 +21414,208 @@ input:focus::placeholder {
 }
 .tabs .accordion-item {
   border-radius: 1.5rem;
+}
+
+.product {
+  background: #f6f7f8;
+}
+.product__wrapper {
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 992px) {
+  .product__wrapper {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+.product__item {
+  border-radius: 1.5rem;
+}
+.product__item h2, .product__item .h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+@media (max-width: 768px) {
+  .product__item h2, .product__item .h2 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 550px) {
+  .product__item h2, .product__item .h2 {
+    font-size: 1.5rem;
+  }
+}
+.product__item:last-child {
+  background: var(--bs-white);
+}
+.product__buttons {
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 550px) {
+  .product__buttons {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+.product__price {
+  font-size: 1.5rem;
+  background: #f6f7f8;
+}
+@media (max-width: 550px) {
+  .product__price {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 992px) {
+  .product__image {
+    max-height: 350px;
+  }
+}
+@media (max-width: 550px) {
+  .product__image {
+    max-height: 229px;
+  }
+}
+
+.info-product {
+  font-size: 18px;
+}
+@media (max-width: 550px) {
+  .info-product {
+    font-size: 12px;
+  }
+}
+.info-product__item {
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid #e7e9eb;
+}
+@media (max-width: 768px) {
+  .info-product__item {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  .info-product__item > p:first-child {
+    -ms-grid-column-span: 3;
+    grid-column: span 3;
+  }
+  .info-product__item > p:last-child {
+    -ms-grid-column-span: 2;
+    grid-column: span 2;
+  }
+}
+.info-product__name {
+  color: #7c8692;
+}
+
+.tooltip-wrapper {
+  width: 50px;
+  height: 50px;
+}
+@media (max-width: 550px) {
+  .tooltip-wrapper {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.icon-button {
+  background-color: var(--bs-white);
+  border: 1px solid #e2e2e2;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.icon-button:hover {
+  background-color: var(--bs-primary);
+}
+@media (max-width: 550px) {
+  .icon-button .reload,
+  .icon-button .clock,
+  .icon-button .repair {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.icon-button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.custom-tooltip {
+  bottom: 75%;
+  left: 80%;
+  background-color: var(--bs-white);
+  color: var(--bs-black);
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  -webkit-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+  max-width: 240px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+@media (max-width: 768px) {
+  .custom-tooltip {
+    max-width: 200px;
+    font-size: 0.75rem;
+    bottom: -85%;
+  }
+}
+
+.icon-button:hover .custom-tooltip {
+  opacity: 1;
+}
+
+.product-arenda__wrapper {
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border: 1px solid #e0e0e0;
+  font-size: 18px;
+}
+@media (max-width: 1200px) {
+  .product-arenda__wrapper {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 !important;
+    border: none;
+    gap: 1.25rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .product-arenda__wrapper {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    gap: 10px !important;
+  }
+}
+@media (max-width: 550px) {
+  .product-arenda__wrapper {
+    font-size: 0.75rem;
+  }
+}
+
+.arenda-product__item:not(:last-child) {
+  border-right: 1px solid #e0e0e0;
+}
+@media (max-width: 1200px) {
+  .arenda-product__item {
+    border-radius: 0.5rem;
+    border: 1px solid #e0e0e0;
+    padding: 1.25rem;
+  }
+}
+@media (max-width: 768px) {
+  .arenda-product__item {
+    -ms-grid-columns: 61% 39%;
+    grid-template-columns: 61% 39%;
+  }
 }/*# sourceMappingURL=main.css.map */
