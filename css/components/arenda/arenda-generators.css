@@ -28,20 +28,6 @@
   line-height: 32px;
 }
 
-.item-arenda__title {
-  font-size: 3rem;
-  font-weight: 900;
-}
-@media (max-width: 1200px) {
-  .item-arenda__title {
-    font-size: 2rem;
-  }
-}
-@media (max-width: 768px) {
-  .item-arenda__title {
-    font-size: 1.5rem;
-  }
-}
 .item-arenda__list {
   -ms-grid-columns: 1fr !important;
   grid-template-columns: 1fr !important;

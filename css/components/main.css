@@ -64,4 +64,19 @@ a {
   .headers .header {
     background-color: var(--bs-white);
   }
+}
+
+.item-arenda__title {
+  font-size: 3rem;
+  font-weight: 900;
+}
+@media (max-width: 1200px) {
+  .item-arenda__title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .item-arenda__title {
+    font-size: 1.5rem;
+  }
 }/*# sourceMappingURL=main.css.map */
