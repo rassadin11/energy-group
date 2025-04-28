@@ -17920,19 +17920,6 @@ a {
   font-weight: 600;
 }
 
-@media (max-width: 992px) {
-  .headers {
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-  .headers .header {
-    background-color: var(--bs-white);
-  }
-}
-
 .item-arenda__title {
   font-size: 3rem;
   font-weight: 900;
@@ -17946,6 +17933,10 @@ a {
   .item-arenda__title {
     font-size: 1.5rem;
   }
+}
+
+.headers {
+  z-index: 100000;
 }
 
 .pre-header {
@@ -17972,6 +17963,9 @@ a {
   border-bottom: 1px dashed var(--bs-white);
 }
 
+.header {
+  background: var(--bs-white);
+}
 .header__logo {
   width: 187px;
 }
@@ -19393,7 +19387,7 @@ input[type=number] {
   border-radius: 10px;
   color: rgba(6, 27, 49, 0.7);
   position: relative;
-  z-index: 100000;
+  z-index: 10000;
   margin-right: 0.3rem;
   margin-top: -0.1rem;
 }
@@ -21631,7 +21625,7 @@ input:focus:-ms-input-placeholder {
   height: 100vh;
   background: var(--bs-black);
   opacity: 0.5;
-  z-index: 100000;
+  z-index: 10000;
 }
 .popup-book__wrapper {
   position: fixed;

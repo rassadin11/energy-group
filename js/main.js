@@ -758,23 +758,6 @@ if (document.getElementById(`calculator-video-block`)) {
   });
 }
 
-// fix header on mobile
-
-try {
-  const mainSlider = document.querySelector('main');
-  const headers = document.querySelector('.headers');
-  if (document.body.clientWidth <= 992) {
-    mainSlider.style.paddingTop = headers.clientHeight + 'px';
-  }
-  window.onresize = () => {
-    if (document.body.clientWidth <= 992) {
-      mainSlider.style.paddingTop = headers.clientHeight + 'px';
-    }
-  };
-} catch (e) {
-  console.warn('slider error');
-}
-
 // Custom dropdown with search
 const customDropdowns = document.querySelectorAll('.custom-dropdown');
 customDropdowns.forEach(dropdown => {
@@ -1093,6 +1076,46 @@ window.onresize = () => {
   tooltipsPosition();
 };
 tooltipsPosition();
+function checkStuck() {
+  var st = window.scrollY || document.documentElement.scrollTop;
+  var docWidth = document.documentElement.clientWidth;
+  var fixed = document.querySelector('.headers');
+  var height = fixed.offsetTop + fixed.offsetHeight;
+  if (st < height && docWidth > 979) {
+    fixed.classList.remove('scroll-to-fixed-fixed');
+    fixed.style.top = 'auto';
+    fixed.style.position = 'static';
+    fixed.style.width = '100%';
+    document.body.style.marginTop = '0';
+  } else {
+    if (docWidth > 979 && st > height) {
+      fixed.classList.add('scroll-to-fixed-fixed');
+      fixed.style.position = 'fixed';
+      fixed.style.top = '0';
+      document.body.style.marginTop = '60px';
+    }
+    if (st < height && docWidth < 979) {
+      fixed.classList.remove('scroll-to-fixed-fixed');
+      fixed.style.top = 'auto';
+      fixed.style.position = 'static';
+      fixed.style.width = '100%';
+      document.body.style.marginTop = '0';
+    } else {
+      if (docWidth < 979 && st > height) {
+        fixed.classList.add('scroll-to-fixed-fixed');
+        fixed.style.position = 'fixed';
+        fixed.style.top = '0';
+        document.body.style.marginTop = '50px';
+      }
+    }
+  }
+}
+window.onload = () => {
+  checkStuck();
+};
+window.onscroll = () => {
+  checkStuck();
+};
 })();
 
 /******/ })()
