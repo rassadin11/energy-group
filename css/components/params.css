@@ -296,7 +296,7 @@ input[type=number] {
 .params-overlay-wrap {
   width: 100%;
   height: 100%;
-  z-index: 10000;
+  z-index: 995;
 }
 .params-overlay__button-wrapper {
   -ms-grid-columns: 1fr 1fr;

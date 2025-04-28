@@ -7,7 +7,7 @@
   height: 100vh;
   background: var(--bs-black);
   opacity: 0.5;
-  z-index: 10000;
+  z-index: 995;
 }
 .popup-book__wrapper {
   position: fixed;
@@ -19,7 +19,7 @@
   width: 866px;
   border-radius: 1.5rem;
   background: var(--bs-white);
-  z-index: 100001;
+  z-index: 9951;
   -ms-grid-columns: (1fr)[8];
   grid-template-columns: repeat(8, 1fr);
 }
