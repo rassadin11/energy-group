@@ -569,12 +569,14 @@ headerCity.addEventListener('click', () => {
   contactsBlackBackground.classList.add('active');
   document.body.classList.add('overflow-hidden');
   document.body.style.paddingRight = `${scrollbarWidth}px`;
+  document.querySelector('.headers').style.paddingRight = `${scrollbarWidth}px`;
 });
 cityCross.addEventListener('click', () => {
   cityPopup.classList.remove('active');
   contactsBlackBackground.classList.remove('active');
   document.body.classList.remove('overflow-hidden');
   document.body.style.paddingRight = `${0}px`;
+  document.querySelector('.headers').style.paddingRight = `${0}px`;
 });
 contactsBlackBackground.addEventListener('click', () => {
   contactsWhiteBackground.style.height = 0 + 'px';
@@ -584,6 +586,7 @@ contactsBlackBackground.addEventListener('click', () => {
   arrowExtra.classList.remove('active');
   document.body.classList.remove('overflow-hidden');
   document.body.style.paddingRight = `${0}px`;
+  document.querySelector('.headers').style.paddingRight = `${0}px`;
 });
 
 // menu-burger
@@ -1116,6 +1119,59 @@ window.onload = () => {
 window.onscroll = () => {
   checkStuck();
 };
+
+// popups
+
+const popupRecall = document.querySelector('.popup-recall');
+const cross = popupRecall.querySelector('.popup-cross');
+const background = popupRecall.querySelector('.popup-background');
+cross.addEventListener('click', () => {
+  popupRecall.classList.add('d-none');
+  document.body.classList.remove('overflow-hidden');
+  document.body.style.paddingRight = `0px`;
+  document.querySelector('.headers').style.paddingRight = `0px`;
+});
+background.addEventListener('click', () => {
+  popupRecall.classList.add('d-none');
+  document.body.classList.remove('overflow-hidden');
+  document.body.style.paddingRight = `0px`;
+  document.querySelector('.headers').style.paddingRight = `0px`;
+});
+const openPopupRecall = document.querySelectorAll('.open-popup-recall');
+openPopupRecall.forEach(item => {
+  item.addEventListener('click', () => {
+    popupRecall.classList.remove('d-none');
+    document.body.classList.add('overflow-hidden');
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
+    document.querySelector('.headers').style.paddingRight = `${scrollbarWidth}px`;
+  });
+});
+
+// popup book s-th
+
+const popupBook = document.querySelector('.popup-book');
+const crossBook = popupBook.querySelector('.popup-cross');
+const backgroundBook = popupBook.querySelector('.popup-background');
+crossBook.addEventListener('click', () => {
+  popupBook.classList.add('d-none');
+  document.body.classList.remove('overflow-hidden');
+  document.body.style.paddingRight = `0px`;
+});
+backgroundBook.addEventListener('click', () => {
+  popupBook.classList.add('d-none');
+  document.body.classList.remove('overflow-hidden');
+  document.body.style.paddingRight = `0px`;
+  document.querySelector('.headers').style.paddingRight = `0px`;
+});
+const openPopupBook = document.querySelectorAll('.open-popup-book');
+openPopupBook.forEach(item => {
+  item.addEventListener('click', () => {
+    popupBook.classList.remove('d-none');
+    document.body.classList.add('overflow-hidden');
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
+    document.querySelector('.headers').style.paddingRight = `${scrollbarWidth}px`;
+  });
+});
 })();
 
 /******/ })()

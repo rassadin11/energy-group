@@ -1,4 +1,4 @@
-.popup-book-container:before {
+.popup-book-container .popup-background {
   content: "";
   position: fixed;
   top: 0;
@@ -7,7 +7,7 @@
   height: 100vh;
   background: var(--bs-black);
   opacity: 0.5;
-  z-index: 995;
+  z-index: 2500;
 }
 .popup-book__wrapper {
   position: fixed;
@@ -126,4 +126,13 @@
 .popup-cross svg {
   width: 10px;
   height: 10px;
+}
+
+.popup-recall .popup-book__title {
+  font-size: 2rem;
+}
+@media (max-width: 768px) {
+  .popup-recall .popup-book__title {
+    font-size: 26px;
+  }
 }/*# sourceMappingURL=popup-book.css.map */

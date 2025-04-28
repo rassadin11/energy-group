@@ -21616,7 +21616,7 @@ input:focus:-ms-input-placeholder {
   }
 }
 
-.popup-book-container:before {
+.popup-book-container .popup-background {
   content: "";
   position: fixed;
   top: 0;
@@ -21625,7 +21625,7 @@ input:focus:-ms-input-placeholder {
   height: 100vh;
   background: var(--bs-black);
   opacity: 0.5;
-  z-index: 995;
+  z-index: 2500;
 }
 .popup-book__wrapper {
   position: fixed;
@@ -21744,4 +21744,13 @@ input:focus:-ms-input-placeholder {
 .popup-cross svg {
   width: 10px;
   height: 10px;
+}
+
+.popup-recall .popup-book__title {
+  font-size: 2rem;
+}
+@media (max-width: 768px) {
+  .popup-recall .popup-book__title {
+    font-size: 26px;
+  }
 }/*# sourceMappingURL=main.css.map */
