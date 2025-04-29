@@ -409,6 +409,7 @@ headerCity.addEventListener('click', () => {
     contactsBlackBackground.classList.add('active')
     document.body.classList.add('overflow-hidden')
     document.body.style.paddingRight = `${scrollbarWidth}px`;
+    document.querySelector('.headers').style.paddingRight = `${scrollbarWidth}px`;
 })
 
 cityCross.addEventListener('click', () => {
@@ -416,6 +417,7 @@ cityCross.addEventListener('click', () => {
     contactsBlackBackground.classList.remove('active')
     document.body.classList.remove('overflow-hidden')
     document.body.style.paddingRight = `${0}px`;
+    document.querySelector('.headers').style.paddingRight = `${0}px`;
 })
 
 contactsBlackBackground.addEventListener('click', () => {
@@ -426,6 +428,7 @@ contactsBlackBackground.addEventListener('click', () => {
     arrowExtra.classList.remove('active')
     document.body.classList.remove('overflow-hidden')
     document.body.style.paddingRight = `${0}px`;
+    document.querySelector('.headers').style.paddingRight = `${0}px`;
 })
 
 // menu-burger
@@ -624,25 +627,6 @@ if (document.getElementById(`calculator-video-block`)) {
         selector: 'this',
         iframeMaxHeight: '90%'
     });
-}
-
-// fix header on mobile
-
-try {
-    const mainSlider = document.querySelector('main')
-    const headers = document.querySelector('.headers')
-
-    if (document.body.clientWidth <= 992) {
-        mainSlider.style.paddingTop = headers.clientHeight + 'px';
-    }
-
-    window.onresize = () => {
-        if (document.body.clientWidth <= 992) {
-            mainSlider.style.paddingTop = headers.clientHeight + 'px';
-        }
-    }
-} catch (e) {
-    console.warn('slider error')
 }
 
 // Custom dropdown with search
@@ -998,3 +982,134 @@ function activateButton(activeBtn) {
     buttons.forEach(elem => elem.classList.remove('active'))
     buttons[activeBtn].classList.add('active')
 }
+
+// for product page
+
+function tooltipsPosition() {
+    if (document.querySelector('.product')) {
+        const borderRight = document.querySelector('.product .product__wrapper').getBoundingClientRect().right
+        const customTooltips = document.querySelectorAll('.custom-tooltip')
+
+        customTooltips.forEach(tool => {
+            tool.style.right = 'inherit'
+            tool.style.left = '80%'
+
+            if (tool.getBoundingClientRect().right > borderRight) {
+                tool.style.left = 'inherit'
+                tool.style.right = '0'
+            }
+        })
+    }
+}
+
+window.onresize = () => {
+    tooltipsPosition()
+}
+
+tooltipsPosition()
+
+function checkStuck() {
+    var st = window.scrollY || document.documentElement.scrollTop;
+    var docWidth = document.documentElement.clientWidth;
+    var fixed = document.querySelector('.headers');
+    var height = fixed.offsetTop + fixed.offsetHeight;
+
+    if (st < height && docWidth > 979) {
+        fixed.classList.remove('scroll-to-fixed-fixed');
+        fixed.style.top = 'auto';
+        fixed.style.position = 'static';
+        fixed.style.width = '100%';
+        document.body.style.marginTop = '0';
+    } else {
+        if (docWidth > 979 && st > height) {
+            fixed.classList.add('scroll-to-fixed-fixed');
+            fixed.style.position = 'fixed';
+            fixed.style.top = '0';
+            document.body.style.marginTop = '60px';
+        }
+        if (st < height && docWidth < 979) {
+            fixed.classList.remove('scroll-to-fixed-fixed');
+            fixed.style.top = 'auto';
+            fixed.style.position = 'static';
+            fixed.style.width = '100%';
+            document.body.style.marginTop = '0';
+        } else {
+            if (docWidth < 979 && st > height) {
+                fixed.classList.add('scroll-to-fixed-fixed');
+                fixed.style.position = 'fixed';
+                fixed.style.top = '0';
+                document.body.style.marginTop = '50px';
+            }
+        }
+    }
+}
+
+
+window.onload = () => {
+    checkStuck();
+}
+
+window.onscroll = () => {
+    checkStuck();
+}
+
+// popups
+
+const popupRecall = document.querySelector('.popup-recall')
+const cross = popupRecall.querySelector('.popup-cross')
+const background = popupRecall.querySelector('.popup-background')
+
+cross.addEventListener('click', () => {
+    popupRecall.classList.add('d-none')
+    document.body.classList.remove('overflow-hidden')
+    document.body.style.paddingRight = `0px`;
+    document.querySelector('.headers').style.paddingRight = `0px`;
+})
+
+background.addEventListener('click', () => {
+    popupRecall.classList.add('d-none')
+    document.body.classList.remove('overflow-hidden')
+    document.body.style.paddingRight = `0px`;
+    document.querySelector('.headers').style.paddingRight = `0px`;
+})
+
+const openPopupRecall = document.querySelectorAll('.open-popup-recall')
+
+openPopupRecall.forEach(item => {
+    item.addEventListener('click', () => {
+        popupRecall.classList.remove('d-none')
+        document.body.classList.add('overflow-hidden')
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+        document.querySelector('.headers').style.paddingRight = `${scrollbarWidth}px`;
+    })
+})
+
+// popup book s-th
+
+const popupBook = document.querySelector('.popup-book')
+const crossBook = popupBook.querySelector('.popup-cross')
+const backgroundBook = popupBook.querySelector('.popup-background')
+
+crossBook.addEventListener('click', () => {
+    popupBook.classList.add('d-none')
+    document.body.classList.remove('overflow-hidden')
+    document.body.style.paddingRight = `0px`;
+})
+
+backgroundBook.addEventListener('click', () => {
+    popupBook.classList.add('d-none')
+    document.body.classList.remove('overflow-hidden')
+    document.body.style.paddingRight = `0px`;
+    document.querySelector('.headers').style.paddingRight = `0px`;
+})
+
+const openPopupBook = document.querySelectorAll('.open-popup-book')
+
+openPopupBook.forEach(item => {
+    item.addEventListener('click', () => {
+        popupBook.classList.remove('d-none')
+        document.body.classList.add('overflow-hidden')
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+        document.querySelector('.headers').style.paddingRight = `${scrollbarWidth}px`;
+    })
+})

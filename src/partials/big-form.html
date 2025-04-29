@@ -1,16 +1,21 @@
 <section class="big-form pt-md-9 mt-md-6 mt-8">
     <div class="container px-0">
         <div class="big-form__wrapper position-relative text-center overflow-hidden pt-md-10 pb-md-0 py-7 px-md-0 px-4">
-            <img src="./img/generators_block.jpg" alt="form block"
-                class="big-form__background-image tab-card__background-image">
-            <img src="./img/form_person.png" alt="person form" class="big-form__person-image position-absolute">
+            <picture>
+                <source srcset="./img/generators_block.webp" type="image/webp">
+                <source srcset="./img/generators_block.jpg" type="image/jpeg">
+                <img loading="lazy" decoding="async" src="./img/generators_block.jpg" alt="form block"
+                    class="big-form__background-image tab-card__background-image" width="100%" height="100%">
+            </picture>
+            <img loading="lazy" decoding="async" src="./img/form_person.png" alt="person form"
+                class="big-form__person-image position-absolute">
             <h2 class="fw-bold"><span>Подберём</span> для вас лучшее решение</h2>
             <p class="mt-md-6 mt-4 big-form__description">Заполните форму и мы свяжемся с вами в ближайшее время</p>
 
             <form action="#"
                 class="d-flex gap-md-6 gap-4 justify-content-md-center flex-md-row flex-column mt-6 flex-wrap">
-                <input type="text" class="big-form__input p-md-4 p-3 rounded-3" placeholder="Ваше имя">
-                <input type="tel" class="big-form__input p-md-4 p-3 rounded-3" placeholder="Телефон">
+                <input type="text" class="big-form__input p-md-4 p-3 rounded-3" placeholder="Ваше имя" required>
+                <input type="tel" class="big-form__input p-md-4 p-3 rounded-3" placeholder="Телефон" required>
                 <button class="btn btn-warning py-md-4 py-3 px-9">Отправить</button>
             </form>
             <p class="big-form__description small mt-md-9 mt-7 pb-md-10">Я согласен на передачу и обработку

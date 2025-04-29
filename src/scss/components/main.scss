@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Overpass";
+  font-family: "Overpass", "Adjusted Arial Fallback";
   font-weight: 400;
   font-size: 1rem;
   color: var(--bs-blue);
@@ -56,16 +56,21 @@ a {
   font-weight: 600;
 }
 
-.headers {
-  @media (max-width: 992px) {
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    width: 100%;
+.item-arenda {
+  &__title {
+    font-size: 3rem;
+    font-weight: 900;
 
-    & .header {
-      background-color: var(--bs-white);
+    @media (max-width: 1200px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
     }
   }
+}
+
+.headers {
+  z-index: 1000;
 }

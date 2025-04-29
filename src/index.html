@@ -4,14 +4,13 @@
 @include('partials/head.html')
 
 <body>
-  <div class="headers">
+  <div class="headers w-100">
     @include('partials/pre-header.html')
     @include('partials/header.html')
   </div>
 
-  @include('partials/main-slider.html')
-
   <main class="main">
+    @include('partials/main-slider.html')
     @include('partials/params.html')
     @include('partials/generators.html')
     @include('partials/manufacturers.html')
@@ -29,6 +28,9 @@
     @include('partials/diesel.html')
   </main>
   @include('partials/footer.html')
+
+  @include('partials/popup-book.html')
+  @include('partials/popup-recall.html')
 </body>
 
 </html>

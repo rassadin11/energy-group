@@ -4,9 +4,18 @@
   border-radius: 1.5rem;
 }
 
-input:focus::placeholder {
-  visibility: hidden;
+input:focus::-webkit-input-placeholder {
+  color: transparent !important;
 }
+input:focus:-moz-placeholder {
+  color: transparent !important;
+} /* FF 4-18 */
+input:focus::-moz-placeholder {
+  color: transparent !important;
+} /* FF 19+ */
+input:focus:-ms-input-placeholder {
+  color: transparent !important;
+} /* IE 10+ */
 
 .big-form {
   .container.px-0 {

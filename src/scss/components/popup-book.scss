@@ -1,0 +1,128 @@
+.popup-book {
+  &-container .popup-background {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bs-black);
+    opacity: 0.5;
+    z-index: 2500;
+  }
+
+  &__wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 866px;
+    border-radius: 1.5rem;
+    background: var(--bs-white);
+    z-index: 9951;
+    grid-template-columns: repeat(8, 1fr);
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+      width: calc(100% - 2rem);
+    }
+
+    & > div:first-child {
+      grid-column: span 5;
+    }
+
+    & > div:nth-child(2) {
+      grid-column: span 3;
+      position: relative;
+
+      @media (max-width: 992px) {
+        display: none;
+      }
+
+      img {
+        height: calc(100% + 1rem);
+        position: absolute;
+        bottom: -2rem;
+      }
+    }
+
+    .big-form__input {
+      background: #f6f7f8;
+      border: 1px solid #ececec;
+      color: #061b31;
+
+      &::placeholder {
+        color: #061b31;
+        opacity: 0.3;
+      }
+    }
+
+    & form button {
+      color: var(--bs-white);
+
+      &:hover {
+        color: var(--bs-white);
+      }
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+
+    span {
+      color: var(--bs-yellow);
+    }
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
+
+  &__paragraph {
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
+
+  &__agreement {
+    font-size: 0.75rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
+}
+
+.popup-cross {
+  background: #818181;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 26px;
+  width: 26px;
+  border: none;
+
+  @media (max-width: 768px) {
+    top: 10px;
+    right: 10px;
+  }
+
+  svg {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.popup-recall {
+  .popup-book__title {
+    font-size: 2rem;
+
+    @media (max-width: 768px) {
+      font-size: 26px;
+    }
+  }
+}

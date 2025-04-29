@@ -1,1 +1,8 @@
-// @include font-face("Muller", "../fonts/MullerRegular", 400, normal);
+@font-face {
+  font-family: "Adjusted Arial Fallback";
+  src: local(Arial);
+  size-adjust: 100%;
+  ascent-override: normal;
+  descent-override: normal;
+  line-gap-override: normal;
+}

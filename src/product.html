@@ -4,16 +4,24 @@
 @include('partials/head.html')
 
 <body>
-    <div class="headers">
+    <div class="headers w-100">
         @include('partials/pre-header.html')
-        @include('partials/arenda/header_arenda.html')
+        @include('partials/product/header_product.html')
     </div>
 
     <main class="main">
-
+        @include('partials/product/product.html')
+        @include('partials/product/product-arenda.html')
+        @include('partials/arenda/calculator.html')
+        @include('partials/product/generators.html')
+        @include('partials/product/popular-slider.html')
+        @include('partials/small-form.html')
+        @include('partials/diesel.html')
     </main>
 
     @include('partials/footer.html')
+    @include('partials/popup-book.html')
+    @include('partials/popup-recall.html')
 </body>
 
 </html>

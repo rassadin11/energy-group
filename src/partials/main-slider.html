@@ -2,7 +2,11 @@
     data-slider-nav-autoplay-interval="10000">
     <ul class="slider-container main-slider">
         <li class="position-relative py-md-10 py-8 pb-5">
-            <img src="./img/slider1.jpg" class="main-slider__image low-opacity position-absolute w-100 z-n1">
+            <picture>
+                <source srcset="./img/slider1.webp" type="image/webp">
+                <img loading="eager" fetchpriority="high" src="./img/slider1.jpg"
+                    class="main-slider__image low-opacity position-absolute z-n1" width="100%" height="100%">
+            </picture>
 
             <div class="container position-relative d-flex justify-content-between h-100">
                 <div class="d-flex flex-column">
@@ -25,12 +29,19 @@
                         </button>
                     </div>
                 </div>
-                <img src="./img/slider1_image.png" alt="slider image"
-                    class="main-slider__second-image first d-none d-lg-block">
+                <picture>
+                    <source srcset="./img/slider1_image.webp" type="image/webp">
+                    <img loading="eager" fetchpriority="high" src="./img/slider1_image.png" alt="slider image"
+                        class="main-slider__second-image first d-none d-lg-block" height="100%">
+                </picture>
             </div>
         </li>
         <li class="position-relative py-md-10 py-8 pb-5">
-            <img src="./img/slider0.jpg" class="main-slider__image position-absolute w-100 z-n1">
+            <picture>
+                <source srcset="./img/slider0.webp" type="image/webp">
+                <img loading="lazy" decoding="async" src="./img/slider0.jpg"
+                    class="main-slider__image position-absolute w-100 h-100 z-n1" width="100%" height="100%">
+            </picture>
 
             <div class="container position-relative d-flex flex-column h-100 slide-wrapper">
                 <h2 class="main-slider__title">Аренда&nbsp;<br> дизельных генераторов
@@ -74,7 +85,11 @@
             </div>
         </li>
         <li class="position-relative py-md-10 py-8 pb-5">
-            <img src="./img/slider2.jpg" class="main-slider__image position-absolute w-100 z-n1">
+            <picture>
+                <source srcset="./img/slider2.webp" type="image/webp">
+                <img loading="lazy" decoding="async" src="./img/slider2.jpg"
+                    class="main-slider__image position-absolute w-100 h-100 z-n1" width="100%" height="100%">
+            </picture>
 
             <div class="container position-relative d-flex flex-column h-100">
                 <h2 class="main-slider__title">Производство&nbsp;<br />блок-контейнеров типа «Север»</h2>

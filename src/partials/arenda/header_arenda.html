@@ -1,8 +1,8 @@
 <header class="header pb-md-5">
   <div class="container header__wrapper">
     <div class="d-flex align-items-center justify-content-between">
-      <a href="#" class="header__logo d-block me-md-2 me-0">
-        <img src="./img/svg/logo.svg" />
+      <a href="./" class="header__logo d-block me-md-2 me-0">
+        <img loading="eager" fetchpriority="high" src="./img/svg/logo.svg" alt="logo" width="100%" />
       </a>
       <div class="d-none d-lg-block search-container position-relative py-3 pe-3">
         <svg class="search-icon position-absolute">
@@ -18,12 +18,12 @@
         <div class="contacts-wrapper__background position-absolute"></div>
         <div class="header__contacts ms-lg-1 d-none d-md-flex flex-column">
           <p class="header__contact d-flex align-items-center justify-content-between">
-            <a href="tel:88005117379">8 800 511-73-79</a>
-            <svg class="arrow toggle-extra" style="cursor: pointer;">
+            <a href="tel:88005117379">8 800 511-73-79</a>
+            <svg class="arrow toggle-extra">
               <use xlink:href="./img/sprite.svg#arrow"></use>
             </svg>
           </p>
-          <p class="header__description disabled-color">Бесплатный по РФ</p>
+          <p class="header__description disabled-color">Бесплатный по РФ</p>
         </div>
 
         <div class="extra-phone position-absolute mt-2 px-1">
@@ -54,16 +54,16 @@
 
       <!-- mobile icons -->
       <div class="header__mobile-icons d-lg-none gap-3 d-flex">
-        <svg class="place">
+        <svg class="place" role="button">
           <use xlink:href="./img/svg/sprite.svg#place"></use>
         </svg>
-        <svg class="phone contacts d-block d-md-none">
+        <svg class="phone contacts d-block d-md-none" role="button">
           <use xlink:href="./img/svg/sprite.svg#phone"></use>
         </svg>
-        <svg class="search">
+        <svg class="search" role="button">
           <use xlink:href="./img/svg/sprite.svg#search"></use>
         </svg>
-        <svg class="burger">
+        <svg class="burger" role="button">
           <use xlink:href="./img/svg/sprite.svg#burger"></use>
         </svg>
       </div>
@@ -90,20 +90,23 @@
                   <p class="pb-3" data-layout="1, 2" data-position="element, header"><span>Дизельные генераторы</span>
                   </p>
                   <ul class="p-0 catalogue-header__list">
-                    <li><a href="#" data-layout="2" data-position="element"><span>Aksa</span></a></li>
-                    <li><a href="#" data-layout="2" data-position="element"><span>Atlas Copco</span></a></li>
-                    <li><a href="#" data-layout="2" data-position="element"><span>Cummins</span></a></li>
-                    <li><a href="#" data-layout="2" data-position="element"><span>Emsa</span></a></li>
-                    <li><a href="#" data-layout="2" data-position="element"><span>Fubag</span></a></li>
-                    <li><a href="#" data-layout="2" data-position="element"><span>Gesan</span></a></li>
-                    <li><a href="#" data-layout="2" data-position="element"><span>AGG</span></a></li>
-                    <li><a href="#" data-layout="2" data-position="element"><span>Motor</span></a></li>
-                    <li><a href="#" data-layout="2" data-position="element"><span>SDMO</span></a></li>
-                    <li><a href="#" data-layout="2" data-position="element"><span>Zeus</span></a></li>
-                    <li><a href="#" data-layout="2" data-position="element"><span>Азимут</span></a></li>
-                    <li><a href="#" data-layout="2" data-position="element"><span>ТСС</span></a></li>
-                    <li><a href="#" data-layout="2" data-position="element"><span>Фрегат</span></a></li>
-                    <li><a href="#" data-layout="2" data-position="element"><span>Все производители</span></a></li>
+                    <li><a href="./product.html" data-layout="2" data-position="element"><span>Aksa</span></a></li>
+                    <li><a href="./product.html" data-layout="2" data-position="element"><span>Atlas
+                          Copco</span></a>
+                    </li>
+                    <li><a href="./product.html" data-layout="2" data-position="element"><span>Cummins</span></a></li>
+                    <li><a href="./product.html" data-layout="2" data-position="element"><span>Emsa</span></a></li>
+                    <li><a href="./product.html" data-layout="2" data-position="element"><span>Fubag</span></a></li>
+                    <li><a href="./product.html" data-layout="2" data-position="element"><span>Gesan</span></a></li>
+                    <li><a href="./product.html" data-layout="2" data-position="element"><span>AGG</span></a></li>
+                    <li><a href="./product.html" data-layout="2" data-position="element"><span>Motor</span></a></li>
+                    <li><a href="./product.html" data-layout="2" data-position="element"><span>SDMO</span></a></li>
+                    <li><a href="./product.html" data-layout="2" data-position="element"><span>Zeus</span></a></li>
+                    <li><a href="./product.html" data-layout="2" data-position="element"><span>Азимут</span></a></li>
+                    <li><a href="./product.html" data-layout="2" data-position="element"><span>ТСС</span></a></li>
+                    <li><a href="./product.html" data-layout="2" data-position="element"><span>Фрегат</span></a></li>
+                    <li><a href="./product.html" data-layout="2" data-position="element"><span>Все
+                          производители</span></a></li>
                   </ul>
                 </div>
               </div>
@@ -112,18 +115,20 @@
                   <p class="pb-3" data-layout="1, 3" data-position="element, header"><span>Бензиновые генераторы</span>
                   </p>
                   <ul class="p-0 catalogue-header__list">
-                    <li><a href="#" data-layout="3" data-position="element"><span>Fubag</span></a></li>
-                    <li><a href="#" data-layout="3" data-position="element"><span>Geko</span></a></li>
-                    <li><a href="#" data-layout="3" data-position="element"><span>ТСС</span></a></li>
-                    <li><a href="#" data-layout="3" data-position="element"><span>Все производители</span></a></li>
+                    <li><a href="./product.html" data-layout="3" data-position="element"><span>Fubag</span></a></li>
+                    <li><a href="./product.html" data-layout="3" data-position="element"><span>Geko</span></a></li>
+                    <li><a href="./product.html" data-layout="3" data-position="element"><span>ТСС</span></a></li>
+                    <li><a href="./product.html" data-layout="3" data-position="element"><span>Все
+                          производители</span></a></li>
                   </ul>
                 </div>
                 <div class="catalogue-header__category mt-9">
                   <p class="pb-3" data-layout="1, 4" data-position="element, header"><span>Газовые генераторы</span></p>
                   <ul class="p-0 catalogue-header__list">
-                    <li><a href="#" data-layout="4" data-position="element"><span>Generac</span></a></li>
-                    <li><a href="#" data-layout="4" data-position="element"><span>REG</span></a></li>
-                    <li><a href="#" data-layout="4" data-position="element"><span>Все производители</span></a></li>
+                    <li><a href="./product.html" data-layout="4" data-position="element"><span>Generac</span></a></li>
+                    <li><a href="./product.html" data-layout="4" data-position="element"><span>REG</span></a></li>
+                    <li><a href="./product.html" data-layout="4" data-position="element"><span>Все
+                          производители</span></a></li>
                   </ul>
                 </div>
               </div>
@@ -138,10 +143,10 @@
               <div class="catalogue-header__block">
                 <div class="catalogue-header__category">
                   <ul class="p-0 catalogue-header__list">
-                    <li><a href="#" data-layout="5" data-position="element"><span>Eaton</span></a></li>
-                    <li><a href="#" data-layout="5" data-position="element"><span>HIDEN</span></a></li>
-                    <li><a href="#" data-layout="5" data-position="element"><span>Импульс</span></a></li>
-                    <li><a href="#" data-layout="5" data-position="element"><span>Парус</span></a></li>
+                    <li><a href="./product.html" data-layout="5" data-position="element"><span>Eaton</span></a></li>
+                    <li><a href="./product.html" data-layout="5" data-position="element"><span>HIDEN</span></a></li>
+                    <li><a href="./product.html" data-layout="5" data-position="element"><span>Импульс</span></a></li>
+                    <li><a href="./product.html" data-layout="5" data-position="element"><span>Парус</span></a></li>
                   </ul>
                 </div>
               </div>
@@ -204,7 +209,8 @@
               </li>
             </ul>
           </li>
-          <li class="header-menu__item nav-item"><a href="#" class="nav-link py-lg-2 py-3"><span>Аренда</span></a></li>
+          <li class="header-menu__item nav-item"><a href="./arenda.html"
+              class="nav-link py-lg-2 py-3"><span>Аренда</span></a></li>
           <li class="header-menu__item nav-item menu__dropdown position-relative">
             <span class="nav-link py-lg-2 py-3 d-lg-block d-flex justify-content-between align-items-center">
               <span>О
@@ -257,8 +263,8 @@
         </div>
         <div class="d-flex justify-content-between align-items-center">
           <div class="header__contacts py-3">
-            <p class=" header__contact"><a href="mail:generator-energy.ru@ya.ru">8 800 511-73-79</a></p>
-            <p class="header__description disabled-color">Бесплатный по РФ</p>
+            <p class=" header__contact"><a href="mail:generator-energy.ru@ya.ru">8 800 511-73-79</a></p>
+            <p class="header__description disabled-color">Бесплатный по РФ</p>
           </div>
           <div class="header__socials d-flex gap-2">
             <div class="socials-header__whatsapp rounded-3">
@@ -285,7 +291,7 @@
           class="header-breadcrumb__item">Аренда
           дизельных генераторов</a>
       </div>
-      <div class="header-breadcrumbs-mobile d-block d-md-none d-flex align-items-end gap-3">
+      <div class="header-breadcrumbs-mobile d-block d-md-none d-flex align-items-end gap-3 mb-12">
         <div class="header-breadcrumbs__arrow rounded-1 d-flex align-items-center justify-content-center">
           <svg>
             <use xlink:href="./img/svg/sprite.svg#arrow"></use>
@@ -370,7 +376,7 @@
         </div>
       </div>
 
-      <button class="d-block mt-4 py-3 text-center btn btn-primary w-100">
+      <button class="d-block mt-4 py-3 text-center btn btn-primary w-100 open-popup-recall">
         Вам перезвонить?
       </button>
     </div>

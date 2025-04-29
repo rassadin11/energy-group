@@ -104,7 +104,7 @@
     "body": [
       "<picture>",
       "  <source srcset=\"$1.webp\" type=\"image/webp\">",
-      "  <img loading=\"lazy\" src=\"$1.$2\" class=\"image\" width=\"$4\" height=\"$5\" alt=\"$3\">",
+      "  <img loading="lazy" decoding="async"  loading=\"lazy\" src=\"$1.$2\" class=\"image\" width=\"$4\" height=\"$5\" alt=\"$3\">",
       "</picture>"
     ],
     "description": "Snippet for basic logo structure"
@@ -113,12 +113,12 @@
     "scope": "html",
     "prefix": "g-svgimg",
     "body": [
-      "<img loading=\"lazy\" src=\"$1.$2\" class=\"image\" width=\"$4\" height=\"$5\" alt=\"$3\">"
+      "<img loading="lazy" decoding="async"  loading=\"lazy\" src=\"$1.$2\" class=\"image\" width=\"$4\" height=\"$5\" alt=\"$3\">"
     ],
     "description": "Snippet for simple html svg images"
   },
   "tooltip": {
-  "prefix": "g-tooltip",
+    "prefix": "g-tooltip",
     "body": [
       "<span class=\"tooltip\">",
       "  <button class=\"btn-reset tooltip__btn\" aria-describedby=\"$1\">$2</button>",

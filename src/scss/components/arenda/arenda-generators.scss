@@ -8,7 +8,7 @@
       background: var(--bs-white);
 
       @media (min-width: 767px) {
-        padding: 2.5rem !important;
+        padding: 1.75rem !important;
       }
     }
   }
@@ -20,22 +20,15 @@
       grid-template-columns: 1fr;
     }
   }
+
+  &__text {
+    opacity: 0.5;
+    font-size: 18px;
+    line-height: 32px;
+  }
 }
 
 .item-arenda {
-  &__title {
-    font-size: 3rem;
-    font-weight: 900;
-
-    @media (max-width: 1200px) {
-      font-size: 2rem;
-    }
-
-    @media (max-width: 768px) {
-      font-size: 1.5rem;
-    }
-  }
-
   &__list {
     grid-template-columns: 1fr !important;
 
@@ -57,12 +50,45 @@
   &__image {
     width: 100%;
     height: 100%;
-    max-height: 427px;
     border-radius: 1.5rem;
 
     @media (max-width: 768px) {
       min-height: 229px;
       max-height: 300px;
+    }
+  }
+}
+
+// for product
+.arenda-generators.product {
+  .arenda-generators__wrapper {
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+
+      & > *:first-child {
+        order: 2;
+      }
+
+      & > *:last-child {
+        order: 1;
+      }
+
+      .arenda-generators__item img {
+        @media (max-width: 992px) {
+          max-height: 350px;
+        }
+
+        @media (max-width: 550px) {
+          max-height: 250px;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      .arenda-generators__text {
+        font-size: 14px;
+        line-height: 24px;
+      }
     }
   }
 }

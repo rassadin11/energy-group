@@ -134,6 +134,10 @@
     top: -3rem;
     right: 2.5rem;
 
+    @media (max-width: 992px) {
+      display: none !important;
+    }
+
     .slider-nav {
       padding: 13px 16px;
       background: var(--bs-white);

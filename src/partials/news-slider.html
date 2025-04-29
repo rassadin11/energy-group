@@ -22,7 +22,7 @@
                 <div class="swiffy-slider popular-slider-wrapper slider-item-show4">
                     <ul class="slider-container video popular-slider py-lg-9 py-md-7 py-4" id="gallery-videos-demo">
                         <li class="news-slider">
-                            <a href="#" id="open-video-1" data-iframe="true"
+                            <a href="#" id="open-video-block-1" data-iframe="true"
                                 data-src="https://rutube.ru/play/embed/85a6ab2db98dfda4735d247bd21fc0eb"
                                 class="popular-slider__block d-flex flex-column gap-2 justify-content-end position-relative overflow-hidden p-4 ">
                                 <img src="https://rutube.ru/api/video/85a6ab2db98dfda4735d247bd21fc0eb/thumbnail/?redirect=1"
@@ -38,7 +38,7 @@
                             </a>
                         </li>
                         <li class="news-slider">
-                            <a href="#" id="open-video-2" data-iframe="true"
+                            <a href="#" id="open-video-block-2" data-iframe="true"
                                 data-src="https://rutube.ru/play/embed/85a6ab2db98dfda4735d247bd21fc0eb"
                                 class="popular-slider__block d-flex flex-column gap-2 justify-content-end position-relative overflow-hidden p-4 ">
                                 <img src="https://rutube.ru/api/video/85a6ab2db98dfda4735d247bd21fc0eb/thumbnail/?redirect=1"
@@ -54,7 +54,7 @@
                             </a>
                         </li>
                         <li class="news-slider">
-                            <a href="#" id="open-video-3" data-iframe="true"
+                            <a href="#" id="open-video-block-3" data-iframe="true"
                                 data-src="https://rutube.ru/play/embed/85a6ab2db98dfda4735d247bd21fc0eb"
                                 class="popular-slider__block d-flex flex-column gap-2 justify-content-end position-relative overflow-hidden p-4 ">
                                 <img src="https://rutube.ru/api/video/85a6ab2db98dfda4735d247bd21fc0eb/thumbnail/?redirect=1"
@@ -70,7 +70,7 @@
                             </a>
                         </li>
                         <li class="news-slider">
-                            <a href="#" id="open-video-4" data-iframe="true"
+                            <a href="#" id="open-video-block-4" data-iframe="true"
                                 data-src="https://rutube.ru/play/embed/85a6ab2db98dfda4735d247bd21fc0eb"
                                 class="popular-slider__block d-flex flex-column gap-2 justify-content-end position-relative overflow-hidden p-4 ">
                                 <img src="https://rutube.ru/api/video/85a6ab2db98dfda4735d247bd21fc0eb/thumbnail/?redirect=1"
@@ -86,6 +86,7 @@
                             </a>
                         </li>
                     </ul>
+
                     <div class="d-none d-lg-block position-absolute popular-slider__arrows-wrapper slider-nav-visible">
                         <div class="popular-slider__arrows d-none d-md-flex">
                             <button type="button" class="slider-nav position-relative me-3"></button>
@@ -98,7 +99,11 @@
                 <div class="swiffy-slider popular-slider-wrapper slider-item-show4">
                     <ul class="slider-container popular-slider py-lg-9 py-md-7 py-4">
                         <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
-                            <img src="./img/generators_block.jpg" alt="" class="object-fit-cover">
+                            <picture>
+                                <source srcset="./img/generators_block.webp" type="image/webp">
+                                <img loading="lazy" decoding="async" src="./img/generators_block.jpg" alt=""
+                                    class="object-fit-cover">
+                            </picture>
 
                             <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
                                 <p class="semibold">Опциональный заголовок, который можно отключать</p>
@@ -111,7 +116,11 @@
                             </div>
                         </li>
                         <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
-                            <img src="./img/news_02.jpg" alt="" class="object-fit-cover">
+                            <picture>
+                                <source srcset="./img/news_02.webp" type="image/webp">
+                                <img loading="lazy" decoding="async" src="./img/news_02.jpg" alt=""
+                                    class="object-fit-cover">
+                            </picture>
 
                             <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
                                 <p class="semibold">Новость, которую мы заслужили, спасибо</p>
@@ -123,7 +132,11 @@
                             </div>
                         </li>
                         <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
-                            <img src="./img/news_03.jpg" alt="" class="object-fit-cover">
+                            <picture>
+                                <source srcset="./img/news_03.webp" type="image/webp">
+                                <img loading="lazy" decoding="async" src="./img/news_03.jpg" alt=""
+                                    class="object-fit-cover">
+                            </picture>
 
                             <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
                                 <p class="semibold">Energy Group лидер по продажам автономной электрической энергии</p>
@@ -136,7 +149,11 @@
                             </div>
                         </li>
                         <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
-                            <img src="./img/news_04.jpg" alt="" class="object-fit-cover">
+                            <picture>
+                                <source srcset="./img/news_04.webp" type="image/webp">
+                                <img loading="lazy" decoding="async" src="./img/news_04.jpg" alt=""
+                                    class="object-fit-cover">
+                            </picture>
 
                             <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
                                 <p class="semibold">Одна строка</p>
@@ -149,7 +166,11 @@
                             </div>
                         </li>
                         <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
-                            <img src="./img/news_04.jpg" alt="" class="object-fit-cover">
+                            <picture>
+                                <source srcset="./img/news_04.webp" type="image/webp">
+                                <img loading="lazy" decoding="async" src="./img/news_04.jpg" alt=""
+                                    class="object-fit-cover">
+                            </picture>
 
                             <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
                                 <p class="semibold">Одна строка</p>
@@ -162,7 +183,11 @@
                             </div>
                         </li>
                         <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
-                            <img src="./img/news_04.jpg" alt="" class="object-fit-cover">
+                            <picture>
+                                <source srcset="./img/news_04.webp" type="image/webp">
+                                <img loading="lazy" decoding="async" src="./img/news_04.jpg" alt=""
+                                    class="object-fit-cover">
+                            </picture>
 
                             <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
                                 <p class="semibold">Одна строка</p>
