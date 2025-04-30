@@ -277,12 +277,17 @@ window.addEventListener('resize', () => {
 const catalogueButton = document.querySelector('.header__catalogue');
 const catalogueOverlay = document.querySelector('.catalogue-header__overlay');
 const headerMenu = document.querySelector('.header-menu-wrapper');
+console.log(headerMenu);
+console.log(catalogueOverlay);
 headerMenu.addEventListener('mouseover', e => {
-  if (catalogueButton.contains(e.target) || catalogueOverlay.contains(e.target) || catalogueButton.contains(e.target)) {
+  if (catalogueButton.contains(e.target) || catalogueOverlay.contains(e.target)) {
     catalogueOverlay.classList.add('active');
   } else {
     catalogueOverlay.classList.remove('active');
   }
+});
+headerMenu.addEventListener('mouseleave', () => {
+  catalogueOverlay.classList.remove('active');
 });
 headerMenu.addEventListener('click', e => {
   if (catalogueButton.contains(e.target)) {
@@ -569,7 +574,10 @@ headerCity.addEventListener('click', () => {
   contactsBlackBackground.classList.add('active');
   document.body.classList.add('overflow-hidden');
   document.body.style.paddingRight = `${scrollbarWidth}px`;
-  document.querySelector('.headers').style.paddingRight = `${scrollbarWidth}px`;
+  console.log(document.querySelector('.headers').style.position);
+  if (document.querySelector('.headers').style.position !== 'static' && document.querySelector('.headers').style.position !== '') {
+    document.querySelector('.headers').style.paddingRight = `${scrollbarWidth}px`;
+  }
 });
 cityCross.addEventListener('click', () => {
   cityPopup.classList.remove('active');
@@ -642,13 +650,65 @@ document.querySelectorAll('.custom-select').forEach(select => {
 
 // params-block__button
 
-const paramsButtons = document.querySelectorAll('.params-block .params-block__button');
+const paramsBlock = document.querySelector('.params-block');
+const paramsButtons = paramsBlock.querySelectorAll('.params-block__button');
+
+// initial params for diesel
+
+const diesel_power = ['12 кВт', '15 кВт', '16 кВт', '20 кВт', '24 кВт', '25 кВт', '30 кВт', '35 кВт', '40 кВт', '45 кВт', '48 кВт', '50 кВт', '60 кВт', '70 кВт', '75 кВт', '80 кВт', '100 кВт', '75 кВт', '110 кВт', '120 кВт', '130 кВт', '150 кВт', '160 кВт', '180 кВт', '200 кВт', '240 кВт', '250 кВт', '300 кВт', '320 кВт', '350 кВт', '400 кВт', '450 кВт', '500 кВт', '600 кВт', '700 кВт', '800 кВт', '900 кВт', '1000 кВт', '1100 кВт', '1200 кВт', '1500 кВт', '150 кВт', '1600 кВт', '2000 кВт', '200 кВт'];
+const diesel_engine = ['Aksa', 'BOUDOUIN', 'Cooper', 'Cummins', 'Deutz', 'Doosan', 'Hino', 'Isuzu', 'IVECO', 'Komatsu', 'Kubota', 'Lister Petter', 'Lombardini', 'Mitsubishi', 'MTU', 'Perkins', 'Ricardo', 'Scania', 'SDEC', 'TSS Diesel', 'Weichai', 'Weifang', 'YangDong', 'Yanmar', 'Yuchai', 'MM3', 'ЯМЗ'];
+const diesel_developers = ['Gazvolt', 'Genese', 'Motor', 'REG', 'Азимут', 'Амперос', 'Вепрь', 'Дизель', 'Добрыня', 'Исток', 'Старт', 'ТСС', 'ФАС', 'Фрегат', 'AGG', 'CTG', 'Firman', 'MingPowers', 'PowerLink', 'Toyo', 'Aksa', 'EMSA', 'Hertz', 'Zeus', 'Airman', 'Denyo', 'Kubota', 'Mitsubishi', 'Yamaha', 'Yanmar', 'Briggs &amp; Stratton', 'Chicago Pneumatic', 'Cummins', 'Generac', 'Honeywell', 'Mirkon Energy', 'ELCOS', 'FPT', 'Genmac', 'GMGen', 'Onis Visa', 'Pramac', 'Fubag', 'Geko', 'Henkelhausen', 'RID', 'FG Wilson', 'JCB', 'EUROPOWER', 'Gesan', 'Himoinsa', 'FOGO', 'Atlas Copco', 'Energo', 'SDMO'];
+const diesel_tension = ["230 B", "230/400 B"];
+const diesel_out_tension = ["230/400 B", "230 B"];
+const diesel_amortization = ["1 - ручной ввод", "2 - автозапуск"];
+
+// initial params for patrol
+
+const patrol_power = ['15 кВт', '16 кВт', '17 кВт', '18 кВт'];
+const patrol_engine = ['Briggs and Stratton Vanguard', 'Fubag', 'Loncin'];
+const patrol_developers = ['EuroPower', 'Fubag', 'Geko', 'Исток', 'ТСС'];
+const patrol_tension = ["230 B", "230/400 B"];
+const patrol_out_tension = ["230/400 B", "230 B"];
+const patrol_amortization = ["1 - ручной ввод", "2 - автозапуск"];
+
+// select blocks for small block
+const power_small_select = document.querySelector(".power.small-block .dropdown-options");
+const tension_small_select = document.querySelector(".tension.small-block .dropdown-options");
+const engine_small_select = document.querySelector(".engine.small-block .dropdown-options");
+const developers_small_select = document.querySelector(".developer.small-block .dropdown-options");
+
+// connection between select and values
+const all_small_selects = [[power_small_select, diesel_power, patrol_power], [tension_small_select, diesel_tension, patrol_tension], [engine_small_select, diesel_engine, patrol_engine], [developers_small_select, diesel_developers, patrol_developers]];
 paramsButtons.forEach(elem => {
   elem.addEventListener('click', () => {
     paramsButtons.forEach(item => item.classList.remove('active'));
     elem.classList.add('active');
+    changeSelects(all_small_selects, elem.dataset.type);
   });
 });
+function changeSelects(selects, type) {
+  switch (type) {
+    case "diesel":
+      selects.forEach(select => {
+        changeSelect(select[0], select[1]);
+      });
+      break;
+    case "patrol":
+      selects.forEach(select => {
+        changeSelect(select[0], select[2]);
+      });
+      break;
+  }
+}
+function changeSelect(select, initialData) {
+  select.innerHTML = '';
+  initialData.forEach(item => {
+    select.insertAdjacentHTML('beforeend', `
+            <div class="dropdown-option py-2 px-3" data-value="${item}">${item}</div>
+        `);
+  });
+}
+changeSelects(all_small_selects, 'diesel');
 
 // params overlay
 
@@ -684,12 +744,26 @@ try {
 // params-block__button inside overlay
 
 const paramsButtonsOverlay = document.querySelectorAll('.params-overlay__buttons .params-block__button');
+
+// select blocks for big block
+const power_big_select = document.querySelector(".power.big-block .dropdown-options");
+const tension_big_select = document.querySelector(".tension.big-block .dropdown-options");
+const engine_big_select = document.querySelector(".engine.big-block .dropdown-options");
+const developers_big_select = document.querySelector(".developer.big-block .dropdown-options");
+const out_tension_big_select = document.querySelector(".out-tension.big-block .dropdown-options");
+const amortization_big_select = document.querySelector(".amortization.big-block .dropdown-options");
+
+// connection between select and values
+const all_big_selects = [[power_big_select, diesel_power, patrol_power], [tension_big_select, diesel_tension, patrol_tension], [engine_big_select, diesel_engine, patrol_engine], [developers_big_select, diesel_developers, patrol_developers], [out_tension_big_select, diesel_out_tension, patrol_out_tension], [amortization_big_select, diesel_amortization, patrol_amortization]];
 paramsButtonsOverlay.forEach(elem => {
   elem.addEventListener('click', () => {
     paramsButtonsOverlay.forEach(item => item.classList.remove('active'));
     elem.classList.add('active');
+    console.log(all_big_selects);
+    changeSelects(all_big_selects, elem.dataset.type);
   });
 });
+changeSelects(all_big_selects, 'diesel');
 
 // country accordeon
 
@@ -1084,32 +1158,18 @@ function checkStuck() {
   var docWidth = document.documentElement.clientWidth;
   var fixed = document.querySelector('.headers');
   var height = fixed.offsetTop + fixed.offsetHeight;
-  if (st < height && docWidth > 979) {
+  if (st < height && docWidth < 979) {
     fixed.classList.remove('scroll-to-fixed-fixed');
     fixed.style.top = 'auto';
     fixed.style.position = 'static';
     fixed.style.width = '100%';
     document.body.style.marginTop = '0';
   } else {
-    if (docWidth > 979 && st > height) {
+    if (docWidth < 979 && st > height) {
       fixed.classList.add('scroll-to-fixed-fixed');
       fixed.style.position = 'fixed';
       fixed.style.top = '0';
-      document.body.style.marginTop = '60px';
-    }
-    if (st < height && docWidth < 979) {
-      fixed.classList.remove('scroll-to-fixed-fixed');
-      fixed.style.top = 'auto';
-      fixed.style.position = 'static';
-      fixed.style.width = '100%';
-      document.body.style.marginTop = '0';
-    } else {
-      if (docWidth < 979 && st > height) {
-        fixed.classList.add('scroll-to-fixed-fixed');
-        fixed.style.position = 'fixed';
-        fixed.style.top = '0';
-        document.body.style.marginTop = '50px';
-      }
+      document.body.style.marginTop = '50px';
     }
   }
 }
@@ -1129,13 +1189,17 @@ cross.addEventListener('click', () => {
   popupRecall.classList.add('d-none');
   document.body.classList.remove('overflow-hidden');
   document.body.style.paddingRight = `0px`;
-  document.querySelector('.headers').style.paddingRight = `0px`;
+  if (document.querySelector('.headers').style.position !== 'static' && document.querySelector('.headers').style.position !== '') {
+    document.querySelector('.headers').style.paddingRight = `0px`;
+  }
 });
 background.addEventListener('click', () => {
   popupRecall.classList.add('d-none');
   document.body.classList.remove('overflow-hidden');
   document.body.style.paddingRight = `0px`;
-  document.querySelector('.headers').style.paddingRight = `0px`;
+  if (document.querySelector('.headers').style.position !== 'static' && document.querySelector('.headers').style.position !== '') {
+    document.querySelector('.headers').style.paddingRight = `0px`;
+  }
 });
 const openPopupRecall = document.querySelectorAll('.open-popup-recall');
 openPopupRecall.forEach(item => {
@@ -1143,7 +1207,10 @@ openPopupRecall.forEach(item => {
     popupRecall.classList.remove('d-none');
     document.body.classList.add('overflow-hidden');
     document.body.style.paddingRight = `${scrollbarWidth}px`;
-    document.querySelector('.headers').style.paddingRight = `${scrollbarWidth}px`;
+    console.log(document.querySelector('.headers').style.position);
+    if (document.querySelector('.headers').style.position !== 'static' && document.querySelector('.headers').style.position !== '') {
+      document.querySelector('.headers').style.paddingRight = `${scrollbarWidth}px`;
+    }
   });
 });
 
@@ -1161,7 +1228,9 @@ backgroundBook.addEventListener('click', () => {
   popupBook.classList.add('d-none');
   document.body.classList.remove('overflow-hidden');
   document.body.style.paddingRight = `0px`;
-  document.querySelector('.headers').style.paddingRight = `0px`;
+  if (document.querySelector('.headers').style.position !== 'static' && document.querySelector('.headers').style.position !== '') {
+    document.querySelector('.headers').style.paddingRight = `${0}px`;
+  }
 });
 const openPopupBook = document.querySelectorAll('.open-popup-book');
 openPopupBook.forEach(item => {
@@ -1169,7 +1238,9 @@ openPopupBook.forEach(item => {
     popupBook.classList.remove('d-none');
     document.body.classList.add('overflow-hidden');
     document.body.style.paddingRight = `${scrollbarWidth}px`;
-    document.querySelector('.headers').style.paddingRight = `${scrollbarWidth}px`;
+    if (document.querySelector('.headers').style.position !== 'static' && document.querySelector('.headers').style.position !== '') {
+      document.querySelector('.headers').style.paddingRight = `${scrollbarWidth}px`;
+    }
   });
 });
 })();

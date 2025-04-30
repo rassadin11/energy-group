@@ -36,6 +36,15 @@
   overflow: hidden;
   min-height: 267px;
 }
+.items-services__item img {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.items-services__item:hover img {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
 @media (max-width: 768px) {
   .items-services__item {
     min-height: 218px;
