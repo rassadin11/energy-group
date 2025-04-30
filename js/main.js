@@ -277,8 +277,6 @@ window.addEventListener('resize', () => {
 const catalogueButton = document.querySelector('.header__catalogue');
 const catalogueOverlay = document.querySelector('.catalogue-header__overlay');
 const headerMenu = document.querySelector('.header-menu-wrapper');
-console.log(headerMenu);
-console.log(catalogueOverlay);
 headerMenu.addEventListener('mouseover', e => {
   if (catalogueButton.contains(e.target) || catalogueOverlay.contains(e.target)) {
     catalogueOverlay.classList.add('active');
@@ -422,7 +420,6 @@ arrowBack.addEventListener('click', () => {
   if (m_history.length) {
     m_history.pop();
     let elements;
-    console.log(m_history);
     if (!m_history.length) {
       arrowBack.classList.remove('active');
       overlayMenu.classList.remove('d-none');
@@ -574,7 +571,6 @@ headerCity.addEventListener('click', () => {
   contactsBlackBackground.classList.add('active');
   document.body.classList.add('overflow-hidden');
   document.body.style.paddingRight = `${scrollbarWidth}px`;
-  console.log(document.querySelector('.headers').style.position);
   if (document.querySelector('.headers').style.position !== 'static' && document.querySelector('.headers').style.position !== '') {
     document.querySelector('.headers').style.paddingRight = `${scrollbarWidth}px`;
   }
@@ -759,7 +755,6 @@ paramsButtonsOverlay.forEach(elem => {
   elem.addEventListener('click', () => {
     paramsButtonsOverlay.forEach(item => item.classList.remove('active'));
     elem.classList.add('active');
-    console.log(all_big_selects);
     changeSelects(all_big_selects, elem.dataset.type);
   });
 });
@@ -1207,7 +1202,6 @@ openPopupRecall.forEach(item => {
     popupRecall.classList.remove('d-none');
     document.body.classList.add('overflow-hidden');
     document.body.style.paddingRight = `${scrollbarWidth}px`;
-    console.log(document.querySelector('.headers').style.position);
     if (document.querySelector('.headers').style.position !== 'static' && document.querySelector('.headers').style.position !== '') {
       document.querySelector('.headers').style.paddingRight = `${scrollbarWidth}px`;
     }
