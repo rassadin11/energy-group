@@ -684,84 +684,85 @@ if (paramsBlock) {
     });
   });
   changeSelects(all_small_selects, 'diesel');
-}
-function changeSelects(selects, type) {
-  switch (type) {
-    case "diesel":
-      selects.forEach(select => {
-        changeSelect(select[0], select[1]);
-      });
-      break;
-    case "patrol":
-      selects.forEach(select => {
-        changeSelect(select[0], select[2]);
-      });
-      break;
+  function changeSelects(selects, type) {
+    switch (type) {
+      case "diesel":
+        selects.forEach(select => {
+          changeSelect(select[0], select[1]);
+        });
+        break;
+      case "patrol":
+        selects.forEach(select => {
+          changeSelect(select[0], select[2]);
+        });
+        break;
+    }
   }
-}
-function changeSelect(select, initialData) {
-  select.innerHTML = '';
-  initialData.forEach(item => {
-    select.insertAdjacentHTML('beforeend', `
+  function changeSelect(select, initialData) {
+    select.innerHTML = '';
+    initialData.forEach(item => {
+      select.insertAdjacentHTML('beforeend', `
             <div class="dropdown-option py-2 px-3" data-value="${item}">${item}</div>
         `);
-  });
-}
-
-// params overlay
-
-try {
-  const paramsWrapper = document.querySelector('.params-overlay__wrapper');
-  const paramsOverlay = document.querySelector('.params-overlay');
-  const paramsCross = paramsOverlay.querySelector('.cross-place');
-  const paramsButton = document.querySelectorAll('.params-show-popup');
-  paramsButton.forEach(btn => {
-    btn.addEventListener('click', () => {
-      paramsWrapper.classList.add('active');
-      paramsOverlay.classList.add('active');
-      document.body.classList.add('overflow-hidden');
-      document.body.style.paddingRight = `${scrollbarWidth}px`;
     });
-  });
-  paramsWrapper.addEventListener('click', () => {
-    paramsWrapper.classList.remove('active');
-    paramsOverlay.classList.remove('active');
-    document.body.classList.remove('overflow-hidden');
-    document.body.style.paddingRight = `${0}px`;
-  });
-  paramsCross.addEventListener('click', () => {
-    paramsWrapper.classList.remove('active');
-    paramsOverlay.classList.remove('active');
-    document.body.classList.remove('overflow-hidden');
-    document.body.style.paddingRight = `${0}px`;
-  });
-} catch (e) {
-  console.warn('error');
-}
+  }
 
-// params-block__button inside overlay
+  // params overlay
 
-const paramsButtonsOverlay = document.querySelectorAll('.params-overlay__buttons .params-block__button');
-if (paramsButtonsOverlay) {
-  // select blocks for big block
-  const power_big_select = document.querySelector(".power.big-block .dropdown-options");
-  const tension_big_select = document.querySelector(".tension.big-block .dropdown-options");
-  const engine_big_select = document.querySelector(".engine.big-block .dropdown-options");
-  const developers_big_select = document.querySelector(".developer.big-block .dropdown-options");
-  const out_tension_big_select = document.querySelector(".out-tension.big-block .dropdown-options");
-  const amortization_big_select = document.querySelector(".amortization.big-block .dropdown-options");
-
-  // connection between select and values
-  const all_big_selects = [[power_big_select, diesel_power, patrol_power], [tension_big_select, diesel_tension, patrol_tension], [engine_big_select, diesel_engine, patrol_engine], [developers_big_select, diesel_developers, patrol_developers], [out_tension_big_select, diesel_out_tension, patrol_out_tension], [amortization_big_select, diesel_amortization, patrol_amortization]];
-  paramsButtonsOverlay.forEach(elem => {
-    elem.addEventListener('click', () => {
-      paramsButtonsOverlay.forEach(item => item.classList.remove('active'));
-      elem.classList.add('active');
-      changeSelects(all_big_selects, elem.dataset.type);
+  try {
+    const paramsWrapper = document.querySelector('.params-overlay__wrapper');
+    const paramsOverlay = document.querySelector('.params-overlay');
+    const paramsCross = paramsOverlay.querySelector('.cross-place');
+    const paramsButton = document.querySelectorAll('.params-show-popup');
+    paramsButton.forEach(btn => {
+      btn.addEventListener('click', () => {
+        paramsWrapper.classList.add('active');
+        paramsOverlay.classList.add('active');
+        document.body.classList.add('overflow-hidden');
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+      });
     });
-  });
-  changeSelects(all_big_selects, 'diesel');
+    paramsWrapper.addEventListener('click', () => {
+      paramsWrapper.classList.remove('active');
+      paramsOverlay.classList.remove('active');
+      document.body.classList.remove('overflow-hidden');
+      document.body.style.paddingRight = `${0}px`;
+    });
+    paramsCross.addEventListener('click', () => {
+      paramsWrapper.classList.remove('active');
+      paramsOverlay.classList.remove('active');
+      document.body.classList.remove('overflow-hidden');
+      document.body.style.paddingRight = `${0}px`;
+    });
+  } catch (e) {
+    console.warn('error');
+  }
+
+  // params-block__button inside overlay
+
+  const paramsButtonsOverlay = document.querySelectorAll('.params-overlay__buttons .params-block__button');
+  if (paramsButtonsOverlay) {
+    // select blocks for big block
+    const power_big_select = document.querySelector(".power.big-block .dropdown-options");
+    const tension_big_select = document.querySelector(".tension.big-block .dropdown-options");
+    const engine_big_select = document.querySelector(".engine.big-block .dropdown-options");
+    const developers_big_select = document.querySelector(".developer.big-block .dropdown-options");
+    const out_tension_big_select = document.querySelector(".out-tension.big-block .dropdown-options");
+    const amortization_big_select = document.querySelector(".amortization.big-block .dropdown-options");
+
+    // connection between select and values
+    const all_big_selects = [[power_big_select, diesel_power, patrol_power], [tension_big_select, diesel_tension, patrol_tension], [engine_big_select, diesel_engine, patrol_engine], [developers_big_select, diesel_developers, patrol_developers], [out_tension_big_select, diesel_out_tension, patrol_out_tension], [amortization_big_select, diesel_amortization, patrol_amortization]];
+    paramsButtonsOverlay.forEach(elem => {
+      elem.addEventListener('click', () => {
+        paramsButtonsOverlay.forEach(item => item.classList.remove('active'));
+        elem.classList.add('active');
+        changeSelects(all_big_selects, elem.dataset.type);
+      });
+    });
+    changeSelects(all_big_selects, 'diesel');
+  }
 }
+
 // country accordeon
 
 const countryBlocks = document.querySelectorAll(".blocks-manufacturers__block");
