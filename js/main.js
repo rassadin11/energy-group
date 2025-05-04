@@ -627,23 +627,6 @@ backgroundPopup.addEventListener('click', () => {
   }, 300);
 });
 
-// selects
-
-document.querySelectorAll('.custom-select').forEach(select => {
-  select.addEventListener('change', function () {
-    if (this.value) {
-      this.classList.add('has-value');
-    } else {
-      this.classList.remove('has-value');
-    }
-  });
-
-  // Инициализация при загрузке
-  if (select.value) {
-    select.classList.add('has-value');
-  }
-});
-
 // params-block__button
 
 const paramsBlock = document.querySelector('.params-block');
@@ -690,11 +673,13 @@ if (paramsBlock) {
         selects.forEach(select => {
           changeSelect(select[0], select[1]);
         });
+        resetCustomDropdowns();
         break;
       case "patrol":
         selects.forEach(select => {
           changeSelect(select[0], select[2]);
         });
+        resetCustomDropdowns();
         break;
     }
   }
@@ -834,86 +819,153 @@ if (document.getElementById(`calculator-video-block`)) {
 }
 
 // Custom dropdown with search
-const customDropdowns = document.querySelectorAll('.custom-dropdown');
-customDropdowns.forEach(dropdown => {
-  const selectDisplay = dropdown.querySelector('.select-display');
-  const selectedValue = dropdown.querySelector('.selected-value');
-  const dropdownContainer = dropdown.querySelector('.dropdown-container');
-  const searchInput = dropdown.querySelector('.search-input');
-  const options = dropdown.querySelectorAll('.dropdown-option');
-  const hiddenInput = dropdown.querySelector('input[type="hidden"]');
-  const selectLabel = dropdown.querySelector('.select-label');
-  const arrowSelect = dropdown.querySelector('.arrow');
-  const dropdownWrapper = dropdown.querySelector('.dropdown-container-wrapper');
 
-  // Toggle dropdown on click
-  selectDisplay.addEventListener('click', () => {
-    selectDisplay.classList.toggle('active');
-    arrowSelect.classList.toggle('active');
-    dropdownWrapper.classList.toggle('active');
-    dropdownContainer.classList.toggle('active');
-  });
+function activateCustomDropdowns() {
+  const customDropdowns = document.querySelectorAll('.custom-dropdown');
+  customDropdowns.forEach(dropdown => {
+    const selectDisplay = dropdown.querySelector('.select-display');
+    const selectedValue = dropdown.querySelector('.selected-value');
+    const dropdownContainer = dropdown.querySelector('.dropdown-container');
+    const searchInput = dropdown.querySelector('.search-input');
+    const options = dropdown.querySelectorAll('.dropdown-option');
+    const hiddenInput = dropdown.querySelector('input[type="hidden"]');
+    const selectLabel = dropdown.querySelector('.select-label');
+    const arrowSelect = dropdown.querySelector('.arrow');
+    const dropdownWrapper = dropdown.querySelector('.dropdown-container-wrapper');
 
-  // Close dropdown when clicking outside
-  document.addEventListener('click', e => {
-    if (!dropdown.contains(e.target)) {
-      selectDisplay.classList.remove('active');
-      arrowSelect.classList.remove('active');
-      dropdownWrapper.classList.remove('active');
-      dropdownContainer.classList.remove('active');
-    }
-  });
+    // Toggle dropdown on click
+    selectDisplay.addEventListener('click', () => {
+      selectDisplay.classList.toggle('active');
+      arrowSelect.classList.toggle('active');
+      dropdownWrapper.classList.toggle('active');
+      dropdownContainer.classList.toggle('active');
+    });
 
-  // Filter options based on search input
-  searchInput.addEventListener('input', () => {
-    const searchText = searchInput.value.toLowerCase();
-    options.forEach(option => {
-      const optionText = option.textContent.toLowerCase();
-      if (optionText.includes(searchText)) {
-        option.style.display = 'block';
-      } else {
-        option.style.display = 'none';
+    // Close dropdown when clicking outside
+    document.addEventListener('click', e => {
+      if (!dropdown.contains(e.target)) {
+        selectDisplay.classList.remove('active');
+        arrowSelect.classList.remove('active');
+        dropdownWrapper.classList.remove('active');
+        dropdownContainer.classList.remove('active');
       }
     });
-  });
 
-  // Select option on click
-  options.forEach(option => {
-    option.addEventListener('click', () => {
-      // Update display value
-      selectedValue.textContent = option.textContent;
-      selectedValue.classList.add('d-block');
-      if (!selectedValue.classList.contains('no-title')) {
-        selectedValue.classList.add('mt-2');
-        selectedValue.classList.add('fw-semibold');
-      } else {
-        selectedValue.classList.remove('default');
-      }
-      if (!selectDisplay.classList.contains('overlay')) {
-        selectedValue.classList.add('pt-1');
-      }
-      selectDisplay.classList.add('selected');
+    // Filter options based on search input
+    searchInput.addEventListener('input', () => {
+      const searchText = searchInput.value.toLowerCase();
+      options.forEach(option => {
+        const optionText = option.textContent.toLowerCase();
+        if (optionText.includes(searchText)) {
+          option.style.display = 'block';
+        } else {
+          option.style.display = 'none';
+        }
+      });
+    });
 
-      // Update hidden input value
-      hiddenInput.value = option.getAttribute('data-value');
+    // Select option on click
+    options.forEach(option => {
+      option.addEventListener('click', () => {
+        // Update display value
+        selectedValue.textContent = option.textContent;
+        selectedValue.classList.add('d-block');
+        if (!selectedValue.classList.contains('no-title')) {
+          selectedValue.classList.add('mt-2');
+          selectedValue.classList.add('fw-semibold');
+        } else {
+          selectedValue.classList.remove('default');
+        }
+        if (!selectDisplay.classList.contains('overlay')) {
+          selectedValue.classList.add('pt-1');
+        }
+        selectDisplay.classList.add('selected');
 
-      // Close dropdown
-      dropdownContainer.classList.remove('active');
+        // Update hidden input value
+        hiddenInput.value = option.getAttribute('data-value');
 
-      // Clear search input
-      searchInput.value = '';
-      selectDisplay.classList.remove('active');
-      arrowSelect.classList.remove('active');
-      dropdownWrapper.classList.remove('active');
-      selectLabel.classList.add('active');
+        // Close dropdown
+        dropdownContainer.classList.remove('active');
 
-      // Show all options again
-      options.forEach(opt => {
-        opt.style.display = 'block';
+        // Clear search input
+        searchInput.value = '';
+        selectDisplay.classList.remove('active');
+        arrowSelect.classList.remove('active');
+        dropdownWrapper.classList.remove('active');
+        selectLabel.classList.add('active');
+
+        // Show all options again
+        options.forEach(opt => {
+          opt.style.display = 'block';
+        });
       });
     });
   });
-});
+}
+activateCustomDropdowns();
+function resetCustomDropdowns() {
+  const customDropdowns = document.querySelectorAll('.custom-dropdown');
+  customDropdowns.forEach(dropdown => {
+    const selectDisplay = dropdown.querySelector('.select-display');
+    const selectedValue = dropdown.querySelector('.selected-value');
+    const dropdownContainer = dropdown.querySelector('.dropdown-container');
+    const searchInput = dropdown.querySelector('.search-input');
+    const options = dropdown.querySelectorAll('.dropdown-option');
+    const selectLabel = dropdown.querySelector('.select-label');
+    const hiddenInput = dropdown.querySelector('input[type="hidden"]');
+    const arrowSelect = dropdown.querySelector('.arrow');
+    const dropdownWrapper = dropdown.querySelector('.dropdown-container-wrapper');
+
+    // Select option on click
+    selectedValue.classList.remove('d-block');
+    selectedValue.classList.remove('mt-2');
+    selectedValue.classList.remove('fw-semibold');
+    selectedValue.classList.remove('default');
+    selectedValue.classList.remove('pt-1');
+    selectedValue.innerHTML = selectLabel.innerHTML;
+    selectDisplay.classList.remove('selected');
+    selectDisplay.classList.remove('active');
+    selectLabel.classList.remove('active');
+    searchInput.value = '';
+    dropdownContainer.classList.remove('active');
+    dropdownWrapper.classList.remove('active');
+    arrowSelect.classList.remove('active');
+    options.forEach(option => {
+      option.addEventListener('click', () => {
+        selectedValue.textContent = option.textContent;
+        selectedValue.classList.add('d-block');
+        if (!selectedValue.classList.contains('no-title')) {
+          selectedValue.classList.add('mt-2');
+          selectedValue.classList.add('fw-semibold');
+        } else {
+          selectedValue.classList.remove('default');
+        }
+        if (!selectDisplay.classList.contains('overlay')) {
+          selectedValue.classList.add('pt-1');
+        }
+        selectDisplay.classList.add('selected');
+
+        // Update hidden input value
+        hiddenInput.value = option.getAttribute('data-value');
+
+        // Close dropdown
+        dropdownContainer.classList.remove('active');
+
+        // Clear search input
+        searchInput.value = '';
+        selectDisplay.classList.remove('active');
+        arrowSelect.classList.remove('active');
+        dropdownWrapper.classList.remove('active');
+        selectLabel.classList.add('active');
+
+        // Show all options again
+        options.forEach(opt => {
+          opt.style.display = 'block';
+        });
+      });
+    });
+  });
+}
 const allGenerators = document.querySelectorAll('.generators');
 allGenerators.forEach(generator => {
   const generatorButtons = generator.querySelectorAll('.tabs-header__buttons .btn');
