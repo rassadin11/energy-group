@@ -111,7 +111,7 @@
 }
 
 .contacts-wrapper {
-  z-index: 2050;
+  z-index: 1600;
 
   & > .header__contacts {
     position: relative;
@@ -134,7 +134,7 @@
     width: 100vw;
     height: calc(var(--vh, 1vh) * 100);
     background: rgba(0, 0, 0, 0.5);
-    z-index: 2000;
+    z-index: 1500;
     opacity: 0;
     visibility: hidden;
 
