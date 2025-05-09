@@ -1285,17 +1285,20 @@ if (sliderReviews) {
 // reviews height
 
 let r = document.querySelector('.reviews');
-if (document.body.clientWidth > 1400) {
-  r.style.height = `${504}px`;
-} else {
-  r.style.height = 'auto';
+if (r) {
+  if (document.body.clientWidth > 1400) {
+    r.style.height = `${504}px`;
+  } else {
+    r.style.height = 'auto';
+  }
 }
 window.onresize = () => {
-  let r = document.querySelector('.reviews');
-  if (document.body.clientWidth > 1400) {
-    r.style.height = `${r.querySelector('.container').clientHeight}px`;
-  } else {
-    r.style.height = '0';
+  if (r) {
+    if (document.body.clientWidth > 1400) {
+      r.style.height = `${r.querySelector('.container').clientHeight}px`;
+    } else {
+      r.style.height = '0';
+    }
   }
 };
 
