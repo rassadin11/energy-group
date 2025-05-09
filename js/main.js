@@ -1183,6 +1183,122 @@ function activateButton(activeBtn) {
   buttons[activeBtn].classList.add('active');
 }
 
+// for reviews slider
+const sliderReviews = document.querySelector('.reviews .swiffy-slider');
+let activeSlide = 0;
+if (sliderReviews) {
+  const reviews = sliderReviews;
+  const items = reviews.querySelectorAll('li');
+  const itemWidth = items[0].getBoundingClientRect().width;
+  const dublicates = document.querySelector('.reviews__dublicates');
+  const reviewsWrapper = document.querySelector('.reviews-dublicates-wrapper');
+
+  // generate indicator buttons
+
+  const indicators = document.querySelector('.indicators');
+  const amountOfSlides = sliderReviews.querySelectorAll("li").length;
+  indicators.innerHTML = '';
+  for (let i = 0; i < amountOfSlides - 2; i++) {
+    indicators.insertAdjacentHTML('beforeend', `<li data-slide=${i} class=${i === 0 ? 'active' : ''}></li>`);
+  }
+  const allIndicators = indicators.querySelectorAll('li');
+  allIndicators.forEach(item => {
+    item.addEventListener('click', () => {
+      allIndicators.forEach(elem => elem.classList.remove('active'));
+      item.classList.add('active');
+      activeSlide = +item.dataset.slide;
+      swiffyslider.slideTo(sliderReviews, activeSlide);
+      dublicates.scrollTo({
+        left: dublicates.children[activeSlide].offsetLeft - 5,
+        behavior: 'smooth'
+      });
+      dublicates.querySelectorAll(".reviews__slide").forEach(item => item.classList.remove('hide'));
+      dublicates.children[activeSlide + 1].classList.add('hide');
+      dublicates.children[activeSlide + 2].classList.add('hide');
+      dublicates.children[activeSlide + 3].classList.add('hide');
+    });
+  });
+
+  // position dublicates container
+
+  const rect1 = dublicates.children[1].offsetLeft + reviewsWrapper.offsetLeft;
+  const reviewsRect = reviews.offsetLeft;
+  console.log(rect1, reviewsRect);
+  const diff = rect1 - reviewsRect - 14;
+  reviewsWrapper.style.transform = `translate(-${diff}px, -389px)`;
+
+  // change slide on click
+
+  for (let i = 0; i < dublicates.children.length; i++) {
+    let slide = dublicates.children[i];
+    slide.addEventListener('click', () => {
+      if (!slide.classList.contains('hide')) {
+        let idx = +slide.dataset.forMid;
+        if (idx > 3) {
+          idx -= 3;
+          swiffyslider.slideTo(sliderReviews, idx);
+          dublicates.scrollTo({
+            left: dublicates.children[idx].offsetLeft - 5,
+            behavior: 'smooth'
+          });
+          dublicates.querySelectorAll(".reviews__slide").forEach(item => item.classList.remove('hide'));
+          dublicates.children[idx + 1].classList.add('hide');
+          dublicates.children[idx + 2].classList.add('hide');
+          dublicates.children[idx + 3].classList.add('hide');
+          allIndicators.forEach(ind => {
+            if (+ind.dataset.slide !== idx) {
+              ind.classList.remove('active');
+            } else {
+              ind.classList.add('active');
+            }
+          });
+        } else {
+          idx -= 1;
+          swiffyslider.slideTo(sliderReviews, idx);
+          dublicates.scrollTo({
+            left: dublicates.children[idx].offsetLeft - 5,
+            behavior: 'smooth'
+          });
+          dublicates.querySelectorAll(".reviews__slide").forEach(item => item.classList.remove('hide'));
+          dublicates.children[idx + 1].classList.add('hide');
+          dublicates.children[idx + 2].classList.add('hide');
+          dublicates.children[idx + 3].classList.add('hide');
+          allIndicators.forEach(ind => {
+            if (+ind.dataset.slide !== idx) {
+              ind.classList.remove('active');
+            } else {
+              ind.classList.add('active');
+            }
+          });
+        }
+      }
+    });
+  }
+
+  // reviews dublicates positioning
+
+  dublicates.querySelectorAll(".reviews__slide").forEach(item => {
+    item.style.width = itemWidth + 'px';
+  });
+}
+
+// reviews height
+
+let r = document.querySelector('.reviews');
+if (document.body.clientWidth > 1400) {
+  r.style.height = `${504}px`;
+} else {
+  r.style.height = 'auto';
+}
+window.onresize = () => {
+  let r = document.querySelector('.reviews');
+  if (document.body.clientWidth > 1400) {
+    r.style.height = `${r.querySelector('.container').clientHeight}px`;
+  } else {
+    r.style.height = '0';
+  }
+};
+
 // for product page
 
 function tooltipsPosition() {
