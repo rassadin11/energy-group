@@ -21536,6 +21536,19 @@ input:focus:-ms-input-placeholder {
     max-height: 229px;
   }
 }
+.product__icons {
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.product__icons > *:last-child {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-column: 1/5;
+  width: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
 
 .info-product {
   font-size: 18px;
@@ -21574,9 +21587,23 @@ input:focus:-ms-input-placeholder {
 }
 @media (max-width: 550px) {
   .tooltip-wrapper {
-    width: 30px;
-    height: 30px;
+    width: 100%;
   }
+}
+
+.tooltip-text {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: var(--bs-white);
+  color: var(--bs-black);
+  border: 1px solid #e2e2e2;
+}
+.tooltip-text svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
 }
 
 .icon-button {
@@ -21588,14 +21615,6 @@ input:focus:-ms-input-placeholder {
 }
 .icon-button:hover {
   background-color: var(--bs-primary);
-}
-@media (max-width: 550px) {
-  .icon-button .reload,
-  .icon-button .clock,
-  .icon-button .repair {
-    width: 15px;
-    height: 15px;
-  }
 }
 
 .icon-button svg {
