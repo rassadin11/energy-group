@@ -28,14 +28,17 @@
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.reviews__slide:hover {
+.reviews__slide.hover-none {
+  visibility: hidden;
+}
+.reviews__slide:not(.hover-none):hover {
   background: #f6f7f8;
 }
-.reviews__slide:hover .reviews__image:after {
+.reviews__slide:not(.hover-none):hover .reviews__image:after {
   opacity: 0.5;
   visibility: visible;
 }
-.reviews__slide:hover .reviews__image .zoom {
+.reviews__slide:not(.hover-none):hover .reviews__image .zoom {
   opacity: 1;
   visibility: visible;
 }
