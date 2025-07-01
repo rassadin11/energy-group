@@ -1,0 +1,25 @@
+.article-breadcrumbs {
+  position: relative;
+  font-size: 14px;
+  color: #51606f;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:last-child {
+    color: #828c97;
+  }
+
+  &:not(:last-child):after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    width: 2px;
+    height: 2px;
+    background: #828c97;
+    border-radius: 50%;
+    transform: translate(0, -50%);
+  }
+}

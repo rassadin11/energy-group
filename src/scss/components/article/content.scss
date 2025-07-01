@@ -1,0 +1,253 @@
+.article-grid {
+  grid-template-columns: 1fr 1fr 1fr;
+
+  & > *:first-child {
+    grid-column: 1 / 3;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-weight: 900;
+    line-height: 44px;
+    scroll-margin-top: 1rem;
+
+    @media (max-width: 992px) {
+      scroll-margin-top: 9rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 550px) {
+      font-size: 1.5rem;
+      line-height: 28px;
+    }
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    scroll-margin-top: 1rem;
+
+    @media (max-width: 992px) {
+      scroll-margin-top: 9rem;
+    }
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .article-sources a {
+    color: #51606f;
+    font-size: 14px;
+  }
+
+  .article-conclusion {
+    color: #51606f !important;
+    font-size: 1rem;
+  }
+
+  &__item {
+    p {
+      font-size: 18px;
+      color: #061b31;
+      line-height: 26px;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      a {
+        text-decoration: underline;
+        color: #d97706;
+      }
+    }
+
+    .article-list {
+      li {
+        position: relative;
+        font-size: 18px;
+        color: #061b31;
+        line-height: 26px;
+        padding-left: 1rem;
+
+        @media (max-width: 768px) {
+          font-size: 1rem;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0; /* Позиционируем точку слева от текста */
+          top: 9px;
+          width: 4px;
+          height: 4px;
+          background-color: #fbbf24; /* Цвет точки совпадает с цветом текста */
+          border-radius: 50%; /* Делаем элемент круглым */
+        }
+      }
+    }
+  }
+}
+
+.article-anchors {
+  background: #fbfbfb;
+  border-radius: 1.5rem;
+  height: fit-content;
+
+  a {
+    color: #828c97;
+    position: relative;
+    padding-left: 14px;
+    transition: all 0.3s ease;
+
+    &.active {
+      color: #061b31;
+    }
+
+    &:hover {
+      color: #d97706;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0; /* Позиционируем точку слева от текста */
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 4px;
+      background-color: currentColor; /* Цвет точки совпадает с цветом текста */
+      border-radius: 50%; /* Делаем элемент круглым */
+    }
+  }
+}
+
+.info-article {
+  &__text {
+    color: #828c97 !important;
+    font-size: 1rem !important;
+  }
+
+  &__name {
+    font-size: 1rem !important;
+  }
+}
+
+.cards-article {
+  &__item {
+    border-radius: 1.5rem;
+    border: 1px solid #e7e9eb;
+    transition: all 0.3s ease;
+
+    @media (max-width: 550px) {
+      img {
+        max-height: 61px;
+      }
+    }
+
+    p {
+      color: #51606f;
+      line-height: 24px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+
+      p {
+        color: #d97706;
+      }
+    }
+  }
+}
+
+.article-socials {
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.socials-article {
+  &__block {
+    background: #ffffff;
+    border: 1px solid #e7e9eb;
+    border-radius: 1.5rem;
+
+    @media (max-width: 768px) {
+      &:first-child {
+        border: none;
+      }
+    }
+  }
+
+  button {
+    background: #f2f3f4;
+    border-radius: 0.5rem;
+    border: none;
+  }
+
+  &__icon {
+    height: fit-content;
+    background: #f2f3f4;
+    border-radius: 0.5rem;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-size: 1rem !important;
+  }
+}
+
+.article-video {
+  min-height: 670px;
+  border-radius: 1.5rem;
+}
+
+.icon_telegram {
+  width: 20px;
+  height: 17px;
+  color: #061b31;
+}
+
+.icon_whatsapp {
+  width: 20px;
+  height: 20px;
+  color: #061b31;
+}
+
+.icon_vk {
+  width: 18px;
+  height: 18px;
+  color: #061b31;
+}
+
+.like {
+  width: 18px;
+  height: 19px;
+}
+
+.dislike {
+  transform: scaleY(-1);
+  width: 18px;
+  height: 19px;
+}
+
+.pencil {
+  width: 18px;
+  height: 18px;
+}
+
+.clock {
+  width: 20px;
+  height: 20px;
+}
