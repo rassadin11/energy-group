@@ -22074,6 +22074,7 @@ input:focus:-ms-input-placeholder {
   background: #f2f3f4;
   border-radius: 0.5rem;
   border: none;
+  color: inherit;
 }
 .socials-article__icon {
   height: -webkit-fit-content;
