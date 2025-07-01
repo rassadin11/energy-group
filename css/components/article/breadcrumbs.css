@@ -1,0 +1,24 @@
+.article-breadcrumbs {
+  position: relative;
+  font-size: 14px;
+  color: #51606f;
+}
+.article-breadcrumbs:hover {
+  text-decoration: underline;
+}
+.article-breadcrumbs:last-child {
+  color: #828c97;
+}
+.article-breadcrumbs:not(:last-child):after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  width: 2px;
+  height: 2px;
+  background: #828c97;
+  border-radius: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}/*# sourceMappingURL=breadcrumbs.css.map */

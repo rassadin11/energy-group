@@ -11,8 +11,7 @@
 __webpack_require__.r(__webpack_exports__);
 const swiffyslider = {
   version: "1.6.0",
-  init() {
-    let e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document.body;
+  init(e = document.body) {
     for (let t of e.querySelectorAll(".swiffy-slider")) this.initSlider(t);
   },
   initSlider(e) {
@@ -32,8 +31,7 @@ const swiffyslider = {
       this.setVisibleSlides(e, t);
     }
   },
-  setVisibleSlides(e) {
-    let t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0.3;
+  setVisibleSlides(e, t = 0.3) {
     let i = new IntersectionObserver(t => {
       t.forEach(e => {
         e.isIntersecting ? e.target.classList.add("slide-visible") : e.target.classList.remove("slide-visible");
@@ -44,8 +42,7 @@ const swiffyslider = {
     });
     for (let t of e.querySelectorAll(".slider-container>*")) i.observe(t);
   },
-  slide(e) {
-    let t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : !0;
+  slide(e, t = !0) {
     const i = e.querySelector(".slider-container"),
       s = e.classList.contains("slider-nav-page"),
       l = e.classList.contains("slider-nav-noloop"),
@@ -77,8 +74,7 @@ const swiffyslider = {
       behavior: r ? "auto" : "smooth"
     });
   },
-  onSlideEnd(e, t) {
-    let i = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 125;
+  onSlideEnd(e, t, i = 125) {
     let s;
     e.querySelector(".slider-container").addEventListener("scroll", function () {
       window.clearTimeout(s), s = setTimeout(t, i);
@@ -126,8 +122,7 @@ window.swiffyslider = swiffyslider, document.currentScript.hasAttribute("data-no
 const swiffysliderextensions = {
   version: "1.6.0",
   draggingtimer: null,
-  init() {
-    let e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document.body;
+  init(e = document.body) {
     for (const s of e.querySelectorAll(".swiffy-slider")) this.initSlider(s);
   },
   initSlider(e) {
