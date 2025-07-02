@@ -328,7 +328,7 @@ input[type="number"] {
   font-size: 1.5rem;
 
   @media (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 18px;
   }
 }
 
@@ -353,4 +353,14 @@ input[type="number"] {
   right: 0.75rem;
   top: 50%;
   transform: translate(0, -50%);
+}
+
+.overlay-params__input-wrapper.left:before {
+  left: 0.75rem;
+  top: 51%;
+  width: fit-content;
+
+  @media (max-width: 768px) {
+    top: 50%;
+  }
 }

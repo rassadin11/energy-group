@@ -1,0 +1,136 @@
+<div class="position-relative resume-overlay-wrap">
+  <div
+    class="params-overlay__wrapper resume-overlay__wrapper position-fixed"
+  ></div>
+  <form
+    action="#"
+    method="POST"
+    class="params-overlay resume-overlay px-md-8 py-md-8 py-5 px-4 position-fixed w-100"
+  >
+    <div
+      class="d-flex justify-content-between align-items-center position-relative resume-overlay__header pb-lg-0 pb-5"
+    >
+      <p class="semibold overlay-title">Отправить резюме</p>
+      <svg class="mobile-cross cross-place">
+        <use xlink:href="./img/svg/sprite.svg#mobile-cross"></use>
+      </svg>
+    </div>
+
+    <div class="flex-fill d-grid resume-overlay__form gap-7">
+      <div class="resume-overlay__block mt-lg-7 pt-lg-2 mt-md-7 mt-6">
+        <p class="semibold">ФИО</p>
+
+        <div
+          class="overlay-params__input-wrapper position-relative mt-2"
+          data-sign=""
+        >
+          <input
+            type="text"
+            placeholder="Щербаков Михаил Артёмович"
+            class="w-100 block-params__input px-3 pe-md-9 pe-7 py-4 rounded-3 resume-overlay__input"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="resume-overlay__block mt-lg-7 pt-lg-2 mt-md-7">
+        <p class="semibold">Интересующая вакансия</p>
+
+        <div
+          class="overlay-params__input-wrapper position-relative mt-2"
+          data-sign=""
+        >
+          <input
+            type="text"
+            placeholder="Электромонтажник"
+            class="w-100 block-params__input px-3 pe-md-9 pe-7 py-4 rounded-3 resume-overlay__input"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="resume-overlay__block">
+        <p class="semibold">Телефон</p>
+
+        <div
+          class="overlay-params__input-wrapper position-relative mt-2 left"
+          data-sign="+7"
+        >
+          <input
+            type="tel"
+            placeholder="(000) 000-00-00"
+            class="w-100 block-params__input px-3 ps-8 py-4 rounded-3 resume-overlay__input"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="resume-overlay__block">
+        <p class="semibold">Email *</p>
+
+        <div
+          class="overlay-params__input-wrapper position-relative mt-2"
+          data-sign=""
+        >
+          <input
+            type="mail"
+            placeholder="example@mail.ru"
+            class="w-100 block-params__input px-3 pe-md-9 pe-7 py-4 rounded-3 resume-overlay__input"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="resume-overlay__block long-block">
+        <p class="semibold">Сообщение</p>
+
+        <div
+          class="overlay-params__input-wrapper position-relative mt-2"
+          data-sign=""
+        >
+          <textarea
+            type="text"
+            placeholder="Введите сообщение"
+            class="w-100 block-params__input p-4 rounded-3 resume-overlay__input"
+            required
+            rows="4"
+          ></textarea>
+        </div>
+      </div>
+      <div
+        class="resume-overlay__block long-block results d-flex flex-md-row flex-column justify-content-between"
+      >
+        <div class="file-input-wrapper position-relative">
+          <input
+            type="file"
+            id="pdf-upload"
+            class="file-input position-absolute w-100 h-100"
+            accept=".pdf"
+          />
+          <label
+            for="pdf-upload"
+            class="file-input-label justify-content-center py-3 px-5 d-flex align-items-center gap-2"
+          >
+            <svg class="pin">
+              <use xlink:href="./img/svg/sprite.svg#pin"></use>
+            </svg>
+            <span class="file-input-text fw-bold">Добавить файл</span>
+          </label>
+          <div id="file-name" class="file-name mt-2"></div>
+        </div>
+        <div>
+          <button
+            class="btn btn-warning py-3 px-5 c-white fw-bold mt-md-0 mt-1"
+            type="submit"
+          >
+            Отправить резюме
+          </button>
+        </div>
+      </div>
+    </div>
+    <p class="mt-md-5 mt-6 resume-overlay__info">
+      Нажимая кнопку, я даю согласие на обработку персональных данных в
+      соответствии с политикой конфиденциальности
+    </p>
+  </form>
+</div>

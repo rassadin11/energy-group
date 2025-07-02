@@ -1,0 +1,100 @@
+.reviews-page {
+  h1 {
+    font-weight: 900;
+  }
+
+  &__filter {
+    border-radius: 48px;
+    border: 1px solid #cdd1d6;
+    transition: all 0.3s ease;
+    background: #fff;
+    padding-top: 6px;
+    padding-bottom: 6px;
+
+    @media (max-width: 550px) {
+      font-size: 14px;
+    }
+
+    &.active {
+      background: #fbbf24;
+      border: 1px solid #fbbf24;
+    }
+  }
+
+  &__videos {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 700px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.video-review {
+  background: #ffffff;
+  border: 1px solid #e7e9eb;
+  border-radius: 1.5rem;
+  transition: all 0.3s ease;
+
+  &__video {
+    border-radius: 1.5rem;
+    min-height: 225px;
+
+    @media (max-width: 550px) {
+      min-height: 184px;
+    }
+
+    .player {
+      color: #1f3246;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      .player {
+        color: #f59e0b;
+      }
+    }
+  }
+
+  &:hover {
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  &__wrapper {
+    p {
+      line-height: 1.5;
+    }
+    p:first-child {
+      font-size: 18px;
+
+      @media (max-width: 550px) {
+        font-size: 1rem;
+      }
+    }
+
+    & .about-wrapper__description {
+      display: block;
+      display: -webkit-box;
+      max-width: 400px;
+      -webkit-line-clamp: 3; /* количество строк */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      @media (max-width: 550px) {
+        font-size: 14px;
+        -webkit-line-clamp: 4;
+      }
+
+      &.date {
+        @media (max-width: 550px) {
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}

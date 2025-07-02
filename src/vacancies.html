@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+  @include('partials/head.html')
+
+  <body>
+    <div class="headers w-100">
+      @include('partials/pre-header.html') @include('partials/header.html')
+    </div>
+
+    <main class="main">
+      @include('partials/vacancies/breadcrumbs.html')
+      @include("partials/vacancies/vacancies.html")
+    </main>
+
+    @include('partials/vacancy/popup.html') @include('partials/footer.html')
+    @include('partials/popup-book.html') @include('partials/popup-recall.html')
+  </body>
+</html>
