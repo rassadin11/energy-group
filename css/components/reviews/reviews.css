@@ -20,6 +20,9 @@
   background: var(--yellow-color);
   border: 1px solid var(--yellow-color);
 }
+.reviews-page__filter a {
+  color: inherit;
+}
 .reviews-page__videos {
   -ms-grid-columns: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
