@@ -22200,7 +22200,7 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .vacancies h1, .vacancies .h1 {
-  font-weight: 900;
+  font-weight: 900 !important;
 }
 .vacancies p {
   color: var(--light-blue);
