@@ -48,17 +48,17 @@
   font-size: 1.25rem;
 }
 .article-grid .article-sources a {
-  color: #51606f;
-  font-size: 14px;
+  color: var(--light-blue);
+  font-size: 0.875rem;
 }
 .article-grid .article-conclusion {
-  color: #51606f !important;
+  color: var(--light-blue) !important;
   font-size: 1rem;
 }
 .article-grid__item p {
-  font-size: 18px;
-  color: #061b31;
-  line-height: 26px;
+  font-size: 1.125rem;
+  color: var(--bs-blue);
+  line-height: 1.5;
 }
 @media (max-width: 768px) {
   .article-grid__item p {
@@ -68,50 +68,51 @@
 }
 .article-grid__item p a {
   text-decoration: underline;
-  color: #d97706;
+  color: var(--orange-color);
 }
-.article-grid__item .article-list li {
+
+.article-list li {
   position: relative;
-  font-size: 18px;
-  color: #061b31;
-  line-height: 26px;
+  font-size: 1.125rem;
+  color: var(--bs-blue);
+  line-height: 1.5;
   padding-left: 1rem;
 }
 @media (max-width: 768px) {
-  .article-grid__item .article-list li {
+  .article-list li {
     font-size: 1rem;
   }
 }
-.article-grid__item .article-list li::before {
+.article-list li::before {
   content: "";
   position: absolute;
   left: 0; /* Позиционируем точку слева от текста */
   top: 9px;
   width: 4px;
   height: 4px;
-  background-color: #fbbf24; /* Цвет точки совпадает с цветом текста */
+  background-color: var(--yellow-color); /* Цвет точки совпадает с цветом текста */
   border-radius: 50%; /* Делаем элемент круглым */
 }
 
 .article-anchors {
-  background: #fbfbfb;
+  background: var(--light-background);
   border-radius: 1.5rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 .article-anchors a {
-  color: #828c97;
+  color: var(--gray-blue);
   position: relative;
-  padding-left: 14px;
+  padding-left: 0.875rem;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 .article-anchors a.active {
-  color: #061b31;
+  color: var(--bs-blue);
 }
 .article-anchors a:hover {
-  color: #d97706;
+  color: var(--orange-color);
 }
 .article-anchors a::before {
   content: "";
@@ -128,7 +129,7 @@
 }
 
 .info-article__text {
-  color: #828c97 !important;
+  color: var(--gray-blue) !important;
   font-size: 1rem !important;
 }
 .info-article__name {
@@ -137,7 +138,7 @@
 
 .cards-article__item {
   border-radius: 1.5rem;
-  border: 1px solid #e7e9eb;
+  border: 1px solid var(--border-light);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -147,8 +148,8 @@
   }
 }
 .cards-article__item p {
-  color: #51606f;
-  line-height: 24px;
+  color: var(--light-blue);
+  line-height: 1.5;
   font-size: 1rem;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -158,7 +159,7 @@
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
 }
 .cards-article__item:hover p {
-  color: #d97706;
+  color: var(--orange-color);
 }
 
 @media (max-width: 768px) {
@@ -168,8 +169,8 @@
 }
 
 .socials-article__block {
-  background: #ffffff;
-  border: 1px solid #e7e9eb;
+  background: var(--bs-white);
+  border: 1px solid var(--border-light);
   border-radius: 1.5rem;
 }
 @media (max-width: 768px) {
@@ -178,7 +179,7 @@
   }
 }
 .socials-article button {
-  background: #f2f3f4;
+  background: var(--extra-light-background);
   border-radius: 0.5rem;
   border: none;
   color: inherit;
@@ -187,7 +188,7 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  background: #f2f3f4;
+  background: var(--extra-light-background);
   border-radius: 0.5rem;
 }
 @media (max-width: 768px) {
@@ -207,19 +208,19 @@
 .icon_telegram {
   width: 20px;
   height: 17px;
-  color: #061b31;
+  color: var(--bs-blue);
 }
 
 .icon_whatsapp {
   width: 20px;
   height: 20px;
-  color: #061b31;
+  color: var(--bs-blue);
 }
 
 .icon_vk {
   width: 18px;
   height: 18px;
-  color: #061b31;
+  color: var(--bs-blue);
 }
 
 .like {

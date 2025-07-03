@@ -336,7 +336,7 @@ input[type=number] {
 }
 @media (max-width: 768px) {
   .overlay-title {
-    font-size: 1rem;
+    font-size: 18px;
   }
 }
 
@@ -360,4 +360,17 @@ input[type=number] {
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
+}
+
+.overlay-params__input-wrapper.left:before {
+  left: 0.75rem;
+  top: 51%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+@media (max-width: 768px) {
+  .overlay-params__input-wrapper.left:before {
+    top: 50%;
+  }
 }/*# sourceMappingURL=params.css.map */

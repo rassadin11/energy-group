@@ -132,7 +132,7 @@
   left: 80%;
   background-color: var(--bs-white);
   color: var(--bs-black);
-  font-size: 14px;
+  font-size: 0.875rem;
   opacity: 0;
   pointer-events: none;
   -webkit-transition: opacity 0.3s ease;

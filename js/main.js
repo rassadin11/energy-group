@@ -794,8 +794,18 @@ lightGallery(document.getElementById('animated-thumbnails'), {
   thumbnail: true,
   selector: '.blagodar-image__wrapper'
 });
+lightGallery(document.getElementById(`article-video`), {
+  selector: 'this',
+  iframeMaxHeight: '90%'
+});
 for (let i = 1; i <= 4; i++) {
   lightGallery(document.getElementById(`open-video-${i}`), {
+    selector: 'this',
+    iframeMaxHeight: '90%'
+  });
+}
+for (let i = 1; i <= 6; i++) {
+  lightGallery(document.getElementById(`video-review-${i}`), {
     selector: 'this',
     iframeMaxHeight: '90%'
   });
@@ -1347,65 +1357,175 @@ window.onscroll = () => {
 // popups
 
 const popupRecall = document.querySelector('.popup-recall');
-const cross = popupRecall.querySelector('.popup-cross');
-const background = popupRecall.querySelector('.popup-background');
-cross.addEventListener('click', () => {
-  popupRecall.classList.add('d-none');
-  document.body.classList.remove('overflow-hidden');
-  document.body.style.paddingRight = `0px`;
-  if (document.querySelector('.headers').style.position !== 'static' && document.querySelector('.headers').style.position !== '') {
-    document.querySelector('.headers').style.paddingRight = `0px`;
-  }
-});
-background.addEventListener('click', () => {
-  popupRecall.classList.add('d-none');
-  document.body.classList.remove('overflow-hidden');
-  document.body.style.paddingRight = `0px`;
-  if (document.querySelector('.headers').style.position !== 'static' && document.querySelector('.headers').style.position !== '') {
-    document.querySelector('.headers').style.paddingRight = `0px`;
-  }
-});
-const openPopupRecall = document.querySelectorAll('.open-popup-recall');
-openPopupRecall.forEach(item => {
-  item.addEventListener('click', () => {
-    popupRecall.classList.remove('d-none');
-    document.body.classList.add('overflow-hidden');
-    document.body.style.paddingRight = `${scrollbarWidth}px`;
+if (popupRecall) {
+  const cross = popupRecall.querySelector('.popup-cross');
+  const background = popupRecall.querySelector('.popup-background');
+  cross.addEventListener('click', () => {
+    popupRecall.classList.add('d-none');
+    document.body.classList.remove('overflow-hidden');
+    document.body.style.paddingRight = `0px`;
     if (document.querySelector('.headers').style.position !== 'static' && document.querySelector('.headers').style.position !== '') {
-      document.querySelector('.headers').style.paddingRight = `${scrollbarWidth}px`;
+      document.querySelector('.headers').style.paddingRight = `0px`;
     }
   });
-});
-
+  background.addEventListener('click', () => {
+    popupRecall.classList.add('d-none');
+    document.body.classList.remove('overflow-hidden');
+    document.body.style.paddingRight = `0px`;
+    if (document.querySelector('.headers').style.position !== 'static' && document.querySelector('.headers').style.position !== '') {
+      document.querySelector('.headers').style.paddingRight = `0px`;
+    }
+  });
+  const openPopupRecall = document.querySelectorAll('.open-popup-recall');
+  openPopupRecall.forEach(item => {
+    item.addEventListener('click', () => {
+      popupRecall.classList.remove('d-none');
+      document.body.classList.add('overflow-hidden');
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      if (document.querySelector('.headers').style.position !== 'static' && document.querySelector('.headers').style.position !== '') {
+        document.querySelector('.headers').style.paddingRight = `${scrollbarWidth}px`;
+      }
+    });
+  });
+}
 // popup book s-th
 
 const popupBook = document.querySelector('.popup-book');
-const crossBook = popupBook.querySelector('.popup-cross');
-const backgroundBook = popupBook.querySelector('.popup-background');
-crossBook.addEventListener('click', () => {
-  popupBook.classList.add('d-none');
-  document.body.classList.remove('overflow-hidden');
-  document.body.style.paddingRight = `0px`;
-});
-backgroundBook.addEventListener('click', () => {
-  popupBook.classList.add('d-none');
-  document.body.classList.remove('overflow-hidden');
-  document.body.style.paddingRight = `0px`;
-  if (document.querySelector('.headers').style.position !== 'static' && document.querySelector('.headers').style.position !== '') {
-    document.querySelector('.headers').style.paddingRight = `${0}px`;
-  }
-});
-const openPopupBook = document.querySelectorAll('.open-popup-book');
-openPopupBook.forEach(item => {
-  item.addEventListener('click', () => {
-    popupBook.classList.remove('d-none');
-    document.body.classList.add('overflow-hidden');
-    document.body.style.paddingRight = `${scrollbarWidth}px`;
+if (popupBook) {
+  const crossBook = popupBook.querySelector('.popup-cross');
+  const backgroundBook = popupBook.querySelector('.popup-background');
+  crossBook.addEventListener('click', () => {
+    popupBook.classList.add('d-none');
+    document.body.classList.remove('overflow-hidden');
+    document.body.style.paddingRight = `0px`;
+  });
+  backgroundBook.addEventListener('click', () => {
+    popupBook.classList.add('d-none');
+    document.body.classList.remove('overflow-hidden');
+    document.body.style.paddingRight = `0px`;
     if (document.querySelector('.headers').style.position !== 'static' && document.querySelector('.headers').style.position !== '') {
-      document.querySelector('.headers').style.paddingRight = `${scrollbarWidth}px`;
+      document.querySelector('.headers').style.paddingRight = `${0}px`;
     }
   });
+  const openPopupBook = document.querySelectorAll('.open-popup-book');
+  openPopupBook.forEach(item => {
+    item.addEventListener('click', () => {
+      popupBook.classList.remove('d-none');
+      document.body.classList.add('overflow-hidden');
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      if (document.querySelector('.headers').style.position !== 'static' && document.querySelector('.headers').style.position !== '') {
+        document.querySelector('.headers').style.paddingRight = `${scrollbarWidth}px`;
+      }
+    });
+  });
+}
+try {
+  const resumeWrapper = document.querySelector('.resume-overlay__wrapper');
+  if (resumeWrapper) {
+    const resumeOverlay = document.querySelector('.resume-overlay');
+    const resumeCross = resumeOverlay.querySelector('.cross-place');
+    const resumeButton = document.querySelectorAll('.resume-show-popup');
+    resumeButton.forEach(btn => {
+      btn.addEventListener('click', () => {
+        resumeWrapper.classList.add('active');
+        resumeOverlay.classList.add('active');
+        document.body.classList.add('overflow-hidden');
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+      });
+    });
+    resumeWrapper.addEventListener('click', () => {
+      resumeWrapper.classList.remove('active');
+      resumeOverlay.classList.remove('active');
+      document.body.classList.remove('overflow-hidden');
+      document.body.style.paddingRight = `${0}px`;
+    });
+    resumeCross.addEventListener('click', () => {
+      resumeWrapper.classList.remove('active');
+      resumeOverlay.classList.remove('active');
+      document.body.classList.remove('overflow-hidden');
+      document.body.style.paddingRight = `${0}px`;
+    });
+  }
+} catch (e) {
+  console.warn('error');
+}
+const fileInput = document.getElementById('pdf-upload');
+const fileNameDisplay = document.getElementById('file-name');
+if (fileInput) {
+  fileInput.addEventListener('change', function (e) {
+    if (this.files.length > 0) {
+      const file = this.files[0];
+
+      // Проверка типа файла
+      if (file.type !== 'application/pdf') {
+        alert('Пожалуйста, выберите файл в формате PDF.');
+        this.value = '';
+        fileNameDisplay.textContent = '';
+        return;
+      }
+
+      // Проверка размера файла (5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        alert('Файл слишком большой. Максимальный размер: 5MB.');
+        this.value = '';
+        fileNameDisplay.textContent = '';
+        return;
+      }
+      fileNameDisplay.textContent = file.name;
+    } else {
+      fileNameDisplay.textContent = '';
+    }
+  });
+
+  // Обработка перетаскивания файлов
+  const fileInputLabel = document.querySelector('.file-input-label');
+  fileInputLabel.addEventListener('dragover', e => {
+    e.preventDefault();
+    fileInputLabel.style.borderColor = '#3366FF';
+  });
+  fileInputLabel.addEventListener('dragleave', () => {
+    fileInputLabel.style.borderColor = '#e7e9eb';
+  });
+  fileInputLabel.addEventListener('drop', e => {
+    e.preventDefault();
+    fileInputLabel.style.borderColor = '#e7e9eb';
+    if (e.dataTransfer.files.length) {
+      fileInput.files = e.dataTransfer.files;
+      const event = new Event('change');
+      fileInput.dispatchEvent(event);
+    }
+  });
+}
+const vacanciesCards = document.querySelectorAll('.vacancies-card');
+if (vacanciesCards) {
+  vacanciesCards.forEach(item => {
+    item.addEventListener('click', e => {
+      if (e.target.classList.contains('btn')) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    });
+  });
+}
+const reviewsFilterButtons = document.querySelectorAll('.reviews-page__filter');
+reviewsFilterButtons.forEach(item => {
+  item.addEventListener('click', () => {
+    reviewsFilterButtons.forEach(elem => elem.classList.remove('active'));
+    item.classList.add('active');
+  });
 });
+
+// highlight links in header
+
+const categoryLink = document.body.dataset.category;
+if (categoryLink) {
+  const links = headerWrapper.querySelectorAll('[data-category]');
+  links.forEach(link => {
+    if (link.dataset.category === categoryLink) {
+      link.classList.add('active');
+    }
+  });
+}
 })();
 
 /******/ })()
