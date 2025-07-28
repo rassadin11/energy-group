@@ -1,0 +1,54 @@
+.calcs__cards {
+  grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card-calc {
+  border: 1px solid var(--border-light);
+  border-radius: 1.5rem;
+  grid-template-columns: 1fr 1fr;
+
+  &__image {
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+    & img {
+      object-fit: cover;
+      width: 100%;
+      max-height: 270px;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    p {
+      font-size: 1.125rem;
+      line-height: 1.5;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+
+    button {
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+
+      p {
+        flex: 1 1 auto;
+      }
+
+      button {
+        font-size: 0.875rem;
+      }
+    }
+  }
+}

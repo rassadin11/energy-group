@@ -1,0 +1,46 @@
+.lists {
+  h1 {
+    font-weight: 900;
+  }
+}
+
+.files-item {
+  background: var(--extra-light-background);
+  border-radius: 1.5rem;
+
+  &__svg {
+    background: var(--yellow-color);
+    border-radius: 0.5rem;
+    width: fit-content;
+  }
+
+  &__note {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__arrow {
+    color: var(--gray-blue);
+    width: 13px;
+    height: 7px;
+    transform: rotate(-90deg);
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    .files-item__arrow {
+      color: var(--orange-color);
+    }
+  }
+
+  &__wrapper {
+    p {
+      line-height: 1.5;
+      font-size: 1.125rem;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+  }
+}

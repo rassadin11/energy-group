@@ -1,0 +1,197 @@
+.delivery-slider {
+  .swiffy-slider .slider-container {
+    grid-auto-columns: 40%; /* два слайда по центру (2 x 40%) + остальное для соседей */
+
+    & > * {
+      min-height: 380px;
+
+      @media (max-width: 1450px) {
+        min-height: auto;
+      }
+    }
+
+    img {
+      border-radius: 1.5rem;
+    }
+
+    @media (max-width: 1450px) {
+      grid-auto-columns: calc(42% - 53.3333px);
+      padding-left: 1rem;
+      padding-right: 1rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 1300px) {
+      grid-auto-columns: calc(50% - 53.3333px);
+    }
+
+    @media (max-width: 650px) {
+      grid-auto-columns: calc(65% - 53.3333px);
+      grid-gap: 0.75rem;
+    }
+
+    @media (max-width: 500px) {
+      grid-auto-columns: calc(90.5% - 53.3333px);
+    }
+  }
+}
+
+.deliver {
+  h2 {
+    @media (max-width: 550px) {
+      font-size: 1.25rem !important;
+    }
+  }
+
+  &__description {
+    grid-template-columns: 1fr 1fr;
+    font-size: 1.125rem;
+    line-height: 1.5;
+
+    @media (max-width: 550px) {
+      font-size: 1rem !important;
+    }
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+    }
+
+    p {
+      font-size: 1.125rem;
+      line-height: 1.5;
+
+      @media (max-width: 550px) {
+        font-size: 1rem !important;
+      }
+    }
+  }
+
+  .news-slider {
+    a {
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      a {
+        color: var;
+      }
+    }
+
+    @media (max-width: 768px) {
+      border: 1px solid var(--border-light) !important;
+      border-radius: 1rem !important;
+
+      img {
+        border-radius: 1rem;
+      }
+    }
+  }
+
+  &-header {
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .popular-slider__block {
+    @media (max-width: 768px) {
+      &:hover {
+        box-shadow: none !important;
+      }
+    }
+  }
+}
+
+.deliver-info {
+  background: var(--light-background);
+
+  &__wrapper {
+    grid-template-columns: 1fr 1fr;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    background: var(--extra-light-background);
+    border-radius: 1.5rem;
+  }
+
+  &__description {
+    color: var(--light-blue);
+
+    &.none {
+      font-size: 1rem;
+
+      @media (max-width: 550px) {
+        font-size: 0.875rem;
+      }
+    }
+  }
+}
+
+.deliver-logistika {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+
+  &__item {
+    background: var(--extra-light-background);
+    border-radius: 1.5rem;
+
+    p {
+      @media (max-width: 550px) {
+        font-size: 0.875rem;
+      }
+    }
+  }
+}
+
+.delivery-contacts {
+  border-radius: 1.5rem;
+  background: var(--extra-light-background);
+
+  &__description {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    color: var(--gray-blue);
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  &__item {
+    @media (max-width: 768px) {
+      text-align: center !important;
+    }
+
+    h2 {
+      @media (max-width: 768px) {
+        font-size: 1.5rem;
+      }
+
+      @media (max-width: 550px) {
+        font-size: 1.25rem;
+      }
+    }
+
+    a:hover {
+      color: var;
+    }
+  }
+}

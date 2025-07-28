@@ -678,6 +678,11 @@ lightGallery(document.getElementById('animated-thumbnails'), {
     selector: '.blagodar-image__wrapper',
 });
 
+lightGallery(document.getElementById(`article-video`), {
+    selector: 'this',
+    iframeMaxHeight: '90%'
+});
+
 for (let i = 1; i <= 4; i++) {
     lightGallery(document.getElementById(`open-video-${i}`), {
         selector: 'this',
@@ -1413,34 +1418,34 @@ if (popupBook) {
 
 try {
     const resumeWrapper = document.querySelector('.resume-overlay__wrapper')
-    const resumeOverlay = document.querySelector('.resume-overlay')
-    const resumeCross = resumeOverlay.querySelector('.cross-place')
-    const resumeButton = document.querySelectorAll('.resume-show-popup')
+    if (resumeWrapper) {
+        const resumeOverlay = document.querySelector('.resume-overlay')
+        const resumeCross = resumeOverlay.querySelector('.cross-place')
+        const resumeButton = document.querySelectorAll('.resume-show-popup')
 
-    console.log(resumeWrapper, resumeOverlay, resumeCross)
-
-    resumeButton.forEach(btn => {
-        btn.addEventListener('click', () => {
-            resumeWrapper.classList.add('active')
-            resumeOverlay.classList.add('active')
-            document.body.classList.add('overflow-hidden')
-            document.body.style.paddingRight = `${scrollbarWidth}px`;
+        resumeButton.forEach(btn => {
+            btn.addEventListener('click', () => {
+                resumeWrapper.classList.add('active')
+                resumeOverlay.classList.add('active')
+                document.body.classList.add('overflow-hidden')
+                document.body.style.paddingRight = `${scrollbarWidth}px`;
+            })
         })
-    })
 
-    resumeWrapper.addEventListener('click', () => {
-        resumeWrapper.classList.remove('active')
-        resumeOverlay.classList.remove('active')
-        document.body.classList.remove('overflow-hidden')
-        document.body.style.paddingRight = `${0}px`;
-    })
+        resumeWrapper.addEventListener('click', () => {
+            resumeWrapper.classList.remove('active')
+            resumeOverlay.classList.remove('active')
+            document.body.classList.remove('overflow-hidden')
+            document.body.style.paddingRight = `${0}px`;
+        })
 
-    resumeCross.addEventListener('click', () => {
-        resumeWrapper.classList.remove('active')
-        resumeOverlay.classList.remove('active')
-        document.body.classList.remove('overflow-hidden')
-        document.body.style.paddingRight = `${0}px`;
-    })
+        resumeCross.addEventListener('click', () => {
+            resumeWrapper.classList.remove('active')
+            resumeOverlay.classList.remove('active')
+            document.body.classList.remove('overflow-hidden')
+            document.body.style.paddingRight = `${0}px`;
+        })
+    }
 } catch (e) {
     console.warn('error')
 }
@@ -1520,3 +1525,17 @@ reviewsFilterButtons.forEach(item => {
         item.classList.add('active')
     })
 })
+
+// highlight links in header
+
+const categoryLink = document.body.dataset.category;
+
+if (categoryLink) {
+    const links = headerWrapper.querySelectorAll('[data-category]')
+
+    links.forEach(link => {
+        if (link.dataset.category === categoryLink) {
+            link.classList.add('active')
+        }
+    })
+}

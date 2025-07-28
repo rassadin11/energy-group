@@ -2,6 +2,15 @@
   --disabled-color: rgba(6, 27, 49, 0.7);
   --mobile-icon-color: rgba(6, 27, 49, 0.5);
   --background: #f6f7f8;
+  --light-background: #fbfbfb;
+  --extra-light-background: #f2f3f4;
+  --border-gray: #cdd1d6;
+  --border-light: #e7e9eb;
+  --light-blue: #51606f;
+  --gray-blue: #828c97;
+  --orange-color: #d97706;
+  --yellow-color: #fbbf24;
+  --player-yellow-color: #f59e0b;
 }
 
 body {
@@ -123,4 +132,24 @@ a {
 
 .center-arrow.right {
   margin-right: 0.75rem !important;
+}
+
+.center-arrow.delivery.left {
+  margin-left: -1.5rem !important;
+
+  @media (max-width: 1450px) {
+    margin-left: 0.75rem !important;
+  }
+}
+
+.center-arrow.delivery.right {
+  margin-right: -1.5rem !important;
+
+  @media (max-width: 1450px) {
+    margin-right: 0.75rem !important;
+  }
+}
+
+.breadcrumbs {
+  list-style-type: none !important;
 }

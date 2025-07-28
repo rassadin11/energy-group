@@ -5,19 +5,23 @@
 
   &__filter {
     border-radius: 48px;
-    border: 1px solid #cdd1d6;
+    border: 1px solid var(--border-gray);
     transition: all 0.3s ease;
-    background: #fff;
+    background: var(--bs-white);
     padding-top: 6px;
     padding-bottom: 6px;
 
     @media (max-width: 550px) {
-      font-size: 14px;
+      font-size: 0.875rem;
     }
 
     &.active {
-      background: #fbbf24;
-      border: 1px solid #fbbf24;
+      background: var(--yellow-color);
+      border: 1px solid var(--yellow-color);
+    }
+
+    a {
+      color: inherit;
     }
   }
 
@@ -35,8 +39,8 @@
 }
 
 .video-review {
-  background: #ffffff;
-  border: 1px solid #e7e9eb;
+  background: var(--bs-white);
+  border: 1px solid var(--border-light);
   border-radius: 1.5rem;
   transition: all 0.3s ease;
 
@@ -55,7 +59,7 @@
 
     &:hover {
       .player {
-        color: #f59e0b;
+        color: var(--player-yellow-color);
       }
     }
   }
@@ -69,7 +73,7 @@
       line-height: 1.5;
     }
     p:first-child {
-      font-size: 18px;
+      font-size: 1.125rem;
 
       @media (max-width: 550px) {
         font-size: 1rem;
@@ -86,7 +90,7 @@
       text-overflow: ellipsis;
 
       @media (max-width: 550px) {
-        font-size: 14px;
+        font-size: 0.875rem;
         -webkit-line-clamp: 4;
       }
 

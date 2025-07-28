@@ -1,10 +1,10 @@
 .vacancies {
   h1 {
-    font-weight: 900;
+    font-weight: 900 !important;
   }
 
   p {
-    color: #51606f;
+    color: var(--light-blue);
   }
 
   .arrow {
@@ -13,7 +13,7 @@
   }
 
   &__desc {
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 1.5;
 
     @media (max-width: 768px) {
@@ -23,21 +23,21 @@
 
   .selected-value {
     font-size: 1rem;
-    color: #061b31;
+    color: var(--bs-blue);
     font-weight: 400 !important;
     margin-top: 0 !important;
     padding-top: 0 !important;
 
     @media (max-width: 550px) {
-      font-size: 14px;
+      font-size: 0.875rem;
     }
   }
 
   &__founded {
-    color: #828c97;
+    color: var(--gray-blue);
 
     @media (max-width: 550px) {
-      font-size: 14px;
+      font-size: 0.875rem;
       text-align: right;
     }
   }
@@ -59,7 +59,7 @@
   }
 
   &__form {
-    background: #f2f3f4;
+    background: var(--extra-light-background);
     border-radius: 1.5rem;
 
     @media (max-width: 992px) {
@@ -67,12 +67,12 @@
     }
 
     p {
-      font-size: 18px;
-      color: #061b31;
+      font-size: 1.125rem;
+      color: var(--bs-blue);
     }
 
     .btn-primary {
-      background: #1f3246;
+      background: var(--bs-primary);
       border-radius: 0.5rem;
     }
 
@@ -85,8 +85,8 @@
 }
 
 .vacancies-card {
-  background: #ffffff;
-  border: 1px solid #e7e9eb;
+  background: var(--bs-white);
+  border: 1px solid var(--light-background);
   border-radius: 1.5rem;
   transition: all 0.3s ease;
 
@@ -96,7 +96,7 @@
     color: inherit;
 
     @media (max-width: 550px) {
-      font-size: 18px;
+      font-size: 1.125rem;
     }
   }
 
@@ -104,33 +104,33 @@
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
 
     .vacancies-card__title {
-      color: #d97706 !important;
+      color: var(--orange-color) !important;
     }
   }
 
   &__description {
-    color: #51606f;
+    color: var(--light-blue);
     line-height: 1.5;
 
     @media (max-width: 550px) {
-      font-size: 14px;
+      font-size: 0.875rem;
     }
   }
 
   &__info p {
     @media (max-width: 550px) {
-      font-size: 14px;
+      font-size: 0.875rem;
     }
   }
 
   &__price p,
   &__title {
-    color: #061b31 !important;
+    color: var(--bs-blue) !important;
   }
 
   button {
     @media (max-width: 550px) {
-      font-size: 14px;
+      font-size: 0.875rem;
     }
   }
 }
@@ -146,7 +146,7 @@
 }
 
 .place {
-  width: 18px;
+  width: 1.125rem;
   height: 20px;
 
   @media (max-width: 550px) {
@@ -158,24 +158,24 @@
 .vacancy-title {
   font-size: 1.5rem;
   line-height: 1.5;
-  color: #061b31 !important;
+  color: var(--bs-blue) !important;
 
   @media (max-width: 550px) {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 }
 
 .vacancy-text {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .vacancy-desc {
-  color: #51606f !important;
+  color: var(--light-blue) !important;
   font-size: 1rem !important;
   line-height: 1.5;
 
   a {
-    color: #061b31 !important;
+    color: var(--bs-blue) !important;
   }
 }
 
@@ -204,7 +204,7 @@
       position: absolute;
       left: -1rem;
       bottom: 0;
-      background: #e7e9eb;
+      background: var(--border-light);
 
       @media (min-width: 768px) {
         display: none;
@@ -221,15 +221,15 @@
   }
 
   &__input {
-    background: #fbfbfb;
-    border: 1px solid #e7e9eb;
+    background: var(--light-background);
+    border: 1px solid var(--border-light);
     border-radius: 0.5rem;
   }
 
   &__block {
     & > p {
       @media (max-width: 550px) {
-        font-size: 14px;
+        font-size: 0.875rem;
       }
     }
 
@@ -243,9 +243,9 @@
   }
 
   &__info {
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.5;
-    color: #828c97;
+    color: var(--gray-blue);
 
     @media (max-width: 768px) {
       text-align: center;
@@ -254,7 +254,7 @@
   }
 
   .btn-warning {
-    color: #061b31 !important;
+    color: var(--bs-blue) !important;
 
     @media (max-width: 768px) {
       width: 100%;
@@ -276,8 +276,8 @@
 }
 
 .file-input-label {
-  background-color: white;
-  border: 1px solid #e7e9eb;
+  background-color: var(--bs-white);
+  border: 1px solid var(--border-light);
   border-radius: 0.5rem;
   transition: all 0.3s;
   cursor: pointer;
@@ -288,7 +288,7 @@
 }
 
 .file-input-text {
-  color: #061b31;
+  color: var(--bs-blue);
   line-height: 1.5;
 }
 
