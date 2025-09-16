@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+@include('partials/head.html')
+
+<body data-category="about-company">
+    <div class="headers w-100">
+        @include('partials/pre-header.html') @include('partials/header.html')
+    </div>
+
+    <main class="main">
+        <section class="dgu-block position-relative overflow-hidden">
+            <div class="dgu-block__wrapper position-absolute z-0 overflow-hidden w-100 h-100">
+                <img src="./img/about_company/banner.jpg" alt="background"
+                    class="w-100 h-100 object-fit-cover position-relative">
+            </div>
+            <div class="container position-relative d-flex justify-content-between h-100 pt-10 large-p">
+                <div class="d-flex flex-column pt-md-8 pt-4">
+                    <h2 class="main-slider__title mb-0">О компании <br /> Energy Group
+                    </h2>
+                    <p class="main-slider__item mt-2">Представляем услуги по организации автономного <br />
+                        электроснабжения и
+                        электромонтажу с 2015 года
+                    </p>
+
+                    <div class="mt-8">
+                        <button class="btn btn-warning py-4 px-5 fw-bold d-flex gap-3 align-items-center"
+                            id="about-company" data-iframe="true"
+                            data-src="https://rutube.ru/play/embed/26e1a99c6fc68b2d6b1486eb1e52cbf8/?r=plwd"
+                            data-lg-id="a2b4241c-4845-4d4b-a96b-8df284a8bde5">
+                            <svg class="player3">
+                                <use xlink:href="./img/svg/sprite.svg#player3"></use>
+                            </svg>
+                            <span class="lh-1">Видео о&nbsp;компании</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        @include('partials/about_company/about.html')
+
+        <div class="container my-md-10 mt-5 mb-8 pb-md-0 pb-2">
+            <a href="#" id="about-company2" data-iframe="true"
+                data-src="https://rutube.ru/play/embed/85a6ab2db98dfda4735d247bd21fc0eb"
+                class="position-relative overflow-hidden rounded-6 w-100 mt-md-9 mt-8 d-block about-company-video"
+                data-lg-id="a5110d4b-b50a-46b6-9e69-b6f1e21cd6d9">
+                <img src="https://rutube.ru/api/video/85a6ab2db98dfda4735d247bd21fc0eb/thumbnail/?redirect=1"
+                    alt="Rutube Video" class="object-fit-cover position-absolute w-100 h-100" loading="lazy" />
+                <svg class="position-absolute player2 top-50 start-50 translate-middle z-3">
+                    <use xlink:href="./img/svg/sprite.svg#player2"></use>
+                </svg>
+            </a>
+        </div>
+
+        <section class="services bg-extra-light py-md-10 py-8 mt-md-0 mt-2">
+            <div class="container mt-md-6 0">
+                <h2 class="title fw-bold mb-md-7 mb-4">
+                    Услуги
+                </h2>
+                <div class="services__items items-services two d-grid gap-md-6 gap-3">
+                    <a href="#"
+                        class="items-services__item p-md-6 p-4 position-relative d-flex flex-column justify-content-end">
+                        <picture>
+                            <source srcset="./img/about_company/service1.webp" type="image/webp">
+                            <img loading="lazy" decoding="async" src="./img/about_company/service1.jpg"
+                                alt="second image" class="back-image position-absolute" width="100%" height="100%">
+                        </picture>
+                        <div class="items-services__gradient"></div>
+
+                        <p class="mt-5 semibold position-relative z-3">Продажа генераторов</p>
+                        <p class="mt-3 items-services__hint"><span
+                                class="fw-bold py-2 px-3 rounded-3 bg-warning position-relative z-3 text-dark">Каталог</span>
+                        </p>
+                    </a>
+                    <a href="#"
+                        class="items-services__item p-md-6 p-4 position-relative d-flex flex-column justify-content-end">
+                        <picture>
+                            <source srcset="./img/about_company/service2.webp" type="image/webp">
+                            <img loading="lazy" decoding="async" src="./img/about_company/service2.jpg"
+                                alt="second image" class="back-image position-absolute" width="100%" height="100%">
+                        </picture>
+                        <div class="items-services__gradient">
+
+                        </div>
+                        <p class="mt-5 semibold position-relative z-3">Аренда генераторов</p>
+                    </a>
+                    <a href="#"
+                        class="items-services__item p-md-6 p-4 position-relative d-flex flex-column justify-content-end">
+                        <picture>
+                            <source srcset="./img/about_company/service3.webp" type="image/webp">
+                            <img loading="lazy" decoding="async" src="./img/about_company/service3.jpg"
+                                alt="second image" class="back-image position-absolute" width="100%" height="100%">
+                        </picture>
+                        <div class="items-services__gradient">
+
+                        </div>
+                        <p class="mt-5 semibold position-relative z-3">Техобслуживание и ремонт</p>
+                    </a>
+                    <a href="#"
+                        class="items-services__item p-md-6 p-4 position-relative d-flex flex-column justify-content-end">
+                        <picture>
+                            <source srcset="./img/about_company/service4.webp" type="image/webp">
+                            <img loading="lazy" decoding="async" src="./img/about_company/service4.jpg"
+                                alt="second image" class="back-image position-absolute" width="100%" height="100%">
+                        </picture>
+                        <div class="items-services__gradient">
+
+                        </div>
+                        <p class="mt-5 semibold position-relative z-3">Проектирование и монтаж электроснабжения</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="container mt-lg-10 mt-8 pt-lg-0 pt-2">
+            <div class="deliver">
+                <h2 class="title fw-bold mb-md-7 mb-4 p-0">
+                    Наш опыт включает в себя работу на крупнейших мероприятиях международного уровня
+                </h2>
+                <div class="row gx-6 gy-md-0 gy-4">
+                    <p class="col-md-6 col-sm-12 big-p lh-base">Электроснабжение от дизельных генераторов выставочного
+                        центра «Казань Экспо» во время Чемпионата мира рабочих профессий (World Skills) в г. Казань
+                        2019, стадиона и парка болельщиков во время Чемпионата мира по футболу 2018, центрального парка
+                        Универсиады 2013, объектов Чемпионата мира по водным видам спорта-2015, такие крупнейшие
+                        городские мероприятия как день города Казани, Нижнекамска, Альметьевска,
+                    </p>
+                    <p class="col-md-6 col-sm-12 big-p lh-base">
+                        Парад Победы, Новый год, Фестиваль энергосбережения, Международная выставка «Халял»,
+                        Всероссийский кооперативный форум, Казанский марафон, многочисленные мероприятия на различных
+                        площадках города. На все мероприятия на открытом воздухе мы предоставляем генератор в аренду и
+                        выполняем монтаж временных электрических сетей.</p>
+                </div>
+            </div>
+
+            <div class="row gx-6 gy-6 about-company__events mt-md-8 mt-0">
+                <div class="col-xl-3 col-6">
+                    <div class="p-md-5 p-4 rounded-6 border h-100 overflow-hidden">
+                        <p class="w-100 text-center"><img src="./img/about_company/sochi.jpg" alt="sochi">
+                        </p>
+                        <p class="lh-base text-gray flex-fill mt-4">Церемония открытия и закрытия Олимпийских игр в Сочи
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-6">
+                    <div class="p-md-5 p-4 rounded-6 border h-100 overflow-hidden">
+                        <p class="w-100 text-center"><img src="./img/about_company/kazan.jpg" alt="sochi">
+                        </p>
+                        <p class="lh-base text-gray flex-fill mt-4">Главный энергетический подрядчик Универсиады в
+                            Казани</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-6">
+                    <div class="p-md-5 p-4 rounded-6 border h-100 overflow-hidden">
+                        <p class="w-100 text-center"><img src="./img/about_company/kazan-expo.jpg" alt="sochi"></p>
+                        <p class="lh-base text-gray flex-fill mt-6">Электроснабжение выставочного центра Казань Экспо
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-6">
+                    <div class="p-md-5 p-4 rounded-6 border h-100 overflow-hidden">
+                        <p class="w-100 text-center"><img src="./img/about_company/world-skills.jpg" alt="sochi"> </p>
+
+                        <p class="lh-base text-gray flex-fill mt-4">Энергоснабжение на чемпионате мира рабочих профессий
+                            в
+                            Казани </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container d-flex justify-content-center gen_dir">
+            <div class="row bg-extra-light rounded-6 gy-8 w-100 mt-lg-10 mt-8 py-lg-10 py-8">
+                <div class="col-lg-6 col-12 d-flex justify-content-center flex-column px-lg-10 px-4 mt-0 deliver">
+                    <h2 class="fw-bold mt-0">
+                        Сабитов Артур Евгеньевич
+                    </h2>
+                    <p class="text-gray big-p lh-base">Генеральный директор</p>
+                    <p class="mt-lg-8 mt-4 big-p lh-base">Занимаюсь системами автономного энергоснабжения с 2012 года.
+                        Работал
+                        главным
+                        энергетиком
+                        Универсиады в Казани и церемонии открытия-закрытия Олимпийских Игр в Сочи.</p>
+                    <p class="mt-lg-6 mt-4 big-p lh-base">Наша безупречная репутация на рынке дизельных генераторов
+                        позволяет
+                        заказчикам
+                        доверять нам самые
+                        ответственные и сложные проекты.</p>
+                </div>
+                <div class="col-lg-6 col-12 text-center mt-lg-0 mt-6">
+                    <img src="./img/about_company/face.png" alt="face" class="w-100">
+                </div>
+            </div>
+        </section>
+
+        <section class="projects popular-slider my-md-10 mt-8 pt-md-0 pt-2 bg-white">
+            <div class="container slider">
+                <h2 class="title fw-bold mb-md-7 mb-4 p-0">
+                    Нашим ключевым преимуществом для заказчика является комплексное решение всех вопросов по
+                    электроснабжению
+                </h2>
+                <p class="title big-p lh-base pe-xl-9">Мы сами найдем точку питания от постоянных электрических сетей,
+                    сами
+                    привезем ,
+                    подключим, заправим, будем эксплуатировать и демонтируем дизельный генератор. Мы монтируем все
+                    электрические сети от силовых до розеточных, сами устанавливаем электрические щиты, розетки,
+                    светильники. ООО «Энерджи Групп» имеет большое количество электрического и кабельного оборудования,
+                    которое предоставляется в аренду.</p>
+                <div
+                    class="swiffy-slider projects-slider-wrapper slider-item-show3 slider-item-reveal slider-nav-visible mt-8">
+                    <ul class="slider-container popular-slider py-lg-9 py-md-7 py-4">
+                        <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
+                            <picture>
+                                <source srcset="./img/projects_01.webp" type="image/webp">
+                                <img loading="lazy" decoding="async" src="./img/projects_01.jpg" alt="project"
+                                    class="object-fit-cover" width="100%">
+                            </picture>
+
+                            <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
+                                <p class="semibold">ДГУ 30 кВт для электроснабжения цеха по&nbsp;металлообработке</p>
+                                <p class="about-wrapper__description flex-fill mt-1">В&nbsp;октябре 2024 года
+                                    от&nbsp;индивидуального
+                                    мы
+                                    получили запрос на&nbsp;расчет стоимости по&nbsp;проекту ДЭС на&nbsp;30 кВт
+                                    в&nbsp;шумозащитном
+                                    кожухе для резервного электроснабжения цеха по&nbsp;металлообработке.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
+                            <picture>
+                                <source srcset="./img/projects_02.webp" type="image/webp">
+                                <img loading="lazy" decoding="async" src="./img/projects_02.jpg" alt="project"
+                                    class="object-fit-cover" width="100%">
+                            </picture>
+
+                            <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
+                                <p class="semibold">Дизельный генератор 100 кВт для питомника</p>
+                                <p class="about-wrapper__description flex-fill mt-1">В&nbsp;ноябре 2024 года
+                                    от&nbsp;руководства
+                                    питомника мы
+                                    получили запрос на&nbsp;расчет стоимости по&nbsp;проекту ДЭС на&nbsp;100 кВт в
+                                    шумозащитном кожухе для резервного электроснабжения автоматического полива.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
+                            <picture>
+                                <source srcset="./img/projects_03.webp" type="image/webp">
+                                <img loading="lazy" decoding="async" src="./img/projects_03.jpg" alt="project"
+                                    class="object-fit-cover" width="100%">
+                            </picture>
+
+                            <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
+                                <p class="semibold">ДГУ 100 кВт для крупного сельскохозяйственного предприятия</p>
+                                <p class="about-wrapper__description flex-fill mt-1">В&nbsp;октябре 2024&nbsp;г.
+                                    компания
+                                    Энерджи
+                                    Групп
+                                    осуществила поставку дизельного генератора для крупного сельскохозяйственного
+                                    предприятия в&nbsp;Саратовской области.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
+                            <picture>
+                                <source srcset="./img/news_04.webp" type="image/webp">
+                                <img loading="lazy" decoding="async" src="./img/news_04.jpg" alt="project"
+                                    class="object-fit-cover" width="100%">
+                            </picture>
+
+                            <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
+                                <p class="semibold">Дизельный генератор 100 кВт для питомника</p>
+                                <p class="about-wrapper__description flex-fill mt-1">В&nbsp;ноябре 2024 года
+                                    от&nbsp;руководства
+                                    питомника мы
+                                    получили запрос на&nbsp;расчет стоимости по&nbsp;проекту ДЭС на&nbsp;100 кВт в
+                                    шумозащитном кожухе для резервного электроснабжения автоматического полива.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
+                            <picture>
+                                <source srcset="./img/news_04.webp" type="image/webp">
+                                <img loading="lazy" decoding="async" src="./img/news_04.jpg" alt="project"
+                                    class="object-fit-cover" width="100%">
+                            </picture>
+                            <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
+                                <p class="semibold">ДГУ 100 кВт для крупного сельскохозяйственного предприятия</p>
+                                <p class="about-wrapper__description flex-fill mt-1">В&nbsp;октябре 2024&nbsp;г.
+                                    компания
+                                    Энерджи
+                                    Групп
+                                    осуществила поставку дизельного генератора для крупного сельскохозяйственного
+                                    предприятия в&nbsp;Саратовской области.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <button type="button"
+                        class="slider-nav center-arrow d-lg-block d-none position-absolute left"></button>
+                    <button type="button"
+                        class="slider-nav slider-nav-next d-lg-block d-none center-arrow position-absolute right"></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="big-form pt-md-9 mt-md-6 mt-8">
+            <div class="container">
+                <div
+                    class="big-form__wrapper position-relative text-center overflow-hidden pt-md-10 pb-md-0 py-7 px-md-0 px-4">
+                    <picture>
+                        <source srcset="./img/generators_block.webp" type="image/webp" />
+                        <source srcset="./img/generators_block.jpg" type="image/jpeg" />
+                        <img loading="lazy" decoding="async" src="./img/generators_block.jpg" alt="form block"
+                            class="big-form__background-image tab-card__background-image" width="100%" height="100%" />
+                    </picture>
+                    <img loading="lazy" decoding="async" src="./img/form_person.png" alt="person form"
+                        class="big-form__person-image position-absolute" />
+                    <h2 class="fw-bold">
+                        Оставьте заявку на ПНР
+                    </h2>
+                    <p class="mt-md-6 mt-4 big-form__description">
+                        Заполните форму и мы свяжемся с вами в ближайшее время
+                    </p>
+
+                    <form action="#"
+                        class="d-flex gap-md-6 gap-4 justify-content-md-center flex-md-row flex-column mt-6 flex-wrap">
+                        <input type="text" class="big-form__input p-md-4 p-3 rounded-3" placeholder="Ваше имя"
+                            required />
+                        <input type="tel" class="big-form__input p-md-4 p-3 rounded-3" placeholder="Телефон" required />
+                        <button class="btn btn-warning py-md-4 py-3 px-9">
+                            Отправить
+                        </button>
+                    </form>
+                    <p class="big-form__description small mt-md-9 mt-7 pb-md-10">
+                        Я согласен на передачу и обработку персональных данных
+                        в соответствии
+                        <br />
+                        с политикой конфиденциальности
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container my-lg-10 my-md-8 my-6">
+            <div
+                class="d-flex justify-content-md-between p-md-9 p-5 delivery-contacts flex-md-row flex-column justify-content-center align-items-md-start align-items-center">
+                <div class="delivery-contacts__item">
+                    <h2 class="title fw-bold mb-md-4 mb-2">Остались вопросы?</h2>
+                    <p class="delivery-contacts__description">
+                        <a href="#">Свяжитесь с нами</a>
+                    </p>
+                </div>
+                <div class="delivery-contacts__item text-end mt-md-0 mt-5">
+                    <h2 class="title fw-bold mb-md-4 mb-2">+7 (495) ХХХ-ХХ-ХХ</h2>
+                    <p class="delivery-contacts__description">
+                        <a href="mailto:zakaz@generator-energy.ru">zakaz@generator-energy.ru</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    @include('partials/vacancy/popup.html') @include('partials/footer.html')
+    @include('partials/popup-book.html') @include('partials/popup-recall.html')
+</body>
+
+</html>

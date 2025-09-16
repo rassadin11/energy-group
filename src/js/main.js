@@ -697,6 +697,13 @@ for (let i = 1; i <= 6; i++) {
     });
 }
 
+for (let i = 1; i <= 9; i++) {
+    lightGallery(document.getElementById(`video-page-${i}`), {
+        selector: 'this',
+        iframeMaxHeight: '90%'
+    });
+}
+
 for (let i = 1; i <= 4; i++) {
     lightGallery(document.getElementById(`open-video-block-${i}`), {
         selector: 'this',
@@ -705,6 +712,22 @@ for (let i = 1; i <= 4; i++) {
 }
 if (document.getElementById(`calculator-video-block`)) {
     lightGallery(document.getElementById(`calculator-video-block`), {
+        selector: 'this',
+        iframeMaxHeight: '90%'
+    });
+}
+
+// open vidoe on page: about company
+
+if (document.getElementById(`about-company`)) {
+    lightGallery(document.getElementById(`about-company`), {
+        selector: 'this',
+        iframeMaxHeight: '90%'
+    });
+}
+
+if (document.getElementById(`about-company2`)) {
+    lightGallery(document.getElementById(`about-company2`), {
         selector: 'this',
         iframeMaxHeight: '90%'
     });

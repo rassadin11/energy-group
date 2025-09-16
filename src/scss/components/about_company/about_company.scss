@@ -1,0 +1,32 @@
+.player3 {
+    width: 16px;
+    height: 17px;
+}
+
+.player2 {
+    width: 80px;
+}
+
+.about-company-video {
+    min-height: 700px;
+
+    @media (max-width: 992px) {
+        min-height: 80vh;
+    }
+
+    @media (max-width: 550px) {
+        min-height: 185px;
+    }
+}
+
+.about-company__events {
+    img {
+        width: min(100%, 246px)
+    }
+}
+
+.gen_dir {
+    img {
+        max-width: 400px;
+    }
+}

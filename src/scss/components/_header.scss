@@ -91,7 +91,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 
-  & > li {
+  &>li {
     line-height: 1.5;
   }
 
@@ -107,14 +107,15 @@
     }
   }
 }
+
 .btn-popup {
   font-size: 14px;
 }
 
 .contacts-wrapper {
-  z-index: 1600;
+  z-index: 1101;
 
-  & > .header__contacts {
+  &>.header__contacts {
     position: relative;
     z-index: 995;
   }
@@ -135,7 +136,7 @@
     width: 100vw;
     height: calc(var(--vh, 1vh) * 100);
     background: rgba(0, 0, 0, 0.5);
-    z-index: 1500;
+    z-index: 1100;
     opacity: 0;
     visibility: hidden;
 
@@ -153,6 +154,7 @@
     transform: scale(-1);
   }
 }
+
 .extra-phone {
   z-index: 995;
   opacity: 0;
@@ -186,7 +188,7 @@
       overflow: hidden;
     }
 
-    & > div {
+    &>div {
       padding: 0 50px;
       background-color: var(--bs-white);
       border-radius: 0 1.25rem 1.25rem;

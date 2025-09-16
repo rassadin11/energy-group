@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+@include('partials/head.html')
+
+<body data-category="about-company">
+  <div class="headers w-100">
+    @include('partials/pre-header.html') @include('partials/header.html')
+  </div>
+
+  <main class="main">
+    <section class="dgu-block position-relative overflow-hidden">
+      <div class="dgu-block__wrapper position-absolute z-0 overflow-hidden w-100 h-100">
+        <img src="./img/dgu/background.jpg" alt="background" class="dgu w-100 h-100 object-fit-cover position-relative">
+      </div>
+      <div class="container position-relative d-flex justify-content-between h-100 pt-10 large-p">
+        <div class="d-flex flex-column pt-md-8 pt-4">
+          <h2 class="main-slider__title mb-0">Пуско-наладочные <br /> работы ДГУ
+          </h2>
+          <p class="main-slider__item mt-2">Оставьте заявку на&nbsp;выезд специалиста или <br /> консультацию
+            по&nbsp;телефону
+          </p>
+
+          <div class="mt-8">
+            <button class="btn btn-warning py-3 px-5">
+              Оставить заявку
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="d-md-grid d-flex flex-column gap-md-6 gap-2 position-relative z-2 dgu-info__wrapper">
+        <div class="dgu-info d-flex rounded-6 p-md-6 p-4 align-items-center gap-md-4 gap-3">
+          <div class="files-item__svg p-md-3 p-2">
+            <svg class="files-item__note">
+              <use xlink:href="./img/svg/sprite.svg#deliver-tick"></use>
+            </svg>
+          </div>
+          <p class="flex-fill">Обслуживаем более 100 генераторных установок</p>
+        </div>
+        <div class="dgu-info d-flex rounded-6 p-md-6 p-4 align-items-center gap-md-4 gap-3">
+          <div class="files-item__svg p-md-3 p-2">
+            <svg class="files-item__note">
+              <use xlink:href="./img/svg/sprite.svg#deliver-tick"></use>
+            </svg>
+          </div>
+          <p class="flex-fill">Средний опыт сервисных инженеров более 7 лет</p>
+        </div>
+        <div class="dgu-info d-flex rounded-6 p-md-6 p-4 align-items-center gap-md-4 gap-3">
+          <div class="files-item__svg p-md-3 p-2">
+            <svg class="files-item__note">
+              <use xlink:href="./img/svg/sprite.svg#deliver-tick"></use>
+            </svg>
+          </div>
+          <p class="flex-fill">Выезды на объект и видео-консультации</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="d-flex flex-md-column flex-column-reverse pb-md-0 pb-2">
+      <div class="container">
+        <div class="row gx-4 mt-md-10 mt-8 deliver">
+          <h2 class="col-md-6 fw-bold lh-sm col-sm-12">Компания «Энерджи Групп» с 2005 года занимается подготовкой
+            к работе,
+            ремонтом
+            и техническим обслуживанием
+            ДГУ мощностью до 2000 кВт</h2>
+          <div class="deliver__description col-md-6 col-sm-12 ">
+            <p class="dgu__description lh-base">Любая дизель-генераторная установка
+              перед эксплуатацией
+              обязательно
+              проходит
+              пусконаладочные работы (ПНР).
+              Мы обслуживаем ДГУ российских, азиатских, американских и европейских производителей. Команда специалистов
+              со средним опытом 7 лет, собственный транспортный парк и ремонтная база позволяют браться за заказы любой
+              сложности по всей территории РФ.</p>
+          </div>
+        </div>
+      </div>
+      <section class="projects no-background mb-lg-0 mb-3 mt-6">
+        <div class="container mt-md-9 mt-2 pt-md-0 pt-2 mb-xxl-10 article-slider delivery-slider">
+          <div class="swiffy-slider slider-item-show2 slider-item-reveal slider-nav-visible">
+            <ul class="slider-container dgu">
+              <li>
+                <div class="h-100 dgu__height">
+                  <img src="./img/dgu/slider1.webp" class="h-100 w-100" loading="lazy" alt="photo" />
+                </div>
+              </li>
+
+              <li>
+                <div class="h-100 dgu__height">
+                  <img src="./img/dgu/slider2.webp" class="h-100 w-100" loading="lazy" alt="photo" />
+                </div>
+              </li>
+
+              <li>
+                <div class="h-100 dgu__height">
+                  <img src="./img/dgu/background.webp" class="h-100 w-100" loading="lazy" alt="photo" />
+                </div>
+              </li>
+
+              <li>
+                <div class="h-100 dgu__height">
+                  <img src="./img/dgu/slider1.webp" class="h-100 w-100" loading="lazy" alt="photo" />
+                </div>
+              </li>
+              <li>
+                <div class="h-100 dgu__height">
+                  <img src="./img/dgu/slider2.webp" class="h-100 w-100" loading="lazy" alt="photo" />
+                </div>
+              </li>
+              <li>
+                <div class="h-100 dgu__height">
+                  <img src="./img/dgu/background.webp" class="h-100 w-100" loading="lazy" alt="photo" />
+                </div>
+              </li>
+            </ul>
+
+            <button type="button"
+              class="delivery slider-nav center-arrow d-lg-block d-none position-absolute left"></button>
+            <button type="button"
+              class="delivery slider-nav slider-nav-next d-lg-block d-none center-arrow position-absolute right"></button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="dgu__background">
+      <div class="container pt-md-10 pt-8 deliver mt-8">
+        <h2 class="fw-bold lh-sm mb-4 pt-md-0 pt-2">Для чего проводятся пуско-наладочные работы дизельного генератора?
+        </h2>
+        <p class="big-p lh-base">Пусконаладка генератора – процедура по вводу смонтированного оборудования в
+          эксплуатацию
+          и его
+          выведение в
+          режим оптимальных технико-экономических параметров. Она решает следующие задачи:</p>
+
+        <div class="d-grid dgu__cards gap-md-6 gap-2 mt-2">
+          <div class="d-flex flex-md-column flex-row align-items-md-start gap-md-0 gap-3 p-md-6 p-4 rounded-5">
+            <div>
+              <p class="files-item__svg p-md-3 fw-bold lh-base text-center">
+                01
+              </p>
+            </div>
+            <p class="mt-md-4 lh-base flex-fill">Подготовка установки к стабильной работе на протяжении всего срока
+              эксплуатации</p>
+          </div>
+          <div class="d-flex flex-md-column flex-row align-items-md-start gap-md-0 gap-3 p-md-6 p-4 rounded-5">
+            <div>
+              <p class="files-item__svg p-md-3 fw-bold lh-base text-center">
+                02
+              </p>
+            </div>
+            <p class="mt-md-4 lh-base flex-fill">Анализ соответствия монтажа систем генератора проектной документации,
+              контроль
+          </div>
+          <div class="d-flex flex-md-column flex-row align-items-md-start gap-md-0 gap-3 p-md-6 p-4 rounded-5">
+            <div>
+              <p class="files-item__svg p-md-3 fw-bold lh-base text-center">
+                03
+              </p>
+            </div>
+            <p class="mt-md-4 lh-base flex-fill">Проверка уровня топливной, смазочной, охлаждающей жидкостей и уровня
+              электролита
+          </div>
+          <div class="d-flex flex-md-column flex-row align-items-md-start gap-md-0 gap-3 p-md-6 p-4 rounded-5">
+            <div>
+              <p class="files-item__svg p-md-3 fw-bold lh-base text-center">
+                04
+              </p>
+            </div>
+            <p class="mt-md-4 lh-base flex-fill">Проверка соответствия подключения дизельной электростанции,
+              надёжности
+              и наличия разгерметизации</p>
+          </div>
+          <div class="d-flex flex-md-column flex-row align-items-md-start gap-md-0 gap-3 p-md-6 p-4 rounded-5">
+            <div>
+              <p class="files-item__svg p-md-3 fw-bold lh-base text-center">
+                05
+              </p>
+            </div>
+            <p class="mt-md-4 lh-base flex-fill">Проведение наладочных испытаний</p>
+          </div>
+          <div class="d-flex flex-md-column flex-row align-items-md-start gap-md-0 gap-3 p-md-6 p-4 rounded-5">
+            <div>
+              <p class="files-item__svg p-md-3 fw-bold lh-base text-center">
+                06
+              </p>
+            </div>
+            <p class="mt-md-4 lh-base flex-fill">Оценка функционирования электростанции при нагрузке</p>
+          </div>
+          <div class="d-flex flex-md-column flex-row align-items-md-start gap-md-0 gap-3 p-md-6 p-4 rounded-5">
+            <div>
+              <p class="files-item__svg p-md-3 fw-bold lh-base text-center">
+                07
+              </p>
+            </div>
+            <p class="mt-md-4 lh-base flex-fill">Контроль за срабатыванием систем безопасности, защитного оборудования
+            </p>
+          </div>
+          <div class="d-flex flex-md-column flex-row align-items-md-start gap-md-0 gap-3 p-md-6 p-4 rounded-5">
+            <div>
+              <p class="files-item__svg p-md-3 fw-bold lh-base text-center">
+                08
+              </p>
+            </div>
+            <p class="mt-md-4 lh-base flex-fill">Консультирование персонала по технике безопасности</p>
+          </div>
+        </div>
+
+        <div class="warning-block py-md-6 py-4 px-md-5 px-4 rounded-end-4 mt-md-6 mt-5 big-p lh-base">
+          Важно! Проводить ПНР генераторов неподготовленному низкоквалифицированному персоналу запрещено во избежание
+          случаев работы оборудования в нештатном режиме, возникновения неисправностей или обстоятельств, аннулирующих
+          гарантийное обслуживание.
+        </div>
+
+        <div class="mt-md-9 mt-0 row gx-6 gy-md-0 gy-4 pb-10">
+          <p class="col-md-6 col-sm-12 big-p lh-base">Для пусконаладки ДЭС наши сотрудники выезжают на объект, проверяют
+            правильность монтажа агрегата, подключения его систем, наличие повреждений, следов разгерметизации,
+            надежность соединений, уровень жидкостей. После инженеры тестируют системы защиты, проводят проверки
+            функционирование устройства на холостом ходу, при необходимости — удаляют воздух из топливной системы. Далее
+            специалисты испытывают электростанцию при невысокой нагрузке (1/3 от максимальной), контролируя ее рабочие
+            параметры через панель управления, акустически (посторонние шумы), визуально (цвет выхлопов) и приборами.
+          </p>
+          <p class="col-md-6 col-sm-12 big-p lh-base">
+            Затем — испытывают генератор в реальных условиях — при переводе на него нагрузки, консультируют персонал по
+            правилам техники безопасности и использования ДГУ. Естественно, инженеры устраняют обнаруженные неполадки с
+            выдачей акта сдачи-приёма или дают рекомендации по их устранению, например, при неправильном бетонировании
+            основания.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container my-10">
+      <div class="row">
+        <div class="col-md-6 col-sm-12 deliver">
+          <h2 class="mb-0 fw-bold">Стоимость пусконаладки <br /> генератора
+          </h2>
+          <p class="mt-4 big-p lh-base">Цены указаны для города Казань. При выезде за пределы города цены за ПНР
+            рассчитываются отдельно в зависимости от удаленности населенного пункта.
+          </p>
+
+          <div class="mt-6 d-md-block d-none">
+            <button class="btn btn-warning py-3 px-5 fw-bold">
+              Оставить заявку
+            </button>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12 mt-md-0 mt-4 dgu__tarifs">
+          <div class="rounded-4 border py-md-3 py-2 overflow-hidden dgu__background">
+            <div
+              class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
+              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2">
+                <svg class="other_energy">
+                  <use xlink:href="./img/svg/sprite.svg#other_energy"></use>
+                </svg>
+                до 30 кВт
+              </p>
+              <p class="col-lg-6 col-md-4 d-flex align-items-center gap-md-3 gap-2 flex-md-row flex-row-reverse">
+                <svg class="ruble">
+                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                </svg>
+                <span class="fw-bold">30 000 ₽</span>
+              </p>
+            </div>
+            <div
+              class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
+              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2">
+                <svg class="other_energy">
+                  <use xlink:href="./img/svg/sprite.svg#other_energy"></use>
+                </svg>
+                от 31 до 59 кВт
+              </p>
+              <p class="col-lg-6 col-md-4 d-flex align-items-center gap-md-3 gap-2 flex-md-row flex-row-reverse">
+                <svg class="ruble">
+                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                </svg>
+                <sp class="fw-bold" an>7%</sp>
+              </p>
+            </div>
+            <div
+              class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
+              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2">
+                <svg class="other_energy">
+                  <use xlink:href="./img/svg/sprite.svg#other_energy"></use>
+                </svg>
+                от 60 до 99 кВт
+              </p>
+              <p class="col-lg-6 col-md-4 d-flex align-items-center gap-md-3 gap-2 flex-md-row flex-row-reverse">
+                <svg class="ruble">
+                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                </svg>
+                <sp class="fw-bold" an>6%</sp>
+              </p>
+            </div>
+            <div
+              class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
+              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2">
+                <svg class="other_energy">
+                  <use xlink:href="./img/svg/sprite.svg#other_energy"></use>
+                </svg>
+                от 100 до 199 кВт
+              </p>
+              <p class="col-lg-6 col-md-4 d-flex align-items-center gap-md-3 gap-2 flex-md-row flex-row-reverse">
+                <svg class="ruble">
+                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                </svg>
+                <sp class="fw-bold" an>5%</sp>
+              </p>
+            </div>
+            <div
+              class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
+              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2">
+                <svg class="other_energy">
+                  <use xlink:href="./img/svg/sprite.svg#other_energy"></use>
+                </svg>
+                от 200 до 299 кВт
+              </p>
+              <p class="col-lg-6 col-md-4 d-flex align-items-center gap-md-3 gap-2 flex-md-row flex-row-reverse">
+                <svg class="ruble">
+                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                </svg>
+                <sp class="fw-bold" an>4%</sp>
+              </p>
+            </div>
+            <div
+              class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
+              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2">
+                <svg class="other_energy">
+                  <use xlink:href="./img/svg/sprite.svg#other_energy"></use>
+                </svg>
+                от 300 до 499 кВт
+              </p>
+              <p class="col-lg-6 col-md-4 d-flex align-items-center gap-md-3 gap-2 flex-md-row flex-row-reverse">
+                <svg class="ruble">
+                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                </svg>
+                <span class="fw-bold">3,5%</span>
+              </p>
+            </div>
+            <div
+              class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
+              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2">
+                <svg class="other_energy">
+                  <use xlink:href="./img/svg/sprite.svg#other_energy"></use>
+                </svg>
+                от 500 до 800 кВт
+              </p>
+              <p class="col-lg-6 col-md-4 d-flex align-items-center gap-md-3 gap-2 flex-md-row flex-row-reverse">
+                <svg class="ruble">
+                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                </svg>
+                <sp class="fw-bold" an>3%</sp>
+              </p>
+            </div>
+            <div class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between border-base">
+              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2">
+                <svg class="other_energy">
+                  <use xlink:href="./img/svg/sprite.svg#other_energy"></use>
+                </svg>
+                От 801 до 1600 кВт
+              </p>
+              <p class="col-lg-6 col-md-4 d-flex align-items-center gap-md-3 gap-2 flex-md-row flex-row-reverse">
+                <svg class="ruble">
+                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                </svg>
+                <span class="fw-bold">2,5%</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="projects popular-slider dgu__background py-10">
+      <div class="container slider">
+        <h2 class="title fw-bold mb-md-7 mb-4">
+          Наши проекты
+        </h2>
+        <div class="swiffy-slider projects-slider-wrapper slider-item-show3 slider-item-reveal slider-nav-visible">
+          <ul class="slider-container popular-slider py-lg-9 py-md-7 py-4">
+            <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
+              <picture>
+                <source srcset="./img/projects_01.webp" type="image/webp">
+                <img loading="lazy" decoding="async" src="./img/projects_01.jpg" alt="project" class="object-fit-cover"
+                  width="100%">
+              </picture>
+
+              <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
+                <p class="semibold">ДГУ 30 кВт для электроснабжения цеха по&nbsp;металлообработке</p>
+                <p class="about-wrapper__description flex-fill mt-1">В&nbsp;октябре 2024 года
+                  от&nbsp;индивидуального
+                  мы
+                  получили запрос на&nbsp;расчет стоимости по&nbsp;проекту ДЭС на&nbsp;30 кВт
+                  в&nbsp;шумозащитном
+                  кожухе для резервного электроснабжения цеха по&nbsp;металлообработке.
+                </p>
+              </div>
+            </li>
+            <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
+              <picture>
+                <source srcset="./img/projects_02.webp" type="image/webp">
+                <img loading="lazy" decoding="async" src="./img/projects_02.jpg" alt="project" class="object-fit-cover"
+                  width="100%">
+              </picture>
+
+              <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
+                <p class="semibold">Дизельный генератор 100 кВт для питомника</p>
+                <p class="about-wrapper__description flex-fill mt-1">В&nbsp;ноябре 2024 года от&nbsp;руководства
+                  питомника мы
+                  получили запрос на&nbsp;расчет стоимости по&nbsp;проекту ДЭС на&nbsp;100 кВт в
+                  шумозащитном кожухе для резервного электроснабжения автоматического полива.
+                </p>
+              </div>
+            </li>
+            <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
+              <picture>
+                <source srcset="./img/projects_03.webp" type="image/webp">
+                <img loading="lazy" decoding="async" src="./img/projects_03.jpg" alt="project" class="object-fit-cover"
+                  width="100%">
+              </picture>
+
+              <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
+                <p class="semibold">ДГУ 100 кВт для крупного сельскохозяйственного предприятия</p>
+                <p class="about-wrapper__description flex-fill mt-1">В&nbsp;октябре 2024&nbsp;г. компания
+                  Энерджи
+                  Групп
+                  осуществила поставку дизельного генератора для крупного сельскохозяйственного
+                  предприятия в&nbsp;Саратовской области.
+                </p>
+              </div>
+            </li>
+            <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
+              <picture>
+                <source srcset="./img/news_04.webp" type="image/webp">
+                <img loading="lazy" decoding="async" src="./img/news_04.jpg" alt="project" class="object-fit-cover"
+                  width="100%">
+              </picture>
+
+              <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
+                <p class="semibold">Дизельный генератор 100 кВт для питомника</p>
+                <p class="about-wrapper__description flex-fill mt-1">В&nbsp;ноябре 2024 года от&nbsp;руководства
+                  питомника мы
+                  получили запрос на&nbsp;расчет стоимости по&nbsp;проекту ДЭС на&nbsp;100 кВт в
+                  шумозащитном кожухе для резервного электроснабжения автоматического полива.
+                </p>
+              </div>
+            </li>
+            <li class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider">
+              <picture>
+                <source srcset="./img/news_04.webp" type="image/webp">
+                <img loading="lazy" decoding="async" src="./img/news_04.jpg" alt="project" class="object-fit-cover"
+                  width="100%">
+              </picture>
+              <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100">
+                <p class="semibold">ДГУ 100 кВт для крупного сельскохозяйственного предприятия</p>
+                <p class="about-wrapper__description flex-fill mt-1">В&nbsp;октябре 2024&nbsp;г. компания
+                  Энерджи
+                  Групп
+                  осуществила поставку дизельного генератора для крупного сельскохозяйственного
+                  предприятия в&nbsp;Саратовской области.
+                </p>
+              </div>
+            </li>
+          </ul>
+
+          <button type="button" class="slider-nav center-arrow d-lg-block d-none position-absolute left"></button>
+          <button type="button"
+            class="slider-nav slider-nav-next d-lg-block d-none center-arrow position-absolute right"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="big-form pt-md-9 mt-md-6 mt-8">
+      <div class="container">
+        <div class="big-form__wrapper position-relative text-center overflow-hidden pt-md-10 pb-md-0 py-7 px-md-0 px-4">
+          <picture>
+            <source srcset="./img/generators_block.webp" type="image/webp" />
+            <source srcset="./img/generators_block.jpg" type="image/jpeg" />
+            <img loading="lazy" decoding="async" src="./img/generators_block.jpg" alt="form block"
+              class="big-form__background-image tab-card__background-image" width="100%" height="100%" />
+          </picture>
+          <img loading="lazy" decoding="async" src="./img/form_person.png" alt="person form"
+            class="big-form__person-image position-absolute" />
+          <h2 class="fw-bold">
+            Оставьте заявку на ПНР
+          </h2>
+          <p class="mt-md-6 mt-4 big-form__description">
+            Заполните форму и мы свяжемся с вами в ближайшее время
+          </p>
+
+          <form action="#"
+            class="d-flex gap-md-6 gap-4 justify-content-md-center flex-md-row flex-column mt-6 flex-wrap">
+            <input type="text" class="big-form__input p-md-4 p-3 rounded-3" placeholder="Ваше имя" required />
+            <input type="tel" class="big-form__input p-md-4 p-3 rounded-3" placeholder="Телефон" required />
+            <button class="btn btn-warning py-md-4 py-3 px-9">
+              Отправить
+            </button>
+          </form>
+          <p class="big-form__description small mt-md-9 mt-7 pb-md-10">
+            Я согласен на передачу и обработку персональных данных
+            в соответствии
+            <br />
+            с политикой конфиденциальности
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container my-lg-10 my-md-8 my-6">
+      <div
+        class="d-flex justify-content-md-between p-md-9 p-5 delivery-contacts flex-md-row flex-column justify-content-center align-items-md-start align-items-center">
+        <div class="delivery-contacts__item">
+          <h2 class="title fw-bold mb-md-4 mb-2">Остались вопросы?</h2>
+          <p class="delivery-contacts__description">
+            <a href="#">Свяжитесь с нами</a>
+          </p>
+        </div>
+        <div class="delivery-contacts__item text-end mt-md-0 mt-5">
+          <h2 class="title fw-bold mb-md-4 mb-2">+7 (495) ХХХ-ХХ-ХХ</h2>
+          <p class="delivery-contacts__description">
+            <a href="mailto:zakaz@generator-energy.ru">zakaz@generator-energy.ru</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  @include('partials/vacancy/popup.html') @include('partials/footer.html')
+  @include('partials/popup-book.html') @include('partials/popup-recall.html')
+</body>
+
+</html>

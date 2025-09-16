@@ -1,8 +1,8 @@
 .delivery-slider {
   .swiffy-slider .slider-container {
-    grid-auto-columns: 40%; /* два слайда по центру (2 x 40%) + остальное для соседей */
+    grid-auto-columns: 40%;
 
-    & > * {
+    &>* {
       min-height: 380px;
 
       @media (max-width: 1450px) {
