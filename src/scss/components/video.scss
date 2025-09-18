@@ -17,7 +17,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(180deg, rgba(6, 27, 49, 0) 0%, #061b31 100%);
+      background: linear-gradient(180deg, rgba(6, 27, 49, 0) 0%, var(--bs-blue) 100%);
     }
 
     img {
@@ -35,5 +35,5 @@
 .player {
   width: 52px;
   height: 52px;
-  color: #f59e0b;
+  color: var(--player-yellow-color);
 }

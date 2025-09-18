@@ -1,5 +1,5 @@
 .big-form__wrapper {
-  background: #061b31;
+  background: var(--bs-blue);
   color: var(--bs-white);
   border-radius: 1.5rem;
 }
@@ -7,28 +7,42 @@
 input:focus::-webkit-input-placeholder {
   color: transparent !important;
 }
+
 input:focus:-moz-placeholder {
   color: transparent !important;
-} /* FF 4-18 */
+}
+
+/* FF 4-18 */
 input:focus::-moz-placeholder {
   color: transparent !important;
-} /* FF 19+ */
+}
+
+/* FF 19+ */
 input:focus:-ms-input-placeholder {
   color: transparent !important;
-} /* IE 10+ */
+}
+
+/* IE 10+ */
 
 textarea:focus::-webkit-input-placeholder {
   color: transparent !important;
 }
+
 textarea:focus:-moz-placeholder {
   color: transparent !important;
-} /* FF 4-18 */
+}
+
+/* FF 4-18 */
 textarea:focus::-moz-placeholder {
   color: transparent !important;
-} /* FF 19+ */
+}
+
+/* FF 19+ */
 textarea:focus:-ms-input-placeholder {
   color: transparent !important;
-} /* IE 10+ */
+}
+
+/* IE 10+ */
 
 .big-form {
   .container.px-0 {
@@ -37,6 +51,7 @@ textarea:focus:-ms-input-placeholder {
       padding-right: 0 !important;
     }
   }
+
   h2 span {
     color: var(--bs-yellow);
   }
@@ -48,7 +63,7 @@ textarea:focus:-ms-input-placeholder {
   }
 
   &__description {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--bs-white-opacity);
     line-height: 1.4;
 
     &.small {

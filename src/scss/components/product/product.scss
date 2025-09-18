@@ -59,10 +59,10 @@
 }
 
 .info-product {
-  font-size: 18px;
+  font-size: 1.125rem;
 
   @media (max-width: 550px) {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 
   &__item {
@@ -72,11 +72,11 @@
     @media (max-width: 768px) {
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
-      & > p:first-child {
+      &>p:first-child {
         grid-column: span 3;
       }
 
-      & > p:last-child {
+      &>p:last-child {
         grid-column: span 2;
       }
     }
@@ -108,6 +108,7 @@
   }
 
   @media (max-width: 550px) {
+
     .reload,
     .clock,
     .repair {

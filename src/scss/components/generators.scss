@@ -14,7 +14,7 @@
 }
 
 .tabs-header__button {
-  font-size: 14px;
+  font-size: 0.875rem;
   background: var(--bs-white);
   border: 1px solid #efefef;
   border-radius: 3rem;
@@ -26,14 +26,14 @@
   }
 
   &.active {
-    background: #061b31;
-    border: 1px solid #061b31;
+    background: var(--bs-blue);
+    border: 1px solid var(--bs-blue);
     color: var(--bs-white);
   }
 
   &:hover {
-    background: #061b31;
-    border: 1px solid #061b31;
+    background: var(--bs-blue);
+    border: 1px solid var(--bs-blue);
     color: var(--bs-white);
   }
 }
@@ -50,7 +50,7 @@
 
     .nav-link {
       font-weight: 700;
-      font-size: 18px;
+      font-size: 1.125rem;
       padding: 0;
       border-bottom: none !important;
     }
@@ -102,7 +102,7 @@
   }
 
   &:not(.type):hover {
-    background-color: #061b31;
+    background-color: var(--bs-blue);
     color: var(--bs-white);
 
     .tab-card__background-image {
@@ -136,7 +136,7 @@
 }
 
 @media (max-width: 992px) {
-  .slider .xs-x-scroll > div {
+  .slider .xs-x-scroll>div {
     scroll-snap-align: center;
   }
 
@@ -152,33 +152,33 @@
     scroll-padding: 0;
   }
 
-  .xs-x-scroll > * {
+  .xs-x-scroll>* {
     margin-bottom: 0 !important;
   }
 
-  .xs-x-scroll > div {
+  .xs-x-scroll>div {
     min-width: 95%;
     scroll-snap-align: start;
     padding: 0;
   }
 
-  .xs-x-scroll > div:last-of-type {
+  .xs-x-scroll>div:last-of-type {
     overflow-y: hidden;
   }
 
-  .xs-x-scroll > div:not(:last-of-type) {
+  .xs-x-scroll>div:not(:last-of-type) {
     overflow-y: hidden;
     flex-shrink: inherit;
     margin-right: 0.5rem;
   }
 
-  .tab-cards.xs-x-scroll > div {
+  .tab-cards.xs-x-scroll>div {
     min-width: 46%;
   }
 }
 
 @media (max-width: 768px) {
-  .tab-cards.xs-x-scroll > div {
+  .tab-cards.xs-x-scroll>div {
     min-width: 72%;
   }
 }

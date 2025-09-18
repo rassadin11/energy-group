@@ -10,7 +10,7 @@
     &__wrapper {
         &:before {
             content: '';
-            background: linear-gradient(90deg, #061b31 0%, rgba(6, 27, 49, 0) 150%);
+            background: linear-gradient(90deg, var(--bs-blue) 0%, rgba(6, 27, 49, 0) 150%);
             position: absolute;
             top: 0;
             left: 0;
@@ -56,7 +56,7 @@
 
     @media (max-width: 500px) {
         p {
-            font-size: 14px;
+            font-size: 0.875rem;
         }
     }
 }
@@ -71,7 +71,7 @@
 
 .dgu {
     &__description {
-        font-size: 18px;
+        font-size: 1.125rem;
     }
 
     &__background {
@@ -80,7 +80,7 @@
 
     &__tarifs {
         @media (max-width: 768px) {
-            font-size: 14px;
+            font-size: 0.875rem;
         }
     }
 
@@ -128,7 +128,7 @@
 
         @media (max-width: 768px) {
             min-width: 40px;
-            font-size: 14px;
+            font-size: 0.875rem;
             min-height: 40px;
             display: flex;
             align-items: center;
@@ -138,7 +138,7 @@
 
     p {
         @media (max-width: 768px) {
-            font-size: 14px;
+            font-size: 0.875rem;
         }
     }
 }
@@ -149,7 +149,7 @@
     border-left: 2px solid #EF4444;
 
     @media (max-width: 768px) {
-        font-size: 14px;
+        font-size: 0.875rem;
     }
 }
 

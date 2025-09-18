@@ -29,19 +29,19 @@
       padding: 1.25rem 1rem !important;
     }
 
-    & > p {
+    &>p {
       opacity: 0.5;
       line-height: 1.5;
 
       @media (max-width: 650px) {
-        font-size: 14px;
+        font-size: 0.875rem;
         line-height: 1.6;
       }
     }
   }
 
   &__title {
-    font-size: 18px;
+    font-size: 1.125rem;
 
     @media (max-width: 650px) {
       font-size: 1rem;

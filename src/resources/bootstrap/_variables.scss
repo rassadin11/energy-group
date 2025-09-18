@@ -46,6 +46,7 @@ $yellow: #ffbc38 !default;
 $green: #2cb742 !default;
 $teal: #20c997 !default;
 $cyan: #27a7e7 !default;
+$gray: #828c97;
 // scss-docs-end color-variables
 
 // Bootstrap 5.3.x additions
@@ -83,8 +84,9 @@ $colors: (
   "cyan": $cyan,
   "black": $black,
   "white": $white,
-  "gray": $gray-600,
+  "gray": $gray,
   "gray-dark": $gray-800,
+  "white-opacity": rgba(255, 255, 255, 0.7),
   ) !default;
 // scss-docs-end colors-map
 
@@ -339,7 +341,9 @@ $theme-colors: (
   "danger": $danger,
   "light": $light,
   "dark": $dark,
-  "gray": #51606f,
+  "gray": $gray,
+  "dark-gray": #51606f,
+  "white-opacity": rgba(255, 255, 255, 0.7),
   ) !default;
 // scss-docs-end theme-colors-map
 

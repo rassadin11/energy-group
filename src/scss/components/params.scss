@@ -1,6 +1,6 @@
 .title {
   @media (max-width: 550px) {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 }
 
@@ -45,13 +45,13 @@
   }
 
   &__button {
-    color: #061b31;
+    color: var(--bs-blue);
     background: var(--bs-white);
     border: none;
     transition: all 0.3s ease;
 
     &.active {
-      background: #061b31;
+      background: var(--bs-blue);
       color: var(--bs-white);
     }
 
@@ -68,7 +68,7 @@
   color: var(--bs-primary);
 
   span {
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 20px;
   }
 
@@ -152,12 +152,12 @@ select:focus {
   outline: none;
 }
 
-.custom-select.has-value + .select-label {
+.custom-select.has-value+.select-label {
   opacity: 1;
   top: 5px;
 }
 
-.custom-select.has-value.overlay + .select-label {
+.custom-select.has-value.overlay+.select-label {
   top: 8px;
 }
 
@@ -328,7 +328,7 @@ input[type="number"] {
   font-size: 1.5rem;
 
   @media (max-width: 768px) {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 }
 

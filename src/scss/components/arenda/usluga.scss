@@ -85,7 +85,7 @@
 
     &::before {
       content: "";
-      background: linear-gradient(180deg, rgba(6, 27, 49, 0) 0%, #061b31 100%);
+      background: linear-gradient(180deg, rgba(6, 27, 49, 0) 0%, var(--bs-blue) 100%);
       position: absolute;
       top: 0;
       left: 0;

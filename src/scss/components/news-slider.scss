@@ -9,8 +9,8 @@
 .news-slider__block {
   border-radius: 1.5rem;
 
-  & > p:first-child {
-    font-size: 18px;
+  &>p:first-child {
+    font-size: 1.125rem;
 
     @media (max-width: 550px) {
       font-size: 1rem;
@@ -18,9 +18,9 @@
     }
   }
 
-  & > p:nth-child(2) {
+  &>p:nth-child(2) {
     @media (max-width: 550px) {
-      font-size: 14px;
+      font-size: 0.875rem;
     }
   }
 }

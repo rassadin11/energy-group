@@ -14,12 +14,12 @@
     &__string {
         &>*:first-child {
             flex: 0 0 38%;
-            color: #061b31;
+            color: var(--bs-blue);
         }
 
         &>*:last-child {
             flex: 1 1 100%;
-            color: #061b31;
+            color: var(--bs-blue);
         }
 
         &.headers * {
@@ -28,19 +28,18 @@
 
         &>p {
             @media (max-width: 768px) {
-                font-size: 14px;
+                font-size: 0.875rem;
             }
         }
     }
 
     &__description {
         font-size: 0.75rem;
-        color: #828c97;
     }
 
     .form-control {
         @media (max-width: 768px) {
-            font-size: 14px;
+            font-size: 0.875rem;
         }
     }
 }
@@ -54,10 +53,8 @@
 }
 
 .calculator__text {
-    color: #51606f;
-
     @media (max-width: 550px) {
-        font-size: 12px;
+        font-size: 0.75rem;
     }
 }
 
@@ -70,8 +67,6 @@
         }
 
         p {
-            color: #828c97;
-
             @media (max-width: 992px) {
                 color: var(--bs-blue);
             }
@@ -79,7 +74,6 @@
 
         &>p {
             @media (max-width: 550px) {
-                color: #828c97;
                 font-size: 10px;
             }
         }

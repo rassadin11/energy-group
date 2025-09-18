@@ -23,12 +23,11 @@
 
 .nav-link {
   display: block;
-  padding: var(--#{$prefix}nav-link-padding-y)
-    var(--#{$prefix}nav-link-padding-x);
+  padding: var(--#{$prefix}nav-link-padding-y) var(--#{$prefix}nav-link-padding-x);
   @include font-size(var(--#{$prefix}nav-link-font-size));
   font-weight: var(--#{$prefix}nav-link-font-weight);
   color: var(--#{$prefix}nav-link-color);
-  text-decoration: if($link-decoration == none, null, none);
+  text-decoration: if($link-decoration ==none, null, none);
   background: none;
   border: 0;
   @include transition($nav-link-transition);
@@ -36,7 +35,7 @@
   &:hover,
   &:focus {
     color: var(--#{$prefix}nav-link-hover-color);
-    text-decoration: if($link-hover-decoration == underline, none, null);
+    text-decoration: if($link-hover-decoration ==underline, none, null);
   }
 
   &:focus-visible {
@@ -71,9 +70,7 @@
   border-bottom: none;
 
   .nav-link {
-    margin-bottom: calc(
-      -1 * var(--#{$prefix}nav-tabs-border-width)
-    ); // stylelint-disable-line function-disallowed-list
+    margin-bottom: calc(-1 * var(--#{$prefix}nav-tabs-border-width)); // stylelint-disable-line function-disallowed-list
     border: none;
     border-bottom: 1px solid transparent;
     font-weight: 700;
@@ -91,7 +88,7 @@
 
   .nav-link.active,
   .nav-item.show .nav-link {
-    color: #061b31;
+    color: var(--bs-blue);
     background-color: transparent;
     border-color: none;
     border-bottom: 1px solid var(--bs-yellow);
@@ -99,9 +96,7 @@
 
   .dropdown-menu {
     // Make dropdown border overlap tab border
-    margin-top: calc(
-      -1 * var(--#{$prefix}nav-tabs-border-width)
-    ); // stylelint-disable-line function-disallowed-list
+    margin-top: calc(-1 * var(--#{$prefix}nav-tabs-border-width)); // stylelint-disable-line function-disallowed-list
     // Remove the top rounded corners here since there is a hard edge above the menu
     @include border-top-radius(0);
   }
@@ -123,7 +118,7 @@
   }
 
   .nav-link.active,
-  .show > .nav-link {
+  .show>.nav-link {
     color: var(--#{$prefix}nav-pills-link-active-color);
     @include gradient-bg(var(--#{$prefix}nav-pills-link-active-bg));
   }
@@ -154,7 +149,7 @@
   }
 
   .nav-link.active,
-  .show > .nav-link {
+  .show>.nav-link {
     font-weight: $font-weight-bold;
     color: var(--#{$prefix}nav-underline-link-active-color);
     border-bottom-color: currentcolor;
@@ -166,7 +161,8 @@
 //
 
 .nav-fill {
-  > .nav-link,
+
+  >.nav-link,
   .nav-item {
     flex: 1 1 auto;
     text-align: center;
@@ -174,7 +170,8 @@
 }
 
 .nav-justified {
-  > .nav-link,
+
+  >.nav-link,
   .nav-item {
     flex-basis: 0;
     flex-grow: 1;
@@ -194,10 +191,11 @@
 // Hide tabbable panes to start, show them when `.active`
 
 .tab-content {
-  > .tab-pane {
+  >.tab-pane {
     display: none;
   }
-  > .active {
+
+  >.active {
     display: block;
   }
 }

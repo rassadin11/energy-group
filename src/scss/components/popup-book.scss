@@ -27,11 +27,11 @@
       width: calc(100% - 2rem);
     }
 
-    & > div:first-child {
+    &>div:first-child {
       grid-column: span 5;
     }
 
-    & > div:nth-child(2) {
+    &>div:nth-child(2) {
       grid-column: span 3;
       position: relative;
 
@@ -49,10 +49,10 @@
     .big-form__input {
       background: #f6f7f8;
       border: 1px solid #ececec;
-      color: #061b31;
+      color: var(--bs-blue);
 
       &::placeholder {
-        color: #061b31;
+        color: var(--bs-blue);
         opacity: 0.3;
       }
     }

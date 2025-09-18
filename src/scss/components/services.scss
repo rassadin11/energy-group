@@ -64,7 +64,7 @@
     }
 
     &:first-child {
-      background: #061b31;
+      background: var(--bs-blue);
     }
 
     .back-image {
@@ -78,7 +78,7 @@
   }
 
   &__hint {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   &__gradient {
@@ -87,7 +87,7 @@
     height: 100%;
     left: 0;
     top: 0;
-    background: linear-gradient(180deg, rgba(6, 27, 49, 0) 0%, #061b31 100%);
+    background: linear-gradient(180deg, rgba(6, 27, 49, 0) 0%, var(--bs-blue) 100%);
     z-index: 0;
   }
 }

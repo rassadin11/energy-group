@@ -49,7 +49,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        background: #061b31;
+        background: var(--bs-blue);
         opacity: 0;
         visibility: hidden;
         width: 100%;
@@ -84,13 +84,13 @@
       &.active {
         width: 48px !important;
         height: 7px !important;
-        background-color: #061b31;
+        background-color: var(--bs-blue);
       }
     }
   }
 
   &__link {
-    font-size: 18px;
+    font-size: 1.125rem;
 
     &:hover {
       text-decoration: underline;
@@ -131,11 +131,10 @@
   margin: 0;
   padding: 0;
   scrollbar-width: none;
-  scrollbar-color: rgba(0, 0, 0, 0.4)
-    rgba(0, 0, 0, var(--swiffy-slider-track-opacity));
+  scrollbar-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, var(--swiffy-slider-track-opacity));
   background-clip: padding-box;
 
-  & > * {
+  &>* {
     scroll-snap-align: start;
     opacity: 0.4;
     cursor: pointer;

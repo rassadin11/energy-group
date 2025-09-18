@@ -1,6 +1,6 @@
 .calculator-block {
   border-radius: 1.5rem;
-  background: #061b31;
+  background: var(--bs-blue);
   color: var(--bs-white);
   grid-template-columns: repeat(12, 1fr);
 
@@ -91,7 +91,7 @@
   }
 
   &__text {
-    font-size: 18px;
+    font-size: 1.125rem;
     opacity: 0.6;
 
     @media (max-width: 768px) {

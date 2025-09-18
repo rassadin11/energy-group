@@ -109,7 +109,7 @@
 }
 
 .btn-popup {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .contacts-wrapper {
@@ -226,7 +226,7 @@
   }
 
   &__title {
-    font-size: 18px;
+    font-size: 1.125rem;
     transition: all 0.3s ease;
 
     &:hover {
@@ -435,7 +435,7 @@
 }
 
 .place-title {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 24px;
 }
 
@@ -527,7 +527,7 @@
 .mobile-catalogue {
   &__title {
     font-size: 24px;
-    color: #061b31;
+    color: var(--bs-blue);
   }
 }
 
@@ -537,7 +537,7 @@
   &__arrow {
     transform: rotate(90deg);
     padding: 5.2px 6px;
-    border: 1px solid #061b31;
+    border: 1px solid var(--bs-blue);
     box-sizing: content-box;
 
     svg {
@@ -560,7 +560,7 @@
   }
 
   &__text {
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.1;
   }
 }

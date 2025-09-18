@@ -11,7 +11,7 @@
 
   &__block {
     border-radius: 1.5rem;
-    background: #061b31;
+    background: var(--bs-blue);
 
     img {
       width: 100%;
@@ -46,7 +46,7 @@
     transition: all 0.3s ease;
 
     @media (max-width: 500px) {
-      font-size: 12px;
+      font-size: 0.75rem;
     }
   }
 
