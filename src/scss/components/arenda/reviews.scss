@@ -28,7 +28,7 @@
     transition: all 0.3s ease;
 
     &:hover {
-      background: #f6f7f8;
+      background: var(--bs-background);
 
       .reviews__image {
         &:after {
@@ -97,7 +97,7 @@
     }
 
     @media (max-width: 768px) {
-      background: #f6f7f8;
+      background: var(--bs-background);
     }
   }
 }

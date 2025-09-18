@@ -1,5 +1,5 @@
 .generators {
-  background: #f6f7f8;
+  background: var(--bs-background);
 
   .tab-content {
     @media (max-width: 1300px) {
@@ -83,7 +83,6 @@
 
 .tab-card {
   background: var(--bs-white);
-  border-radius: 1.5rem;
   border: 2px solid #efefef;
   transition: all 0.3s ease;
   overflow: hidden;

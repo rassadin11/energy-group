@@ -1,5 +1,4 @@
 .calculator-block {
-  border-radius: 1.5rem;
   background: var(--bs-blue);
   color: var(--bs-white);
   grid-template-columns: repeat(12, 1fr);
@@ -66,7 +65,6 @@
 .info-calculator {
   grid-column: 1 / 7;
   margin-right: 34px;
-  border-radius: 1.5rem;
 
   @media (max-width: 1300px) {
     margin-right: 0.5rem;

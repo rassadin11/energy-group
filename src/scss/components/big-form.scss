@@ -1,7 +1,6 @@
 .big-form__wrapper {
   background: var(--bs-blue);
   color: var(--bs-white);
-  border-radius: 1.5rem;
 }
 
 input:focus::-webkit-input-placeholder {
@@ -70,9 +69,6 @@ textarea:focus:-ms-input-placeholder {
       font-size: 0.75rem;
 
       @media (max-width: 768px) {
-        br {
-          display: none;
-        }
 
         width: 90%;
         margin: 0 auto;

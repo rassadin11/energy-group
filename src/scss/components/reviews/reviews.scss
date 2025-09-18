@@ -41,11 +41,9 @@
 .video-review {
   background: var(--bs-white);
   border: 1px solid var(--border-light);
-  border-radius: 1.5rem;
   transition: all 0.3s ease;
 
   &__video {
-    border-radius: 1.5rem;
     min-height: 225px;
 
     @media (max-width: 550px) {
@@ -72,6 +70,7 @@
     p {
       line-height: 1.5;
     }
+
     p:first-child {
       font-size: 1.125rem;
 
@@ -84,7 +83,8 @@
       display: block;
       display: -webkit-box;
       max-width: 400px;
-      -webkit-line-clamp: 3; /* количество строк */
+      -webkit-line-clamp: 3;
+      /* количество строк */
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;

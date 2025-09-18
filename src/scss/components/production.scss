@@ -15,7 +15,6 @@
   &__block {
     background: var(--bs-white);
     border: 1px solid rgba(6, 27, 49, 0.1);
-    border-radius: 1.5rem;
 
     img {
       width: 50%;
@@ -36,7 +35,7 @@
     }
 
     @media (max-width: 550px) {
-      & > div {
+      &>div {
         display: flex;
         flex-direction: column;
         justify-content: space-between;

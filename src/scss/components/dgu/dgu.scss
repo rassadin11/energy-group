@@ -1,12 +1,4 @@
 .dgu-block {
-    line-height: 1.5;
-
-    br {
-        @media (max-width: 768px) {
-            display: none;
-        }
-    }
-
     &__wrapper {
         &:before {
             content: '';
@@ -38,12 +30,6 @@
 }
 
 .dgu-info {
-    background: var(--extra-light-background);
-
-    @media (max-width: 768px) {
-        border-radius: 1rem !important;
-    }
-
     &__wrapper {
         margin-top: -4.5rem;
 
@@ -75,7 +61,7 @@
     }
 
     &__background {
-        background: #FBFBFB
+        background: var(--light-background)
     }
 
     &__tarifs {
@@ -86,12 +72,6 @@
 
     &__height {
         max-height: 380px;
-    }
-
-    &.slider-container {
-        @media (max-width: 768px) {
-            height: 180px;
-        }
     }
 }
 
@@ -114,7 +94,7 @@
         grid-template-columns: 1fr;
     }
 
-    & .d-flex {
+    & .d-flex:not(.files-item__svg) {
         background: var(--extra-light-background);
         height: 232px;
 
@@ -130,9 +110,6 @@
             min-width: 40px;
             font-size: 0.875rem;
             min-height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
     }
 

@@ -20,14 +20,13 @@
   }
 
   &__block {
-    background: #f6f7f8;
-    border-radius: 1.5rem;
+    background: var(--bs-background);
     border: none;
 
     &:hover {
       border: none;
 
-      & > img {
+      &>img {
         opacity: 0.1;
       }
     }
@@ -42,7 +41,7 @@
 
     &.tab-card:hover {
       @media (max-width: 768px) {
-        background: #f6f7f8;
+        background: var(--bs-background);
         color: var(--bs-primary);
       }
     }

@@ -8,7 +8,7 @@
   }
 
   &:last-child {
-    color: #828c97;
+    color: var(--bs-gray);
   }
 
   &:not(:last-child):after {
@@ -18,7 +18,7 @@
     right: 10px;
     width: 2px;
     height: 2px;
-    background: #828c97;
+    background: var(--bs-gray);
     border-radius: 50%;
     transform: translate(0, -50%);
   }

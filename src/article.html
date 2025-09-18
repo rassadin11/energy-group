@@ -1,191 +1,140 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
-  @include('partials/head.html')
+@include('partials/head.html')
 
-  <body data-category="about-company">
-    <div class="headers w-100">
-      @include('partials/pre-header.html') @include('partials/header.html')
-    </div>
+<body data-category="about-company">
+  <div class="headers w-100">
+    @include('partials/pre-header.html') @include('partials/header.html')
+  </div>
 
-    <main class="main">
-      @include('partials/article/breadcrumbs.html')
-      @include('partials/article/content.html')
+  <main class="main">
+    @include('partials/article/breadcrumbs.html')
+    @include('partials/article/content.html')
 
-      <section class="projects popular-slider no-background mb-lg-0 mb-3">
-        <div class="container pt-md-9 mt-md-6 mt-9 pt-3 mb-xxl-10 article-slider slider">
-          <h2 class="title fw-bold">Читайте также</h2>
-          <div class="swiffy-slider slider-nav-outside-expand slider-nav-visible projects-slider-wrapper slider-item-show4 pt-xxl-10 pt-xl-9 pt-6">
-            <ul class="slider-container popular-slider pb-lg-10 pb-9">
-              <li
-                class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider"
-              >
-                <picture>
-                  <source srcset="./img/article/slide1.webp" type="image/webp" />
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    src="./img/article/slide1.jpg"
-                    alt="project"
-                    class="object-fit-cover"
-                    width="100%"
-                  />
-                </picture>
+    <section class="projects popular-slider no-background mb-lg-0 mb-3">
+      <div class="container pt-md-9 mt-md-6 mt-9 pt-3 mb-xxl-10 article-slider slider">
+        <h2 class="title fw-bold">Читайте также</h2>
+        <div
+          class="swiffy-slider slider-nav-outside-expand slider-nav-visible projects-slider-wrapper slider-item-show4 pt-xxl-10 pt-xl-9 pt-6">
+          <ul class="slider-container popular-slider pb-lg-10 pb-9">
+            <li
+              class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider rounded-md-6 rounded-4">
+              <picture>
+                <source srcset="./img/article/slide1.webp" type="image/webp" />
+                <img loading="lazy" decoding="async" src="./img/article/slide1.jpg" alt="project"
+                  class="object-fit-cover" width="100%" />
+              </picture>
 
-                <div
-                  class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100"
-                >
-                  <p class="semibold">
-                    Опциональный заголовок, который можно отключать
-                  </p>
-                  <p class="about-wrapper__description flex-fill mt-1">
-                    Описание новости, статьи или видео в одну, две или 3 строки,
-                    но желательно не больше
-                  </p>
-                  <p class="about-wrapper__description mt-3 date">15.02.2025</p>
-                </div>
-              </li>
-              <li
-                class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider"
-              >
-                <picture>
-                  <source srcset="./img/article/slide2.webp" type="image/webp" />
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    src="./img/article/slide2.jpg"
-                    alt="project"
-                    class="object-fit-cover"
-                    width="100%"
-                  />
-                </picture>
+              <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block rounded-md-6 rounded-4 h-100">
+                <p class="semibold">
+                  Опциональный заголовок, который можно отключать
+                </p>
+                <p class="about-wrapper__description flex-fill mt-1">
+                  Описание новости, статьи или видео в одну, две или 3 строки,
+                  но желательно не больше
+                </p>
+                <p class="about-wrapper__description mt-3 date">15.02.2025</p>
+              </div>
+            </li>
+            <li
+              class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider rounded-md-6 rounded-4">
+              <picture>
+                <source srcset="./img/article/slide2.webp" type="image/webp" />
+                <img loading="lazy" decoding="async" src="./img/article/slide2.jpg" alt="project"
+                  class="object-fit-cover" width="100%" />
+              </picture>
 
-                <div
-                  class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100"
-                >
-                  <p class="semibold">
-                    Energy Group лидер по продажам автономной электрической
-                    энергии
-                  </p>
-                  <p class="about-wrapper__description flex-fill mt-1">
-                    Никто не продавал больше и не будет, потому что мы уже
-                    продали
-                  </p>
-                  <p class="about-wrapper__description mt-3 date">13.02.2025</p>
-                </div>
-              </li>
-              <li
-                class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider"
-              >
-                <picture>
-                  <source srcset="./img/article/slide3.webp" type="image/webp" />
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    src="./img/article/slide3.jpg"
-                    alt="project"
-                    class="object-fit-cover"
-                    width="100%"
-                  />
-                </picture>
+              <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block rounded-md-6 rounded-4 h-100">
+                <p class="semibold">
+                  Energy Group лидер по продажам автономной электрической
+                  энергии
+                </p>
+                <p class="about-wrapper__description flex-fill mt-1">
+                  Никто не продавал больше и не будет, потому что мы уже
+                  продали
+                </p>
+                <p class="about-wrapper__description mt-3 date">13.02.2025</p>
+              </div>
+            </li>
+            <li
+              class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider rounded-md-6 rounded-4">
+              <picture>
+                <source srcset="./img/article/slide3.webp" type="image/webp" />
+                <img loading="lazy" decoding="async" src="./img/article/slide3.jpg" alt="project"
+                  class="object-fit-cover" width="100%" />
+              </picture>
 
-                <div
-                  class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100"
-                >
-                  <p class="semibold">Одна строка</p>
-                  <p class="about-wrapper__description flex-fill mt-1">
-                    Замечательная новость о компании или оборудовании которое
-                    она продает
-                  </p>
-                  <p class="about-wrapper__description mt-3 date">12.02.2025</p>
-                </div>
-              </li>
-              <li
-                class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider"
-              >
-                <picture>
-                  <source srcset="./img/article/slide4.webp" type="image/webp" />
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    src="./img/article/slide4.jpg"
-                    alt="project"
-                    class="object-fit-cover"
-                    width="100%"
-                  />
-                </picture>
+              <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block rounded-md-6 rounded-4 h-100">
+                <p class="semibold">Одна строка</p>
+                <p class="about-wrapper__description flex-fill mt-1">
+                  Замечательная новость о компании или оборудовании которое
+                  она продает
+                </p>
+                <p class="about-wrapper__description mt-3 date">12.02.2025</p>
+              </div>
+            </li>
+            <li
+              class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider rounded-md-6 rounded-4">
+              <picture>
+                <source srcset="./img/article/slide4.webp" type="image/webp" />
+                <img loading="lazy" decoding="async" src="./img/article/slide4.jpg" alt="project"
+                  class="object-fit-cover" width="100%" />
+              </picture>
 
-                <div
-                  class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100"
-                >
-                  <p class="semibold">Новость, которую мы заслужили, спасибо</p>
-                  <p class="about-wrapper__description flex-fill mt-1">
-                    Краткое описание
-                  </p>
+              <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block rounded-md-6 rounded-4 h-100">
+                <p class="semibold">Новость, которую мы заслужили, спасибо</p>
+                <p class="about-wrapper__description flex-fill mt-1">
+                  Краткое описание
+                </p>
                 </p>
                 <p class="about-wrapper__description mt-3 date">14.02.2025</p>
-                </div>
-              </li>
-              <li
-                class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider"
-              >
-                <picture>
-                  <source srcset="./img/article/slide1.webp" type="image/webp" />
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    src="./img/article/slide1.jpg"
-                    alt="project"
-                    class="object-fit-cover"
-                    width="100%"
-                  />
-                </picture>
+              </div>
+            </li>
+            <li
+              class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider rounded-md-6 rounded-4">
+              <picture>
+                <source srcset="./img/article/slide1.webp" type="image/webp" />
+                <img loading="lazy" decoding="async" src="./img/article/slide1.jpg" alt="project"
+                  class="object-fit-cover" width="100%" />
+              </picture>
 
-                <div
-                  class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100"
-                >
-                  <p class="semibold">Одна строка</p>
-                  <p class="about-wrapper__description flex-fill mt-1">
-                    Замечательная новость о компании или оборудовании которое
-                    она продает
-                  </p>
-                  <p class="about-wrapper__description mt-3 date">12.02.2025</p>
-                </div>
-              </li>
-              <li
-                class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider"
-              >
-                <picture>
-                  <source srcset="./img/article/slide2.webp" type="image/webp" />
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    src="./img/article/slide2.jpg"
-                    alt="project"
-                    class="object-fit-cover"
-                    width="100%"
-                  />
-                </picture>
+              <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block rounded-md-6 rounded-4 h-100">
+                <p class="semibold">Одна строка</p>
+                <p class="about-wrapper__description flex-fill mt-1">
+                  Замечательная новость о компании или оборудовании которое
+                  она продает
+                </p>
+                <p class="about-wrapper__description mt-3 date">12.02.2025</p>
+              </div>
+            </li>
+            <li
+              class="popular-slider__block d-flex flex-column gap-4 overflow-hidden news-slider rounded-md-6 rounded-4">
+              <picture>
+                <source srcset="./img/article/slide2.webp" type="image/webp" />
+                <img loading="lazy" decoding="async" src="./img/article/slide2.jpg" alt="project"
+                  class="object-fit-cover" width="100%" />
+              </picture>
 
-                <div
-                  class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block h-100"
-                >
-                  <p class="semibold">Новость, которую мы заслужили, спасибо</p>
-                  <p class="about-wrapper__description flex-fill mt-1">
-                    Краткое описание
-                  </p>
+              <div class="px-md-6 px-4 pb-4 d-flex flex-column gap-2 news-slider__block rounded-md-6 rounded-4 h-100">
+                <p class="semibold">Новость, которую мы заслужили, спасибо</p>
+                <p class="about-wrapper__description flex-fill mt-1">
+                  Краткое описание
+                </p>
                 </p>
                 <p class="about-wrapper__description mt-3 date">14.02.2025</p>
-                </div>
-              </li>
-            </ul>
+              </div>
+            </li>
+          </ul>
 
-            <button type="button" class="slider-nav center-arrow d-lg-block d-none position-absolute left"></button>
-            <button type="button" class="slider-nav slider-nav-next d-lg-block d-none center-arrow position-absolute right"></button>
-          </div>
+          <button type="button" class="slider-nav center-arrow d-lg-block d-none position-absolute left"></button>
+          <button type="button"
+            class="slider-nav slider-nav-next d-lg-block d-none center-arrow position-absolute right"></button>
         </div>
-      </section>
-    </main>
-    @include('partials/footer.html') @include('partials/popup-book.html')
-    @include('partials/popup-recall.html')
-  </body>
+      </div>
+    </section>
+  </main>
+  @include('partials/footer.html') @include('partials/popup-book.html')
+  @include('partials/popup-recall.html')
+</body>
+
 </html>

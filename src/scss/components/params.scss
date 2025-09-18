@@ -5,8 +5,7 @@
 }
 
 .params-block {
-  background: #f6f7f8;
-  border-radius: 1.5rem;
+  background: var(--bs-background);
 
   @media (max-width: 1200px) {
     display: flex;
@@ -292,7 +291,7 @@ input[type="number"] {
 
   &__button-wrapper {
     grid-template-columns: 1fr 1fr;
-    background: #f6f7f8;
+    background: var(--bs-background);
 
     button {
       background: transparent;

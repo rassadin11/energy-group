@@ -10,10 +10,6 @@
       }
     }
 
-    img {
-      border-radius: 1.5rem;
-    }
-
     @media (max-width: 1450px) {
       grid-auto-columns: calc(42% - 53.3333px);
       padding-left: 1rem;
@@ -49,7 +45,6 @@
   &__description {
     grid-template-columns: 1fr 1fr;
     font-size: 1.125rem;
-    line-height: 1.5;
 
     @media (max-width: 550px) {
       font-size: 1rem !important;
@@ -61,7 +56,6 @@
 
     p {
       font-size: 1.125rem;
-      line-height: 1.5;
 
       @media (max-width: 550px) {
         font-size: 1rem !important;
@@ -82,11 +76,6 @@
 
     @media (max-width: 768px) {
       border: 1px solid var(--border-light) !important;
-      border-radius: 1rem !important;
-
-      img {
-        border-radius: 1rem;
-      }
     }
   }
 
@@ -118,11 +107,10 @@
 
   &__item {
     background: var(--extra-light-background);
-    border-radius: 1.5rem;
   }
 
   &__description {
-    color: var(--light-blue);
+    color: var(--bs-gray);
 
     &.none {
       font-size: 1rem;
@@ -145,13 +133,8 @@
     grid-template-columns: 1fr;
   }
 
-  p {
-    line-height: 1.5;
-  }
-
   &__item {
     background: var(--extra-light-background);
-    border-radius: 1.5rem;
 
     p {
       @media (max-width: 550px) {
@@ -162,13 +145,10 @@
 }
 
 .delivery-contacts {
-  border-radius: 1.5rem;
   background: var(--extra-light-background);
 
   &__description {
     font-size: 1.125rem;
-    line-height: 1.5;
-    color: var(--gray-blue);
 
     @media (max-width: 768px) {
       font-size: 1rem;
@@ -188,10 +168,6 @@
       @media (max-width: 550px) {
         font-size: 1.25rem;
       }
-    }
-
-    a:hover {
-      color: var;
     }
   }
 }

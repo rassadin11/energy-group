@@ -1,6 +1,6 @@
 <div class="popup-book-container popup-book position-relative d-none">
   <div class="popup-background"></div>
-  <div class="popup-book__wrapper d-grid p-md-8 py-8 px-4">
+  <div class="popup-book__wrapper rounded-md-6 rounded-4 d-grid p-md-8 py-8 px-4">
     <div>
       <p class="popup-book__title fw-bold">
         Взять <span>в аренду</span> генератор
@@ -10,44 +10,22 @@
         <span class="fw-bold">подберем для Вас лучшее решение</span>
       </p>
 
-      <form
-        action="#"
-        class="d-flex gap-md-3 gap-3 justify-content-md-center flex-column mt-5 flex-wrap"
-      >
-        <input
-          type="text"
-          class="big-form__input p-md-4 p-3 rounded-3"
-          placeholder="Ваше имя"
-          required
-        />
-        <input
-          type="tel"
-          class="big-form__input p-md-4 p-3 rounded-3"
-          placeholder="Телефон"
-          required
-        />
+      <form action="#" class="d-flex gap-md-3 gap-3 justify-content-md-center flex-column mt-5 flex-wrap">
+        <input type="text" class="big-form__input p-md-4 p-3 rounded-3" placeholder="Ваше имя" required />
+        <input type="tel" class="big-form__input p-md-4 p-3 rounded-3" placeholder="Телефон" required />
         <button class="btn btn-warning py-md-3 py-3 px-9">Отправить</button>
       </form>
 
       <p class="popup-book__agreement mt-6">
-        <a href="#"
-          >Я согласен на передачу и обработку персональных данных в соответствии
-          с политикой конфиденциальности</a
-        >
+        <a href="#">Я согласен на передачу и обработку персональных данных в соответствии
+          с политикой конфиденциальности</a>
       </p>
     </div>
     <div>
-      <img
-        loading="lazy"
-        decoding="async"
-        src="./img/arenda/popup-book.png"
-        alt="popup"
-      />
+      <img loading="lazy" decoding="async" src="./img/arenda/popup-book.png" alt="popup" />
     </div>
 
-    <button
-      class="d-block popup-cross rounded-3 d-flex justify-content-center align-items-center"
-    >
+    <button class="d-block popup-cross rounded-3 d-flex justify-content-center align-items-center">
       <svg>
         <use xlink:href="./img/svg/sprite.svg#x"></use>
       </svg>

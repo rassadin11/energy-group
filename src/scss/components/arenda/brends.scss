@@ -1,10 +1,4 @@
 .brends {
-  br {
-    @media (max-width: 768px) {
-      display: none;
-    }
-  }
-
   .tick {
     width: 25px;
     height: 25px;
@@ -40,14 +34,12 @@
   }
 
   &__item {
-    background: #f6f7f8;
-    border-radius: 1.5rem;
+    background: var(--bs-background);
   }
 
   &__notification {
     opacity: 0.5;
     background: var(--bs-white);
-    border-radius: 1.5rem;
     line-height: 2;
 
     @media (max-width: 1200px) {
