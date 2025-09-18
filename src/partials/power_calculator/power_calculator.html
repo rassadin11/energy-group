@@ -1,0 +1,426 @@
+<section class="container payment mt-6 mb-10 pb-lg-10 tabs position-relative">
+  <h1 class="mb-0 vacancy-header fw-bold">Расчет мощности генератора</h1>
+
+  <p class="lh-base big-p mt-4 text-gray">Узнать допустимую мощность для электрогенератора на дизеле можно онлайн —
+    введите данные
+    в таблицу ниже. Если указанные в ней сведения отличаются от реальных, необходимо указать фактические значения. Затем
+    предстоит кликнуть на пункт «подобрать генератор». Система найдет устройство, которое подойдет для постоянной
+    работы. В таблице указаны примерные значения. Это позволит понять принцип подбора оборудования. Чтобы выполнить
+    точный персональный расчет, обратитесь к специалистам.</p>
+
+  <div class="row mt-md-9 mt-0 calculator gy-5">
+    <div class="col-md-8 col-12">
+      <div class="accordion d-flex flex-column gap-3" id="accordionExample">
+        <div class="accordion-item p-md-6 p-4 border border-1 active">
+          <h2 class="accordion-header">
+            <button class="accordion-button fw-semibold gap-1 d-flex align-items-center p-0" type="button"
+              data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <svg class="light-icon">
+                <use href="./img/svg/sprite.svg#light-icon"></use>
+              </svg>
+              <p>Освещение</p>
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body p-0 mt-md-6 mt-2 calc-form">
+              <div class="calc-form__string d-none d-md-flex mb-3 gap-1 headers">
+                <p class="col-md-3">Устройство</p>
+                <div class="row p-0 gx-3">
+                  <p class="col-4">Мощность, Вт</p>
+                  <p class="col-4">Коэф. пуск. тока</p>
+                  <p class="col-4">Кол-во</p>
+                </div>
+              </div>
+
+              <!-- Строка -->
+              <div
+                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
+                <p>Лампы накаливания</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <p class="d-md-none d-block calc-form__description mb-2">Мощность, Вт</p>
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <p class="d-md-none d-block calc-form__description mb-2">Коэф. пуск. тока</p>
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <p class="d-md-none d-block calc-form__description mb-2">Кол-во, шт</p>
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
+                <p>Энергосбере­гающие лампы </p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
+                <p>Светодиодные лампы</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item p-md-6 p-4 border border-1">
+          <h2 class="accordion-header">
+            <button class="accordion-button fw-semibold gap-1 d-flex align-items-center p-0 collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+              <svg class="wash-machine">
+                <use href="./img/svg/sprite.svg#wash-machine"></use>
+              </svg>
+              <p>Бытовая техника</p>
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body p-0 mt-md-6 mt-2 calc-form">
+              <div class="calc-form__string d-none d-md-flex mb-3 gap-1 headers">
+                <p class="col-md-3">Устройство</p>
+                <div class="row p-0 gx-3">
+                  <p class="col-4">Мощность, Вт</p>
+                  <p class="col-4">Коэф. пуск. тока</p>
+                  <p class="col-4">Кол-во</p>
+                </div>
+              </div>
+
+              <!-- Строка -->
+              <div
+                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
+                <p>Лампы накаливания</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <p class="d-md-none d-block calc-form__description mb-2">Мощность, Вт</p>
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <p class="d-md-none d-block calc-form__description mb-2">Коэф. пуск. тока</p>
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <p class="d-md-none d-block calc-form__description mb-2">Кол-во, шт</p>
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
+                <p>Энергосбере­гающие лампы </p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
+                <p>Светодиодные лампы</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item p-md-6 p-4 border border-1">
+          <h2 class="accordion-header">
+            <button class="accordion-button fw-semibold gap-1 d-flex align-items-center p-0 collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true"
+              aria-controls="collapseThree">
+              <svg class="home">
+                <use href="./img/svg/sprite.svg#home"></use>
+              </svg>
+              <p>Системы жизнеобеспечения дома</p>
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body p-0 mt-md-6 mt-2 calc-form">
+              <div class="calc-form__string d-none d-md-flex mb-3 gap-1 headers">
+                <p class="col-md-3">Устройство</p>
+                <div class="row p-0 gx-3">
+                  <p class="col-4">Мощность, Вт</p>
+                  <p class="col-4">Коэф. пуск. тока</p>
+                  <p class="col-4">Кол-во</p>
+                </div>
+              </div>
+
+              <!-- Строка -->
+              <div
+                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
+                <p>Лампы накаливания</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <p class="d-md-none d-block calc-form__description mb-2">Мощность, Вт</p>
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <p class="d-md-none d-block calc-form__description mb-2">Коэф. пуск. тока</p>
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <p class="d-md-none d-block calc-form__description mb-2">Кол-во, шт</p>
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
+                <p>Энергосбере­гающие лампы </p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
+                <p>Светодиодные лампы</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item p-md-6 p-4 border border-1">
+          <h2 class="accordion-header">
+            <button class="accordion-button fw-semibold gap-1 d-flex align-items-center p-0 collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true"
+              aria-controls="collapseFive">
+              <svg class="multimedia">
+                <use href="./img/svg/sprite.svg#multimedia"></use>
+              </svg>
+              <p>Мультимедиа</p>
+            </button>
+          </h2>
+          <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body p-0 mt-md-6 mt-2 calc-form">
+              <div class="calc-form__string d-none d-md-flex mb-3 gap-1 headers">
+                <p class="col-md-3">Устройство</p>
+                <div class="row p-0 gx-3">
+                  <p class="col-4">Мощность, Вт</p>
+                  <p class="col-4">Коэф. пуск. тока</p>
+                  <p class="col-4">Кол-во</p>
+                </div>
+              </div>
+
+              <!-- Строка -->
+              <div
+                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
+                <p>Лампы накаливания</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <p class="d-md-none d-block calc-form__description mb-2">Мощность, Вт</p>
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <p class="d-md-none d-block calc-form__description mb-2">Коэф. пуск. тока</p>
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <p class="d-md-none d-block calc-form__description mb-2">Кол-во, шт</p>
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
+                <p>Энергосбере­гающие лампы </p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
+                <p>Светодиодные лампы</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item p-md-6 p-4 border border-1">
+          <h2 class="accordion-header">
+            <button class="accordion-button fw-semibold gap-1 d-flex align-items-center p-0 collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true"
+              aria-controls="collapseFour">
+              <svg class="light-icon">
+                <use href="./img/svg/sprite.svg#light-icon"></use>
+              </svg>
+              <p>Электроинструменты, оборудование</p>
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body p-0 mt-md-6 mt-2 calc-form">
+              <div class="calc-form__string d-none d-md-flex mb-3 gap-1 headers">
+                <p class="col-md-3">Устройство</p>
+                <div class="row p-0 gx-3">
+                  <p class="col-4">Мощность, Вт</p>
+                  <p class="col-4">Коэф. пуск. тока</p>
+                  <p class="col-4">Кол-во</p>
+                </div>
+              </div>
+
+              <!-- Строка -->
+              <div
+                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
+                <p>Лампы накаливания</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <p class="d-md-none d-block calc-form__description mb-2">Мощность, Вт</p>
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <p class="d-md-none d-block calc-form__description mb-2">Коэф. пуск. тока</p>
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <p class="d-md-none d-block calc-form__description mb-2">Кол-во, шт</p>
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
+                <p>Энергосбере­гающие лампы </p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
+                <p>Светодиодные лампы</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-12">
+      <div class="bg-secondary p-md-6 p-4 rounded-6">
+        <p class="text-gray">Расчётная мощность</p>
+        <p class="calculator__power result-value fw-bold fs-2 mt-2">10 кВт</p>
+        <button class="btn btn-warning py-12 w-100 fw-bold mt-4">Подобрать генератор</button>
+        <button class="btn btn-primary py-12 w-100 fw-bold mt-2">Задать вопрос</button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="calculator__result position-fixed bottom-0 start-50 bg-white p-4 translate-x-middle z-3 border rounded-top-4 w-100">
+    <div class="d-flex justify-content-between align-items-center gap-2">
+      <div>
+        <p class="calculator__text">Расчётная мощность</p>
+        <p class="result-value mt-1 fw-bold">10 кВт</p>
+      </div>
+      <div>
+        <button class="btn btn-warning py-12 w-100 fw-bold text-nowrap">Подобрать генератор</button>
+      </div>
+    </div>
+  </div>
+
+  <p class="lh-base big-p mt-md-9 mt-8 pt-md-0 pt-2">Срок службы автономных генераторов, созданных на базе дизельных и
+    бензиновых двигателей, зависит от правильно подобной мощности. Уровень нагрузки должен составлять 40-80% от
+    номинала. Чтобы определить значение показателя, важно выполнить расчет мощности генератора. На нее влияют следующие
+    факторы:</p>
+  <ul class="article-list p-0 mt-md-6 mt-3">
+    <li class="mt-2">запас прочности;</li>
+    <li class="mt-2">потребляемая мощность загрузки;</li>
+    <li class="mt-2">коэффициент пускового тока</li>
+  </ul>
+</section>

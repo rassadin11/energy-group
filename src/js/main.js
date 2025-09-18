@@ -733,6 +733,13 @@ if (document.getElementById(`about-company2`)) {
     });
 }
 
+// certificates
+
+lightGallery(document.getElementById('animated-thumbnails'), {
+    thumbnail: true,
+    selector: '.certificate',
+});
+
 // Custom dropdown with search
 
 function activateCustomDropdowns() {
@@ -1562,3 +1569,21 @@ if (categoryLink) {
         }
     })
 }
+
+// для аккордеонов добавляем класс active к открытому accordion-item
+
+const accordionItems = document.querySelectorAll(".accordion-item");
+
+accordionItems.forEach((item) => {
+    const collapse = item.querySelector(".accordion-collapse");
+
+    // когда аккордеон открывается
+    collapse.addEventListener("show.bs.collapse", () => {
+        item.classList.add("active");
+    });
+
+    // когда аккордеон закрывается
+    collapse.addEventListener("hide.bs.collapse", () => {
+        item.classList.remove("active");
+    });
+});

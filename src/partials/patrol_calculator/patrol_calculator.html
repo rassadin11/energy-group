@@ -1,0 +1,116 @@
+<section class="container payment mt-6 mb-10 pb-lg-10 tabs position-relative">
+  <h1 class="mb-0 vacancy-header fw-bold">Расчет расхода топлива генератора</h1>
+
+  <div class="row mt-md-9 mt-0 calculator gy-5">
+    <div class="col-md-8 col-12">
+      <div class="patrol-calculator__block p-lg-6 p-4 rounded-md-6 rounded-4">
+        <h2 class="fw-bold mb-0"><svg class="light-icon d-md-inline d-none">
+            <use href="./img/svg/sprite.svg#drop"></use>
+          </svg>
+          <span>Калькулятор расхода топлива генератора</span>
+        </h2>
+
+        <div class="row gx-3 gy-lg-0 gy-4 patrol-calculator__info mt-lg-6 mt-0">
+          <div class="col-lg-4 col-12">
+            <div class="h-100 d-flex flex-column">
+              <p class="flex-fill">Мощность генератора, кВт</p>
+              <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark mt-lg-6 mt-2" value="100">
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-12">
+            <div class="h-100 d-flex flex-column">
+              <p class="flex-fill">Средняя нагрузка</p>
+              <div class="select-container custom-dropdown tension small-block mt-lg-6 mt-2">
+                <div
+                  class="select-display custom-select py-md-3 px-md-4 py-12 px-3 border border-1 d-flex align-items-center w-100 rounded-2 position-relative">
+                  <span class="selected-value no-title">50%</span>
+                  <span class="select-arrow">
+                    <svg class="arrow">
+                      <use xlink:href="./img/svg/sprite.svg#arrow"></use>
+                    </svg>
+                  </span>
+                </div>
+                <div class="dropdown-container-wrapper mb-8 pb-4 position-absolute w-100">
+                  <div class="dropdown-container w-100 rounded-2">
+                    <div class="search-box p-2">
+                      <input type="text" class="search-input w-100 rounded-2 px-3 py-2 ps-1"
+                        placeholder="Поиск по параметру">
+                    </div>
+                    <div class="dropdown-options mb-1">
+                      <div class="dropdown-option py-2 px-3" data-value="230 B">50%</div>
+                      <div class="dropdown-option py-2 px-3" data-value="230/400 B">100%</div>
+                    </div>
+                    <input type="hidden" name="engine" value="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-12">
+            <div class="h-100 d-flex flex-column">
+              <p class="flex-fill">Время работы/час</p>
+              <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark mt-lg-6 mt-2" value="100">
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-md-6 mt-4 lh-base">Полученный результат не отражает реальный расход топлива, он даёт
+          приблизительное
+          представление о
+          потреблении. Реальные значения индивидуальны для каждого конкретного генератора и зависят от ряда факторов.
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4 col-12">
+      <div class="bg-secondary p-md-6 p-4 rounded-md-6 rounded-4 d-flex flex-column h-100">
+        <p class="text-gray">Расчётная мощность</p>
+        <p class="calculator__power result-value fw-bold fs-2 mt-2">18.75 л</p>
+        <div class="flex-fill mt-4">
+          <div class="d-flex justify-content-between align-items-center">
+            <p>Средний расход:</p>
+            <p>3.75 л/ч</p>
+          </div>
+          <div class="d-flex justify-content-between align-items-center mt-1">
+            <p>Всего выработано:</p>
+            <p>75.00 кВт*ч</p>
+          </div>
+        </div>
+        <button class="btn btn-primary py-12 w-100 fw-bold mt-md-2 mt-8">Задать вопрос</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div
+    class="calculator__result position-fixed bottom-0 start-50 bg-white p-4 translate-x-middle z-3 border rounded-top-4 w-100">
+    <div class="d-flex justify-content-between align-items-center gap-2">
+      <div>
+        <p class="calculator__text">Расчётная мощность</p>
+        <p class="result-value mt-1 fw-bold">10 кВт</p>
+      </div>
+      <div>
+        <button class="btn btn-warning py-12 w-100 fw-bold text-nowrap">Подобрать генератор</button>
+      </div>
+    </div>
+  </div> -->
+
+  <p class="lh-base big-p mt-md-9 mt-8 pt-md-0 pt-2">При выборе / покупке генератора смотрят не только на его стоимость,
+    но и на расход топлива. В отличие от другой техники, скорость вращения коленчатого вала электростанции остается
+    относительно фиксированной. Это позволяет определить расход дизельного топлива при разных нагрузках, а значит,
+    запастись горючим на определённые период и вычислить стоимость электроснабжения.</p>
+
+  <p class="lh-base big-p fw-bold mt-md-6 mt-4">Факторы, влияющие на расход топлива дизельного генератора:</p>
+  <ul class="article-list p-0 mt-md-4 mt-3">
+    <li class="mt-2">Мощность – чем выше, тем экономичнее двигатель при расчете потребления на каждый киловатт</li>
+    <li class="mt-2">Состояние поршневой группы – износ увеличивает расход, ведь падает компрессия, следственно, и КПД
+    </li>
+    <li class="mt-2">Настройка двигателя: своевременность впрыска, зазоры клапанов</li>
+    <li class="mt-2">Тип и качество ДТ: зимнее, летнее</li>
+    <li class="mt-2">Температура окружающего воздуха – затраты на прогрев двигателя зимой будут выше</li>
+    <li class="mt-2">Нагрузка – обычно энергопотребление динамичное, поэтому берут приблизительное среднее значение за
+      весь рабочий цикл</li>
+    <li class="mt-2">Высота относительно уровня моря, состояние трущихся компонентов мотора и прочие факторы также
+      вносят свои коррективы.</li>
+  </ul>
+</section>

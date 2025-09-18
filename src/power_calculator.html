@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+@include('partials/head.html')
+
+<body data-category="about-company">
+  <div class="headers w-100">
+    @include('partials/pre-header.html') @include('partials/header.html')
+  </div>
+
+  <main class="main">
+    @include('partials/power_calculator/breadcrumbs.html')
+    @include("partials/power_calculator/power_calculator.html")
+  </main>
+
+  @include('partials/power_calculator/popup.html') @include('partials/footer.html')
+  @include('partials/popup-book.html') @include('partials/popup-recall.html')
+</body>
+
+</html>

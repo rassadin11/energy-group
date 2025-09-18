@@ -1,22 +1,34 @@
 .tabs {
+  .accordion-item {
+    background-color: var(--extra-light-background);
+    transition: all .3s ease;
+
+    &:not(.active) {
+      background-color: var(--bs-white);
+    }
+
+    &.active {
+      border: 1px solid transparent !important;
+    }
+  }
+
   .accordion-button {
     box-shadow: none !important;
-    background-color: #fafafa !important;
+    background: transparent !important;
     font-size: 18px !important;
     transition: all 0.3s ease;
 
     &:not(.collapsed)::after {
-      background-color: var(--bs-yellow);
+      background-color: #1F3246;
     }
 
     @media (max-width: 768px) {
-      font-size: 0.75rem !important;
+      font-size: 1rem !important;
     }
   }
 
   .accordion-body {
     font-size: 18px !important;
-    opacity: 0.5;
 
     @media (max-width: 768px) {
       font-size: 0.75rem !important;
@@ -24,9 +36,10 @@
   }
 
   .accordion-button::after {
-    min-height: 48px;
-    min-width: 48px;
+    min-height: 32px;
+    min-width: 32px;
     display: block;
+    border: 1px solid #e7e9eb;
     background-position: center;
     border-radius: 50%;
     background-color: var(--bs-white);
@@ -36,6 +49,9 @@
       min-width: 20px;
       min-height: 20px;
       background-size: 10px;
+      background-color: transparent !important;
+      background-image: var(--bs-accordion-btn-icon) !important;
+      border: none;
     }
   }
 

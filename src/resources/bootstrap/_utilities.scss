@@ -89,6 +89,14 @@ $utilities: map-merge(( // scss-docs-start utils-vertical-align
           x: translateX(-50%),
           y: translateY(-50%),
         )),
+      "translate-x-middle": (property: transform,
+        class: translate-x-middle,
+        values: (null: translateX(-50%),
+        )),
+      "translate-y-middle": (property: transform,
+        class: translate-y-middle,
+        values: (null: translateY(-50%),
+        )),
       // scss-docs-end utils-position
       // scss-docs-start utils-borders
       "border": (property: border,
