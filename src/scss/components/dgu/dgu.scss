@@ -48,10 +48,10 @@
 }
 
 .large-p {
-    padding-bottom: 10.5rem;
+    padding-bottom: 8.5rem;
 
     @media (max-width: 768px) {
-        padding-bottom: 5rem;
+        padding-bottom: 4.5rem;
     }
 }
 
@@ -72,6 +72,7 @@
 
     &__height {
         max-height: 380px;
+        min-height: 182px;
     }
 }
 

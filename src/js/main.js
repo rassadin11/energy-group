@@ -1587,3 +1587,35 @@ accordionItems.forEach((item) => {
         item.classList.remove("active");
     });
 });
+
+// for calcs
+
+function isInViewport(element) {
+    let rect = element.getBoundingClientRect();
+    return (
+        rect.bottom >= 0 &&
+        rect.right >= 0 &&
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// пример использования
+const static_button = document.querySelector(".calculator__result-button");
+const dynamic_block = document.querySelector(".calculator__result");
+
+function showDynamicBlock() {
+    if (static_button && dynamic_block) {
+        if (isInViewport(static_button)) {
+            dynamic_block.classList.add("d-none")
+        } else {
+            dynamic_block.classList.remove('d-none')
+        }
+    }
+}
+
+window.onscroll = () => {
+    showDynamicBlock()
+};
+
+showDynamicBlock()

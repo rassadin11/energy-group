@@ -28,10 +28,10 @@
   }
 
   .accordion-body {
-    font-size: 1.125rem !important;
+    font-size: 1rem !important;
 
     @media (max-width: 768px) {
-      font-size: 0.75rem !important;
+      font-size: 0.875rem !important;
     }
   }
 
@@ -46,12 +46,9 @@
     transition: all 0.3s ease;
 
     @media (max-width: 768px) {
-      min-width: 20px;
-      min-height: 20px;
+      min-width: 32px;
+      min-height: 32px;
       background-size: 10px;
-      background-color: transparent !important;
-      background-image: var(--bs-accordion-btn-icon) !important;
-      border: none;
     }
   }
 

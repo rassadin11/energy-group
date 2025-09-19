@@ -48,6 +48,14 @@
     overflow: hidden;
     min-height: 267px;
 
+    &.about-company {
+      min-height: 320px;
+
+      @media (max-width: 768px) {
+        min-height: 185px;
+      }
+    }
+
     img {
       transition: all 0.3s ease;
     }

@@ -8,10 +8,10 @@
     работы. В таблице указаны примерные значения. Это позволит понять принцип подбора оборудования. Чтобы выполнить
     точный персональный расчет, обратитесь к специалистам.</p>
 
-  <div class="row mt-md-9 mt-0 calculator gy-5">
+  <div class="row mt-md-7 mt-0 calculator gy-5">
     <div class="col-md-8 col-12">
       <div class="accordion d-flex flex-column gap-3" id="accordionExample">
-        <div class="accordion-item p-md-6 p-4 border border-1 active">
+        <div class="accordion-item px-md-6 py-md-5 p-4 border border-1 active">
           <h2 class="accordion-header">
             <button class="accordion-button fw-semibold gap-1 d-flex align-items-center p-0" type="button"
               data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -23,7 +23,7 @@
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
             <div class="accordion-body p-0 mt-md-6 mt-2 calc-form">
-              <div class="calc-form__string d-none d-md-flex mb-3 gap-1 headers">
+              <div class="calc-form__string d-none d-md-flex gap-1 headers mb-5">
                 <p class="col-md-3">Устройство</p>
                 <div class="row p-0 gx-3">
                   <p class="col-4">Мощность, Вт</p>
@@ -34,7 +34,7 @@
 
               <!-- Строка -->
               <div
-                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
                 <p>Лампы накаливания</p>
                 <div class="row p-0 gx-3 mt-md-0 mt-2">
                   <div class="col-4">
@@ -46,14 +46,16 @@
                     <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
                   </div>
                   <div class="col-4">
-                    <p class="d-md-none d-block calc-form__description mb-2 text-dark-gray">Кол-во, шт</p>
-                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                    <div class="d-flex flex-column justify-content-between h-100">
+                      <p class="d-md-none d-block calc-form__description mb-2 text-dark-gray">Кол-во, шт</p>
+                      <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                    </div>
                   </div>
                 </div>
               </div>
 
               <div
-                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
                 <p>Энергосбере­гающие лампы </p>
                 <div class="row p-0 gx-3 mt-md-0 mt-2">
                   <div class="col-4">
@@ -69,7 +71,7 @@
               </div>
 
               <div
-                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
                 <p>Светодиодные лампы</p>
                 <div class="row p-0 gx-3 mt-md-0 mt-2">
                   <div class="col-4">
@@ -86,19 +88,20 @@
             </div>
           </div>
         </div>
-        <div class="accordion-item p-md-6 p-4 border border-1">
+        <div class="accordion-item px-md-6 py-md-5 p-4 border border-1">
           <h2 class="accordion-header">
             <button class="accordion-button fw-semibold gap-1 d-flex align-items-center p-0 collapsed" type="button"
-              data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+              data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true"
+              aria-controls="collapseFour">
               <svg class="wash-machine">
                 <use href="./img/svg/sprite.svg#wash-machine"></use>
               </svg>
               <p>Бытовая техника</p>
             </button>
           </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body p-0 mt-md-6 mt-2 calc-form">
-              <div class="calc-form__string d-none d-md-flex mb-3 gap-1 headers">
+              <div class="calc-form__string d-none d-md-flex gap-1 headers mb-5">
                 <p class="col-md-3">Устройство</p>
                 <div class="row p-0 gx-3">
                   <p class="col-4">Мощность, Вт</p>
@@ -107,10 +110,9 @@
                 </div>
               </div>
 
-              <!-- Строка -->
               <div
-                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
-                <p>Лампы накаливания</p>
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Холодильник</p>
                 <div class="row p-0 gx-3 mt-md-0 mt-2">
                   <div class="col-4">
                     <p class="d-md-none d-block calc-form__description mb-2 text-dark-gray">Мощность, Вт</p>
@@ -121,15 +123,17 @@
                     <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
                   </div>
                   <div class="col-4">
-                    <p class="d-md-none d-block calc-form__description mb-2 text-dark-gray">Кол-во, шт</p>
-                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                    <div class="d-flex flex-column justify-content-between h-100">
+                      <p class="d-md-none d-block calc-form__description mb-2 text-dark-gray">Кол-во, шт</p>
+                      <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                    </div>
                   </div>
                 </div>
               </div>
 
               <div
-                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
-                <p>Энергосбере­гающие лампы </p>
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Морозильная <wbr>камера</p>
                 <div class="row p-0 gx-3 mt-md-0 mt-2">
                   <div class="col-4">
                     <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
@@ -144,8 +148,248 @@
               </div>
 
               <div
-                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
-                <p>Светодиодные лампы</p>
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Посудомоечная <wbr>машина</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Электрочайник</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Кухонный <wbr>комбайн</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Хлебопечка</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Мультиварка</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Соковыжималка</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Блендер</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Стиральная <wbr>машина</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Утюг <wbr>с&nbsp;отпаривателем</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Пылесос</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Фен</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Электро&shy;обогреватель</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Кофеварка</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Микроволновая <wbr>печь</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Варочная <wbr>панель</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Встраиваемый <wbr>духовой шкаф</p>
                 <div class="row p-0 gx-3 mt-md-0 mt-2">
                   <div class="col-4">
                     <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
@@ -161,7 +405,7 @@
             </div>
           </div>
         </div>
-        <div class="accordion-item p-md-6 p-4 border border-1">
+        <div class="accordion-item px-md-6 py-md-5 p-4 border border-1">
           <h2 class="accordion-header">
             <button class="accordion-button fw-semibold gap-1 d-flex align-items-center p-0 collapsed" type="button"
               data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true"
@@ -174,7 +418,7 @@
           </h2>
           <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body p-0 mt-md-6 mt-2 calc-form">
-              <div class="calc-form__string d-none d-md-flex mb-3 gap-1 headers">
+              <div class="calc-form__string d-none d-md-flex gap-1 headers mb-5">
                 <p class="col-md-3">Устройство</p>
                 <div class="row p-0 gx-3">
                   <p class="col-4">Мощность, Вт</p>
@@ -183,10 +427,9 @@
                 </div>
               </div>
 
-              <!-- Строка -->
               <div
-                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
-                <p>Лампы накаливания</p>
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Перфоратор</p>
                 <div class="row p-0 gx-3 mt-md-0 mt-2">
                   <div class="col-4">
                     <p class="d-md-none d-block calc-form__description mb-2 text-dark-gray">Мощность, Вт</p>
@@ -197,15 +440,17 @@
                     <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
                   </div>
                   <div class="col-4">
-                    <p class="d-md-none d-block calc-form__description mb-2 text-dark-gray">Кол-во, шт</p>
-                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                    <div class="d-flex flex-column justify-content-between h-100">
+                      <p class="d-md-none d-block calc-form__description mb-2 text-dark-gray">Кол-во, шт</p>
+                      <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                    </div>
                   </div>
                 </div>
               </div>
 
               <div
-                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
-                <p>Энергосбере­гающие лампы </p>
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Электродрель</p>
                 <div class="row p-0 gx-3 mt-md-0 mt-2">
                   <div class="col-4">
                     <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
@@ -220,8 +465,167 @@
               </div>
 
               <div
-                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
-                <p>Светодиодные лампы</p>
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Шлифмашина</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Болгарка</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Электролобзик</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Инверторная <wbr>сварка <wbr>(электрод&nbsp;4&nbsp;мм)</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Бетономешалка</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Электропила</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Отбойный <wbr>молоток</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Компрессор</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Циркулярная <wbr>пила&nbsp;125мм</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Калорифер</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Мойка высокого <wbr>давления</p>
                 <div class="row p-0 gx-3 mt-md-0 mt-2">
                   <div class="col-4">
                     <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
@@ -237,7 +641,7 @@
             </div>
           </div>
         </div>
-        <div class="accordion-item p-md-6 p-4 border border-1">
+        <div class="accordion-item px-md-6 py-md-5 p-4 border border-1">
           <h2 class="accordion-header">
             <button class="accordion-button fw-semibold gap-1 d-flex align-items-center p-0 collapsed" type="button"
               data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true"
@@ -250,7 +654,7 @@
           </h2>
           <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body p-0 mt-md-6 mt-2 calc-form">
-              <div class="calc-form__string d-none d-md-flex mb-3 gap-1 headers">
+              <div class="calc-form__string d-none d-md-flex gap-1 headers mb-5">
                 <p class="col-md-3">Устройство</p>
                 <div class="row p-0 gx-3">
                   <p class="col-4">Мощность, Вт</p>
@@ -259,10 +663,9 @@
                 </div>
               </div>
 
-              <!-- Строка -->
               <div
-                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
-                <p>Лампы накаливания</p>
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Телевизор</p>
                 <div class="row p-0 gx-3 mt-md-0 mt-2">
                   <div class="col-4">
                     <p class="d-md-none d-block calc-form__description mb-2 text-dark-gray">Мощность, Вт</p>
@@ -273,15 +676,17 @@
                     <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
                   </div>
                   <div class="col-4">
-                    <p class="d-md-none d-block calc-form__description mb-2 text-dark-gray">Кол-во, шт</p>
-                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                    <div class="d-flex flex-column justify-content-between h-100">
+                      <p class="d-md-none d-block calc-form__description mb-2 text-dark-gray">Кол-во, шт</p>
+                      <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                    </div>
                   </div>
                 </div>
               </div>
 
               <div
-                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
-                <p>Энергосбере­гающие лампы </p>
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Персональный <wbr>компьютер</p>
                 <div class="row p-0 gx-3 mt-md-0 mt-2">
                   <div class="col-4">
                     <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
@@ -296,8 +701,8 @@
               </div>
 
               <div
-                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
-                <p>Светодиодные лампы</p>
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Ноутбук</p>
                 <div class="row p-0 gx-3 mt-md-0 mt-2">
                   <div class="col-4">
                     <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
@@ -310,23 +715,71 @@
                   </div>
                 </div>
               </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Музыкальный <wbr>центр</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Принтер</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Проектор</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
-        <div class="accordion-item p-md-6 p-4 border border-1">
+        <div class="accordion-item px-md-6 py-md-5 p-4 border border-1">
           <h2 class="accordion-header">
             <button class="accordion-button fw-semibold gap-1 d-flex align-items-center p-0 collapsed" type="button"
-              data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true"
-              aria-controls="collapseFour">
+              data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
               <svg class="light-icon">
                 <use href="./img/svg/sprite.svg#light-icon"></use>
               </svg>
-              <p>Электроинструменты, оборудование</p>
+              <p>Системы жизнеобеспечения дома</p>
             </button>
           </h2>
-          <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body p-0 mt-md-6 mt-2 calc-form">
-              <div class="calc-form__string d-none d-md-flex mb-3 gap-1 headers">
+              <div class="calc-form__string d-none d-md-flex gap-1 headers mb-5">
                 <p class="col-md-3">Устройство</p>
                 <div class="row p-0 gx-3">
                   <p class="col-4">Мощность, Вт</p>
@@ -335,10 +788,9 @@
                 </div>
               </div>
 
-              <!-- Строка -->
               <div
-                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
-                <p>Лампы накаливания</p>
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Двухконтурный <wbr>газовый котел</p>
                 <div class="row p-0 gx-3 mt-md-0 mt-2">
                   <div class="col-4">
                     <p class="d-md-none d-block calc-form__description mb-2 text-dark-gray">Мощность, Вт</p>
@@ -349,15 +801,17 @@
                     <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
                   </div>
                   <div class="col-4">
-                    <p class="d-md-none d-block calc-form__description mb-2 text-dark-gray">Кол-во, шт</p>
-                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                    <div class="d-flex flex-column justify-content-between h-100">
+                      <p class="d-md-none d-block calc-form__description mb-2 text-dark-gray">Кол-во, шт</p>
+                      <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                    </div>
                   </div>
                 </div>
               </div>
 
               <div
-                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
-                <p>Энергосбере­гающие лампы </p>
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Скважинный <wbr>насос</p>
                 <div class="row p-0 gx-3 mt-md-0 mt-2">
                   <div class="col-4">
                     <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
@@ -372,8 +826,120 @@
               </div>
 
               <div
-                class="calc-form__string py-md-2 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-3 mt-4">
-                <p>Светодиодные лампы</p>
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Насос системы <wbr>отопления</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Система <wbr>видеонаблюдения</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Бойлер</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Проточный <wbr>водонагреватель</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Кондиционер</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Теплый пол <wbr>(1&nbsp;кв.м.)</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Привод <wbr>откатных ворот</p>
+                <div class="row p-0 gx-3 mt-md-0 mt-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="1">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="calc-form__string py-md-1 d-flex justify-content-between align-items-md-center align-items-start flex-md-row flex-column gap-1 mt-md-0 mt-4">
+                <p>Насос полива</p>
                 <div class="row p-0 gx-3 mt-md-0 mt-2">
                   <div class="col-4">
                     <input type="text" class="form-control py-md-3 px-md-4 py-12 px-3 text-dark" value="100">
@@ -395,7 +961,7 @@
       <div class="bg-secondary p-md-6 p-4 rounded-md-6 rounded-4">
         <p class="text-dark-gray">Расчётная мощность</p>
         <p class="calculator__power result-value fw-bold fs-2 mt-2">10 кВт</p>
-        <button class="btn btn-warning py-12 w-100 fw-bold mt-4">Подобрать генератор</button>
+        <button class="btn btn-warning py-12 w-100 fw-bold mt-4 calculator__result-button">Подобрать генератор</button>
         <button class="btn btn-primary py-12 w-100 fw-bold mt-2">Задать вопрос</button>
       </div>
     </div>

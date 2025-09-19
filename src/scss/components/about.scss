@@ -32,7 +32,7 @@
     font-size: 1.5rem;
 
     @media (max-width: 768px) {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
     }
   }
 
@@ -41,5 +41,10 @@
     line-height: 1.5;
     color: rgba(6, 27, 49, 0.5);
     word-break: break-word;
+
+    @media (max-width: 768px) {
+      font-size: 0.875rem;
+      line-height: 20px;
+    }
   }
 }
