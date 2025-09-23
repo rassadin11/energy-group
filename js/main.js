@@ -1956,76 +1956,78 @@ function scrollFilters(item, useContentHeight) {
 
 // Находим все блоки фильтров каталога
 const filterBlocks = document.querySelectorAll('.catalog__filter');
-filterBlocks.forEach(filterBlock => {
-  const toggleBtn = filterBlock.querySelector('.filter-catalog__header .btn');
-  if (toggleBtn) {
-    const contentWrapper = filterBlock.querySelector('.filter-catalog__wrapper');
-    const arrowIcon = toggleBtn.querySelector('.default-icon-arrow');
-    let isExpanded = true;
-    let contentHeight = contentWrapper.clientHeight;
-    console.log(contentWrapper, contentWrapper.clientHeight);
-    function useContentHeight(value) {
-      contentHeight = value;
-    }
-    contentWrapper.style.maxHeight = contentHeight + 'px';
-    contentWrapper.style.transition = 'all 0.3s ease-in';
-    let isPadding;
+setTimeout(() => {
+  filterBlocks.forEach(filterBlock => {
+    const toggleBtn = filterBlock.querySelector('.filter-catalog__header .btn');
+    if (toggleBtn) {
+      const contentWrapper = filterBlock.querySelector('.filter-catalog__wrapper');
+      const arrowIcon = toggleBtn.querySelector('.default-icon-arrow');
+      let isExpanded = true;
+      let contentHeight = contentWrapper.clientHeight;
+      console.log(contentWrapper, contentWrapper.clientHeight);
+      function useContentHeight(value) {
+        contentHeight = value;
+      }
+      contentWrapper.style.maxHeight = contentHeight + 'px';
+      contentWrapper.style.transition = 'all 0.3s ease-in';
+      let isPadding;
 
-    // Добавляем обработчик события на кнопку
-    toggleBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      if (contentWrapper.classList.contains('pb-2')) isPadding = true;
-      if (isExpanded) {
-        contentWrapper.style.maxHeight = '0px';
-        if (isPadding) {
-          contentWrapper.classList.add('pb-0');
-          contentWrapper.classList.remove('pb-2');
-          contentWrapper.parentNode.querySelector('.filter-catalog__header').classList.remove('mb-3');
-          contentWrapper.parentNode.querySelector('.filter-catalog__header').classList.add('mb-0');
+      // Добавляем обработчик события на кнопку
+      toggleBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (contentWrapper.classList.contains('pb-2')) isPadding = true;
+        if (isExpanded) {
+          contentWrapper.style.maxHeight = '0px';
+          if (isPadding) {
+            contentWrapper.classList.add('pb-0');
+            contentWrapper.classList.remove('pb-2');
+            contentWrapper.parentNode.querySelector('.filter-catalog__header').classList.remove('mb-3');
+            contentWrapper.parentNode.querySelector('.filter-catalog__header').classList.add('mb-0');
+          }
+
+          // change padding for all block
+
+          contentWrapper.parentNode.classList.remove('pb-5');
+          contentWrapper.parentNode.classList.add('pb-1');
+          arrowIcon.style.transform = 'rotate(-90deg)';
+        } else {
+          // Разворачиваем контент
+          contentWrapper.style.maxHeight = contentHeight + 'px';
+          arrowIcon.style.transform = 'rotate(90deg)';
+          if (isPadding) {
+            contentWrapper.classList.add('pb-2');
+            contentWrapper.classList.remove('pb-0');
+            contentWrapper.parentNode.querySelector('.filter-catalog__header').classList.add('mb-3');
+            contentWrapper.parentNode.querySelector('.filter-catalog__header').classList.remove('mb-0');
+          }
+
+          // change padding for all block
+
+          contentWrapper.parentNode.classList.add('pb-5');
+          contentWrapper.parentNode.classList.remove('pb-1');
         }
 
-        // change padding for all block
+        // Добавляем transition для стрелки
+        arrowIcon.style.transition = 'transform 0.3s ease-in-out';
 
-        contentWrapper.parentNode.classList.remove('pb-5');
-        contentWrapper.parentNode.classList.add('pb-1');
-        arrowIcon.style.transform = 'rotate(-90deg)';
-      } else {
-        // Разворачиваем контент
-        contentWrapper.style.maxHeight = contentHeight + 'px';
-        arrowIcon.style.transform = 'rotate(90deg)';
-        if (isPadding) {
-          contentWrapper.classList.add('pb-2');
-          contentWrapper.classList.remove('pb-0');
-          contentWrapper.parentNode.querySelector('.filter-catalog__header').classList.add('mb-3');
-          contentWrapper.parentNode.querySelector('.filter-catalog__header').classList.remove('mb-0');
+        // Меняем состояние
+        isExpanded = !isExpanded;
+      });
+      const wrapper = filterBlock.querySelector('#checkboxWrapper');
+      if (wrapper) {
+        scrollFilters(wrapper, useContentHeight);
+      }
+
+      // Обработчик для изменения размера окна (на случай изменения контента)
+      window.addEventListener('resize', function () {
+        if (isExpanded) {
+          const newHeight = contentWrapper.scrollHeight;
+          contentWrapper.style.maxHeight = newHeight + 'px';
         }
-
-        // change padding for all block
-
-        contentWrapper.parentNode.classList.add('pb-5');
-        contentWrapper.parentNode.classList.remove('pb-1');
-      }
-
-      // Добавляем transition для стрелки
-      arrowIcon.style.transition = 'transform 0.3s ease-in-out';
-
-      // Меняем состояние
-      isExpanded = !isExpanded;
-    });
-    const wrapper = filterBlock.querySelector('#checkboxWrapper');
-    if (wrapper) {
-      scrollFilters(wrapper, useContentHeight);
+      });
     }
-
-    // Обработчик для изменения размера окна (на случай изменения контента)
-    window.addEventListener('resize', function () {
-      if (isExpanded) {
-        const newHeight = contentWrapper.scrollHeight;
-        contentWrapper.style.maxHeight = newHeight + 'px';
-      }
-    });
-  }
-});
+  });
+}, 0);
 
 // nouislider
 
