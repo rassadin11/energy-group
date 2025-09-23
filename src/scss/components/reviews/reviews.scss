@@ -4,24 +4,29 @@
   }
 
   &__filter {
-    border-radius: 48px;
+    border-radius: 3rem;
     border: 1px solid var(--border-gray);
-    transition: all 0.3s ease;
     background: var(--bs-white);
-    padding-top: 6px;
-    padding-bottom: 6px;
+    transition: all .3s ease;
 
     @media (max-width: 550px) {
       font-size: 0.875rem;
     }
 
     &.active {
-      background: var(--yellow-color);
-      border: 1px solid var(--yellow-color);
+      background: #1F3246;
+      border: 1px solid #1F3246;
+      color: var(--bs-white);
     }
 
     a {
       color: inherit;
+    }
+
+    span {
+      background-color: var(--yellow-color);
+      font-size: 0.75rem;
+      padding: 1px 6px;
     }
   }
 

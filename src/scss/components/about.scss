@@ -45,6 +45,10 @@
     @media (max-width: 768px) {
       font-size: 0.875rem;
       line-height: 20px;
+
+      &.default-p {
+        font-size: 0.75rem !important;
+      }
     }
   }
 }

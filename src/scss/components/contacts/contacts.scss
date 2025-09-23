@@ -1,0 +1,60 @@
+.contacts {
+    &__address {
+        font-size: 1.5rem;
+
+        @media (max-width: 768px) {
+            font-size: 1.125rem;
+        }
+    }
+
+    &__time {
+        @media (max-width: 768px) {
+            font-size: 0.875rem;
+        }
+    }
+
+    &__contact {
+        @media (max-width: 768px) {
+            font-size: 0.875rem;
+        }
+
+        & a:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__semititle {
+        @media (max-width: 768px) {
+            font-size: 1.25rem !important;
+        }
+    }
+
+    &__table td {
+        @media (max-width: 768px) {
+            font-size: 0.875rem;
+        }
+    }
+
+    &__map {
+        height: 600px;
+
+        @media (max-width: 992px) {
+            height: 80vh;
+        }
+    }
+}
+
+.solid-phone,
+.mail-icon,
+.location {
+    width: 24px;
+    height: 24px;
+}
+
+.bg-whatsapp {
+    background: #25d366;
+}
+
+.bg-light {
+    background: var(--light-background)
+}

@@ -26,7 +26,7 @@
 }
 
 .bg-extra-light {
-    background: var(--extra-light-background);
+    background: var(--extra-light-background) !important;
 }
 
 .dgu-info {
@@ -139,4 +139,8 @@
         width: 13.5px;
         height: 16.5px;
     }
+}
+
+.h-fit {
+    height: fit-content;
 }

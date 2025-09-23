@@ -7,6 +7,7 @@
 @import "./components/lightgallery.scss";
 @import "./components/swiffy.scss";
 @import "../resources/bootstrap/bootstrap.scss";
+@import "../resources/nouislider.min.scss";
 @import "./components/main.scss";
 
 // подключения компонентов главной страницы
@@ -79,3 +80,12 @@
 
 // power_calculator
 @import "./components/power_calculator/power_calculator.scss";
+
+// contacts
+@import "./components/contacts/contacts.scss";
+
+// product_page
+@import "./components/product_page/product_page.scss";
+
+// product_page
+@import "./components/catalog/catalog.scss";
