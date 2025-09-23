@@ -15,8 +15,7 @@
   }
 }
 .blocks-industry__block {
-  border-radius: 1.5rem;
-  background: #061b31;
+  background: var(--bs-blue);
 }
 .blocks-industry__block img {
   width: 100%;
@@ -51,7 +50,7 @@
 }
 @media (max-width: 500px) {
   .block-industry__count {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 }
 .block-industry:hover .block-industry__count {

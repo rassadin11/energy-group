@@ -67,7 +67,7 @@
 }
 @media (max-width: 768px) {
   .arenda-form__wrapper form {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 }
 @media (max-width: 768px) {

@@ -163,7 +163,7 @@
 }
 
 .lg-toolbar .lg-icon.lg-icon-18 {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .lg-toolbar .lg-icon:hover {
@@ -204,7 +204,7 @@
 }
 
 .lg-sub-html p {
-  font-size: 12px;
+  font-size: 0.75rem;
   margin: 5px 0 0;
 }
 
@@ -229,7 +229,7 @@
 }
 
 .lg-error-msg {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #999;
 }
 

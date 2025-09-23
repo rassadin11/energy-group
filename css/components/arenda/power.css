@@ -8,7 +8,7 @@
   border: 1px solid #e0e0e0;
 }
 .power-card__energy {
-  background: #f6f7f8;
+  background: var(--bs-background);
 }
 @media (max-width: 992px) {
   .power-card__energy {
@@ -26,7 +26,7 @@
   }
 }
 .power-card__energy-second {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #7c8692;
 }
 @media (max-width: 600px) {

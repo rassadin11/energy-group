@@ -2,7 +2,7 @@
   font-weight: 900 !important;
 }
 .vacancies p {
-  color: var(--light-blue);
+  color: var(--bs-gray);
 }
 .vacancies .arrow {
   right: 0 !important;
@@ -28,9 +28,6 @@
   .vacancies .selected-value {
     font-size: 0.875rem;
   }
-}
-.vacancies__founded {
-  color: var(--gray-blue);
 }
 @media (max-width: 550px) {
   .vacancies__founded {
@@ -59,7 +56,6 @@
 }
 .vacancies-grid__form {
   background: var(--extra-light-background);
-  border-radius: 1.5rem;
 }
 @media (max-width: 992px) {
   .vacancies-grid__form {
@@ -83,7 +79,6 @@
 .vacancies-card {
   background: var(--bs-white);
   border: 1px solid var(--light-background);
-  border-radius: 1.5rem;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -106,8 +101,7 @@
   color: var(--orange-color) !important;
 }
 .vacancies-card__description {
-  color: var(--light-blue);
-  line-height: 1.5;
+  color: var(--bs-gray);
 }
 @media (max-width: 550px) {
   .vacancies-card__description {
@@ -166,7 +160,7 @@
 }
 
 .vacancy-desc {
-  color: var(--light-blue) !important;
+  color: var(--bs-gray) !important;
   font-size: 1rem !important;
   line-height: 1.5;
 }
@@ -184,9 +178,6 @@
   z-index: 10000;
 }
 
-.resume-overlay {
-  border-radius: 1.5rem;
-}
 .resume-overlay textarea {
   resize: none;
 }
@@ -239,7 +230,7 @@
 .resume-overlay__info {
   font-size: 0.875rem;
   line-height: 1.5;
-  color: var(--gray-blue);
+  color: var(--bs-gray);
 }
 @media (max-width: 768px) {
   .resume-overlay__info {

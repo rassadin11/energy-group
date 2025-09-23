@@ -1,5 +1,5 @@
 .usluga {
-  background: #f6f7f8;
+  background: var(--bs-background);
 }
 @media (max-width: 992px) {
   .usluga:not(.city-slider__wrapper) .swiffy-slider {
@@ -69,7 +69,6 @@
   grid-template-rows: 268px 268px 268px;
 }
 .usluga-grid__item {
-  border-radius: 1.5rem;
   color: var(--bs-white);
 }
 .usluga-grid__item:hover img {
@@ -79,8 +78,8 @@
 }
 .usluga-grid__item::before {
   content: "";
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(6, 27, 49, 0)), to(#061b31));
-  background: linear-gradient(180deg, rgba(6, 27, 49, 0) 0%, #061b31 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(6, 27, 49, 0)), to(var(--bs-blue)));
+  background: linear-gradient(180deg, rgba(6, 27, 49, 0) 0%, var(--bs-blue) 100%);
   position: absolute;
   top: 0;
   left: 0;

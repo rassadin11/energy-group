@@ -1,5 +1,5 @@
 .generators {
-  background: #f6f7f8;
+  background: var(--bs-background);
 }
 @media (max-width: 1300px) {
   .generators .tab-content {
@@ -14,7 +14,7 @@
 }
 
 .tabs-header__button {
-  font-size: 14px;
+  font-size: 0.875rem;
   background: var(--bs-white);
   border: 1px solid #efefef;
   border-radius: 3rem;
@@ -29,13 +29,13 @@
   }
 }
 .tabs-header__button.active {
-  background: #061b31;
-  border: 1px solid #061b31;
+  background: var(--bs-blue);
+  border: 1px solid var(--bs-blue);
   color: var(--bs-white);
 }
 .tabs-header__button:hover {
-  background: #061b31;
-  border: 1px solid #061b31;
+  background: var(--bs-blue);
+  border: 1px solid var(--bs-blue);
   color: var(--bs-white);
 }
 
@@ -48,7 +48,7 @@
   }
   .tabs-header .nav-link {
     font-weight: 700;
-    font-size: 18px;
+    font-size: 1.125rem;
     padding: 0;
     border-bottom: none !important;
   }
@@ -81,7 +81,6 @@
 
 .tab-card {
   background: var(--bs-white);
-  border-radius: 1.5rem;
   border: 2px solid #efefef;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -102,7 +101,7 @@
   transition: all 0.3s ease;
 }
 .tab-card:not(.type):hover {
-  background-color: #061b31;
+  background-color: var(--bs-blue);
   color: var(--bs-white);
 }
 .tab-card:not(.type):hover .tab-card__background-image {

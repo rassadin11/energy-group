@@ -1,0 +1,27 @@
+// Container grid
+//
+// Override the default Bootstrap grid system
+
+// scss-docs-start container-grid
+.container-grid {
+  --bs-rows-cols: #{$grid-row-columns};
+  display: grid;
+  gap: var(--bs-gutter-x, #{$grid-gutter-width});
+  grid-template-columns: repeat(var(--bs-rows-cols, #{$grid-columns}), 1fr);
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+  @include media-breakpoint-up($breakpoint) {
+    @if $infix != "" {
+      .container-grid-#{$infix} {
+        --bs-rows-cols: #{$grid-row-columns};
+        display: grid;
+        gap: var(--bs-gutter-x, #{$grid-gutter-width});
+        grid-template-columns: repeat(var(--bs-rows-cols, #{$grid-columns}), 1fr);
+      }
+    }
+  }
+}
+// scss-docs-end container-grid

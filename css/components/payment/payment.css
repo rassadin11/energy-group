@@ -1,0 +1,39 @@
+@media (max-width: 550px) {
+  .payment h2 {
+    font-size: 1.125rem;
+  }
+}
+
+.gallery-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.certificate p {
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.certificate > div {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.certificate > div .gallery-icon {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.certificate > div:hover {
+  -webkit-box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+.certificate > div:hover .gallery-icon {
+  opacity: 1;
+  visibility: visible;
+}
+.certificate > div:hover p {
+  color: var(--orange-color);
+}/*# sourceMappingURL=payment.css.map */

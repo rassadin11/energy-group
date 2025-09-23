@@ -1,12 +1,11 @@
 @media (max-width: 550px) {
   .title {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 }
 
 .params-block {
-  background: #f6f7f8;
-  border-radius: 1.5rem;
+  background: var(--bs-background);
 }
 @media (max-width: 1200px) {
   .params-block {
@@ -58,14 +57,14 @@
   }
 }
 .params-block__button {
-  color: #061b31;
+  color: var(--bs-blue);
   background: var(--bs-white);
   border: none;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 .params-block__button.active {
-  background: #061b31;
+  background: var(--bs-blue);
   color: var(--bs-white);
 }
 @media (max-width: 1200px) {
@@ -83,7 +82,7 @@
   color: var(--bs-primary);
 }
 .params-show-popup span {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 20px;
 }
 .params-show-popup:hover {
@@ -301,7 +300,7 @@ input[type=number] {
 .params-overlay__button-wrapper {
   -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
-  background: #f6f7f8;
+  background: var(--bs-background);
 }
 .params-overlay__button-wrapper button {
   background: transparent;
@@ -336,7 +335,7 @@ input[type=number] {
 }
 @media (max-width: 768px) {
   .overlay-title {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 }
 

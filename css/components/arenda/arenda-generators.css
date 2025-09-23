@@ -1,8 +1,5 @@
 .arenda-generators {
-  background: #f6f7f8;
-}
-.arenda-generators__item {
-  border-radius: 1.5rem;
+  background: var(--bs-background);
 }
 .arenda-generators__item:first-child {
   background: var(--bs-white);
@@ -24,7 +21,7 @@
 }
 .arenda-generators__text {
   opacity: 0.5;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 32px;
 }
 
@@ -34,7 +31,7 @@
 }
 .item-arenda__list .main-slider__item {
   color: rgba(0, 0, 0, 0.7);
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 @media (max-width: 768px) {
   .item-arenda__list .main-slider__item {
@@ -48,7 +45,6 @@
 .item-arenda__image {
   width: 100%;
   height: 100%;
-  border-radius: 1.5rem;
 }
 @media (max-width: 768px) {
   .item-arenda__image {
@@ -85,7 +81,7 @@
 }
 @media (max-width: 768px) {
   .arenda-generators.product .arenda-generators__wrapper .arenda-generators__text {
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 24px;
   }
 }/*# sourceMappingURL=arenda-generators.css.map */

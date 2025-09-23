@@ -27,9 +27,6 @@
   opacity: 0.5;
 }
 
-.price-arenda__item img {
-  border-radius: 1.5rem;
-}
 @media (max-width: 992px) {
   .price-arenda__item img {
     max-width: 70%;

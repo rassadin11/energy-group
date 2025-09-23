@@ -1,5 +1,5 @@
 .product {
-  background: #f6f7f8;
+  background: var(--bs-background);
 }
 .product__wrapper {
   -ms-grid-columns: 1fr 1fr;
@@ -10,9 +10,6 @@
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
-}
-.product__item {
-  border-radius: 1.5rem;
 }
 .product__item h2 {
   font-size: 2.5rem;
@@ -43,7 +40,7 @@
 }
 .product__price {
   font-size: 1.5rem;
-  background: #f6f7f8;
+  background: var(--bs-background);
 }
 @media (max-width: 550px) {
   .product__price {
@@ -62,11 +59,11 @@
 }
 
 .info-product {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 @media (max-width: 550px) {
   .info-product {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 }
 .info-product__item {

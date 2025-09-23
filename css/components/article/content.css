@@ -48,11 +48,11 @@
   font-size: 1.25rem;
 }
 .article-grid .article-sources a {
-  color: var(--light-blue);
+  color: var(--bs-gray);
   font-size: 0.875rem;
 }
 .article-grid .article-conclusion {
-  color: var(--light-blue) !important;
+  color: var(--bs-gray) !important;
   font-size: 1rem;
 }
 .article-grid__item p {
@@ -86,23 +86,25 @@
 .article-list li::before {
   content: "";
   position: absolute;
-  left: 0; /* Позиционируем точку слева от текста */
+  left: 0;
+  /* Позиционируем точку слева от текста */
   top: 9px;
   width: 4px;
   height: 4px;
-  background-color: var(--yellow-color); /* Цвет точки совпадает с цветом текста */
-  border-radius: 50%; /* Делаем элемент круглым */
+  background-color: var(--yellow-color);
+  /* Цвет точки совпадает с цветом текста */
+  border-radius: 50%;
+  /* Делаем элемент круглым */
 }
 
 .article-anchors {
   background: var(--light-background);
-  border-radius: 1.5rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 .article-anchors a {
-  color: var(--gray-blue);
+  color: var(--bs-gray);
   position: relative;
   padding-left: 0.875rem;
   -webkit-transition: all 0.3s ease;
@@ -117,19 +119,22 @@
 .article-anchors a::before {
   content: "";
   position: absolute;
-  left: 0; /* Позиционируем точку слева от текста */
+  left: 0;
+  /* Позиционируем точку слева от текста */
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   width: 4px;
   height: 4px;
-  background-color: currentColor; /* Цвет точки совпадает с цветом текста */
-  border-radius: 50%; /* Делаем элемент круглым */
+  background-color: currentColor;
+  /* Цвет точки совпадает с цветом текста */
+  border-radius: 50%;
+  /* Делаем элемент круглым */
 }
 
 .info-article__text {
-  color: var(--gray-blue) !important;
+  color: var(--bs-gray) !important;
   font-size: 1rem !important;
 }
 .info-article__name {
@@ -137,7 +142,6 @@
 }
 
 .cards-article__item {
-  border-radius: 1.5rem;
   border: 1px solid var(--border-light);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -148,7 +152,7 @@
   }
 }
 .cards-article__item p {
-  color: var(--light-blue);
+  color: var(--bs-gray);
   line-height: 1.5;
   font-size: 1rem;
   -webkit-transition: all 0.3s ease;
@@ -171,7 +175,6 @@
 .socials-article__block {
   background: var(--bs-white);
   border: 1px solid var(--border-light);
-  border-radius: 1.5rem;
 }
 @media (max-width: 768px) {
   .socials-article__block:first-child {
@@ -202,7 +205,6 @@
 
 .article-video {
   min-height: 670px;
-  border-radius: 1.5rem;
 }
 
 .icon_telegram {

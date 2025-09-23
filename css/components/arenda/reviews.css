@@ -29,7 +29,7 @@
   transition: all 0.3s ease;
 }
 .reviews__slide:hover {
-  background: #f6f7f8;
+  background: var(--bs-background);
 }
 .reviews__slide:hover .reviews__image:after {
   opacity: 0.5;
@@ -44,7 +44,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: #061b31;
+  background: var(--bs-blue);
   opacity: 0;
   visibility: hidden;
   width: 100%;
@@ -79,17 +79,17 @@
 .reviews .indicators li.active {
   width: 48px !important;
   height: 7px !important;
-  background-color: #061b31;
+  background-color: var(--bs-blue);
 }
 .reviews__link {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 .reviews__link:hover {
   text-decoration: underline;
 }
 @media (max-width: 768px) {
   .reviews__link {
-    background: #f6f7f8;
+    background: var(--bs-background);
   }
 }
 

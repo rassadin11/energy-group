@@ -1,6 +1,5 @@
 .calculator-block {
-  border-radius: 1.5rem;
-  background: #061b31;
+  background: var(--bs-blue);
   color: var(--bs-white);
   -ms-grid-columns: (1fr)[12];
   grid-template-columns: repeat(12, 1fr);
@@ -80,7 +79,6 @@
   -ms-grid-column-span: 6;
   grid-column: 1/7;
   margin-right: 34px;
-  border-radius: 1.5rem;
 }
 @media (max-width: 1300px) {
   .info-calculator {
@@ -107,7 +105,7 @@
   pointer-events: none;
 }
 .info-calculator__text {
-  font-size: 18px;
+  font-size: 1.125rem;
   opacity: 0.6;
 }
 @media (max-width: 768px) {

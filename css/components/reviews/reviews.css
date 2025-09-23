@@ -3,13 +3,11 @@
   font-weight: 900;
 }
 .reviews-page__filter {
-  border-radius: 48px;
+  border-radius: 3rem;
   border: 1px solid var(--border-gray);
+  background: var(--bs-white);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  background: var(--bs-white);
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 @media (max-width: 550px) {
   .reviews-page__filter {
@@ -17,11 +15,17 @@
   }
 }
 .reviews-page__filter.active {
-  background: var(--yellow-color);
-  border: 1px solid var(--yellow-color);
+  background: #1F3246;
+  border: 1px solid #1F3246;
+  color: var(--bs-white);
 }
 .reviews-page__filter a {
   color: inherit;
+}
+.reviews-page__filter span {
+  background-color: var(--yellow-color);
+  font-size: 0.75rem;
+  padding: 1px 6px;
 }
 .reviews-page__videos {
   -ms-grid-columns: 1fr 1fr 1fr;
@@ -43,12 +47,10 @@
 .video-review {
   background: var(--bs-white);
   border: 1px solid var(--border-light);
-  border-radius: 1.5rem;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 .video-review__video {
-  border-radius: 1.5rem;
   min-height: 225px;
 }
 @media (max-width: 550px) {
@@ -83,7 +85,8 @@
   display: block;
   display: -webkit-box;
   max-width: 400px;
-  -webkit-line-clamp: 3; /* количество строк */
+  -webkit-line-clamp: 3;
+  /* количество строк */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;

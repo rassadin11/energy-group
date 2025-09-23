@@ -1,15 +1,5 @@
-.news-slider {
-  border-radius: 1.5rem !important;
-}
-.news-slider img {
-  border-radius: 1.5rem;
-}
-
-.news-slider__block {
-  border-radius: 1.5rem;
-}
 .news-slider__block > p:first-child {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 @media (max-width: 550px) {
   .news-slider__block > p:first-child {
@@ -19,7 +9,7 @@
 }
 @media (max-width: 550px) {
   .news-slider__block > p:nth-child(2) {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 }
 

@@ -4,7 +4,6 @@
 
 .files-item {
   background: var(--extra-light-background);
-  border-radius: 1.5rem;
 }
 .files-item__svg {
   background: var(--yellow-color);
@@ -18,7 +17,7 @@
   height: 24px;
 }
 .files-item__arrow {
-  color: var(--gray-blue);
+  color: var(--bs-gray);
   width: 13px;
   height: 7px;
   -webkit-transform: rotate(-90deg);

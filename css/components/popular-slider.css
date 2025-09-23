@@ -20,7 +20,7 @@
 }
 
 .popular-slider {
-  background: #f6f7f8;
+  background: var(--bs-background);
 }
 .popular-slider.no-background {
   background: transparent;
@@ -79,7 +79,6 @@
 }
 .popular-slider__block {
   background: var(--bs-white);
-  border-radius: 1.5rem;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -90,7 +89,6 @@
 @media (max-width: 992px) {
   .popular-slider__block {
     border: 1px solid rgba(6, 27, 49, 0.1);
-    border-radius: 1rem;
   }
 }
 .popular-slider__description {
@@ -99,13 +97,13 @@
 }
 @media (max-width: 768px) {
   .popular-slider__description {
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.45;
   }
 }
 .popular-slider__price {
-  font-size: 18px;
-  color: #061b31;
+  font-size: 1.125rem;
+  color: var(--bs-blue);
 }
 @media (max-width: 768px) {
   .popular-slider__price {
@@ -113,7 +111,7 @@
   }
 }
 .popular-slider__button.first {
-  background: #f6f7f8;
+  background: var(--bs-background);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -121,7 +119,7 @@
   background: var(--bs-yellow);
 }
 .popular-slider__info {
-  font-size: 12px;
+  font-size: 0.75rem;
   text-align: center;
   color: rgba(6, 27, 49, 0.5);
 }

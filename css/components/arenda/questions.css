@@ -2,13 +2,11 @@
   -ms-grid-columns: 1fr auto;
   grid-template-columns: 1fr auto;
   border: 1px solid #ffbc38;
-  border-radius: 1.5rem;
 }
 
 .questions__phone {
   max-width: 448px;
-  border-radius: 1.5rem;
-  background: #f6f7f8;
+  background: var(--bs-background);
 }
 
 .questions__phone-link {
@@ -16,5 +14,5 @@
   color: var(--bs-yellow);
 }
 .questions__text {
-  font-size: 18px;
+  font-size: 1.125rem;
 }/*# sourceMappingURL=questions.css.map */

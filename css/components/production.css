@@ -18,7 +18,6 @@
 .blocks-production__block {
   background: var(--bs-white);
   border: 1px solid rgba(6, 27, 49, 0.1);
-  border-radius: 1.5rem;
 }
 .blocks-production__block img {
   width: 50%;

@@ -1,6 +1,5 @@
-@charset "UTF-8";
 .delivery-slider .swiffy-slider .slider-container {
-  grid-auto-columns: 40%; /* два слайда по центру (2 x 40%) + остальное для соседей */
+  grid-auto-columns: 40%;
 }
 .delivery-slider .swiffy-slider .slider-container > * {
   min-height: 380px;
@@ -9,9 +8,6 @@
   .delivery-slider .swiffy-slider .slider-container > * {
     min-height: auto;
   }
-}
-.delivery-slider .swiffy-slider .slider-container img {
-  border-radius: 1.5rem;
 }
 @media (max-width: 1450px) {
   .delivery-slider .swiffy-slider .slider-container {
@@ -49,7 +45,6 @@
   -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   font-size: 1.125rem;
-  line-height: 1.5;
 }
 @media (max-width: 550px) {
   .deliver__description {
@@ -64,7 +59,6 @@
 }
 .deliver__description p {
   font-size: 1.125rem;
-  line-height: 1.5;
 }
 @media (max-width: 550px) {
   .deliver__description p {
@@ -81,10 +75,6 @@
 @media (max-width: 768px) {
   .deliver .news-slider {
     border: 1px solid var(--border-light) !important;
-    border-radius: 1rem !important;
-  }
-  .deliver .news-slider img {
-    border-radius: 1rem;
   }
 }
 @media (max-width: 768px) {
@@ -114,10 +104,9 @@
 }
 .deliver-info__item {
   background: var(--extra-light-background);
-  border-radius: 1.5rem;
 }
 .deliver-info__description {
-  color: var(--light-blue);
+  color: var(--bs-gray);
 }
 .deliver-info__description.none {
   font-size: 1rem;
@@ -144,12 +133,8 @@
     grid-template-columns: 1fr;
   }
 }
-.deliver-logistika p {
-  line-height: 1.5;
-}
 .deliver-logistika__item {
   background: var(--extra-light-background);
-  border-radius: 1.5rem;
 }
 @media (max-width: 550px) {
   .deliver-logistika__item p {
@@ -158,13 +143,10 @@
 }
 
 .delivery-contacts {
-  border-radius: 1.5rem;
   background: var(--extra-light-background);
 }
 .delivery-contacts__description {
   font-size: 1.125rem;
-  line-height: 1.5;
-  color: var(--gray-blue);
 }
 @media (max-width: 768px) {
   .delivery-contacts__description {
@@ -185,7 +167,4 @@
   .delivery-contacts__item h2 {
     font-size: 1.25rem;
   }
-}
-.delivery-contacts__item a:hover {
-  color: var;
 }/*# sourceMappingURL=delivery.css.map */
