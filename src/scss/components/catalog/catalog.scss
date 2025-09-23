@@ -17,6 +17,10 @@
     border-radius: 3rem;
     padding-top: 6px;
     padding-bottom: 6px;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &__fade {
@@ -226,6 +230,8 @@
 }
 
 .filter-catalog {
+  transition: all .3s ease;
+
   &__arrow {
     transform: rotate(180deg)
   }
@@ -237,6 +243,10 @@
 
 .default-icon-arrow {
   transform: rotate(90deg);
+}
+
+.header-filter {
+  transition: all .3s ease;
 }
 
 .checkbox-wrapper {
@@ -369,6 +379,135 @@
       border: 1px solid transparent;
       background: #1F3246;
       color: var(--bs-white);
+    }
+  }
+}
+
+.filter-catalog__wrapper {
+  overflow-y: clip;
+  transition: max-height 0.3s ease-in-out;
+
+  & .nouislider-slider {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+.items-pagination {
+  @media (max-width: 400px) {
+    width: 100%;
+  }
+
+  &__item {
+    width: 48px;
+    height: 48px;
+    background: var(--bs-white);
+    transition: all .3s ease;
+
+    &.active {
+      background: #1F3246;
+      color: var(--bs-white);
+    }
+
+    &:hover {
+      background: #1F3246;
+      color: var(--bs-white);
+    }
+
+    @media (max-width: 768px) {
+      font-size: 0.875rem;
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+.more {
+  @media (max-width: 400px) {
+    flex: 1 1 auto;
+
+    & a {
+      width: auto;
+    }
+  }
+}
+
+.pagination-arrow {
+  @media (max-width: 768px) {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.pagination-catalog {
+  button {
+    @media (max-width: 768px) {
+      width: 100%;
+      font-size: 0.875rem;
+    }
+  }
+}
+
+.podborki-catalog {
+  &__title {
+    font-size: 1.5rem;
+  }
+}
+
+.podborka__item {
+  padding: 6px 0.6rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.review-catalog {
+  border-radius: 0.75rem;
+
+  &__image {
+    width: 80px;
+    height: 80px;
+  }
+
+  &__review {
+    border-radius: 0.75rem;
+    border: 1px solid var(--extra-light-background)
+  }
+}
+
+.catalog-form {
+  &__image {
+    right: -11%;
+    top: 10%;
+    width: 511px;
+
+    @media (max-width: 992px) {
+      right: -8%;
+      top: 26%;
+      width: 400px;
+    }
+
+    @media (max-width: 850px) {
+      right: 50%;
+      top: 62%;
+      transform: translateX(50%);
+    }
+
+    @media (max-width: 600px) {
+      width: 300px;
+      top: 67%
+    }
+  }
+
+  @media (max-width: 850px) {
+    .big-form__wrapper {
+      text-align: center;
+      padding-bottom: 10rem !important;
+    }
+
+    button {
+      margin-bottom: 0 !important;
     }
   }
 }

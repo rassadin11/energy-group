@@ -1814,6 +1814,18 @@ if (buyPageDesc[1]) {
     });
 }
 
+// reviews expanded
+
+const allReviews = document.querySelectorAll('.review-catalog__review')
+
+allReviews.forEach(item => {
+    initReadMore({
+        wrapper: item.querySelector('.review-catalog__wrapper'),
+        content: item.querySelector('.review-catalog__content'),
+        button: item.querySelector('.review-catalog__read-more'),
+        lines: 6,
+    })
+})
 
 // читать далее для отзывов на мобильном
 
@@ -1917,67 +1929,156 @@ if (slider) {
 
 //
 const sliderCatalog = document.getElementById('slider-catalog');
-const sliderCatalogPrev = document.querySelector('.slider-catalog__prev-arrow');
-const sliderCatalogNext = document.querySelector('.slider-catalog__next-arrow');
-const slideCatalogWidth = sliderCatalog.querySelector('.slider-catalog__slide').offsetWidth + 16; // ширина + gap
+if (sliderCatalog) {
 
-sliderCatalogPrev.addEventListener('click', () => {
-    sliderCatalog.scrollBy({ left: -slideCatalogWidth, behavior: 'smooth' });
-});
+    const sliderCatalogPrev = document.querySelector('.slider-catalog__prev-arrow');
+    const sliderCatalogNext = document.querySelector('.slider-catalog__next-arrow');
+    const slideCatalogWidth = sliderCatalog.querySelector('.slider-catalog__slide').offsetWidth + 16; // ширина + gap
 
-function updateButtons() {
-    const maxScroll = sliderCatalog.scrollWidth - sliderCatalog.clientWidth;
+    sliderCatalogPrev.addEventListener('click', () => {
+        sliderCatalog.scrollBy({ left: -slideCatalogWidth, behavior: 'smooth' });
+    });
 
-    if (sliderCatalog.scrollLeft <= 0) {
-        sliderCatalogPrev.parentNode.classList.add('hide');
-    } else {
-        sliderCatalogPrev.parentNode.classList.remove('hide');
+    function updateButtons() {
+        const maxScroll = sliderCatalog.scrollWidth - sliderCatalog.clientWidth;
+
+        if (sliderCatalog.scrollLeft <= 0) {
+            sliderCatalogPrev.parentNode.classList.add('hide');
+        } else {
+            sliderCatalogPrev.parentNode.classList.remove('hide');
+        }
+
+        if (sliderCatalog.scrollLeft >= maxScroll - 5) {
+            sliderCatalogNext.parentNode.classList.add('hide');
+        } else {
+            sliderCatalogNext.parentNode.classList.remove('hide');
+        }
     }
 
-    if (sliderCatalog.scrollLeft >= maxScroll - 5) {
-        sliderCatalogNext.parentNode.classList.add('hide');
-    } else {
-        sliderCatalogNext.parentNode.classList.remove('hide');
-    }
+    sliderCatalogNext.addEventListener('click', () => {
+        sliderCatalog.scrollBy({ left: slideCatalogWidth, behavior: 'smooth' });
+    });
+
+    sliderCatalog.addEventListener('scroll', updateButtons);
+    window.addEventListener('resize', updateButtons);
+
+    // при загрузке страницы
+    updateButtons();
 }
-
-sliderCatalogNext.addEventListener('click', () => {
-    sliderCatalog.scrollBy({ left: slideCatalogWidth, behavior: 'smooth' });
-});
-
-sliderCatalog.addEventListener('scroll', updateButtons);
-window.addEventListener('resize', updateButtons);
-
-// при загрузке страницы
-updateButtons();
 
 // для фильтров
-const wrapper = document.querySelectorAll('#checkboxWrapper');
-if (wrapper) {
-    wrapper.forEach(item => {
-        const btn = item.parentNode.querySelector('#toggleBtn');
-        let expanded = false;
-        let btnInitialValue = ''
+function scrollFilters(item, useContentHeight) {
+    const btn = item.parentNode.querySelector('#toggleBtn');
+    let blockHeight = 0
+    let expanded = false;
+    let btnInitialValue = ''
 
-        btn.addEventListener('click', () => {
-            if (!btnInitialValue) btnInitialValue = btn.querySelector('span').innerHTML
+    blockHeight = item.clientHeight
 
-            expanded = !expanded;
-            item.classList.toggle('expanded', expanded);
+    btn.addEventListener('click', () => {
+        if (!btnInitialValue) btnInitialValue = btn.querySelector('span').innerHTML
 
-            if (expanded) {
-                item.classList.remove('pe-1')
-            } else {
-                item.classList.add('pe-1')
-                item.scroll({ top: 0, behavior: 'smooth' });
-            }
+        expanded = !expanded;
+        item.classList.toggle('expanded', expanded);
 
-            btn.querySelector('.default-icon-arrow').style.transform = expanded ? 'rotate(-90deg)' : 'rotate(90deg)'
-            btn.querySelector('span').textContent = expanded ? 'Свернуть' : btnInitialValue;
-        });
-    })
+        if (expanded) {
+            item.classList.remove('pe-1')
+            item.parentNode.parentNode.style.maxHeight = +item.parentNode.parentNode.style.maxHeight.replace("px", '') + (300 - blockHeight) + 'px'
+            useContentHeight(+item.parentNode.parentNode.style.maxHeight.replace("px", ''))
+        } else {
+            item.classList.add('pe-1')
+            item.parentNode.parentNode.style.maxHeight = +item.parentNode.clientHeight + 'px'
+            useContentHeight(+item.parentNode.clientHeight)
+            item.scroll({ top: 0, behavior: 'smooth' });
+        }
+
+        btn.querySelector('.default-icon-arrow').style.transform = expanded ? 'rotate(-90deg)' : 'rotate(90deg)'
+        btn.querySelector('span').textContent = expanded ? 'Свернуть' : btnInitialValue;
+    });
 }
 
+// Находим все блоки фильтров каталога
+const filterBlocks = document.querySelectorAll('.catalog__filter');
+
+filterBlocks.forEach(filterBlock => {
+    const toggleBtn = filterBlock.querySelector('.filter-catalog__header .btn');
+
+    if (toggleBtn) {
+        const contentWrapper = filterBlock.querySelector('.filter-catalog__wrapper');
+        const arrowIcon = toggleBtn.querySelector('.default-icon-arrow');
+        let isExpanded = true;
+
+        let contentHeight = contentWrapper.clientHeight;
+        console.log(contentWrapper, contentWrapper.clientHeight)
+        function useContentHeight(value) {
+            contentHeight = value;
+        }
+
+        contentWrapper.style.maxHeight = contentHeight + 'px';
+        contentWrapper.style.transition = 'all 0.3s ease-in';
+
+        let isPadding
+
+        // Добавляем обработчик события на кнопку
+        toggleBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (contentWrapper.classList.contains('pb-2')) isPadding = true
+
+            if (isExpanded) {
+                contentWrapper.style.maxHeight = '0px';
+
+                if (isPadding) {
+                    contentWrapper.classList.add('pb-0')
+                    contentWrapper.classList.remove('pb-2')
+                    contentWrapper.parentNode.querySelector('.filter-catalog__header').classList.remove('mb-3')
+                    contentWrapper.parentNode.querySelector('.filter-catalog__header').classList.add('mb-0')
+                }
+
+                // change padding for all block
+
+                contentWrapper.parentNode.classList.remove('pb-5')
+                contentWrapper.parentNode.classList.add('pb-1')
+
+                arrowIcon.style.transform = 'rotate(-90deg)';
+            } else {
+                // Разворачиваем контент
+                contentWrapper.style.maxHeight = contentHeight + 'px';
+                arrowIcon.style.transform = 'rotate(90deg)';
+
+                if (isPadding) {
+                    contentWrapper.classList.add('pb-2')
+                    contentWrapper.classList.remove('pb-0')
+                    contentWrapper.parentNode.querySelector('.filter-catalog__header').classList.add('mb-3')
+                    contentWrapper.parentNode.querySelector('.filter-catalog__header').classList.remove('mb-0')
+                }
+
+                // change padding for all block
+
+                contentWrapper.parentNode.classList.add('pb-5')
+                contentWrapper.parentNode.classList.remove('pb-1')
+            }
+
+            // Добавляем transition для стрелки
+            arrowIcon.style.transition = 'transform 0.3s ease-in-out';
+
+            // Меняем состояние
+            isExpanded = !isExpanded;
+        });
+
+        const wrapper = filterBlock.querySelector('#checkboxWrapper');
+        if (wrapper) {
+            scrollFilters(wrapper, useContentHeight)
+        }
+
+        // Обработчик для изменения размера окна (на случай изменения контента)
+        window.addEventListener('resize', function () {
+            if (isExpanded) {
+                const newHeight = contentWrapper.scrollHeight;
+                contentWrapper.style.maxHeight = newHeight + 'px';
+            }
+        });
+    }
+});
 
 // nouislider
 
@@ -1985,6 +2086,8 @@ let nouisliders = document.querySelectorAll('#nouislider');
 
 if (nouisliders) {
     nouisliders.forEach(slider => {
+        const parentWrapper = slider.parentNode
+
         const sliderRange = noUiSlider.create(slider, {
             start: [+slider.dataset.min, +slider.dataset.max],
             connect: true,
@@ -1995,10 +2098,19 @@ if (nouisliders) {
         });
 
         sliderRange.on('update', (vals) => {
-            const parentWrapper = slider.parentNode
 
             parentWrapper.querySelector('.min-input').value = Math.round(+vals[0])
             parentWrapper.querySelector('.max-input').value = Math.round(+vals[1])
+        })
+
+        parentWrapper.querySelector('.min-input').addEventListener('input', (e) => {
+            const value = e.target.value
+            sliderRange.set([value, null])
+        })
+
+        parentWrapper.querySelector('.max-input').addEventListener('input', (e) => {
+            const value = e.target.value
+            sliderRange.set([null, value])
         })
     })
 }
