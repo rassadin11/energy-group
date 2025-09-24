@@ -2134,6 +2134,13 @@ if (document.body.clientWidth < 768) {
     });
   });
 }
+
+// map inactive
+
+const mapInactive = document.querySelector('.map-inactive');
+mapInactive.addEventListener('click', () => {
+  mapInactive.classList.remove('show');
+});
 })();
 
 /******/ })()

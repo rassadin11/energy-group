@@ -24407,6 +24407,26 @@ textarea:focus:-ms-input-placeholder {
     --swiffy-slider-item-count: 2;
   }
 }
+.map-inactive {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.map-inactive.show {
+  background: var(--bs-warning);
+  opacity: 0.3;
+  z-index: 10000;
+  visibility: visible;
+  height: 600px !important;
+  cursor: pointer;
+}
+@media (max-width: 992px) {
+  .map-inactive.show {
+    height: 80vh !important;
+  }
+}
+
 .fw-extrabold {
   font-weight: 900 !important;
 }
