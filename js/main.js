@@ -2138,9 +2138,25 @@ if (document.body.clientWidth < 768) {
 // map inactive
 
 const mapInactive = document.querySelector('.map-inactive');
-mapInactive.addEventListener('click', () => {
-  mapInactive.classList.remove('show');
-});
+if (mapInactive) {
+  mapInactive.addEventListener('click', () => {
+    mapInactive.classList.remove('show');
+  });
+}
+// for checkboxes in product_page
+
+const valuesCheckboxes = document.querySelectorAll('.values-buy__checkbox');
+if (valuesCheckboxes) {
+  valuesCheckboxes.forEach(item => {
+    item.addEventListener('click', e => {
+      if (!e.target.classList.contains('form-check-input')) {
+        item.querySelector('input').checked = true;
+        valuesCheckboxes.forEach(elem => elem.classList.remove("checked"));
+        item.classList.add('checked');
+      }
+    });
+  });
+}
 })();
 
 /******/ })()

@@ -24310,11 +24310,32 @@ textarea:focus:-ms-input-placeholder {
   visibility: hidden !important;
 }
 
+@media (max-width: 768px) {
+  .values-buy {
+    width: 100%;
+  }
+}
 .values-buy__btn {
   color: var(--orange-color);
 }
 .values-buy__image img {
   width: 48px;
+}
+.values-buy__checkbox {
+  border-radius: 0.75rem;
+  border: 2px solid var(--bs-semi-gray);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.values-buy__checkbox.checked {
+  border: 2px solid #FBBF24;
+}
+.values-buy__checkbox-price {
+  font-size: 0.875rem;
+}
+.values-buy__avto {
+  border-radius: 0.75rem;
 }
 
 .text-wrapper {
