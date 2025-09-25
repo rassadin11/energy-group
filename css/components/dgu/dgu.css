@@ -69,6 +69,11 @@
   max-height: 380px;
   min-height: 182px;
 }
+@media (min-width: 992px) {
+  .dgu.slider-container {
+    overflow: hidden;
+  }
+}
 
 .big-p {
   font-size: 1.125rem;

@@ -20634,9 +20634,16 @@ input[type=number] {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+.popular-slider__block .deliver-link {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
 .popular-slider__block:hover {
   -webkit-box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+.popular-slider__block:hover .deliver-link {
+  color: var(--bs-orange);
 }
 @media (max-width: 992px) {
   .popular-slider__block {
@@ -23432,6 +23439,7 @@ textarea:focus:-ms-input-placeholder {
   background: var(--bs-white);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  color: var(--bs-primary);
 }
 @media (max-width: 550px) {
   .reviews-page__filter {
@@ -23869,6 +23877,11 @@ textarea:focus:-ms-input-placeholder {
 .dgu__height {
   max-height: 380px;
   min-height: 182px;
+}
+@media (min-width: 992px) {
+  .dgu.slider-container {
+    overflow: hidden;
+  }
 }
 
 .big-p {
