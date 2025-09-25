@@ -150,6 +150,11 @@ a {
 .breadcrumbs {
   list-style-type: none !important;
 }
+@media (max-width: 768px) {
+  .breadcrumbs {
+    padding-right: 0 !important;
+  }
+}
 
 @media (max-width: 768px) {
   br {

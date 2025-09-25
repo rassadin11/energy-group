@@ -18939,6 +18939,11 @@ a {
 .breadcrumbs {
   list-style-type: none !important;
 }
+@media (max-width: 768px) {
+  .breadcrumbs {
+    padding-right: 0 !important;
+  }
+}
 
 @media (max-width: 768px) {
   br {
@@ -22876,6 +22881,11 @@ textarea:focus:-ms-input-placeholder {
   font-size: 0.875rem;
   color: #51606f;
 }
+@media (max-width: 768px) {
+  .article-breadcrumbs {
+    font-size: 0.75rem;
+  }
+}
 .article-breadcrumbs:hover a {
   text-decoration: underline;
 }
@@ -22894,6 +22904,11 @@ textarea:focus:-ms-input-placeholder {
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
+}
+@media (max-width: 768px) {
+  .article-breadcrumbs:not(:last-child):after {
+    right: 8px;
+  }
 }
 
 .article-grid {
@@ -24459,6 +24474,17 @@ textarea:focus:-ms-input-placeholder {
   .map-inactive.show {
     height: 80vh !important;
   }
+}
+
+.scroll-snap {
+  -ms-scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-snap-item {
+  scroll-snap-align: start;
+  white-space: nowrap;
 }
 
 .fw-extrabold {

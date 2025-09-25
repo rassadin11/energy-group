@@ -3,6 +3,11 @@
   font-size: 0.875rem;
   color: #51606f;
 }
+@media (max-width: 768px) {
+  .article-breadcrumbs {
+    font-size: 0.75rem;
+  }
+}
 .article-breadcrumbs:hover a {
   text-decoration: underline;
 }
@@ -21,4 +26,9 @@
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
+}
+@media (max-width: 768px) {
+  .article-breadcrumbs:not(:last-child):after {
+    right: 8px;
+  }
 }/*# sourceMappingURL=breadcrumbs.css.map */
