@@ -23246,6 +23246,11 @@ textarea:focus:-ms-input-placeholder {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+@media (max-width: 768px) {
+  .vacancies-card {
+    border: 1px solid var(--bs-border-color);
+  }
+}
 .vacancies-card__title {
   font-size: 1.5rem;
   -webkit-transition: all 0.3s ease;
