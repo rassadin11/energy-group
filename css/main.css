@@ -19981,10 +19981,6 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-.search-input {
-  outline: none;
-}
-
 .select-container .dropdown-container-wrapper.active {
   z-index: 1000;
 }
@@ -21437,7 +21433,6 @@ textarea:focus:-ms-input-placeholder {
 }
 .calculator-block .search-input {
   background: var(--bs-white);
-  height: 50px;
 }
 .calculator-block .default {
   opacity: 0.5;

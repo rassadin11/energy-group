@@ -12,7 +12,6 @@
 }
 .calculator-block .search-input {
   background: var(--bs-white);
-  height: 50px;
 }
 .calculator-block .default {
   opacity: 0.5;
