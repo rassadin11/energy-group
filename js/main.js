@@ -348,8 +348,9 @@ attrLayouts.forEach(item => {
 // click catalogue mobile
 
 function menuGenerator(elements, mainMenuField) {
-  if (mobileTitle) mobileTitle.innerHTML = elements[0];
   mainMenuField.innerHTML = '';
+  if (!elements) return;
+  if (mobileTitle && elements) mobileTitle.innerHTML = elements[0];
   for (let i = 1; i < elements.length; i++) {
     if (elements[i].length === 2) {
       mainMenuField.insertAdjacentHTML(`beforeend`, `
