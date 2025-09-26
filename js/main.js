@@ -2158,6 +2158,26 @@ if (valuesCheckboxes) {
     });
   });
 }
+
+// for characteristicks link in product_page
+
+const characteristicksLink = document.querySelector('a[href="#characteristicks"]');
+if (characteristicksLink) {
+  characteristicksLink.addEventListener('click', e => {
+    reviewsFilterButtons.querySelectorAll('button').forEach(item => item.classList.remove('active'));
+    reviewsFilterButtons.querySelectorAll('button')[0].classList.add('active');
+    const filtersObjects = document.querySelectorAll('[data-filter]');
+    const podborka = document.querySelector('.podborki');
+    filtersObjects.forEach(filter => {
+      if (filter.dataset.filter === 'about_product') {
+        filter.classList.remove('d-none');
+      } else {
+        filter.classList.add('d-none');
+      }
+    });
+    podborka.classList.remove('d-none');
+  });
+}
 })();
 
 /******/ })()
