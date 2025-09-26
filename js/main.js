@@ -348,7 +348,7 @@ attrLayouts.forEach(item => {
 // click catalogue mobile
 
 function menuGenerator(elements, mainMenuField) {
-  mobileTitle.innerHTML = elements[0];
+  if (mobileTitle) mobileTitle.innerHTML = elements[0];
   mainMenuField.innerHTML = '';
   for (let i = 1; i < elements.length; i++) {
     if (elements[i].length === 2) {
@@ -927,7 +927,7 @@ function activateCustomDropdowns() {
         selectDisplay.classList.remove('active');
         arrowSelect.classList.remove('active');
         dropdownWrapper.classList.remove('active');
-        if (searchInput) selectLabel.classList.add('active');
+        if (searchInput && selectLabel) selectLabel.classList.add('active');
 
         // Show all options again
         options.forEach(opt => {
