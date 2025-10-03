@@ -2260,8 +2260,10 @@ quizButtonBack.addEventListener('click', () => {
   } else {
     quizButtonNext.querySelector('span').innerHTML = 'Далее';
     quizButtonNext.querySelector('svg').classList.remove('d-none');
-    quizButtonNext.classList.remove('flex-fill');
-    quizButtonBack.querySelector('span').classList.remove('d-none');
+    if (document.body.clientWidth < 768) {
+      quizButtonNext.classList.remove('flex-fill');
+      quizButtonBack.querySelector('span').classList.remove('d-none');
+    }
   }
   showQuizScreen(quiz_slide, `Вопрос ${quiz_slide} из 5`);
 });
@@ -2269,9 +2271,11 @@ quizButtonNext.addEventListener('click', () => {
   if (quiz_slide < 6) quiz_slide++;
   if (quiz_slide === 5) {
     quizButtonNext.querySelector('span').innerHTML = 'Зафиксировать выгоду';
-    quizButtonNext.classList.add('flex-fill');
     quizButtonNext.querySelector('svg').classList.add('d-none');
-    quizButtonBack.querySelector('span').classList.add('d-none');
+    if (document.body.clientWidth < 768) {
+      quizButtonNext.classList.add('flex-fill');
+      quizButtonBack.querySelector('span').classList.add('d-none');
+    }
     showQuizScreen(quiz_slide, `Вопрос ${quiz_slide} из 5`);
   } else if (quiz_slide === 6) {
     quizButtonNext.querySelector('span').innerHTML = 'Отправить данные';

@@ -25071,6 +25071,7 @@ img.marker {
 @media (max-width: 768px) {
   .quiz-warning {
     text-align: center;
+    font-size: 0.75rem;
   }
 }
 
