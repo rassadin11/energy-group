@@ -25079,4 +25079,10 @@ img.marker {
   .quiz-header {
     border-bottom: 1px solid var(--bs-semi-gray);
   }
+}
+
+@media (max-width: 768px) {
+  .quiz-contacts {
+    font-size: 0.875rem;
+  }
 }/*# sourceMappingURL=main.css.map */
