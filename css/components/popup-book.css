@@ -33,17 +33,17 @@
   -ms-grid-column-span: 5;
   grid-column: span 5;
 }
-.popup-book__wrapper > div:nth-child(2) {
+.popup-book__wrapper:not(.quiz) > div:nth-child(2) {
   -ms-grid-column-span: 3;
   grid-column: span 3;
   position: relative;
 }
 @media (max-width: 992px) {
-  .popup-book__wrapper > div:nth-child(2) {
+  .popup-book__wrapper:not(.quiz) > div:nth-child(2) {
     display: none;
   }
 }
-.popup-book__wrapper > div:nth-child(2) img {
+.popup-book__wrapper:not(.quiz) > div:nth-child(2) img:not(.marker) {
   height: calc(100% + 1rem);
   position: absolute;
   bottom: -2rem;
