@@ -2,7 +2,7 @@
 <html lang="ru" class="page">
 @include('partials/head.html')
 
-<body data-category="about-company">
+<body data-category="dgu">
   <div class="headers w-100">
     @include('partials/pre-header.html') @include('partials/header.html')
   </div>
@@ -10,7 +10,8 @@
   <main class="main">
     <section class="dgu-block position-relative overflow-hidden lh-base">
       <div class="dgu-block__wrapper position-absolute z-0 overflow-hidden w-100 h-100">
-        <img src="./img/dgu/background.jpg" alt="background" class="dgu w-100 h-100 object-fit-cover position-relative">
+        <img loading="lazy" src="./img/dgu/background.jpg" alt="background"
+          class="dgu w-100 h-100 object-fit-cover position-relative">
       </div>
       <div class="container position-relative d-flex justify-content-between h-100 pt-10 large-p">
         <div class="d-flex flex-column pt-md-8 pt-4">
@@ -80,8 +81,8 @@
       </div>
       <section class="projects no-background mb-lg-0 mb-3 mt-6">
         <div class="container mt-md-7 mt-2 pt-md-0 pt-2 mb-xxl-8 article-slider delivery-slider">
-          <div class="swiffy-slider slider-item-show2 slider-item-reveal slider-nav-visible">
-            <ul class="slider-container dgu">
+          <div class="swiffy-slider slider-item-show2 slider-item-reveal slider-nav-visible px-lg-0 px-4">
+            <ul class="slider-container dgu rounded-md-6 rounded-4">
               <li>
                 <div class="h-100 dgu__height rounded-md-6 rounded-4 overflow-hidden">
                   <img src="./img/dgu/slider1.webp" class="h-100 w-100 object-fit-cover" loading="lazy" alt="photo" />

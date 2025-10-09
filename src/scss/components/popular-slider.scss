@@ -76,8 +76,16 @@
     background: var(--bs-white);
     transition: all 0.3s ease;
 
+    .deliver-link {
+      transition: all .3s ease;
+    }
+
     &:hover {
       box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+
+      .deliver-link {
+        color: var(--bs-orange);
+      }
     }
 
     @media (max-width: 992px) {

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+@include('partials/head.html')
+
+<body data-category="vacancy">
+  <div class="headers w-100">
+    @include('partials/pre-header.html') @include('partials/header.html')
+  </div>
+
+  <main class="main container">
+    <button class="btn btn-warning py-10 w-100 mt-10 fw-bold fs-2 open-popup-quiz">Открыть квиз</button>
+  </main>
+
+  <div class="popup-book-container popup-quiz position-relative d-none">
+    <div class="popup-background"></div>
+    <div class="popup-book__wrapper rounded-md-6 rounded-4 p-md-8 d-flex flex-column quiz">
+      <div class="p-md-0 p-5 quiz-header">
+        <div class="d-flex align-items-center w-100 gap-4">
+          <div class="flex-fill">
+            <div class="progress progress-quiz" role="progressbar" aria-label="Success striped example"
+              aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar progress-bar-striped rounded-3" style="width: 20%"></div>
+            </div>
+          </div>
+          <button class="btn p-0">
+            <svg class="quiz-cross">
+              <use xlink:href="./img/svg/sprite.svg#mobile-cross"></use>
+            </svg>
+          </button>
+        </div>
+
+        <p class="text-dark-gray mt-1 quiz-progress">Вопрос 1 из 5</p>
+      </div>
+      <div class="popup-quiz__main-content content-quiz mt-md-8 p-md-0 p-4 flex-fill">
+        <div class="content-quiz-wrapper" data-screen="1">
+          <h2 class="content-quiz__title fw-bold lh-base">Генератор нужен для резерва или как основной источник
+            электричества?
+          </h2>
+          <div class="content-quiz__checkboxes mt-md-2 mt-3 row gx-6 gy-md-6 gy-3">
+            <div class="col-md-6 col-12">
+              <label for="quiz-main1"
+                class="d-flex p-4 align-items-md-center align-items-end gap-2 border border-1 rounded-3 content-quiz__checkbox">
+                <input class="form-check-input ms-0 mt-0" checked type="radio" name="quiz-radio" id="quiz-main1"
+                  value="option3">
+                <p>Как основной</p>
+              </label>
+            </div>
+            <div class="col-md-6 col-12">
+              <label for="quiz-main2"
+                class="d-flex p-4 align-items-md-center align-items-end gap-2 border border-1 rounded-3 content-quiz__checkbox">
+                <input class="form-check-input ms-0 mt-0" type="radio" name="quiz-radio" id="quiz-main2"
+                  value="option3">
+                <p>Как резервный</p>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-quiz-wrapper d-none" data-screen="2">
+          <h2 class="content-quiz__title fw-bold lh-base">Какая требуется мощность?
+          </h2>
+          <div class="content-quiz__checkboxes mt-md-2 mt-3 row gx-6 gy-md-6 gy-3">
+            <div class="col-lg-3 col-md-6 col-12">
+              <label for="quiz-power1"
+                class="d-flex p-4 align-items-md-center align-items-end gap-2 border border-1 rounded-3 content-quiz__checkbox">
+                <input class="form-check-input ms-0 mt-0" checked type="radio" name="quiz-power" id="quiz-power1"
+                  value="option3">
+                <p>2-40 кВт</p>
+              </label>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-12">
+              <label for="quiz-power2"
+                class="d-flex p-4 align-items-md-center align-items-end gap-2 border border-1 rounded-3 content-quiz__checkbox">
+                <input class="form-check-input ms-0 mt-0" type="radio" name="quiz-power" id="quiz-power2"
+                  value="option3">
+                <p>50-100 кВт</p>
+              </label>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-12">
+              <label for="quiz-power3"
+                class="d-flex p-4 align-items-md-center align-items-end gap-2 border border-1 rounded-3 content-quiz__checkbox">
+                <input class="form-check-input ms-0 mt-0" type="radio" name="quiz-power" id="quiz-power3"
+                  value="option3">
+                <p>200-500 кВт</p>
+              </label>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-12">
+              <label for="quiz-power4"
+                class="d-flex p-4 align-items-md-center align-items-end gap-2 border border-1 rounded-3 content-quiz__checkbox">
+                <input class="form-check-input ms-0 mt-0" type="radio" name="quiz-power" id="quiz-power4"
+                  value="option3">
+                <p>600-1000 кВт</p>
+              </label>
+            </div>
+          </div>
+
+          <p class="fw-bold mt-6 mb-2">Другое</p>
+          <input type="number" placeholder="Введите мощность"
+            class="w-100 block-params__input px-3 pe-md-9 pe-7 py-4 rounded-3 resume-overlay__input">
+        </div>
+
+        <div class="content-quiz-wrapper d-none" data-screen="3">
+          <h2 class="content-quiz__title fw-bold lh-base">Какой вариант исполнения нужен?
+          </h2>
+          <div class="content-quiz__checkboxes mt-md-2 mt-3 row gx-6 gy-md-6 gy-3">
+            <div class="col-md-6 col-12">
+              <label for="quiz-variant1"
+                class="d-flex p-4 align-items-md-center align-items-end gap-2 border border-1 rounded-3 content-quiz__checkbox">
+                <input class="form-check-input ms-0 mt-0" checked type="radio" name="quiz-variant" id="quiz-variant1"
+                  value="option3">
+                <p>В кожухе</p>
+              </label>
+            </div>
+            <div class="col-md-6 col-12">
+              <label for="quiz-variant2"
+                class="d-flex p-4 align-items-md-center align-items-end gap-2 border border-1 rounded-3 content-quiz__checkbox">
+                <input class="form-check-input ms-0 mt-0" type="radio" name="quiz-variant" id="quiz-variant2"
+                  value="option3">
+                <p>В контейнере</p>
+              </label>
+            </div>
+            <div class="col-md-6 col-12">
+              <label for="quiz-variant3"
+                class="d-flex p-4 align-items-md-center align-items-end gap-2 border border-1 rounded-3 content-quiz__checkbox">
+                <input class="form-check-input ms-0 mt-0" type="radio" name="quiz-variant" id="quiz-variant3"
+                  value="option3">
+                <p>Открытый</p>
+              </label>
+            </div>
+            <div class="col-md-6 col-12">
+              <label for="quiz-variant4"
+                class="d-flex p-4 align-items-md-center align-items-end gap-2 border border-1 rounded-3 content-quiz__checkbox">
+                <input class="form-check-input ms-0 mt-0" type="radio" name="quiz-variant" id="quiz-variant4"
+                  value="option3">
+                <p>На шасси</p>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-quiz-wrapper d-none map-screen" data-screen="4">
+          <h2 class="content-quiz__title fw-bold lh-base">Адрес и город доставки
+          </h2>
+
+          <div class="overlay-params__input-wrapper position-relative mt-md-8 mt-4">
+            <input type="text" placeholder="Введите точный адрес"
+              class="w-100 block-params__input px-3 pe-md-9 pe-7 py-4 rounded-3 resume-overlay__input quiz-map__input">
+          </div>
+          <div id="quiz-map" class="content-quiz__map w-100 mt-md-6 mt-4 rounded-3 overflow-hidden flex-fill"></div>
+        </div>
+
+        <div class="content-quiz-wrapper d-none" data-screen="5">
+          <h2 class="content-quiz__title fw-bold lh-base">Что хотели бы получить при покупке генератора?
+          </h2>
+          <div class="content-quiz__checkboxes mt-md-2 mt-3 row gx-6 gy-md-6 gy-3">
+            <div class="col-md-6 col-12">
+              <label for="quiz-sale1"
+                class="d-flex p-4 align-items-md-center align-items-end gap-2 border border-1 rounded-3 content-quiz__checkbox">
+                <input class="form-check-input ms-0 mt-0" checked type="radio" name="quiz-sale" id="quiz-sale1"
+                  value="option3">
+                <p>Скидку 10 000 ₽ </p>
+              </label>
+            </div>
+            <div class="col-md-6 col-12">
+              <label for="quiz-sale2"
+                class="d-flex p-4 align-items-md-center align-items-end gap-2 border border-1 rounded-3 content-quiz__checkbox">
+                <input class="form-check-input ms-0 mt-0" type="radio" name="quiz-sale" id="quiz-sale2" value="option3">
+                <p>Комплекс ZIP на ТО</p>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-quiz-wrapper d-none" data-screen="6">
+          <h2 class="content-quiz__title fw-bold lh-base">Спасибо! Мы подобрали несколько вариантов генераторов под ваши
+            задачи
+          </h2>
+          <p class="text-dark-gray mt-4 lh-base quiz-contacts">Оставьте свои контактные данные, мы сообщим вам все
+            параметры и цену</p>
+          <div class="row mt-md-8 mt-2 gy-md-0 gy-6">
+            <div class="col-md-6 col-12 resume-overlay__block">
+              <p class="semibold">Имя</p>
+
+              <div class="overlay-params__input-wrapper position-relative mt-2" data-sign="">
+                <input type="text" placeholder="Щербаков Михаил Артёмович"
+                  class="w-100 block-params__input px-3 pe-md-9 pe-7 py-4 rounded-3 resume-overlay__input" required="">
+              </div>
+            </div>
+            <div class="col-md-6 col-12 resume-overlay__block">
+              <p class="semibold">Телефон</p>
+
+              <div class="overlay-params__input-wrapper position-relative mt-2 left" data-sign="+7"
+                bis_skin_checked="1">
+                <input type="tel" placeholder="(000) 000-00-00"
+                  class="w-100 block-params__input px-3 ps-8 py-4 rounded-3 resume-overlay__input" required="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup-quiz__buttons buttons-quiz d-flex justify-content-between p-md-0 px-4 pb-5 gap-3">
+        <button class="btn fw-semibold p-3 border border-1 d-flex align-items-center gap-2 quiz-back disabled"><svg
+            class="default-icon">
+            <use href="./img/svg/sprite.svg#default-arrow"></use>
+          </svg>
+          <span class="px-2 back-text">Назад</span>
+        </button>
+        <button
+          class="btn btn-warning fw-semibold p-3 d-flex align-items-center justify-content-center gap-md-2 quiz-next"><span
+            class="px-2">Далее</span><svg class="default-icon">
+            <use href="./img/svg/sprite.svg#default-arrow"></use>
+          </svg></button>
+      </div>
+
+      <p class="text-dark-gray mt-md-8 mt-1 lh-base d-none quiz-warning p-md-0 px-4 pb-6">Нажимая кнопку, я даю согласие
+        на
+        обработку
+        <a href="#">персональных данных</a> в
+        соответствии с
+        политикой конфиденциальности
+      </p>
+    </div>
+  </div>
+
+</body>
+
+</html>

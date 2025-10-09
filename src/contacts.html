@@ -2,7 +2,7 @@
 <html lang="ru" class="page">
 @include('partials/head.html')
 
-<body data-category="about-company">
+<body data-category="contacts">
   <div class="headers w-100">
     @include('partials/pre-header.html') @include('partials/header.html')
   </div>
@@ -380,10 +380,13 @@
         </div>
     </section>
 
-    <div class="container overflow-hidden mb-md-10 pb-md-10 mb-8">
-      <iframe class="rounded-md-6 rounded-4 w-100 contacts__map"
-        src="https://yandex.ru/map-widget/v1/?um=constructor%3A26ed9303159fcc8675792c5709437c150395412a88070defa7f3bca4c4334c61&amp;source=constructor"
-        frameborder="0"></iframe>
+    <div class="container overflow-hidden mb-md-10 pb-md-10 mb-8 position-relative">
+      <div class="position-relative">
+        <div class="map-inactive rounded-md-6 rounded-4 position-absolute w-100 h-100 top-0 start-0 show"></div>
+        <iframe class="rounded-md-6 rounded-4 w-100 contacts__map"
+          src="https://yandex.ru/map-widget/v1/?um=constructor%3A26ed9303159fcc8675792c5709437c150395412a88070defa7f3bca4c4334c61&amp;source=constructor"
+          frameborder="0"></iframe>
+      </div>
     </div>
   </main>
 

@@ -3,6 +3,10 @@
   font-size: 0.875rem;
   color: #51606f;
 
+  @media (max-width: 768px) {
+    font-size: 0.75rem;
+  }
+
   &:hover a {
     text-decoration: underline;
   }
@@ -21,5 +25,9 @@
     background: var(--bs-gray);
     border-radius: 50%;
     transform: translate(0, -50%);
+
+    @media (max-width: 768px) {
+      right: 8px;
+    }
   }
 }

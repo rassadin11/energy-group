@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
-  @include('partials/head.html')
+@include('partials/head.html')
 
-  <body data-category="about-company">
-    <div class="headers w-100">
-      @include('partials/pre-header.html') @include('partials/header.html')
-    </div>
+<body data-category="vacancies">
+  <div class="headers w-100">
+    @include('partials/pre-header.html') @include('partials/header.html')
+  </div>
 
-    <main class="main">
-      @include('partials/vacancies/breadcrumbs.html')
-      @include("partials/vacancies/vacancies.html")
-    </main>
+  <main class="main">
+    @include('partials/vacancies/breadcrumbs.html')
+    @include("partials/vacancies/vacancies.html")
+  </main>
 
-    @include('partials/vacancy/popup.html') @include('partials/footer.html')
-    @include('partials/popup-book.html') @include('partials/popup-recall.html')
-  </body>
+  @include('partials/vacancy/popup.html') @include('partials/footer.html')
+  @include('partials/popup-book.html') @include('partials/popup-recall.html')
+</body>
+
 </html>

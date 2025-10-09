@@ -151,8 +151,10 @@ attrLayouts.forEach(item => {
 // click catalogue mobile
 
 function menuGenerator(elements, mainMenuField) {
-    mobileTitle.innerHTML = elements[0]
     mainMenuField.innerHTML = ''
+
+    if (!elements) return;
+    if (mobileTitle && elements) mobileTitle.innerHTML = elements[0]
 
     for (let i = 1; i < elements.length; i++) {
         if (elements[i].length === 2) {
@@ -823,7 +825,7 @@ function activateCustomDropdowns() {
                 arrowSelect.classList.remove('active');
                 dropdownWrapper.classList.remove('active')
 
-                if (searchInput) selectLabel.classList.add('active');
+                if (searchInput && selectLabel) selectLabel.classList.add('active');
 
                 // Show all options again
                 options.forEach(opt => {
@@ -1492,7 +1494,7 @@ if (fileInput) {
 
             // Проверка типа файла
             if (file.type !== 'application/pdf') {
-                alert('Пожалуйста, выберите файл в формате PDF.');
+                console.log('Пожалуйста, выберите файл в формате PDF.');
                 this.value = '';
                 fileNameDisplay.textContent = '';
                 return;
@@ -1500,7 +1502,7 @@ if (fileInput) {
 
             // Проверка размера файла (5MB)
             if (file.size > 5 * 1024 * 1024) {
-                alert('Файл слишком большой. Максимальный размер: 5MB.');
+                console.log('Файл слишком большой. Максимальный размер: 5MB.');
                 this.value = '';
                 fileNameDisplay.textContent = '';
                 return;
@@ -2000,85 +2002,87 @@ function scrollFilters(item, useContentHeight) {
 // Находим все блоки фильтров каталога
 const filterBlocks = document.querySelectorAll('.catalog__filter');
 
-filterBlocks.forEach(filterBlock => {
-    const toggleBtn = filterBlock.querySelector('.filter-catalog__header .btn');
+setTimeout(() => {
+    filterBlocks.forEach(filterBlock => {
+        const toggleBtn = filterBlock.querySelector('.filter-catalog__header .btn');
 
-    if (toggleBtn) {
-        const contentWrapper = filterBlock.querySelector('.filter-catalog__wrapper');
-        const arrowIcon = toggleBtn.querySelector('.default-icon-arrow');
-        let isExpanded = true;
+        if (toggleBtn) {
+            const contentWrapper = filterBlock.querySelector('.filter-catalog__wrapper');
+            const arrowIcon = toggleBtn.querySelector('.default-icon-arrow');
+            let isExpanded = true;
 
-        let contentHeight = contentWrapper.clientHeight;
-        console.log(contentWrapper, contentWrapper.clientHeight)
-        function useContentHeight(value) {
-            contentHeight = value;
-        }
-
-        contentWrapper.style.maxHeight = contentHeight + 'px';
-        contentWrapper.style.transition = 'all 0.3s ease-in';
-
-        let isPadding
-
-        // Добавляем обработчик события на кнопку
-        toggleBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            if (contentWrapper.classList.contains('pb-2')) isPadding = true
-
-            if (isExpanded) {
-                contentWrapper.style.maxHeight = '0px';
-
-                if (isPadding) {
-                    contentWrapper.classList.add('pb-0')
-                    contentWrapper.classList.remove('pb-2')
-                    contentWrapper.parentNode.querySelector('.filter-catalog__header').classList.remove('mb-3')
-                    contentWrapper.parentNode.querySelector('.filter-catalog__header').classList.add('mb-0')
-                }
-
-                // change padding for all block
-
-                contentWrapper.parentNode.classList.remove('pb-5')
-                contentWrapper.parentNode.classList.add('pb-1')
-
-                arrowIcon.style.transform = 'rotate(-90deg)';
-            } else {
-                // Разворачиваем контент
-                contentWrapper.style.maxHeight = contentHeight + 'px';
-                arrowIcon.style.transform = 'rotate(90deg)';
-
-                if (isPadding) {
-                    contentWrapper.classList.add('pb-2')
-                    contentWrapper.classList.remove('pb-0')
-                    contentWrapper.parentNode.querySelector('.filter-catalog__header').classList.add('mb-3')
-                    contentWrapper.parentNode.querySelector('.filter-catalog__header').classList.remove('mb-0')
-                }
-
-                // change padding for all block
-
-                contentWrapper.parentNode.classList.add('pb-5')
-                contentWrapper.parentNode.classList.remove('pb-1')
+            let contentHeight = contentWrapper.clientHeight;
+            console.log(contentWrapper, contentWrapper.clientHeight)
+            function useContentHeight(value) {
+                contentHeight = value;
             }
 
-            // Добавляем transition для стрелки
-            arrowIcon.style.transition = 'transform 0.3s ease-in-out';
+            contentWrapper.style.maxHeight = contentHeight + 'px';
+            contentWrapper.style.transition = 'all 0.3s ease-in';
 
-            // Меняем состояние
-            isExpanded = !isExpanded;
-        });
+            let isPadding
 
-        const wrapper = filterBlock.querySelector('#checkboxWrapper');
-        if (wrapper) {
-            scrollFilters(wrapper, useContentHeight)
-        }
+            // Добавляем обработчик события на кнопку
+            toggleBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                if (contentWrapper.classList.contains('pb-2')) isPadding = true
 
-        // Обработчик для изменения размера окна (на случай изменения контента)
-        window.addEventListener('resize', function () {
-            if (isExpanded) {
-                const newHeight = contentWrapper.scrollHeight;
-                contentWrapper.style.maxHeight = newHeight + 'px';
+                if (isExpanded) {
+                    contentWrapper.style.maxHeight = '0px';
+
+                    if (isPadding) {
+                        contentWrapper.classList.add('pb-0')
+                        contentWrapper.classList.remove('pb-2')
+                        contentWrapper.parentNode.querySelector('.filter-catalog__header').classList.remove('mb-3')
+                        contentWrapper.parentNode.querySelector('.filter-catalog__header').classList.add('mb-0')
+                    }
+
+                    // change padding for all block
+
+                    contentWrapper.parentNode.classList.remove('pb-5')
+                    contentWrapper.parentNode.classList.add('pb-1')
+
+                    arrowIcon.style.transform = 'rotate(-90deg)';
+                } else {
+                    // Разворачиваем контент
+                    contentWrapper.style.maxHeight = contentHeight + 'px';
+                    arrowIcon.style.transform = 'rotate(90deg)';
+
+                    if (isPadding) {
+                        contentWrapper.classList.add('pb-2')
+                        contentWrapper.classList.remove('pb-0')
+                        contentWrapper.parentNode.querySelector('.filter-catalog__header').classList.add('mb-3')
+                        contentWrapper.parentNode.querySelector('.filter-catalog__header').classList.remove('mb-0')
+                    }
+
+                    // change padding for all block
+
+                    contentWrapper.parentNode.classList.add('pb-5')
+                    contentWrapper.parentNode.classList.remove('pb-1')
+                }
+
+                // Добавляем transition для стрелки
+                arrowIcon.style.transition = 'transform 0.3s ease-in-out';
+
+                // Меняем состояние
+                isExpanded = !isExpanded;
+            });
+
+            const wrapper = filterBlock.querySelector('#checkboxWrapper');
+            if (wrapper) {
+                scrollFilters(wrapper, useContentHeight)
             }
-        });
-    }
-});
+
+            // Обработчик для изменения размера окна (на случай изменения контента)
+            window.addEventListener('resize', function () {
+                if (isExpanded) {
+                    const newHeight = contentWrapper.scrollHeight;
+                    contentWrapper.style.maxHeight = newHeight + 'px';
+                }
+            });
+        }
+    });
+}, 0)
 
 // nouislider
 
@@ -2201,4 +2205,291 @@ if (document.body.clientWidth < 768) {
             item.classList.add('active')
         })
     })
+}
+
+// map inactive
+
+const mapInactive = document.querySelector('.map-inactive')
+
+if (mapInactive) {
+    mapInactive.addEventListener('click', () => {
+        mapInactive.classList.remove('show')
+    })
+}
+// for checkboxes in product_page
+
+const valuesCheckboxes = document.querySelectorAll('.values-buy__checkbox')
+
+if (valuesCheckboxes) {
+    valuesCheckboxes.forEach(item => {
+        item.addEventListener('click', e => {
+            if (!e.target.classList.contains('form-check-input')) {
+                item.querySelector('input').checked = true
+                valuesCheckboxes.forEach(elem => elem.classList.remove("checked"))
+                item.classList.add('checked')
+            }
+        })
+    })
+}
+
+// for characteristicks link in product_page
+
+const characteristicksLink = document.querySelector('a[href="#characteristicks"]')
+
+if (characteristicksLink) {
+    characteristicksLink.addEventListener('click', (e) => {
+        reviewsFilterButtons.querySelectorAll('button').forEach(item => item.classList.remove('active'))
+        reviewsFilterButtons.querySelectorAll('button')[0].classList.add('active')
+
+        const filtersObjects = document.querySelectorAll('[data-filter]')
+        const podborka = document.querySelector('.podborki')
+
+        filtersObjects.forEach(filter => {
+            if (filter.dataset.filter === 'about_product') {
+                filter.classList.remove('d-none')
+            } else {
+                filter.classList.add('d-none')
+            }
+        })
+
+        podborka.classList.remove('d-none')
+    })
+}
+
+// quiz
+
+
+
+const popupQuiz = document.querySelector('.popup-quiz')
+
+if (popupQuiz) {
+    const cross = popupQuiz.querySelector('.quiz-cross')
+    const background = popupQuiz.querySelector('.popup-background')
+
+    cross.addEventListener('click', () => {
+        popupQuiz.classList.add('d-none')
+        document.body.classList.remove('overflow-hidden')
+        document.body.style.paddingRight = `0px`;
+
+        if (document.querySelector('.headers').style.position !== 'static' && document.querySelector('.headers').style.position !== '') {
+            document.querySelector('.headers').style.paddingRight = `0px`;
+        }
+    })
+
+    background.addEventListener('click', () => {
+        popupQuiz.classList.add('d-none')
+        document.body.classList.remove('overflow-hidden')
+        document.body.style.paddingRight = `0px`;
+
+        if (document.querySelector('.headers').style.position !== 'static' && document.querySelector('.headers').style.position !== '') {
+            document.querySelector('.headers').style.paddingRight = `0px`;
+        }
+    })
+
+    const openPopupQuiz = document.querySelectorAll('.open-popup-quiz')
+
+    openPopupQuiz.forEach(item => {
+        item.addEventListener('click', () => {
+            popupQuiz.classList.remove('d-none')
+            document.body.classList.add('overflow-hidden')
+            document.body.style.paddingRight = `${scrollbarWidth}px`;
+
+            if (document.querySelector('.headers').style.position !== 'static' && document.querySelector('.headers').style.position !== '') {
+                document.querySelector('.headers').style.paddingRight = `${scrollbarWidth}px`;
+            }
+        })
+    })
+}
+
+const radios = document.querySelectorAll('input[name="quiz-radio"]');
+
+radios.forEach(radio => {
+    radio.addEventListener('change', () => {
+        document.querySelectorAll('label').forEach(label => {
+            label.classList.remove('active');
+        });
+        if (radio.checked) {
+            radio.closest('label').classList.add('active');
+        }
+    });
+});
+
+let quiz_slide = 1;
+const quizButtonBack = document.querySelector('.quiz-back')
+const quizButtonNext = document.querySelector('.quiz-next')
+const quizProgress = document.querySelector('.quiz-progress')
+const quizProgressBar = document.querySelector('.progress-quiz .progress-bar')
+const quizWarning = document.querySelector('.quiz-warning')
+
+function showQuizScreen(index, content) {
+    quizProgress.innerHTML = content;
+    const quizScreens = document.querySelectorAll('[data-screen]')
+
+    quizScreens.forEach(item => {
+        if (item.dataset.screen == index) {
+            item.classList.remove('d-none')
+        } else {
+            item.classList.add('d-none')
+        }
+    })
+
+    // меняем progressbar
+
+    if (index <= 5) {
+        quizProgressBar.style.width = 100 / 5 * index + '%'
+    } else {
+
+    }
+}
+
+quizButtonBack.addEventListener('click', () => {
+    if (quiz_slide > 1) quiz_slide--;
+
+    if (quiz_slide === 1) {
+        quizButtonBack.classList.add('disabled')
+    } if (quiz_slide === 5) {
+        quizButtonNext.querySelector('span').innerHTML = 'Зафиксировать выгоду'
+        showQuizScreen(quiz_slide, `Вопрос ${quiz_slide} из 5`)
+        quizProgressBar.classList.remove('bg-warning')
+        quizWarning.classList.add('d-none')
+    } else {
+        quizButtonNext.querySelector('span').innerHTML = 'Далее'
+        quizButtonNext.querySelector('svg').classList.remove('d-none')
+
+        if (document.body.clientWidth < 768) {
+            quizButtonNext.classList.remove('flex-fill')
+            quizButtonBack.querySelector('span').classList.remove('d-none')
+        }
+    }
+
+    showQuizScreen(quiz_slide, `Вопрос ${quiz_slide} из 5`)
+})
+
+quizButtonNext.addEventListener('click', () => {
+    if (quiz_slide < 6) quiz_slide++;
+
+    if (quiz_slide === 5) {
+        quizButtonNext.querySelector('span').innerHTML = 'Зафиксировать выгоду'
+        quizButtonNext.querySelector('svg').classList.add('d-none')
+
+        if (document.body.clientWidth < 768) {
+            quizButtonNext.classList.add('flex-fill')
+            quizButtonBack.querySelector('span').classList.add('d-none')
+        }
+
+        showQuizScreen(quiz_slide, `Вопрос ${quiz_slide} из 5`)
+    } else if (quiz_slide === 6) {
+        quizButtonNext.querySelector('span').innerHTML = 'Отправить данные'
+        quizProgressBar.classList.add('bg-warning')
+        quizWarning.classList.remove('d-none')
+        showQuizScreen(quiz_slide, `Оставьте заявку`)
+    } else {
+        quizButtonNext.querySelector('span').innerHTML = 'Далее'
+        quizButtonNext.querySelector('svg').classList.remove('d-none')
+        quizButtonBack.classList.remove('disabled')
+
+        showQuizScreen(quiz_slide, `Вопрос ${quiz_slide} из 5`)
+    }
+})
+
+const inputAddress = document.querySelector('.quiz-map__input');
+
+initMap();
+
+async function initMap() {
+    await ymaps3.ready;
+
+    const { YMap, YMapDefaultSchemeLayer, YMapListener, YMapMarker, YMapDefaultFeaturesLayer } = ymaps3;
+
+    const map = new YMap(
+        document.getElementById('quiz-map'),
+        {
+            location: {
+                center: [37.588144, 55.733842],
+                zoom: 10
+            },
+        }
+    );
+
+    map.addChild(new YMapDefaultSchemeLayer());
+    map.addChild(new YMapDefaultFeaturesLayer());
+
+    const center = [37.628056, 55.742245];
+
+    const icon = document.createElement('img');
+    icon.className = 'marker';
+    icon.src = "data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIKIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiPgoKPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCw1MTIpIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCkiCmZpbGw9IiNmZjQ0MzMiIHN0cm9rZT0ibm9uZSI+CjxwYXRoIGQ9Ik0yNDEwIDQ3NzQgYy0yNzYgLTMzIC01MTYgLTEyMCAtNzQwIC0yNjggLTEzOCAtOTIgLTM0MSAtMjkzIC00MjkKLTQyNiAtMTE3IC0xNzYgLTIwNiAtMzg3IC0yNDYgLTU4NSAtNDkgLTI0MyAtMzMgLTYxOSA0MSAtOTU0IDEyNCAtNTU2IDQyMQotMTEyMCA4NTggLTE2MzAgMTEyIC0xMzAgMzYyIC0zODEgNDc2IC00NzcgMTU0IC0xMzAgMTg0IC0xNDMgMjQ1IC0xMDUgOTkgNjAKMzc2IDMxOSA1NDcgNTEwIDQ3OCA1MzcgNzg5IDExMTEgOTIyIDE3MDYgNzQgMzI3IDkwIDcwOSA0MSA5NTAgLTM5IDE5MCAtMTI1CjQwMCAtMjMwIDU2MCAtNjkgMTA2IC0xMDAgMTQ0IC0xOTggMjQ0IC0yMzEgMjM1IC01MTUgMzg5IC04MzQgNDUxIC0xMDQgMjEKLTM2NiAzNCAtNDUzIDI0eiBtMzkzIC04ODEgYzEyMyAtNDMgMTg5IC04NSAyODcgLTE4MyAxMzYgLTEzNiAyMDcgLTI5NCAyMTcKLTQ4NSAyMCAtMzYxIC0yMjMgLTY4NiAtNTc1IC03NzIgLTg4IC0yMSAtMjU2IC0yMSAtMzQ0IDAgLTI4NiA3MCAtNTA1IDI5OAotNTY0IDU4NyAtNTggMjg5IDcxIDYwMiAzMTYgNzY1IDE0NiA5NyAyNTEgMTI2IDQ0MCAxMjIgMTIwIC0zIDE0NCAtNyAyMjMKLTM0eiIvPgo8L2c+Cjwvc3ZnPgo=";
+
+    const marker = new YMapMarker({
+        coordinates: center
+    }, icon);
+
+    map.addChild(marker);
+
+    const clickCallback = async (_, e) => {
+        const coords = e.coordinates;
+
+        ymaps3.search({
+            'text': coords
+        }).then(function (res) {
+            const props = res[0].properties;
+            const address = [props.description, props.name].filter(Boolean).join(', ');
+
+            let center_update = res[0].geometry.coordinates;
+            map.update({
+                location: {
+                    center: center_update,
+                    zoom: 17,
+                    duration: 400
+                }
+            });
+
+            marker.update({
+                coordinates: center_update
+            });
+
+            inputAddress.value = address
+        })
+    };
+
+    const mapListener = new YMapListener({
+        layer: 'any',
+        onClick: clickCallback,
+    });
+
+    map.addChild(mapListener);
+
+    inputAddress.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+            const query = inputAddress.value.trim();
+            if (!query) return;
+
+            ymaps3.search({
+                text: query
+            }).then(function (res) {
+                if (res && res.length > 0) {
+                    const props = res[0].properties;
+                    const address = [props.description, props.name].filter(Boolean).join(', ');
+
+                    let center_update = res[0].geometry.coordinates;
+                    map.update({
+                        location: {
+                            center: center_update,
+                            zoom: 17,
+                            duration: 400
+                        }
+                    });
+                    marker.update({
+                        coordinates: center_update
+                    });
+
+                    inputAddress.value = address;
+                } else {
+                    console.log('Адрес не найден, попробуйте уточнить');
+                }
+            }).catch(err => {
+                console.error('Ошибка поиска:', err);
+            });
+        }
+    });
 }

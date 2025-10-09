@@ -148,6 +148,10 @@ a {
 
 .breadcrumbs {
   list-style-type: none !important;
+
+  @media (max-width: 768px) {
+    padding-right: 0 !important;
+  }
 }
 
 br {

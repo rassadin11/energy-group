@@ -30,7 +30,7 @@
       grid-column: span 5;
     }
 
-    &>div:nth-child(2) {
+    &:not(.quiz)>div:nth-child(2) {
       grid-column: span 3;
       position: relative;
 
@@ -38,7 +38,7 @@
         display: none;
       }
 
-      img {
+      img:not(.marker) {
         height: calc(100% + 1rem);
         position: absolute;
         bottom: -2rem;

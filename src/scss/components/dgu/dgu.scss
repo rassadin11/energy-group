@@ -74,6 +74,12 @@
         max-height: 380px;
         min-height: 182px;
     }
+
+    &.slider-container {
+        @media (min-width: 992px) {
+            overflow: hidden;
+        }
+    }
 }
 
 .big-p {

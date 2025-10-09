@@ -151,12 +151,35 @@
 }
 
 .values-buy {
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
   &__btn {
     color: var(--orange-color)
   }
 
   &__image img {
     width: 48px;
+  }
+
+  &__checkbox {
+    border-radius: 0.75rem;
+    border: 2px solid var(--bs-semi-gray);
+    transition: all .3s ease;
+    cursor: pointer;
+
+    &.checked {
+      border: 2px solid #FBBF24;
+    }
+  }
+
+  &__checkbox-price {
+    font-size: 0.875rem;
+  }
+
+  &__avto {
+    border-radius: 0.75rem;
   }
 }
 
@@ -244,4 +267,33 @@
   .projects .swiffy-slider.analog {
     --swiffy-slider-item-count: 2;
   }
+}
+
+.map-inactive {
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s ease;
+
+  &.show {
+    background: var(--bs-warning);
+    opacity: 0.3;
+    z-index: 10000;
+    visibility: visible;
+    height: 600px !important;
+    cursor: pointer;
+
+    @media (max-width: 992px) {
+      height: 80vh !important;
+    }
+  }
+}
+
+.scroll-snap {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-snap-item {
+  scroll-snap-align: start;
+  white-space: nowrap;
 }
