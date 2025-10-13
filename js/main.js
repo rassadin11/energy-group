@@ -1810,7 +1810,7 @@ if (swiffyReviewsSlider) {
 // Инициализация всех tooltip'ов
 document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
   new bootstrap.Tooltip(el, {
-    placement: 'top',
+    placement: el.dataset.bsPlacement,
     // пытается сверху
     fallbackPlacements: ['bottom'],
     // если не влезает — снизу
