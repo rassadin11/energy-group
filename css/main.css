@@ -25115,6 +25115,12 @@ img.marker {
   }
 }
 
+@media (max-width: 700px) {
+  .to-table-wrapper {
+    width: 192%;
+  }
+}
+
 .to-card {
   min-height: 0 !important;
   height: auto !important;
@@ -25198,10 +25204,6 @@ img.marker {
 }
 
 @media (max-width: 768px) {
-  .to-table {
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
-  }
   .to-table th {
     font-size: 0.875rem !important;
   }
@@ -25237,10 +25239,6 @@ img.marker {
 
 .bright-energy {
   color: #CDD1D6;
-}
-
-.to-table {
-  border: 1px solid #E7E9EB;
 }
 
 .to__small-title {
