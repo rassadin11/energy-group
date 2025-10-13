@@ -18947,7 +18947,10 @@ a {
 
 @media (max-width: 768px) {
   br {
-    display: none;
+    display: inline;
+  }
+  br:before {
+    content: " ";
   }
 }
 
