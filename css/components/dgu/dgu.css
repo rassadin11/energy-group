@@ -100,12 +100,12 @@
     grid-template-columns: 1fr;
   }
 }
-.dgu__cards .d-flex:not(.files-item__svg) {
+.dgu__cards > .d-flex:not(.files-item__svg) {
   background: var(--extra-light-background);
-  height: 232px;
+  min-height: 232px;
 }
 @media (max-width: 768px) {
-  .dgu__cards .d-flex:not(.files-item__svg) {
+  .dgu__cards > .d-flex:not(.files-item__svg) {
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;

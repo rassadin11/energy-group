@@ -55,4 +55,9 @@
 }
 .tabs .accordion-item {
   border-radius: 1.5rem;
+}
+@media (max-width: 768px) {
+  .tabs .accordion-item {
+    border-radius: 1rem;
+  }
 }/*# sourceMappingURL=tabs.css.map */
