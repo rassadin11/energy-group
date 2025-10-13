@@ -101,9 +101,9 @@
         grid-template-columns: 1fr;
     }
 
-    & .d-flex:not(.files-item__svg) {
+    &>.d-flex:not(.files-item__svg) {
         background: var(--extra-light-background);
-        height: 232px;
+        min-height: 232px;
 
         @media (max-width: 768px) {
             height: fit-content;

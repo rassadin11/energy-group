@@ -54,5 +54,9 @@
 
   .accordion-item {
     border-radius: 1.5rem;
+
+    @media (max-width: 768px) {
+      border-radius: 1rem;
+    }
   }
 }

@@ -1,0 +1,49 @@
+.garant-accordion {
+    &__item {
+        @media (min-width: 768px) {
+            button {
+                cursor: default;
+            }
+
+            button::after {
+                display: none !important;
+            }
+        }
+    }
+}
+
+.garant-page {
+    .accordion-item li {
+        font-size: 1rem;
+
+        @media (max-width: 768px) {
+            font-size: 0.875rem;
+        }
+    }
+
+    .big-p {
+        font-size: 1.125rem !important;
+
+        @media (max-width: 768px) {
+            font-size: 1rem !important;
+        }
+    }
+
+    .garant-title {
+        @media (max-width: 768px) {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+.garant-form {
+    @media (max-width: 768px) {
+        &__title {
+            font-size: 1rem !important;
+        }
+
+        &__text {
+            font-size: 0.875rem !important;
+        }
+    }
+}

@@ -2321,175 +2321,207 @@ const quizProgress = document.querySelector('.quiz-progress')
 const quizProgressBar = document.querySelector('.progress-quiz .progress-bar')
 const quizWarning = document.querySelector('.quiz-warning')
 
-function showQuizScreen(index, content) {
-    quizProgress.innerHTML = content;
-    const quizScreens = document.querySelectorAll('[data-screen]')
+if (quizButtonBack) {
 
-    quizScreens.forEach(item => {
-        if (item.dataset.screen == index) {
-            item.classList.remove('d-none')
+    function showQuizScreen(index, content) {
+        quizProgress.innerHTML = content;
+        const quizScreens = document.querySelectorAll('[data-screen]')
+
+        quizScreens.forEach(item => {
+            if (item.dataset.screen == index) {
+                item.classList.remove('d-none')
+            } else {
+                item.classList.add('d-none')
+            }
+        })
+
+        // меняем progressbar
+
+        if (index <= 5) {
+            quizProgressBar.style.width = 100 / 5 * index + '%'
         } else {
-            item.classList.add('d-none')
+
+        }
+    }
+
+    quizButtonBack.addEventListener('click', () => {
+        if (quiz_slide > 1) quiz_slide--;
+
+        if (quiz_slide === 1) {
+            quizButtonBack.classList.add('disabled')
+        } if (quiz_slide === 5) {
+            quizButtonNext.querySelector('span').innerHTML = 'Зафиксировать выгоду'
+            showQuizScreen(quiz_slide, `Вопрос ${quiz_slide} из 5`)
+            quizProgressBar.classList.remove('bg-warning')
+            quizWarning.classList.add('d-none')
+        } else {
+            quizButtonNext.querySelector('span').innerHTML = 'Далее'
+            quizButtonNext.querySelector('svg').classList.remove('d-none')
+
+            if (document.body.clientWidth < 768) {
+                quizButtonNext.classList.remove('flex-fill')
+                quizButtonBack.querySelector('span').classList.remove('d-none')
+            }
+        }
+
+        showQuizScreen(quiz_slide, `Вопрос ${quiz_slide} из 5`)
+    })
+
+    quizButtonNext.addEventListener('click', () => {
+        if (quiz_slide < 6) quiz_slide++;
+
+        if (quiz_slide === 5) {
+            quizButtonNext.querySelector('span').innerHTML = 'Зафиксировать выгоду'
+            quizButtonNext.querySelector('svg').classList.add('d-none')
+
+            if (document.body.clientWidth < 768) {
+                quizButtonNext.classList.add('flex-fill')
+                quizButtonBack.querySelector('span').classList.add('d-none')
+            }
+
+            showQuizScreen(quiz_slide, `Вопрос ${quiz_slide} из 5`)
+        } else if (quiz_slide === 6) {
+            quizButtonNext.querySelector('span').innerHTML = 'Отправить данные'
+            quizProgressBar.classList.add('bg-warning')
+            quizWarning.classList.remove('d-none')
+            showQuizScreen(quiz_slide, `Оставьте заявку`)
+        } else {
+            quizButtonNext.querySelector('span').innerHTML = 'Далее'
+            quizButtonNext.querySelector('svg').classList.remove('d-none')
+            quizButtonBack.classList.remove('disabled')
+
+            showQuizScreen(quiz_slide, `Вопрос ${quiz_slide} из 5`)
         }
     })
 
-    // меняем progressbar
+    const inputAddress = document.querySelector('.quiz-map__input');
 
-    if (index <= 5) {
-        quizProgressBar.style.width = 100 / 5 * index + '%'
-    } else {
+    initMap();
 
-    }
-}
+    async function initMap() {
+        await ymaps3.ready;
 
-quizButtonBack.addEventListener('click', () => {
-    if (quiz_slide > 1) quiz_slide--;
+        const { YMap, YMapDefaultSchemeLayer, YMapListener, YMapMarker, YMapDefaultFeaturesLayer } = ymaps3;
 
-    if (quiz_slide === 1) {
-        quizButtonBack.classList.add('disabled')
-    } if (quiz_slide === 5) {
-        quizButtonNext.querySelector('span').innerHTML = 'Зафиксировать выгоду'
-        showQuizScreen(quiz_slide, `Вопрос ${quiz_slide} из 5`)
-        quizProgressBar.classList.remove('bg-warning')
-        quizWarning.classList.add('d-none')
-    } else {
-        quizButtonNext.querySelector('span').innerHTML = 'Далее'
-        quizButtonNext.querySelector('svg').classList.remove('d-none')
-
-        if (document.body.clientWidth < 768) {
-            quizButtonNext.classList.remove('flex-fill')
-            quizButtonBack.querySelector('span').classList.remove('d-none')
-        }
-    }
-
-    showQuizScreen(quiz_slide, `Вопрос ${quiz_slide} из 5`)
-})
-
-quizButtonNext.addEventListener('click', () => {
-    if (quiz_slide < 6) quiz_slide++;
-
-    if (quiz_slide === 5) {
-        quizButtonNext.querySelector('span').innerHTML = 'Зафиксировать выгоду'
-        quizButtonNext.querySelector('svg').classList.add('d-none')
-
-        if (document.body.clientWidth < 768) {
-            quizButtonNext.classList.add('flex-fill')
-            quizButtonBack.querySelector('span').classList.add('d-none')
-        }
-
-        showQuizScreen(quiz_slide, `Вопрос ${quiz_slide} из 5`)
-    } else if (quiz_slide === 6) {
-        quizButtonNext.querySelector('span').innerHTML = 'Отправить данные'
-        quizProgressBar.classList.add('bg-warning')
-        quizWarning.classList.remove('d-none')
-        showQuizScreen(quiz_slide, `Оставьте заявку`)
-    } else {
-        quizButtonNext.querySelector('span').innerHTML = 'Далее'
-        quizButtonNext.querySelector('svg').classList.remove('d-none')
-        quizButtonBack.classList.remove('disabled')
-
-        showQuizScreen(quiz_slide, `Вопрос ${quiz_slide} из 5`)
-    }
-})
-
-const inputAddress = document.querySelector('.quiz-map__input');
-
-initMap();
-
-async function initMap() {
-    await ymaps3.ready;
-
-    const { YMap, YMapDefaultSchemeLayer, YMapListener, YMapMarker, YMapDefaultFeaturesLayer } = ymaps3;
-
-    const map = new YMap(
-        document.getElementById('quiz-map'),
-        {
-            location: {
-                center: [37.588144, 55.733842],
-                zoom: 10
-            },
-        }
-    );
-
-    map.addChild(new YMapDefaultSchemeLayer());
-    map.addChild(new YMapDefaultFeaturesLayer());
-
-    const center = [37.628056, 55.742245];
-
-    const icon = document.createElement('img');
-    icon.className = 'marker';
-    icon.src = "data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIKIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiPgoKPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCw1MTIpIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCkiCmZpbGw9IiNmZjQ0MzMiIHN0cm9rZT0ibm9uZSI+CjxwYXRoIGQ9Ik0yNDEwIDQ3NzQgYy0yNzYgLTMzIC01MTYgLTEyMCAtNzQwIC0yNjggLTEzOCAtOTIgLTM0MSAtMjkzIC00MjkKLTQyNiAtMTE3IC0xNzYgLTIwNiAtMzg3IC0yNDYgLTU4NSAtNDkgLTI0MyAtMzMgLTYxOSA0MSAtOTU0IDEyNCAtNTU2IDQyMQotMTEyMCA4NTggLTE2MzAgMTEyIC0xMzAgMzYyIC0zODEgNDc2IC00NzcgMTU0IC0xMzAgMTg0IC0xNDMgMjQ1IC0xMDUgOTkgNjAKMzc2IDMxOSA1NDcgNTEwIDQ3OCA1MzcgNzg5IDExMTEgOTIyIDE3MDYgNzQgMzI3IDkwIDcwOSA0MSA5NTAgLTM5IDE5MCAtMTI1CjQwMCAtMjMwIDU2MCAtNjkgMTA2IC0xMDAgMTQ0IC0xOTggMjQ0IC0yMzEgMjM1IC01MTUgMzg5IC04MzQgNDUxIC0xMDQgMjEKLTM2NiAzNCAtNDUzIDI0eiBtMzkzIC04ODEgYzEyMyAtNDMgMTg5IC04NSAyODcgLTE4MyAxMzYgLTEzNiAyMDcgLTI5NCAyMTcKLTQ4NSAyMCAtMzYxIC0yMjMgLTY4NiAtNTc1IC03NzIgLTg4IC0yMSAtMjU2IC0yMSAtMzQ0IDAgLTI4NiA3MCAtNTA1IDI5OAotNTY0IDU4NyAtNTggMjg5IDcxIDYwMiAzMTYgNzY1IDE0NiA5NyAyNTEgMTI2IDQ0MCAxMjIgMTIwIC0zIDE0NCAtNyAyMjMKLTM0eiIvPgo8L2c+Cjwvc3ZnPgo=";
-
-    const marker = new YMapMarker({
-        coordinates: center
-    }, icon);
-
-    map.addChild(marker);
-
-    const clickCallback = async (_, e) => {
-        const coords = e.coordinates;
-
-        ymaps3.search({
-            'text': coords
-        }).then(function (res) {
-            const props = res[0].properties;
-            const address = [props.description, props.name].filter(Boolean).join(', ');
-
-            let center_update = res[0].geometry.coordinates;
-            map.update({
+        const map = new YMap(
+            document.getElementById('quiz-map'),
+            {
                 location: {
-                    center: center_update,
-                    zoom: 17,
-                    duration: 400
-                }
-            });
+                    center: [37.588144, 55.733842],
+                    zoom: 10
+                },
+            }
+        );
 
-            marker.update({
-                coordinates: center_update
-            });
+        map.addChild(new YMapDefaultSchemeLayer());
+        map.addChild(new YMapDefaultFeaturesLayer());
 
-            inputAddress.value = address
-        })
-    };
+        const center = [37.628056, 55.742245];
 
-    const mapListener = new YMapListener({
-        layer: 'any',
-        onClick: clickCallback,
-    });
+        const icon = document.createElement('img');
+        icon.className = 'marker';
+        icon.src = "data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIKIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiPgoKPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCw1MTIpIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCkiCmZpbGw9IiNmZjQ0MzMiIHN0cm9rZT0ibm9uZSI+CjxwYXRoIGQ9Ik0yNDEwIDQ3NzQgYy0yNzYgLTMzIC01MTYgLTEyMCAtNzQwIC0yNjggLTEzOCAtOTIgLTM0MSAtMjkzIC00MjkKLTQyNiAtMTE3IC0xNzYgLTIwNiAtMzg3IC0yNDYgLTU4NSAtNDkgLTI0MyAtMzMgLTYxOSA0MSAtOTU0IDEyNCAtNTU2IDQyMQotMTEyMCA4NTggLTE2MzAgMTEyIC0xMzAgMzYyIC0zODEgNDc2IC00NzcgMTU0IC0xMzAgMTg0IC0xNDMgMjQ1IC0xMDUgOTkgNjAKMzc2IDMxOSA1NDcgNTEwIDQ3OCA1MzcgNzg5IDExMTEgOTIyIDE3MDYgNzQgMzI3IDkwIDcwOSA0MSA5NTAgLTM5IDE5MCAtMTI1CjQwMCAtMjMwIDU2MCAtNjkgMTA2IC0xMDAgMTQ0IC0xOTggMjQ0IC0yMzEgMjM1IC01MTUgMzg5IC04MzQgNDUxIC0xMDQgMjEKLTM2NiAzNCAtNDUzIDI0eiBtMzkzIC04ODEgYzEyMyAtNDMgMTg5IC04NSAyODcgLTE4MyAxMzYgLTEzNiAyMDcgLTI5NCAyMTcKLTQ4NSAyMCAtMzYxIC0yMjMgLTY4NiAtNTc1IC03NzIgLTg4IC0yMSAtMjU2IC0yMSAtMzQ0IDAgLTI4NiA3MCAtNTA1IDI5OAotNTY0IDU4NyAtNTggMjg5IDcxIDYwMiAzMTYgNzY1IDE0NiA5NyAyNTEgMTI2IDQ0MCAxMjIgMTIwIC0zIDE0NCAtNyAyMjMKLTM0eiIvPgo8L2c+Cjwvc3ZnPgo=";
 
-    map.addChild(mapListener);
+        const marker = new YMapMarker({
+            coordinates: center
+        }, icon);
 
-    inputAddress.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter') {
-            const query = inputAddress.value.trim();
-            if (!query) return;
+        map.addChild(marker);
+
+        const clickCallback = async (_, e) => {
+            const coords = e.coordinates;
 
             ymaps3.search({
-                text: query
+                'text': coords
             }).then(function (res) {
-                if (res && res.length > 0) {
-                    const props = res[0].properties;
-                    const address = [props.description, props.name].filter(Boolean).join(', ');
+                const props = res[0].properties;
+                const address = [props.description, props.name].filter(Boolean).join(', ');
 
-                    let center_update = res[0].geometry.coordinates;
-                    map.update({
-                        location: {
-                            center: center_update,
-                            zoom: 17,
-                            duration: 400
-                        }
-                    });
-                    marker.update({
-                        coordinates: center_update
-                    });
+                let center_update = res[0].geometry.coordinates;
+                map.update({
+                    location: {
+                        center: center_update,
+                        zoom: 17,
+                        duration: 400
+                    }
+                });
 
-                    inputAddress.value = address;
-                } else {
-                    console.log('Адрес не найден, попробуйте уточнить');
-                }
-            }).catch(err => {
-                console.error('Ошибка поиска:', err);
-            });
-        }
-    });
+                marker.update({
+                    coordinates: center_update
+                });
+
+                inputAddress.value = address
+            })
+        };
+
+        const mapListener = new YMapListener({
+            layer: 'any',
+            onClick: clickCallback,
+        });
+
+        map.addChild(mapListener);
+
+        inputAddress.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                const query = inputAddress.value.trim();
+                if (!query) return;
+
+                ymaps3.search({
+                    text: query
+                }).then(function (res) {
+                    if (res && res.length > 0) {
+                        const props = res[0].properties;
+                        const address = [props.description, props.name].filter(Boolean).join(', ');
+
+                        let center_update = res[0].geometry.coordinates;
+                        map.update({
+                            location: {
+                                center: center_update,
+                                zoom: 17,
+                                duration: 400
+                            }
+                        });
+                        marker.update({
+                            coordinates: center_update
+                        });
+
+                        inputAddress.value = address;
+                    } else {
+                        console.log('Адрес не найден, попробуйте уточнить');
+                    }
+                }).catch(err => {
+                    console.error('Ошибка поиска:', err);
+                });
+            }
+        });
+    }
 }
+
+// for garant accordion
+const garantAccordionButtons = document.querySelectorAll('.garant-accordion__item button')
+const allAccordions = document.querySelectorAll('.accordion-item')
+
+if (document.body.clientWidth <= 768) {
+    allAccordions.forEach(item => {
+        item.classList.remove('active')
+        item.querySelector('h2 button').classList.add('collapsed')
+
+        item.querySelector('.accordion-collapse').classList.remove('show')
+    })
+}
+
+function initializeGarantAccordion() {
+    garantAccordionButtons.forEach(item => {
+        const target = item.dataset.bsTarget
+
+        if (document.body.clientWidth > 768) {
+            item.dataset.bsTarget = ''
+        } else {
+            item.dataset.bsTarget = target
+        }
+    })
+}
+
+initializeGarantAccordion()
+
+window.onresize = () => initializeGarantAccordion();
