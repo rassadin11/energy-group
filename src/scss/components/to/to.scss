@@ -11,6 +11,12 @@
     }
 }
 
+.to-table-wrapper {
+    @media (max-width: 700px) {
+        width: 192%;
+    }
+}
+
 .to-card {
     min-height: 0 !important;
     height: auto !important;
@@ -98,9 +104,6 @@
 
 .to-table {
     @media (max-width: 768px) {
-        border-top-right-radius: 0 !important;
-        border-bottom-right-radius: 0 !important;
-
         th {
             font-size: 0.875rem !important;
 
@@ -142,10 +145,6 @@
 
 .bright-energy {
     color: #CDD1D6;
-}
-
-.to-table {
-    border: 1px solid #E7E9EB
 }
 
 .to__small-title {

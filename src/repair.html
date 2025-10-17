@@ -2,7 +2,7 @@
 <html lang="ru" class="page">
 @include('partials/head.html')
 
-<body data-category="dgu">
+<body data-category="repair">
   <div class="headers w-100">
     @include('partials/pre-header.html') @include('partials/header.html')
   </div>
@@ -10,14 +10,14 @@
   <main class="main to-page">
     <section class="dgu-block position-relative overflow-hidden lh-base">
       <div class="position-absolute z-0 overflow-hidden w-100 h-100">
-        <img loading="lazy" src="./img/montash/background.png" alt="background"
+        <img loading="lazy" src="./img/to/to-background.jpg" alt="background"
           class="w-100 h-100 object-fit-cover position-relative">
       </div>
       <div class="container position-relative d-flex justify-content-between h-100 pt-10 large-p">
-        <div class="d-flex flex-column">
-          <h2 class="main-slider__title mb-0">Монтаж автономного <br /> электроснабжения: <br /> генераторы, ИБП
+        <div class="d-flex flex-column pt-md-8">
+          <h2 class="main-slider__title mb-0">Ремонт дизельных <br /> генераторов
           </h2>
-          <p class="main-slider__item mt-2">Оставьте заявку на выезд специалиста <br /> или консультацию по телефону
+          <p class="main-slider__item mt-2">Оставьте заявку, чтобы заказать услугу <br /> или консультацию по телефону
           </p>
 
           <div class="mt-8">
@@ -37,7 +37,7 @@
               <use xlink:href="./img/svg/sprite.svg#deliver-tick"></use>
             </svg>
           </div>
-          <p class="flex-fill">Подберём оборудования под ваши требования и бюджет</p>
+          <p class="flex-fill">В документе не указан текст нужно дописать или удалить</p>
         </div>
         <div class="dgu-info d-flex bg-extra-light rounded-md-6 rounded-4 p-md-6 p-4 align-items-center gap-md-4 gap-3">
           <div class="files-item__svg p-md-3 p-2">
@@ -45,7 +45,7 @@
               <use xlink:href="./img/svg/sprite.svg#deliver-tick"></use>
             </svg>
           </div>
-          <p class="flex-fill">Привезём, установим, подключим и проверим — всё под ключ</p>
+          <p class="flex-fill">В документе не указан текст нужно дописать или удалить</p>
         </div>
         <div class="dgu-info d-flex bg-extra-light rounded-md-6 rounded-4 p-md-6 p-4 align-items-center gap-md-4 gap-3">
           <div class="files-item__svg p-md-3 p-2">
@@ -53,178 +53,40 @@
               <use xlink:href="./img/svg/sprite.svg#deliver-tick"></use>
             </svg>
           </div>
-          <p class="flex-fill">Для бизнеса и мероприятий имеем свой парк генераторов в аренду</p>
+          <p class="flex-fill">В документе не указан текст нужно дописать или удалить</p>
         </div>
       </div>
     </section>
 
     <div class="d-flex flex-md-column flex-column-reverse pb-md-0 pb-2">
       <div class="container">
-        <div class="row gx-4 mt-md-10 mt-8 pt-md-0 pt-2 deliver">
-          <h2 class="col-md-6 fw-bold lh-sm col-sm-12">Компания «Энерджи Групп» — лидер рынка по организации автономного
-            энергоснабжения для частного сектора, бизнеса и мероприятий любого масштаба</h2>
+        <div class="row gx-4 mt-md-10 mt-8 deliver">
+          <div class="col-md-6 col-sm-12">
+            <div class="d-flex flex-column justify-content-between h-100">
+              <h2 class="fw-bold lh-sm">Стоимость услуг по ремонту дизельных генераторов</h2>
+              <p>
+                <button class="btn btn-warning py-3 px-5 fw-semibold open-popup-recall">
+                  Рассчитать стоимость
+                </button>
+              </p>
+            </div>
+          </div>
           <div class="deliver__description lh-base col-md-6 col-sm-12 ">
-            <p class="dgu__description lh-base">Мы выполняем организацию процесса «под ключ». Для вас будут созданы
-              временные электросети, осуществлено обеспечение источником питания. В результате удастся подключить
-              оборудование любого типа для строительной площадки или участка для досугового мероприятия</p>
+            <p class="dgu__description lh-base">При своевременном обслуживании оборудования вы исключите его непростой и
+              дорогостоящий ремонт. Каждая ДГУ поставляется с документацией, где указан перечень и периодичность
+              выполняемых технических работ, причем выполнять их разрешается только высококвалифицированным
+              специалистам. При своевременном обслуживании оборудования вы исключите его непростой и
+              дорогостоящий ремонт. Каждая ДГУ поставляется с документацией, где указан перечень и периодичность
+              выполняемых технических работ, причем выполнять их разрешается только высококвалифицированным
+              специалистам.</p>
           </div>
         </div>
       </div>
     </div>
 
-    <section class="my-md-10 py-md-10 dgu__background to__background-paddings py-6">
-      <div class="container deliver">
-        <h2 class="fw-bold lh-sm mb-4 pt-md-0 pt-2">Как мы работаем?</h2>
-
-        <div class="d-grid dgu__cards gap-md-6 gap-2 mt-md-8 mt-5">
-          <div class="d-flex flex-md-column flex-row align-items-md-start gap-md-0 gap-3 p-md-6 p-4 rounded-5 to-card">
-            <div>
-              <p
-                class="files-item__svg p-md-3 fw-bold d-flex align-items-center justify-content-center lh-base text-center">
-                01
-              </p>
-            </div>
-
-            <div class="d-flex gap-2 flex-column to-card__wrapper">
-              <p class="fw-bold mt-md-4 lh-base mb-0">
-                Консультация
-              </p>
-              <p class="lh-base flex-fill text-dark-gray to-card__description">Получите экспертную консультацию
-                по резервному энергоснабжению. Подберём тип оборудования, варианты монтажа и ориентировочную стоимость.
-              </p>
-            </div>
-          </div>
-          <div class="d-flex flex-md-column flex-row align-items-md-start gap-md-0 gap-3 p-md-6 p-4 rounded-5 to-card">
-            <div>
-              <p
-                class="files-item__svg p-md-3 fw-bold d-flex align-items-center justify-content-center lh-base text-center">
-                02
-              </p>
-            </div>
-
-            <div class="d-flex gap-2 flex-column to-card__wrapper">
-              <p class="fw-bold mt-md-4 lh-base mb-0">
-                Выезд инженера
-              </p>
-              <p class="lh-base flex-fill text-dark-gray to-card__description">Бесплатный выезд специалиста для осмотра
-                объекта. Выезд не накладывает обязательств и помогает оценить фронт работ.</p>
-            </div>
-          </div>
-          <div class="d-flex flex-md-column flex-row align-items-md-start gap-md-0 gap-3 p-md-6 p-4 rounded-5 to-card">
-            <div>
-              <p
-                class="files-item__svg p-md-3 fw-bold d-flex align-items-center justify-content-center lh-base text-center">
-                03
-              </p>
-            </div>
-
-            <div class="d-flex gap-2 flex-column to-card__wrapper">
-              <p class="fw-bold mt-md-4 lh-base mb-0">
-                Коммерческое предложение
-              </p>
-              <p class="lh-base flex-fill text-dark-gray to-card__description">Подготовим детализированную смету
-                с фиксированной ценой. Предложим несколько вариантов под разный бюджет.</p>
-            </div>
-          </div>
-          <div class="d-flex flex-md-column flex-row align-items-md-start gap-md-0 gap-3 p-md-6 p-4 rounded-5 to-card">
-            <div>
-              <p
-                class="files-item__svg p-md-3 fw-bold d-flex align-items-center justify-content-center lh-base text-center">
-                04
-              </p>
-            </div>
-
-            <div class="d-flex gap-2 flex-column to-card__wrapper">
-              <p class="fw-bold mt-md-4 lh-base mb-0">
-                Профессиональный монтаж
-              </p>
-              <p class="lh-base flex-fill text-dark-gray to-card__description">Доставка и монтаж «под ключ». Применяем
-                профессиональный инструмент и сертифицированные материалы.</p>
-            </div>
-          </div>
-          <div class="d-flex flex-md-column flex-row align-items-md-start gap-md-0 gap-3 p-md-6 p-4 rounded-5 to-card">
-            <div>
-              <p
-                class="files-item__svg p-md-3 fw-bold d-flex align-items-center justify-content-center lh-base text-center">
-                05
-              </p>
-            </div>
-
-            <div class="d-flex gap-2 flex-column to-card__wrapper">
-              <p class="fw-bold mt-md-4 lh-base mb-0">
-                Обучение и запуск
-              </p>
-              <p class="lh-base flex-fill text-dark-gray to-card__description">Продемонстрируем работу системы и обучим
-                эксплуатации. Расскажем о правилах обслуживания оборудования.</p>
-            </div>
-          </div>
-          <div class="d-flex flex-md-column flex-row align-items-md-start gap-md-0 gap-3 p-md-6 p-4 rounded-5 to-card">
-            <div>
-              <p
-                class="files-item__svg p-md-3 fw-bold d-flex align-items-center justify-content-center lh-base text-center">
-                06
-              </p>
-            </div>
-
-            <div class="d-flex gap-2 flex-column to-card__wrapper">
-              <p class="fw-bold mt-md-4 lh-base mb-0">
-                Завершение работ
-              </p>
-              <p class="lh-base flex-fill text-dark-gray to-card__description">Подпишем акты приёмки и предоставим
-                документы. Оплата только после выполнения всех работ.</p>
-            </div>
-          </div>
-          <div class="d-flex flex-md-column flex-row align-items-md-start gap-md-0 gap-3 p-md-6 p-4 rounded-5 to-card">
-            <div>
-              <p
-                class="files-item__svg p-md-3 fw-bold d-flex align-items-center justify-content-center lh-base text-center">
-                07
-              </p>
-            </div>
-
-            <div class="d-flex gap-2 flex-column to-card__wrapper">
-              <p class="fw-bold mt-md-4 lh-base mb-0">
-                Гарантия
-              </p>
-              <p class="lh-base flex-fill text-dark-gray to-card__description">Гарантия 12 месяцев на работы
-                и оборудование. Бесплатный выезд при любых гарантийных случаях.</p>
-            </div>
-          </div>
-          <div class="d-flex flex-md-column flex-row align-items-md-start gap-md-0 gap-3 p-md-6 p-4 rounded-5 to-card">
-            <div>
-              <p
-                class="files-item__svg p-md-3 fw-bold d-flex align-items-center justify-content-center lh-base text-center">
-                08
-              </p>
-            </div>
-
-            <div class="d-flex gap-2 flex-column to-card__wrapper">
-              <p class="fw-bold mt-md-4 lh-base mb-0">
-                Поддержка
-              </p>
-              <p class="lh-base flex-fill text-dark-gray to-card__description">Техническое обслуживание и консультации
-                после гарантии. Помощь в эксплуатации и ремонте оборудования.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="container my-md-10 my-9 py-md-2 py-1">
+    <section class="container">
       <div class="row">
-        <div class="col-md-6 col-sm-12 deliver d-flex flex-column">
-          <h2 class="mb-0 fw-bold">Стоимость основных услуг по монтажу автономного электроснабжения
-          </h2>
-          <p class="mt-4 big-p lh-base flex-fill">Цены указаны для города Казань. При выезде за пределы города цены
-            за рассчитываются отдельно в зависимости от удалённости населённого пункта.
-          </p>
 
-          <div class="mt-6 d-md-block d-none">
-            <button class="btn btn-warning py-3 px-5 fw-bold open-popup-recall">
-              Рассчитать стоимость
-            </button>
-          </div>
-        </div>
         <div class="col-md-6 col-sm-12 mt-md-0 mt-4 dgu__tarifs">
           <div class="rounded-4 border py-md-3 py-2 overflow-hidden dgu__background">
             <div
@@ -317,17 +179,103 @@
             </button>
           </div>
         </div>
-      </div>
-    </div>
+        <div class="col-md-6 col-sm-12 mt-md-0 mt-4 dgu__tarifs">
+          <div class="rounded-4 border py-md-3 py-2 overflow-hidden dgu__background">
+            <div
+              class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
+              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2 pe-6">
+                Установка генератора
+              </p>
+              <p
+                class="col-lg-6 col-md-4 d-flex align-items-md-center gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4 text-nowrap">
+                <svg class="ruble">
+                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                </svg>
+                <span class="fw-bold">от 6 000 ₽ </span>
+              </p>
+            </div>
 
-    <section class="projects mb-lg-0 mt-6 dgu__background pt-md-5 pb-md-8 mb-md-10 pt-7 to__background-paddings">
+            <div
+              class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
+              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2 pe-6">
+                Установка блока АВР, автоматика, автозапуск
+              </p>
+              <p
+                class="col-lg-6 col-md-4 d-flex align-items-md-center gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4 text-nowrap">
+                <svg class="ruble">
+                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                </svg>
+                <span class="fw-bold">от 10 000 ₽ </span>
+              </p>
+            </div>
+
+            <div
+              class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
+              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2 pe-6">
+                Установка GSM модема для удаленного управления
+              </p>
+              <p
+                class="col-lg-6 col-md-4 d-flex align-items-md-center gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4 text-nowrap">
+                <svg class="ruble">
+                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                </svg>
+                <span class="fw-bold">от 6 000 ₽ </span>
+              </p>
+            </div>
+
+            <div
+              class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
+              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2 pe-6">
+                Установка дымохода
+              </p>
+              <p
+                class="col-lg-6 col-md-4 d-flex align-items-md-center gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4 text-nowrap">
+                <svg class="ruble">
+                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                </svg>
+                <span class="fw-bold">от 5 000 ₽ </span>
+              </p>
+            </div>
+
+            <div
+              class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
+              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2 pe-6">
+                Стоимость пусконаладки генератора
+              </p>
+              <p
+                class="col-lg-6 col-md-4 d-flex align-items-md-center gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4 text-nowrap">
+                <svg class="ruble">
+                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                </svg>
+                <span class="fw-bold">от 30 000 ₽ </span>
+              </p>
+            </div>
+
+            <div class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-base">
+              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2 pe-6">
+                Выезд на объект
+              </p>
+              <p
+                class="col-lg-6 col-md-4 d-flex align-items-md-center gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4 text-nowrap">
+                <svg class="ruble">
+                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                </svg>
+                <span class="fw-bold">от 2 000 ₽ </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects mb-lg-0 mt-6 dgu__background pt-md-10 pb-md-8 mb-md-10 to__background-paddings">
       <div class="container mt-md-7 pt-md-0 mb-xxl-8 article-slider delivery-slider">
         <h2 class="fw-bold mb-md-8 mb-4 ps-md-0 ps-4">
           Фотогалерея
         </h2>
 
         <div class="swiffy-slider slider-item-show2 slider-item-reveal slider-nav-visible px-lg-0 px-4">
-          <ul class="slider-container dgu rounded-md-6 rounded-4 px-0">
+          <ul class="slider-container dgu rounded-md-6 rounded-4">
             <li>
               <div class="h-100 dgu__height rounded-md-6 rounded-4 overflow-hidden">
                 <img src="./img/to/slider1.webp" class="h-100 w-100 object-fit-cover" loading="lazy" alt="photo">
@@ -368,88 +316,6 @@
             class="delivery slider-nav center-arrow d-lg-block d-none position-absolute left"></button>
           <button type="button"
             class="delivery slider-nav slider-nav-next d-lg-block d-none center-arrow position-absolute right"></button>
-        </div>
-      </div>
-    </section>
-
-    <section class="tabs container my-md-10 mt-8">
-      <h2 class="fw-bold">
-        Часто-задаваемые вопросы
-      </h2>
-      <div class="accordion mt-md-8 mt-5" id="accordionExample">
-        <div class="accordion-item border border-1 py-md-6 px-md-3 py-5 px-4 active">
-          <h2 class="accordion-header">
-            <button class="accordion-button fw-semibold lh-base py-0 px-md-12 pe-md-12 p-0 gap-1" type="button"
-              data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Какое масло заливать в&nbsp;дизельный генератор?
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-            <div class="accordion-body py-0 px-md-12 px-0 mt-md-3 mt-2 lh-base">
-              <p>Каждое масло имеет специальную маркировку. Для дизельных генераторов подходят масла с&nbsp;маркировками
-                CD,
-                CE, CF-4. Первая буква © означает, что масло предназначено для электростанций на&nbsp;дизельном топливе.
-                Вторая&nbsp;— рекомендуемые условия эксплуатации. Масла со&nbsp;второй буквой A, B,
-                C&nbsp;в&nbsp;маркировке не
-                рекомендуется использовать, так как они более низкого класса.</p>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item border border-1 mt-md-3 mt-12 py-md-6 px-md-3 py-5 px-4">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed fw-semibold py-0 px-md-12 pe-md-12 p-0" type="button"
-              data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-              Какой расход топлива у&nbsp;дизельного генератора?
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-            <div class="accordion-body py-0 px-md-12 px-0 mt-md-3 mt-2 lh-base">
-              <p>Каждое масло имеет специальную маркировку. Для дизельных генераторов подходят масла с&nbsp;маркировками
-                CD,
-                CE, CF-4. Первая буква © означает, что масло предназначено для электростанций на&nbsp;дизельном топливе.
-                Вторая&nbsp;— рекомендуемые условия эксплуатации. Масла со&nbsp;второй буквой A, B,
-                C&nbsp;в&nbsp;маркировке не
-                рекомендуется использовать, так как они более низкого класса.</p>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item border border-1 mt-md-3 mt-12 py-md-6 px-md-3 py-5 px-4">
-          <h2 class="accordion-header">
-            <button class="accordion-button fw-semibold lh-base py-0 px-md-12 pe-md-12 p-0 collapsed gap-1"
-              type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true"
-              aria-controls="collapseThree">
-              Сколько времени может работать дизельный генератор?
-            </button>
-          </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-            <div class="accordion-body py-0 px-md-12 px-0 mt-md-3 mt-2 lh-base">
-              <p>Каждое масло имеет специальную маркировку. Для дизельных генераторов подходят масла с&nbsp;маркировками
-                CD,
-                CE, CF-4. Первая буква © означает, что масло предназначено для электростанций на&nbsp;дизельном топливе.
-                Вторая&nbsp;— рекомендуемые условия эксплуатации. Масла со&nbsp;второй буквой A, B,
-                C&nbsp;в&nbsp;маркировке не
-                рекомендуется использовать, так как они более низкого класса.</p>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item border border-1 mt-md-3 mt-12 py-md-6 px-md-3 py-5 px-4">
-          <h2 class="accordion-header">
-            <button class="accordion-button fw-semibold lh-base py-0 px-md-12 pe-md-12 p-0 collapsed gap-1"
-              type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true"
-              aria-controls="collapseFour">
-              Какие бывают дизельные генераторы?
-            </button>
-          </h2>
-          <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-            <div class="accordion-body py-0 px-md-12 px-0 mt-md-3 mt-2 lh-base">
-              <p>Каждое масло имеет специальную маркировку. Для дизельных генераторов подходят масла с&nbsp;маркировками
-                CD,
-                CE, CF-4. Первая буква © означает, что масло предназначено для электростанций на&nbsp;дизельном топливе.
-                Вторая&nbsp;— рекомендуемые условия эксплуатации. Масла со&nbsp;второй буквой A, B,
-                C&nbsp;в&nbsp;маркировке не
-                рекомендуется использовать, так как они более низкого класса.</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -590,7 +456,7 @@
       </div>
     </section>
 
-    <section class="big-form mt-md-10 mt-8 pt-md-0 pt-2 mb-md-0 mb-8">
+    <section class="big-form mt-md-0 mt-10 mb-md-0 mb-8">
       <div class="container">
         <div
           class="big-form__wrapper rounded-md-6 rounded-4 position-relative text-center overflow-hidden pt-md-10 pb-md-0 py-7 px-md-0 px-4">
@@ -603,7 +469,7 @@
           <img loading="lazy" decoding="async" src="./img/form_person.png" alt="person form"
             class="big-form__person-image position-absolute" />
           <h2 class="fw-bold">
-            Оставьте заявку на расчёт стоимости
+            Оставьте заявку на расчёт стоимости ТО
           </h2>
           <p class="mt-md-6 mt-4 big-form__description">
             Заполните форму и мы свяжемся с вами в ближайшее время

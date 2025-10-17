@@ -156,7 +156,11 @@ a {
 
 br {
   @media (max-width: 768px) {
-    display: none;
+    display: inline;
+
+    &:before {
+      content: " ";
+    }
   }
 }
 
