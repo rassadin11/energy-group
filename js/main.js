@@ -852,6 +852,14 @@ lightGallery(document.getElementById('animated-thumbnails'), {
   selector: '.certificate'
 });
 
+// project
+
+lightGallery(document.getElementById('animated-thumbnails-project'), {
+  thumbnail: true,
+  selector: '.project-gallery-image',
+  iframeMaxHeight: '90%'
+});
+
 // Custom dropdown with search
 
 function activateCustomDropdowns() {
@@ -2398,6 +2406,126 @@ function initializeGarantAccordion() {
 }
 initializeGarantAccordion();
 window.onresize = () => initializeGarantAccordion();
+
+// power overlay wrap
+
+if (document.body.clientWidth < 768) {
+  try {
+    const powerWrapper = document.querySelector('.power-overlay__wrapper');
+    const powerOverlay = document.querySelector('.power-overlay');
+    const powerCross = powerOverlay.querySelector('.cross-place');
+    const powerButton = document.querySelectorAll('.power-show-popup');
+    const powerSubmit = document.querySelector('.power-overlay__submit');
+    powerButton.forEach(btn => {
+      btn.addEventListener('click', () => {
+        powerWrapper.classList.add('active');
+        powerOverlay.classList.add('active');
+        document.body.classList.add('overflow-hidden');
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+      });
+    });
+    powerWrapper.addEventListener('click', () => {
+      powerWrapper.classList.remove('active');
+      powerOverlay.classList.remove('active');
+      document.body.classList.remove('overflow-hidden');
+      document.body.style.paddingRight = `${0}px`;
+    });
+    powerCross.addEventListener('click', () => {
+      powerWrapper.classList.remove('active');
+      powerOverlay.classList.remove('active');
+      document.body.classList.remove('overflow-hidden');
+      document.body.style.paddingRight = `${0}px`;
+    });
+    powerSubmit.addEventListener('click', () => {
+      powerWrapper.classList.remove('active');
+      powerOverlay.classList.remove('active');
+      document.body.classList.remove('overflow-hidden');
+      document.body.style.paddingRight = `${0}px`;
+    });
+  } catch (e) {
+    console.warn('error');
+  }
+}
+
+// industry overlay wrap
+
+if (document.body.clientWidth < 768) {
+  try {
+    const industryWrapper = document.querySelector('.industry-overlay__wrapper');
+    const industryOverlay = document.querySelector('.industry-overlay');
+    const industryCross = industryOverlay.querySelector('.cross-place');
+    const industryButton = document.querySelectorAll('.industry-show-popup');
+    const industrySubmit = document.querySelector('.industry-overlay__submit');
+    industryButton.forEach(btn => {
+      btn.addEventListener('click', () => {
+        industryWrapper.classList.add('active');
+        industryOverlay.classList.add('active');
+        document.body.classList.add('overflow-hidden');
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+      });
+    });
+    industryWrapper.addEventListener('click', () => {
+      industryWrapper.classList.remove('active');
+      industryOverlay.classList.remove('active');
+      document.body.classList.remove('overflow-hidden');
+      document.body.style.paddingRight = `${0}px`;
+    });
+    industryCross.addEventListener('click', () => {
+      industryWrapper.classList.remove('active');
+      industryOverlay.classList.remove('active');
+      document.body.classList.remove('overflow-hidden');
+      document.body.style.paddingRight = `${0}px`;
+    });
+    industrySubmit.addEventListener('click', () => {
+      industryWrapper.classList.remove('active');
+      industryOverlay.classList.remove('active');
+      document.body.classList.remove('overflow-hidden');
+      document.body.style.paddingRight = `${0}px`;
+    });
+  } catch (e) {
+    console.warn('error');
+  }
+}
+
+// region overlay wrap
+
+if (document.body.clientWidth < 768) {
+  try {
+    const regionWrapper = document.querySelector('.region-overlay__wrapper');
+    const regionOverlay = document.querySelector('.region-overlay');
+    const regionCross = regionOverlay.querySelector('.cross-place');
+    const regionButton = document.querySelectorAll('.region-show-popup');
+    const regionSubmit = document.querySelector('.region-overlay__submit');
+    regionButton.forEach(btn => {
+      btn.addEventListener('click', () => {
+        regionWrapper.classList.add('active');
+        regionOverlay.classList.add('active');
+        document.body.classList.add('overflow-hidden');
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+      });
+    });
+    regionWrapper.addEventListener('click', () => {
+      regionWrapper.classList.remove('active');
+      regionOverlay.classList.remove('active');
+      document.body.classList.remove('overflow-hidden');
+      document.body.style.paddingRight = `${0}px`;
+    });
+    regionCross.addEventListener('click', () => {
+      regionWrapper.classList.remove('active');
+      regionOverlay.classList.remove('active');
+      document.body.classList.remove('overflow-hidden');
+      document.body.style.paddingRight = `${0}px`;
+    });
+    regionSubmit.addEventListener('click', () => {
+      regionWrapper.classList.remove('active');
+      regionOverlay.classList.remove('active');
+      document.body.classList.remove('overflow-hidden');
+      document.body.style.paddingRight = `${0}px`;
+    });
+  } catch (e) {
+    console.warn('error');
+  }
+}
 })();
 
 /******/ })()
