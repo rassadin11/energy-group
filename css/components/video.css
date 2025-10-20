@@ -33,4 +33,10 @@
   width: 52px;
   height: 52px;
   color: var(--player-yellow-color);
+}
+@media (max-width: 550px) {
+  .player {
+    width: 48px;
+    height: 48px;
+  }
 }/*# sourceMappingURL=video.css.map */

@@ -21199,6 +21199,12 @@ textarea:focus:-ms-input-placeholder {
   height: 52px;
   color: var(--player-yellow-color);
 }
+@media (max-width: 550px) {
+  .player {
+    width: 48px;
+    height: 48px;
+  }
+}
 
 .zoom {
   width: 33px;
@@ -25507,6 +25513,11 @@ img.marker {
 
 .project-content__video {
   height: 464px;
+}
+@media (max-width: 550px) {
+  .project-content__video {
+    height: 187px;
+  }
 }
 
 .project-buttons button:first-child {

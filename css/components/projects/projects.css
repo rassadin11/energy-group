@@ -109,6 +109,11 @@
 .project-content__video {
   height: 464px;
 }
+@media (max-width: 550px) {
+  .project-content__video {
+    height: 187px;
+  }
+}
 
 .project-buttons button:first-child {
   background: var(--extra-light-background);
