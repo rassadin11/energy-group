@@ -2526,6 +2526,85 @@ if (document.body.clientWidth < 768) {
     console.warn('error');
   }
 }
+
+// ampers calc
+
+const ampers = document.querySelector('.ampers');
+if (ampers) {
+  const ampersCheckboxes = ampers.querySelectorAll('.ampers-wrapper');
+  ampersCheckboxes.forEach((item, idx) => {
+    const allCheckboxes = item.querySelectorAll('.ampers-checkbox');
+    if (!idx) {
+      allCheckboxes.forEach(elem => {
+        elem.addEventListener('change', () => {
+          allCheckboxes.forEach(i => i.classList.remove('active'));
+          elem.classList.add('active');
+          if (elem.dataset.change) {
+            ampers.querySelector('[data-custom]').innerHTML = 'Введите мощность';
+          } else {
+            ampers.querySelector('[data-custom]').innerHTML = 'Номинальный ток, Ампер';
+          }
+        });
+      });
+    } else {
+      allCheckboxes.forEach(elem => {
+        elem.addEventListener('change', () => {
+          allCheckboxes.forEach(i => i.classList.remove('active'));
+          elem.classList.add('active');
+        });
+      });
+    }
+  });
+  const ampersType = ampers.querySelector('[data-type]');
+  let type_value = '1';
+  ampersType.querySelectorAll('.ampers-checkbox').forEach(item => {
+    item.addEventListener('change', () => {
+      type_value = item.querySelector('input').value;
+      generateResult();
+    });
+  });
+  const phaseType = ampers.querySelector('[data-phase]');
+  let phase_value = '220';
+  phaseType.querySelectorAll('.ampers-checkbox').forEach(item => {
+    item.addEventListener('change', () => {
+      phase_value = item.querySelector('input').value;
+      generateResult();
+    });
+  });
+  const currentType = ampers.querySelector('.ampers-current');
+  let current_value = 0;
+  currentType.value = 0;
+  currentType.addEventListener('input', () => {
+    current_value = currentType.value;
+    generateResult();
+  });
+  function num(e) {
+    return e % 1 === 0 ? e.toFixed(0) : e.toFixed(2);
+  }
+  function generateResult() {
+    if (String(current_value) && String(phase_value) && String(type_value)) {
+      console.log(current_value, phase_value, type_value);
+      const result = ampers.querySelector('.calculator__power span');
+      switch (type_value) {
+        case '1':
+          if (phase_value == 380) {
+            result.innerHTML = num(current_value * +phase_value * 1.73);
+          } else {
+            result.innerHTML = num(current_value * +phase_value);
+          }
+          break;
+        case '2':
+          if (phase_value == 380) {
+            result.innerHTML = num(current_value / (+phase_value * 1.73));
+          } else {
+            result.innerHTML = num(current_value / +phase_value);
+          }
+          break;
+      }
+    }
+  }
+  generateResult();
+}
 })();
 
 /******/ })()
