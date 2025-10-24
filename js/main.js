@@ -2584,7 +2584,8 @@ if (ampers) {
   function generateResult() {
     if (String(current_value) && String(phase_value) && String(type_value)) {
       console.log(current_value, phase_value, type_value);
-      const result = ampers.querySelector('.calculator__power span');
+      const result = ampers.querySelector('.calculator__power span:first-child');
+      const result_postfix = ampers.querySelector('.calculator__power span:last-child');
       switch (type_value) {
         case '1':
           if (phase_value == 380) {
@@ -2592,6 +2593,7 @@ if (ampers) {
           } else {
             result.innerHTML = num(current_value * +phase_value);
           }
+          result_postfix.innerHTML = 'Вт';
           break;
         case '2':
           if (phase_value == 380) {
@@ -2599,6 +2601,7 @@ if (ampers) {
           } else {
             result.innerHTML = num(current_value / +phase_value);
           }
+          result_postfix.innerHTML = 'А';
           break;
       }
     }
