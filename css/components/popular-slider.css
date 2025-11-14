@@ -28,6 +28,9 @@
 .popular-slider.no-background .popular-slider__block {
   border: 1px solid #e7e9eb;
 }
+.popular-slider__text-size {
+  min-height: 40%;
+}
 .popular-slider > .container {
   max-width: 1360px;
 }
@@ -43,7 +46,7 @@
   background: transparent;
   margin-left: 1rem;
   padding-left: 1.5rem;
-  padding-right: 1.3rem;
+  padding-right: 0.5rem;
   margin-right: 1rem;
 }
 @media (max-width: 1300px) {
@@ -81,6 +84,7 @@
   background: var(--bs-white);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  z-index: 1000;
 }
 .popular-slider__block .deliver-link {
   -webkit-transition: all 0.3s ease;

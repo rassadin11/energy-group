@@ -188,4 +188,17 @@ a {
     -o-object-position: 62%;
     object-position: 62%;
   }
+}
+.phone-title {
+  font-size: 2rem;
+}
+@media (max-width: 768px) {
+  .phone-title {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 550px) {
+  .phone-title {
+    font-size: 1.25rem;
+  }
 }/*# sourceMappingURL=main.css.map */

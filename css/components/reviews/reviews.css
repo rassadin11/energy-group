@@ -64,12 +64,12 @@
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.video-review__video:hover .player {
-  color: var(--player-yellow-color);
-}
 .video-review:hover {
   -webkit-box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+.video-review:hover .player {
+  color: var(--player-yellow-color);
 }
 .video-review__wrapper p {
   line-height: 1.5;

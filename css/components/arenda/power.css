@@ -39,6 +39,9 @@
 }
 .power-card__price {
   padding-left: 40px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
 }
 .power-card__price-text {
   font-size: 1.5rem;
@@ -52,9 +55,15 @@
 .power-card__image {
   min-width: 168px;
 }
+.power-card__image img {
+  width: 175px;
+}
 @media (max-width: 992px) {
   .power-card__image {
     min-width: 40%;
+  }
+  .power-card__image img {
+    width: 100%;
   }
 }
 @media (max-width: 550px) {

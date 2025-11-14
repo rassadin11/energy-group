@@ -628,6 +628,11 @@ backgroundPopup.addEventListener('click', () => {
 const paramsBlock = document.querySelector('.params-block');
 if (paramsBlock) {
   const paramsButtons = paramsBlock.querySelectorAll('.params-block__button');
+  const smallSyncContainers = paramsBlock.querySelectorAll('[data-sync-key]');
+  let paramsWrapper = null;
+  let paramsOverlay = null;
+  let paramsButtonsOverlay = [];
+  let all_big_selects = [];
 
   // initial params for diesel
 
@@ -659,27 +664,96 @@ if (paramsBlock) {
     elem.addEventListener('click', () => {
       paramsButtons.forEach(item => item.classList.remove('active'));
       elem.classList.add('active');
-      changeSelects(all_small_selects, elem.dataset.type);
+      changeSelects(all_small_selects, elem.dataset.type, paramsBlock);
     });
   });
-  changeSelects(all_small_selects, 'diesel');
-  function changeSelects(selects, type) {
-    switch (type) {
-      case "diesel":
-        selects.forEach(select => {
-          changeSelect(select[0], select[1]);
-        });
-        resetCustomDropdowns();
-        break;
-      case "patrol":
-        selects.forEach(select => {
-          changeSelect(select[0], select[2]);
-        });
-        resetCustomDropdowns();
-        break;
+  changeSelects(all_small_selects, 'diesel', paramsBlock);
+  function syncOverlayState() {
+    if (!paramsOverlay) {
+      return;
     }
+    const activeSmallTypeButton = paramsBlock.querySelector('.params-block__button.active');
+    const currentType = activeSmallTypeButton ? activeSmallTypeButton.dataset.type : 'diesel';
+    if (paramsButtonsOverlay.length) {
+      paramsButtonsOverlay.forEach(btn => {
+        if (btn.dataset.type === currentType) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    }
+    if (all_big_selects.length) {
+      changeSelects(all_big_selects, currentType, paramsOverlay);
+    }
+    smallSyncContainers.forEach(container => {
+      const syncKey = container.dataset.syncKey;
+      const hiddenInput = container.querySelector('input[type="hidden"]');
+      if (!syncKey || !hiddenInput) {
+        return;
+      }
+      const value = (hiddenInput.value || '').trim();
+      if (!value) {
+        return;
+      }
+      const overlayContainer = paramsOverlay.querySelector(`.custom-dropdown.big-block[data-sync-key="${syncKey}"]`);
+      if (!overlayContainer) {
+        return;
+      }
+      const optionToSelect = overlayContainer.querySelector(`.dropdown-option[data-value="${value}"]`) || Array.from(overlayContainer.querySelectorAll('.dropdown-option')).find(option => option.textContent.trim() === value);
+      if (optionToSelect) {
+        optionToSelect.click();
+      }
+    });
+  }
+  function syncMainState() {
+    if (!paramsOverlay) {
+      return;
+    }
+    const activeOverlayTypeButton = paramsOverlay.querySelector('.params-overlay__buttons .params-block__button.active');
+    const currentType = activeOverlayTypeButton ? activeOverlayTypeButton.dataset.type : 'diesel';
+    const matchingBaseTypeButton = paramsBlock.querySelector(`.params-block__button[data-type="${currentType}"]`);
+    if (matchingBaseTypeButton) {
+      paramsButtons.forEach(button => button.classList.remove('active'));
+      matchingBaseTypeButton.classList.add('active');
+      changeSelects(all_small_selects, currentType, paramsBlock);
+    }
+    const overlaySyncContainers = paramsOverlay.querySelectorAll('.custom-dropdown.big-block[data-sync-key]');
+    overlaySyncContainers.forEach(container => {
+      const syncKey = container.dataset.syncKey;
+      if (!syncKey) {
+        return;
+      }
+      const hiddenInput = container.querySelector('input[type="hidden"]');
+      const value = hiddenInput && hiddenInput.value ? hiddenInput.value.trim() : '';
+      const baseContainer = paramsBlock.querySelector(`.custom-dropdown.small-block[data-sync-key="${syncKey}"]`);
+      if (!baseContainer) {
+        return;
+      }
+      if (!value) {
+        resetCustomDropdowns(baseContainer);
+        return;
+      }
+      const optionToSelect = baseContainer.querySelector(`.dropdown-option[data-value="${value}"]`) || Array.from(baseContainer.querySelectorAll('.dropdown-option')).find(option => option.textContent.trim() === value);
+      if (optionToSelect) {
+        optionToSelect.click();
+      }
+    });
+  }
+  function changeSelects(selects, type, resetScope) {
+    if (!selects || !selects.length) {
+      return;
+    }
+    const dataIndex = type === "patrol" ? 2 : 1;
+    selects.forEach(select => {
+      changeSelect(select[0], select[dataIndex]);
+    });
+    resetCustomDropdowns(resetScope);
   }
   function changeSelect(select, initialData) {
+    if (!select || !initialData) {
+      return;
+    }
     select.innerHTML = '';
     initialData.forEach(item => {
       select.insertAdjacentHTML('beforeend', `
@@ -691,38 +765,51 @@ if (paramsBlock) {
   // params overlay
 
   try {
-    const paramsWrapper = document.querySelector('.params-overlay__wrapper');
-    const paramsOverlay = document.querySelector('.params-overlay');
-    const paramsCross = paramsOverlay.querySelector('.cross-place');
+    paramsWrapper = document.querySelector('.params-overlay__wrapper');
+    paramsOverlay = document.querySelector('.params-overlay');
     const paramsButton = document.querySelectorAll('.params-show-popup');
+    const paramsCross = paramsOverlay ? paramsOverlay.querySelector('.cross-place') : null;
+    function closeParamsOverlay() {
+      syncMainState();
+      if (paramsWrapper) {
+        paramsWrapper.classList.remove('active');
+      }
+      if (paramsOverlay) {
+        paramsOverlay.classList.remove('active');
+      }
+      document.body.classList.remove('overflow-hidden');
+      document.body.style.paddingRight = `${0}px`;
+    }
     paramsButton.forEach(btn => {
       btn.addEventListener('click', () => {
+        if (!paramsWrapper || !paramsOverlay) {
+          return;
+        }
         paramsWrapper.classList.add('active');
         paramsOverlay.classList.add('active');
         document.body.classList.add('overflow-hidden');
         document.body.style.paddingRight = `${scrollbarWidth}px`;
+        syncOverlayState();
       });
     });
-    paramsWrapper.addEventListener('click', () => {
-      paramsWrapper.classList.remove('active');
-      paramsOverlay.classList.remove('active');
-      document.body.classList.remove('overflow-hidden');
-      document.body.style.paddingRight = `${0}px`;
-    });
-    paramsCross.addEventListener('click', () => {
-      paramsWrapper.classList.remove('active');
-      paramsOverlay.classList.remove('active');
-      document.body.classList.remove('overflow-hidden');
-      document.body.style.paddingRight = `${0}px`;
-    });
+    if (paramsWrapper) {
+      paramsWrapper.addEventListener('click', () => {
+        closeParamsOverlay();
+      });
+    }
+    if (paramsCross) {
+      paramsCross.addEventListener('click', () => {
+        closeParamsOverlay();
+      });
+    }
   } catch (e) {
     console.warn('error');
   }
 
   // params-block__button inside overlay
 
-  const paramsButtonsOverlay = document.querySelectorAll('.params-overlay__buttons .params-block__button');
-  if (paramsButtonsOverlay) {
+  paramsButtonsOverlay = Array.from(document.querySelectorAll('.params-overlay__buttons .params-block__button'));
+  if (paramsButtonsOverlay.length && paramsOverlay) {
     // select blocks for big block
     const power_big_select = document.querySelector(".power.big-block .dropdown-options");
     const tension_big_select = document.querySelector(".tension.big-block .dropdown-options");
@@ -732,15 +819,15 @@ if (paramsBlock) {
     const amortization_big_select = document.querySelector(".amortization.big-block .dropdown-options");
 
     // connection between select and values
-    const all_big_selects = [[power_big_select, diesel_power, patrol_power], [tension_big_select, diesel_tension, patrol_tension], [engine_big_select, diesel_engine, patrol_engine], [developers_big_select, diesel_developers, patrol_developers], [out_tension_big_select, diesel_out_tension, patrol_out_tension], [amortization_big_select, diesel_amortization, patrol_amortization]];
+    all_big_selects = [[power_big_select, diesel_power, patrol_power], [tension_big_select, diesel_tension, patrol_tension], [engine_big_select, diesel_engine, patrol_engine], [developers_big_select, diesel_developers, patrol_developers], [out_tension_big_select, diesel_out_tension, patrol_out_tension], [amortization_big_select, diesel_amortization, patrol_amortization]];
     paramsButtonsOverlay.forEach(elem => {
       elem.addEventListener('click', () => {
         paramsButtonsOverlay.forEach(item => item.classList.remove('active'));
         elem.classList.add('active');
-        changeSelects(all_big_selects, elem.dataset.type);
+        changeSelects(all_big_selects, elem.dataset.type, paramsOverlay);
       });
     });
-    changeSelects(all_big_selects, 'diesel');
+    changeSelects(all_big_selects, 'diesel', paramsOverlay);
   }
 }
 
@@ -799,26 +886,30 @@ lightGallery(document.getElementById(`article-video`), {
   selector: 'this',
   iframeMaxHeight: '90%'
 });
-for (let i = 1; i <= 4; i++) {
-  lightGallery(document.getElementById(`open-video-${i}`), {
+const mainPageVideo = document.querySelectorAll(".main-page-video > li > a");
+for (let elem of mainPageVideo) {
+  lightGallery(elem, {
     selector: 'this',
     iframeMaxHeight: '90%'
   });
 }
-for (let i = 1; i <= 6; i++) {
-  lightGallery(document.getElementById(`video-review-${i}`), {
+const videoReviews = document.querySelectorAll(".video-reviews > div > a");
+for (let elem of videoReviews) {
+  lightGallery(elem, {
     selector: 'this',
     iframeMaxHeight: '90%'
   });
 }
-for (let i = 1; i <= 9; i++) {
-  lightGallery(document.getElementById(`video-page-${i}`), {
+const videoPage = document.querySelectorAll(".video-page .stretched-link");
+for (let elem of videoPage) {
+  lightGallery(elem, {
     selector: 'this',
     iframeMaxHeight: '90%'
   });
 }
-for (let i = 1; i <= 4; i++) {
-  lightGallery(document.getElementById(`open-video-block-${i}`), {
+const openVideoBlock = document.querySelectorAll(".open-video-block li .stretched-link");
+for (let elem of openVideoBlock) {
+  lightGallery(elem, {
     selector: 'this',
     iframeMaxHeight: '90%'
   });
@@ -947,8 +1038,10 @@ function activateCustomDropdowns() {
   });
 }
 activateCustomDropdowns();
-function resetCustomDropdowns() {
-  const customDropdowns = document.querySelectorAll('.custom-dropdown');
+function resetCustomDropdowns(scope) {
+  const root = scope && scope.querySelectorAll ? scope : document;
+  const dropdownsList = Array.from(root.querySelectorAll('.custom-dropdown'));
+  const customDropdowns = root !== document && root.classList && root.classList.contains('custom-dropdown') ? [root, ...dropdownsList] : dropdownsList;
   customDropdowns.forEach(dropdown => {
     const selectDisplay = dropdown.querySelector('.select-display');
     const selectedValue = dropdown.querySelector('.selected-value');
@@ -961,19 +1054,34 @@ function resetCustomDropdowns() {
     const dropdownWrapper = dropdown.querySelector('.dropdown-container-wrapper');
 
     // Select option on click
+    if (!selectDisplay || !selectedValue) {
+      return;
+    }
     selectedValue.classList.remove('d-block');
     selectedValue.classList.remove('mt-2');
     selectedValue.classList.remove('fw-semibold');
     selectedValue.classList.remove('default');
     selectedValue.classList.remove('pt-1');
-    selectedValue.innerHTML = selectLabel.innerHTML;
+    if (selectLabel) {
+      selectedValue.innerHTML = selectLabel.innerHTML;
+      selectLabel.classList.remove('active');
+    } else {
+      selectedValue.innerHTML = '';
+    }
     selectDisplay.classList.remove('selected');
     selectDisplay.classList.remove('active');
-    selectLabel.classList.remove('active');
-    searchInput.value = '';
-    dropdownContainer.classList.remove('active');
-    dropdownWrapper.classList.remove('active');
-    arrowSelect.classList.remove('active');
+    if (searchInput) {
+      searchInput.value = '';
+    }
+    if (dropdownContainer) {
+      dropdownContainer.classList.remove('active');
+    }
+    if (dropdownWrapper) {
+      dropdownWrapper.classList.remove('active');
+    }
+    if (arrowSelect) {
+      arrowSelect.classList.remove('active');
+    }
     options.forEach(option => {
       option.addEventListener('click', () => {
         selectedValue.textContent = option.textContent;
@@ -990,17 +1098,29 @@ function resetCustomDropdowns() {
         selectDisplay.classList.add('selected');
 
         // Update hidden input value
-        hiddenInput.value = option.getAttribute('data-value');
+        if (hiddenInput) {
+          hiddenInput.value = option.getAttribute('data-value');
+        }
 
         // Close dropdown
-        dropdownContainer.classList.remove('active');
+        if (dropdownContainer) {
+          dropdownContainer.classList.remove('active');
+        }
 
         // Clear search input
-        searchInput.value = '';
+        if (searchInput) {
+          searchInput.value = '';
+        }
         selectDisplay.classList.remove('active');
-        arrowSelect.classList.remove('active');
-        dropdownWrapper.classList.remove('active');
-        selectLabel.classList.add('active');
+        if (arrowSelect) {
+          arrowSelect.classList.remove('active');
+        }
+        if (dropdownWrapper) {
+          dropdownWrapper.classList.remove('active');
+        }
+        if (selectLabel) {
+          selectLabel.classList.add('active');
+        }
 
         // Show all options again
         options.forEach(opt => {
