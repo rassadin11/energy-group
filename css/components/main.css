@@ -16,6 +16,8 @@ body {
   font-size: 1rem;
   color: var(--bs-blue);
   line-height: 1.2;
+}
+body:not([data-category=article]) {
   overflow-x: hidden;
 }
 

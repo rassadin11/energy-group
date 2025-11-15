@@ -18859,6 +18859,8 @@ body {
   font-size: 1rem;
   color: var(--bs-blue);
   line-height: 1.2;
+}
+body:not([data-category=article]) {
   overflow-x: hidden;
 }
 
@@ -21730,6 +21732,12 @@ textarea:focus:-ms-input-placeholder {
 
 .power-card {
   border: 1px solid #e0e0e0;
+  background: var(--bs-white);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.power-card:hover {
+  background: var(--bs-background);
 }
 .power-card__energy {
   background: var(--bs-background);
@@ -22343,6 +22351,18 @@ textarea:focus:-ms-input-placeholder {
   height: 27px;
 }
 
+.ghost-slide {
+  width: 40%;
+  pointer-events: none;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+@media (max-width: 1280px) {
+  .ghost-slide {
+    display: none;
+  }
+}
+
 .reviews .container {
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -22446,57 +22466,6 @@ textarea:focus:-ms-input-placeholder {
   .quotes {
     width: 22px;
     height: 18px;
-  }
-}
-
-.reviews__dublicates {
-  --swiffy-slider-item-width: 408px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  -ms-scroll-snap-type: x mandatory;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  grid: auto/auto-flow -webkit-max-content;
-  grid: auto/auto-flow max-content;
-  grid-auto-rows: 100%;
-  grid-auto-columns: var(--swiffy-slider-item-width);
-  grid-auto-flow: column;
-  grid-gap: 1rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  scrollbar-width: none;
-  scrollbar-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, var(--swiffy-slider-track-opacity));
-  background-clip: padding-box;
-}
-.reviews__dublicates > * {
-  scroll-snap-align: start;
-  opacity: 0.4;
-  cursor: pointer;
-}
-.reviews__dublicates > *.hide {
-  opacity: 0;
-  visibility: hidden;
-}
-.reviews__dublicates > *:first-child, .reviews__dublicates > *:last-child {
-  border: none;
-}
-
-.reviews-dublicates-wrapper {
-  -webkit-transform: translate(0, -389px);
-  -ms-transform: translate(0, -389px);
-  transform: translate(0, -389px);
-  width: 2000px;
-  margin: 0 auto;
-}
-@media (max-width: 1400px) {
-  .reviews-dublicates-wrapper {
-    display: none;
   }
 }
 

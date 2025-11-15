@@ -6,6 +6,12 @@
 
 .power-card {
   border: 1px solid #e0e0e0;
+  background: var(--bs-white);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.power-card:hover {
+  background: var(--bs-background);
 }
 .power-card__energy {
   background: var(--bs-background);

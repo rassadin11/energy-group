@@ -1347,124 +1347,6 @@ function activateButton(activeBtn) {
   buttons[activeBtn].classList.add('active');
 }
 
-// for reviews slider
-const sliderReviews = document.querySelector('.reviews .swiffy-slider');
-let activeSlide = 0;
-if (sliderReviews) {
-  const reviews = sliderReviews;
-  const items = reviews.querySelectorAll('li');
-  const itemWidth = items[0].getBoundingClientRect().width;
-  const dublicates = document.querySelector('.reviews__dublicates');
-  const reviewsWrapper = document.querySelector('.reviews-dublicates-wrapper');
-
-  // generate indicator buttons
-
-  const indicators = document.querySelector('.indicators');
-  const amountOfSlides = sliderReviews.querySelectorAll("li").length;
-  indicators.innerHTML = '';
-  for (let i = 0; i < amountOfSlides - 2; i++) {
-    indicators.insertAdjacentHTML('beforeend', `<li data-slide=${i} class=${i === 0 ? 'active' : ''}></li>`);
-  }
-  const allIndicators = indicators.querySelectorAll('li');
-  allIndicators.forEach(item => {
-    item.addEventListener('click', () => {
-      allIndicators.forEach(elem => elem.classList.remove('active'));
-      item.classList.add('active');
-      activeSlide = +item.dataset.slide;
-      swiffyslider.slideTo(sliderReviews, activeSlide);
-      dublicates.scrollTo({
-        left: dublicates.children[activeSlide].offsetLeft - 5,
-        behavior: 'smooth'
-      });
-      dublicates.querySelectorAll(".reviews__slide").forEach(item => item.classList.remove('hide'));
-      dublicates.children[activeSlide + 1].classList.add('hide');
-      dublicates.children[activeSlide + 2].classList.add('hide');
-      dublicates.children[activeSlide + 3].classList.add('hide');
-    });
-  });
-
-  // position dublicates container
-
-  const rect1 = dublicates.children[1].offsetLeft + reviewsWrapper.offsetLeft;
-  const reviewsRect = reviews.offsetLeft;
-  const diff = rect1 - reviewsRect - 14;
-  reviewsWrapper.style.transform = `translate(-${diff}px, -389px)`;
-
-  // change slide on click
-
-  for (let i = 0; i < dublicates.children.length; i++) {
-    let slide = dublicates.children[i];
-    slide.addEventListener('click', () => {
-      if (!slide.classList.contains('hide')) {
-        let idx = +slide.dataset.forMid;
-        if (idx > 3) {
-          idx -= 3;
-          swiffyslider.slideTo(sliderReviews, idx);
-          dublicates.scrollTo({
-            left: dublicates.children[idx].offsetLeft - 5,
-            behavior: 'smooth'
-          });
-          dublicates.querySelectorAll(".reviews__slide").forEach(item => item.classList.remove('hide'));
-          dublicates.children[idx + 1].classList.add('hide');
-          dublicates.children[idx + 2].classList.add('hide');
-          dublicates.children[idx + 3].classList.add('hide');
-          allIndicators.forEach(ind => {
-            if (+ind.dataset.slide !== idx) {
-              ind.classList.remove('active');
-            } else {
-              ind.classList.add('active');
-            }
-          });
-        } else {
-          idx -= 1;
-          swiffyslider.slideTo(sliderReviews, idx);
-          dublicates.scrollTo({
-            left: dublicates.children[idx].offsetLeft - 5,
-            behavior: 'smooth'
-          });
-          dublicates.querySelectorAll(".reviews__slide").forEach(item => item.classList.remove('hide'));
-          dublicates.children[idx + 1].classList.add('hide');
-          dublicates.children[idx + 2].classList.add('hide');
-          dublicates.children[idx + 3].classList.add('hide');
-          allIndicators.forEach(ind => {
-            if (+ind.dataset.slide !== idx) {
-              ind.classList.remove('active');
-            } else {
-              ind.classList.add('active');
-            }
-          });
-        }
-      }
-    });
-  }
-
-  // reviews dublicates positioning
-
-  dublicates.querySelectorAll(".reviews__slide").forEach(item => {
-    item.style.width = itemWidth + 'px';
-  });
-}
-
-// reviews height
-
-let r = document.querySelector('.reviews');
-if (r) {
-  if (document.body.clientWidth > 1400) {
-    r.style.height = `${504}px`;
-  } else {
-    r.style.height = 'auto';
-  }
-}
-window.onresize = () => {
-  if (r) {
-    if (document.body.clientWidth > 1400) {
-      r.style.height = `${r.querySelector('.container').clientHeight}px`;
-    } else {
-      r.style.height = '0';
-    }
-  }
-};
-
 // for product page
 
 function tooltipsPosition() {
@@ -1945,75 +1827,6 @@ document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
     trigger: 'hover focus' // показывается при наведении
   });
 });
-const slider = document.querySelector('.swiffy-slider.swiffy-reviews');
-if (slider) {
-  const container = slider.querySelector('.slider-container');
-  const slides = Array.from(container.querySelectorAll('li > div'));
-  function setHeightForElement(el) {
-    if (!el) return;
-    container.style.height = Math.ceil(el.getBoundingClientRect().height) + 'px';
-    setTimeout(() => {
-      container.style.transition = 'height 0s ease';
-    }, 300);
-  }
-
-  // initial
-  setHeightForElement(slides[0]);
-
-  // IntersectionObserver: выбираем слайд с наибольшей видимостью
-  const io = new IntersectionObserver(entries => {
-    let best = null;
-    for (const e of entries) {
-      if (!best || e.intersectionRatio > best.intersectionRatio) best = e;
-    }
-    if (best && best.isIntersecting) {
-      container.style.transition = 'height .3s ease';
-      setHeightForElement(best.target);
-    }
-  }, {
-    root: container,
-    threshold: [0.5]
-  });
-  slides.forEach(s => io.observe(s));
-
-  // ResizeObserver — пересчитать если внутри слайда изменился контент (read-more)
-  const ro = new ResizeObserver(() => {
-    // ищем .slide-visible если есть, иначе ближайший к центру контейнера
-    const visible = container.querySelector('.slide-visible');
-    if (visible) return setHeightForElement(visible);
-
-    // fallback: по центру
-    const contRect = container.getBoundingClientRect();
-    const centerX = contRect.left + contRect.width / 2;
-    let bestSlide = slides[0],
-      bestDist = Infinity;
-    slides.forEach(s => {
-      const r = s.getBoundingClientRect();
-      const sCenter = r.left + r.width / 2;
-      const dist = Math.abs(sCenter - centerX);
-      if (dist < bestDist) {
-        bestDist = dist;
-        bestSlide = s;
-      }
-    });
-    setHeightForElement(bestSlide);
-  });
-  slides.forEach(s => ro.observe(s));
-
-  // если есть кнопки "Читать полностью" — пересчитать после клика (если расширяется)
-  slider.querySelectorAll('.swiffy-content__read-more').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const visible = container.querySelector('.slide-visible') || slides[0];
-      setHeightForElement(visible);
-    });
-  });
-
-  // на ресайзе окна — пересчитать
-  window.addEventListener('resize', () => {
-    const visible = container.querySelector('.slide-visible') || slides[0];
-    setHeightForElement(visible);
-  });
-}
 
 //
 const sliderCatalog = document.getElementById('slider-catalog');
@@ -2727,6 +2540,37 @@ if (ampers) {
     }
   }
   generateResult();
+}
+
+// for scrollspy
+new bootstrap.ScrollSpy(document.body, {
+  target: '#navbar-example2',
+  offset: 20
+});
+
+// for arenda reviews slider
+
+const reviewsSlider = document.querySelector('.reviews');
+function maskForReviewsSlider(reviews) {
+  const rects = reviews.querySelector('.container').getBoundingClientRect();
+  const width = rects.width;
+  const x = rects.x;
+  const slider = reviews.querySelector('.reviews .swiffy-slider');
+  slider.style.maskImage = `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="${document.body.clientWidth}" height="500"><rect x="0" y="0" width="${x}" height="500" fill="rgba(0,0,0,0.2)" /><rect x="${x}" y="0" width="${width}" height="500" fill="white" /><rect x="${width + x}" y="0" width="${document.body.clientWidth - width - x}" height="500" fill="rgba(0,0,0,0.2)" /></svg>')`;
+  slider.querySelector('.slider-container').style.paddingLeft = `${x + 16}px`;
+  slider.querySelector('.slider-container').style.paddingRight = `${x + 16}px`;
+  console.log(slider.querySelector('.slider-container').style.paddingLeft);
+  if (document.body.clientWidth > 1280) {
+    slider.style.setProperty('--swiffy-slider-item-count', "unset");
+    reviews.querySelectorAll('.reviews__slide').forEach(item => {
+      item.style.minWidth = '406px';
+    });
+    console.log('changed');
+  }
+  window.onresize = () => maskForReviewsSlider(reviewsSlider);
+}
+if (reviewsSlider) {
+  maskForReviewsSlider(reviewsSlider);
 }
 })();
 
