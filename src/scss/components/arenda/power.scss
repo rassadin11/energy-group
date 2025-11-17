@@ -8,6 +8,12 @@
 
 .power-card {
   border: 1px solid #e0e0e0;
+  background: var(--bs-white);
+  transition: all .3s ease;
+
+  &:hover {
+    background: var(--bs-background);
+  }
 
   &__energy {
     background: var(--bs-background);
@@ -42,6 +48,7 @@
 
   &__price {
     padding-left: 40px;
+    flex: 0 0 25%;
   }
 
   &__price-text {
@@ -56,8 +63,16 @@
   &__image {
     min-width: 168px;
 
+    img {
+      width: 175px;
+    }
+
     @media (max-width: 992px) {
       min-width: 40%;
+
+      img {
+        width: 100%;
+      }
     }
 
     @media (max-width: 550px) {

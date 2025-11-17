@@ -487,6 +487,11 @@ const paramsBlock = document.querySelector('.params-block')
 
 if (paramsBlock) {
     const paramsButtons = paramsBlock.querySelectorAll('.params-block__button')
+    const smallSyncContainers = paramsBlock.querySelectorAll('[data-sync-key]')
+    let paramsWrapper = null;
+    let paramsOverlay = null;
+    let paramsButtonsOverlay = [];
+    let all_big_selects = [];
 
     // initial params for diesel
 
@@ -520,32 +525,130 @@ if (paramsBlock) {
         elem.addEventListener('click', () => {
             paramsButtons.forEach(item => item.classList.remove('active'))
             elem.classList.add('active')
-            changeSelects(all_small_selects, elem.dataset.type);
+            changeSelects(all_small_selects, elem.dataset.type, paramsBlock);
         })
     })
 
-    changeSelects(all_small_selects, 'diesel')
+    changeSelects(all_small_selects, 'diesel', paramsBlock)
 
-    function changeSelects(selects, type) {
-        switch (type) {
-            case "diesel":
-                selects.forEach(select => {
-                    changeSelect(select[0], select[1]);
-                })
-
-                resetCustomDropdowns();
-                break;
-            case "patrol":
-                selects.forEach(select => {
-                    changeSelect(select[0], select[2]);
-                })
-
-                resetCustomDropdowns();
-                break;
+    function syncOverlayState() {
+        if (!paramsOverlay) {
+            return;
         }
+
+        const activeSmallTypeButton = paramsBlock.querySelector('.params-block__button.active');
+        const currentType = activeSmallTypeButton ? activeSmallTypeButton.dataset.type : 'diesel';
+
+        if (paramsButtonsOverlay.length) {
+            paramsButtonsOverlay.forEach(btn => {
+                if (btn.dataset.type === currentType) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        if (all_big_selects.length) {
+            changeSelects(all_big_selects, currentType, paramsOverlay);
+        }
+
+        smallSyncContainers.forEach(container => {
+            const syncKey = container.dataset.syncKey;
+            const hiddenInput = container.querySelector('input[type="hidden"]');
+
+            if (!syncKey || !hiddenInput) {
+                return;
+            }
+
+            const value = (hiddenInput.value || '').trim();
+
+            if (!value) {
+                return;
+            }
+
+            const overlayContainer = paramsOverlay.querySelector(`.custom-dropdown.big-block[data-sync-key="${syncKey}"]`);
+
+            if (!overlayContainer) {
+                return;
+            }
+
+            const optionToSelect = overlayContainer.querySelector(`.dropdown-option[data-value="${value}"]`) ||
+                Array.from(overlayContainer.querySelectorAll('.dropdown-option')).find(option => option.textContent.trim() === value);
+
+            if (optionToSelect) {
+                optionToSelect.click();
+            }
+        });
+    }
+
+    function syncMainState() {
+        if (!paramsOverlay) {
+            return;
+        }
+
+        const activeOverlayTypeButton = paramsOverlay.querySelector('.params-overlay__buttons .params-block__button.active');
+        const currentType = activeOverlayTypeButton ? activeOverlayTypeButton.dataset.type : 'diesel';
+
+        const matchingBaseTypeButton = paramsBlock.querySelector(`.params-block__button[data-type="${currentType}"]`);
+
+        if (matchingBaseTypeButton) {
+            paramsButtons.forEach(button => button.classList.remove('active'));
+            matchingBaseTypeButton.classList.add('active');
+            changeSelects(all_small_selects, currentType, paramsBlock);
+        }
+
+        const overlaySyncContainers = paramsOverlay.querySelectorAll('.custom-dropdown.big-block[data-sync-key]');
+
+        overlaySyncContainers.forEach(container => {
+            const syncKey = container.dataset.syncKey;
+
+            if (!syncKey) {
+                return;
+            }
+
+            const hiddenInput = container.querySelector('input[type="hidden"]');
+            const value = hiddenInput && hiddenInput.value ? hiddenInput.value.trim() : '';
+
+            const baseContainer = paramsBlock.querySelector(`.custom-dropdown.small-block[data-sync-key="${syncKey}"]`);
+
+            if (!baseContainer) {
+                return;
+            }
+
+            if (!value) {
+                resetCustomDropdowns(baseContainer);
+                return;
+            }
+
+            const optionToSelect = baseContainer.querySelector(`.dropdown-option[data-value="${value}"]`) ||
+                Array.from(baseContainer.querySelectorAll('.dropdown-option')).find(option => option.textContent.trim() === value);
+
+            if (optionToSelect) {
+                optionToSelect.click();
+            }
+        });
+    }
+
+    function changeSelects(selects, type, resetScope) {
+        if (!selects || !selects.length) {
+            return;
+        }
+
+        const dataIndex = type === "patrol" ? 2 : 1;
+
+        selects.forEach(select => {
+            changeSelect(select[0], select[dataIndex]);
+        })
+
+        resetCustomDropdowns(resetScope);
     }
 
     function changeSelect(select, initialData) {
+        if (!select || !initialData) {
+            return;
+        }
+
         select.innerHTML = ''
         initialData.forEach(item => {
             select.insertAdjacentHTML('beforeend', `
@@ -557,42 +660,60 @@ if (paramsBlock) {
     // params overlay
 
     try {
-        const paramsWrapper = document.querySelector('.params-overlay__wrapper')
-        const paramsOverlay = document.querySelector('.params-overlay')
-        const paramsCross = paramsOverlay.querySelector('.cross-place')
+        paramsWrapper = document.querySelector('.params-overlay__wrapper')
+        paramsOverlay = document.querySelector('.params-overlay')
         const paramsButton = document.querySelectorAll('.params-show-popup')
+        const paramsCross = paramsOverlay ? paramsOverlay.querySelector('.cross-place') : null;
+
+        function closeParamsOverlay() {
+            syncMainState();
+
+            if (paramsWrapper) {
+                paramsWrapper.classList.remove('active');
+            }
+
+            if (paramsOverlay) {
+                paramsOverlay.classList.remove('active');
+            }
+
+            document.body.classList.remove('overflow-hidden')
+            document.body.style.paddingRight = `${0}px`;
+        }
 
         paramsButton.forEach(btn => {
             btn.addEventListener('click', () => {
+                if (!paramsWrapper || !paramsOverlay) {
+                    return;
+                }
+
                 paramsWrapper.classList.add('active')
                 paramsOverlay.classList.add('active')
                 document.body.classList.add('overflow-hidden')
                 document.body.style.paddingRight = `${scrollbarWidth}px`;
+                syncOverlayState();
             })
         })
 
-        paramsWrapper.addEventListener('click', () => {
-            paramsWrapper.classList.remove('active')
-            paramsOverlay.classList.remove('active')
-            document.body.classList.remove('overflow-hidden')
-            document.body.style.paddingRight = `${0}px`;
-        })
+        if (paramsWrapper) {
+            paramsWrapper.addEventListener('click', () => {
+                closeParamsOverlay();
+            })
+        }
 
-        paramsCross.addEventListener('click', () => {
-            paramsWrapper.classList.remove('active')
-            paramsOverlay.classList.remove('active')
-            document.body.classList.remove('overflow-hidden')
-            document.body.style.paddingRight = `${0}px`;
-        })
+        if (paramsCross) {
+            paramsCross.addEventListener('click', () => {
+                closeParamsOverlay();
+            })
+        }
     } catch (e) {
         console.warn('error')
     }
 
     // params-block__button inside overlay
 
-    const paramsButtonsOverlay = document.querySelectorAll('.params-overlay__buttons .params-block__button')
+    paramsButtonsOverlay = Array.from(document.querySelectorAll('.params-overlay__buttons .params-block__button'))
 
-    if (paramsButtonsOverlay) {
+    if (paramsButtonsOverlay.length && paramsOverlay) {
         // select blocks for big block
         const power_big_select = document.querySelector(".power.big-block .dropdown-options")
         const tension_big_select = document.querySelector(".tension.big-block .dropdown-options")
@@ -602,7 +723,7 @@ if (paramsBlock) {
         const amortization_big_select = document.querySelector(".amortization.big-block .dropdown-options")
 
         // connection between select and values
-        const all_big_selects = [[power_big_select, diesel_power, patrol_power], [tension_big_select, diesel_tension, patrol_tension],
+        all_big_selects = [[power_big_select, diesel_power, patrol_power], [tension_big_select, diesel_tension, patrol_tension],
         [engine_big_select, diesel_engine, patrol_engine], [developers_big_select, diesel_developers, patrol_developers],
         [out_tension_big_select, diesel_out_tension, patrol_out_tension], [amortization_big_select, diesel_amortization, patrol_amortization]]
 
@@ -610,11 +731,11 @@ if (paramsBlock) {
             elem.addEventListener('click', () => {
                 paramsButtonsOverlay.forEach(item => item.classList.remove('active'))
                 elem.classList.add('active')
-                changeSelects(all_big_selects, elem.dataset.type);
+                changeSelects(all_big_selects, elem.dataset.type, paramsOverlay);
             })
         })
 
-        changeSelects(all_big_selects, 'diesel');
+        changeSelects(all_big_selects, 'diesel', paramsOverlay);
     }
 }
 
@@ -685,33 +806,42 @@ lightGallery(document.getElementById(`article-video`), {
     iframeMaxHeight: '90%'
 });
 
-for (let i = 1; i <= 4; i++) {
-    lightGallery(document.getElementById(`open-video-${i}`), {
+const mainPageVideo = document.querySelectorAll(".main-page-video > li > a")
+
+for (let elem of mainPageVideo) {
+    lightGallery(elem, {
         selector: 'this',
         iframeMaxHeight: '90%'
     });
 }
 
-for (let i = 1; i <= 6; i++) {
-    lightGallery(document.getElementById(`video-review-${i}`), {
+const videoReviews = document.querySelectorAll(".video-reviews > div > a")
+
+for (let elem of videoReviews) {
+    lightGallery(elem, {
         selector: 'this',
         iframeMaxHeight: '90%'
     });
 }
 
-for (let i = 1; i <= 9; i++) {
-    lightGallery(document.getElementById(`video-page-${i}`), {
+const videoPage = document.querySelectorAll(".video-page .stretched-link")
+
+for (let elem of videoPage) {
+    lightGallery(elem, {
         selector: 'this',
         iframeMaxHeight: '90%'
     });
 }
 
-for (let i = 1; i <= 4; i++) {
-    lightGallery(document.getElementById(`open-video-block-${i}`), {
+const openVideoBlock = document.querySelectorAll(".open-video-block li .stretched-link")
+
+for (let elem of openVideoBlock) {
+    lightGallery(elem, {
         selector: 'this',
         iframeMaxHeight: '90%'
     });
 }
+
 if (document.getElementById(`calculator-video-block`)) {
     lightGallery(document.getElementById(`calculator-video-block`), {
         selector: 'this',
@@ -740,6 +870,15 @@ if (document.getElementById(`about-company2`)) {
 lightGallery(document.getElementById('animated-thumbnails'), {
     thumbnail: true,
     selector: '.certificate',
+});
+
+
+// project
+
+lightGallery(document.getElementById('animated-thumbnails-project'), {
+    thumbnail: true,
+    selector: '.project-gallery-image',
+    iframeMaxHeight: '90%'
 });
 
 // Custom dropdown with search
@@ -838,8 +977,12 @@ function activateCustomDropdowns() {
 
 activateCustomDropdowns();
 
-function resetCustomDropdowns() {
-    const customDropdowns = document.querySelectorAll('.custom-dropdown');
+function resetCustomDropdowns(scope) {
+    const root = scope && scope.querySelectorAll ? scope : document;
+    const dropdownsList = Array.from(root.querySelectorAll('.custom-dropdown'));
+    const customDropdowns = root !== document && root.classList && root.classList.contains('custom-dropdown')
+        ? [root, ...dropdownsList]
+        : dropdownsList;
 
     customDropdowns.forEach(dropdown => {
         const selectDisplay = dropdown.querySelector('.select-display');
@@ -853,21 +996,41 @@ function resetCustomDropdowns() {
         const dropdownWrapper = dropdown.querySelector('.dropdown-container-wrapper')
 
         // Select option on click
+        if (!selectDisplay || !selectedValue) {
+            return;
+        }
+
         selectedValue.classList.remove('d-block')
         selectedValue.classList.remove('mt-2')
         selectedValue.classList.remove('fw-semibold')
         selectedValue.classList.remove('default')
         selectedValue.classList.remove('pt-1')
-        selectedValue.innerHTML = selectLabel.innerHTML
+
+        if (selectLabel) {
+            selectedValue.innerHTML = selectLabel.innerHTML
+            selectLabel.classList.remove('active');
+        } else {
+            selectedValue.innerHTML = ''
+        }
 
         selectDisplay.classList.remove('selected');
         selectDisplay.classList.remove('active');
-        selectLabel.classList.remove('active');
 
-        searchInput.value = '';
-        dropdownContainer.classList.remove('active');
-        dropdownWrapper.classList.remove('active')
-        arrowSelect.classList.remove('active');
+        if (searchInput) {
+            searchInput.value = '';
+        }
+
+        if (dropdownContainer) {
+            dropdownContainer.classList.remove('active');
+        }
+
+        if (dropdownWrapper) {
+            dropdownWrapper.classList.remove('active')
+        }
+
+        if (arrowSelect) {
+            arrowSelect.classList.remove('active');
+        }
 
         options.forEach(option => {
             option.addEventListener('click', () => {
@@ -888,17 +1051,29 @@ function resetCustomDropdowns() {
                 selectDisplay.classList.add('selected');
 
                 // Update hidden input value
-                hiddenInput.value = option.getAttribute('data-value');
+                if (hiddenInput) {
+                    hiddenInput.value = option.getAttribute('data-value');
+                }
 
                 // Close dropdown
-                dropdownContainer.classList.remove('active');
+                if (dropdownContainer) {
+                    dropdownContainer.classList.remove('active');
+                }
 
                 // Clear search input
-                searchInput.value = '';
+                if (searchInput) {
+                    searchInput.value = '';
+                }
                 selectDisplay.classList.remove('active');
-                arrowSelect.classList.remove('active');
-                dropdownWrapper.classList.remove('active')
-                selectLabel.classList.add('active');
+                if (arrowSelect) {
+                    arrowSelect.classList.remove('active');
+                }
+                if (dropdownWrapper) {
+                    dropdownWrapper.classList.remove('active')
+                }
+                if (selectLabel) {
+                    selectLabel.classList.add('active');
+                }
 
                 // Show all options again
                 options.forEach(opt => {
@@ -1173,143 +1348,6 @@ if (document.querySelector('.usluga.city-slider__wrapper .swiffy-slider')) {
 function activateButton(activeBtn) {
     buttons.forEach(elem => elem.classList.remove('active'))
     buttons[activeBtn].classList.add('active')
-}
-
-// for reviews slider
-const sliderReviews = document.querySelector('.reviews .swiffy-slider')
-let activeSlide = 0;
-
-if (sliderReviews) {
-    const reviews = sliderReviews
-    const items = reviews.querySelectorAll('li');
-    const itemWidth = items[0].getBoundingClientRect().width;
-    const dublicates = document.querySelector('.reviews__dublicates');
-    const reviewsWrapper = document.querySelector('.reviews-dublicates-wrapper')
-
-    // generate indicator buttons
-
-    const indicators = document.querySelector('.indicators')
-    const amountOfSlides = sliderReviews.querySelectorAll("li").length
-    indicators.innerHTML = ''
-
-    for (let i = 0; i < amountOfSlides - 2; i++) {
-        indicators.insertAdjacentHTML('beforeend', `<li data-slide=${i} class=${i === 0 ? 'active' : ''}></li>`)
-    }
-
-    const allIndicators = indicators.querySelectorAll('li')
-
-    allIndicators.forEach(item => {
-        item.addEventListener('click', () => {
-            allIndicators.forEach(elem => elem.classList.remove('active'))
-            item.classList.add('active')
-
-            activeSlide = +item.dataset.slide
-            swiffyslider.slideTo(sliderReviews, activeSlide)
-
-            dublicates.scrollTo({
-                left: dublicates.children[activeSlide].offsetLeft - 5,
-                behavior: 'smooth'
-            })
-
-            dublicates.querySelectorAll(".reviews__slide").forEach(item => item.classList.remove('hide'))
-            dublicates.children[activeSlide + 1].classList.add('hide')
-            dublicates.children[activeSlide + 2].classList.add('hide')
-            dublicates.children[activeSlide + 3].classList.add('hide')
-        })
-    })
-
-    // position dublicates container
-
-    const rect1 = dublicates.children[1].offsetLeft + reviewsWrapper.offsetLeft
-    const reviewsRect = reviews.offsetLeft
-
-    const diff = rect1 - reviewsRect - 14
-
-    reviewsWrapper.style.transform = `translate(-${diff}px, -389px)`
-
-    // change slide on click
-
-    for (let i = 0; i < dublicates.children.length; i++) {
-        let slide = dublicates.children[i]
-
-        slide.addEventListener('click', () => {
-            if (!slide.classList.contains('hide')) {
-                let idx = +slide.dataset.forMid
-
-                if (idx > 3) {
-                    idx -= 3
-                    swiffyslider.slideTo(sliderReviews, idx)
-
-                    dublicates.scrollTo({
-                        left: dublicates.children[idx].offsetLeft - 5,
-                        behavior: 'smooth'
-                    })
-
-                    dublicates.querySelectorAll(".reviews__slide").forEach(item => item.classList.remove('hide'))
-                    dublicates.children[idx + 1].classList.add('hide')
-                    dublicates.children[idx + 2].classList.add('hide')
-                    dublicates.children[idx + 3].classList.add('hide')
-
-                    allIndicators.forEach(ind => {
-                        if (+ind.dataset.slide !== idx) {
-                            ind.classList.remove('active')
-                        } else {
-                            ind.classList.add('active')
-                        }
-                    })
-                } else {
-                    idx -= 1
-                    swiffyslider.slideTo(sliderReviews, idx)
-
-                    dublicates.scrollTo({
-                        left: dublicates.children[idx].offsetLeft - 5,
-                        behavior: 'smooth'
-                    })
-
-                    dublicates.querySelectorAll(".reviews__slide").forEach(item => item.classList.remove('hide'))
-                    dublicates.children[idx + 1].classList.add('hide')
-                    dublicates.children[idx + 2].classList.add('hide')
-                    dublicates.children[idx + 3].classList.add('hide')
-
-                    allIndicators.forEach(ind => {
-                        if (+ind.dataset.slide !== idx) {
-                            ind.classList.remove('active')
-                        } else {
-                            ind.classList.add('active')
-                        }
-                    })
-                }
-            }
-        })
-    }
-
-    // reviews dublicates positioning
-
-    dublicates.querySelectorAll(".reviews__slide").forEach(item => {
-        item.style.width = itemWidth + 'px';
-    })
-}
-
-// reviews height
-
-let r = document.querySelector('.reviews')
-
-if (r) {
-    if (document.body.clientWidth > 1400) {
-        r.style.height = `${504}px`
-    } else {
-        r.style.height = 'auto'
-    }
-}
-
-window.onresize = () => {
-    if (r) {
-        if (document.body.clientWidth > 1400) {
-            r.style.height = `${r.querySelector('.container').clientHeight}px`
-        } else {
-            r.style.height = '0'
-        }
-    }
 }
 
 // for product page
@@ -1856,78 +1894,6 @@ document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
         trigger: 'hover focus'     // показывается при наведении
     })
 })
-
-const slider = document.querySelector('.swiffy-slider.swiffy-reviews');
-
-if (slider) {
-    const container = slider.querySelector('.slider-container');
-    const slides = Array.from(container.querySelectorAll('li > div'));
-
-    function setHeightForElement(el) {
-        if (!el) return;
-        container.style.height = Math.ceil(el.getBoundingClientRect().height) + 'px';
-
-        setTimeout(() => {
-            container.style.transition = 'height 0s ease';
-        }, 300)
-    }
-
-    // initial
-    setHeightForElement(slides[0]);
-
-    // IntersectionObserver: выбираем слайд с наибольшей видимостью
-    const io = new IntersectionObserver((entries) => {
-        let best = null;
-        for (const e of entries) {
-            if (!best || e.intersectionRatio > best.intersectionRatio) best = e;
-        }
-        if (best && best.isIntersecting) {
-            container.style.transition = 'height .3s ease';
-            setHeightForElement(best.target);
-        }
-    }, {
-        root: container,
-        threshold: [0.5]
-    });
-
-    slides.forEach(s => io.observe(s));
-
-    // ResizeObserver — пересчитать если внутри слайда изменился контент (read-more)
-    const ro = new ResizeObserver(() => {
-        // ищем .slide-visible если есть, иначе ближайший к центру контейнера
-        const visible = container.querySelector('.slide-visible');
-        if (visible) return setHeightForElement(visible);
-
-        // fallback: по центру
-        const contRect = container.getBoundingClientRect();
-        const centerX = contRect.left + contRect.width / 2;
-        let bestSlide = slides[0], bestDist = Infinity;
-        slides.forEach(s => {
-            const r = s.getBoundingClientRect();
-            const sCenter = r.left + r.width / 2;
-            const dist = Math.abs(sCenter - centerX);
-            if (dist < bestDist) { bestDist = dist; bestSlide = s; }
-        });
-
-        setHeightForElement(bestSlide);
-    });
-
-    slides.forEach(s => ro.observe(s));
-
-    // если есть кнопки "Читать полностью" — пересчитать после клика (если расширяется)
-    slider.querySelectorAll('.swiffy-content__read-more').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const visible = container.querySelector('.slide-visible') || slides[0];
-            setHeightForElement(visible);
-        });
-    });
-
-    // на ресайзе окна — пересчитать
-    window.addEventListener('resize', () => {
-        const visible = container.querySelector('.slide-visible') || slides[0];
-        setHeightForElement(visible);
-    });
-}
 
 //
 const sliderCatalog = document.getElementById('slider-catalog');
@@ -2525,3 +2491,280 @@ function initializeGarantAccordion() {
 initializeGarantAccordion()
 
 window.onresize = () => initializeGarantAccordion();
+
+// power overlay wrap
+
+if (document.body.clientWidth < 768) {
+    try {
+        const powerWrapper = document.querySelector('.power-overlay__wrapper')
+        const powerOverlay = document.querySelector('.power-overlay')
+        const powerCross = powerOverlay.querySelector('.cross-place')
+        const powerButton = document.querySelectorAll('.power-show-popup')
+        const powerSubmit = document.querySelector('.power-overlay__submit')
+
+        powerButton.forEach(btn => {
+            btn.addEventListener('click', () => {
+                powerWrapper.classList.add('active')
+                powerOverlay.classList.add('active')
+                document.body.classList.add('overflow-hidden')
+                document.body.style.paddingRight = `${scrollbarWidth}px`;
+            })
+        })
+
+        powerWrapper.addEventListener('click', () => {
+            powerWrapper.classList.remove('active')
+            powerOverlay.classList.remove('active')
+            document.body.classList.remove('overflow-hidden')
+            document.body.style.paddingRight = `${0}px`;
+        })
+
+        powerCross.addEventListener('click', () => {
+            powerWrapper.classList.remove('active')
+            powerOverlay.classList.remove('active')
+            document.body.classList.remove('overflow-hidden')
+            document.body.style.paddingRight = `${0}px`;
+        })
+
+        powerSubmit.addEventListener('click', () => {
+            powerWrapper.classList.remove('active')
+            powerOverlay.classList.remove('active')
+            document.body.classList.remove('overflow-hidden')
+            document.body.style.paddingRight = `${0}px`;
+        })
+    } catch (e) {
+        console.warn('error')
+    }
+}
+
+
+// industry overlay wrap
+
+if (document.body.clientWidth < 768) {
+    try {
+        const industryWrapper = document.querySelector('.industry-overlay__wrapper')
+        const industryOverlay = document.querySelector('.industry-overlay')
+        const industryCross = industryOverlay.querySelector('.cross-place')
+        const industryButton = document.querySelectorAll('.industry-show-popup')
+        const industrySubmit = document.querySelector('.industry-overlay__submit')
+
+        industryButton.forEach(btn => {
+            btn.addEventListener('click', () => {
+                industryWrapper.classList.add('active')
+                industryOverlay.classList.add('active')
+                document.body.classList.add('overflow-hidden')
+                document.body.style.paddingRight = `${scrollbarWidth}px`;
+            })
+        })
+
+        industryWrapper.addEventListener('click', () => {
+            industryWrapper.classList.remove('active')
+            industryOverlay.classList.remove('active')
+            document.body.classList.remove('overflow-hidden')
+            document.body.style.paddingRight = `${0}px`;
+        })
+
+        industryCross.addEventListener('click', () => {
+            industryWrapper.classList.remove('active')
+            industryOverlay.classList.remove('active')
+            document.body.classList.remove('overflow-hidden')
+            document.body.style.paddingRight = `${0}px`;
+        })
+
+        industrySubmit.addEventListener('click', () => {
+            industryWrapper.classList.remove('active')
+            industryOverlay.classList.remove('active')
+            document.body.classList.remove('overflow-hidden')
+            document.body.style.paddingRight = `${0}px`;
+        })
+    } catch (e) {
+        console.warn('error')
+    }
+}
+
+
+// region overlay wrap
+
+if (document.body.clientWidth < 768) {
+    try {
+        const regionWrapper = document.querySelector('.region-overlay__wrapper')
+        const regionOverlay = document.querySelector('.region-overlay')
+        const regionCross = regionOverlay.querySelector('.cross-place')
+        const regionButton = document.querySelectorAll('.region-show-popup')
+        const regionSubmit = document.querySelector('.region-overlay__submit')
+
+        regionButton.forEach(btn => {
+            btn.addEventListener('click', () => {
+                regionWrapper.classList.add('active')
+                regionOverlay.classList.add('active')
+                document.body.classList.add('overflow-hidden')
+                document.body.style.paddingRight = `${scrollbarWidth}px`;
+            })
+        })
+
+        regionWrapper.addEventListener('click', () => {
+            regionWrapper.classList.remove('active')
+            regionOverlay.classList.remove('active')
+            document.body.classList.remove('overflow-hidden')
+            document.body.style.paddingRight = `${0}px`;
+        })
+
+        regionCross.addEventListener('click', () => {
+            regionWrapper.classList.remove('active')
+            regionOverlay.classList.remove('active')
+            document.body.classList.remove('overflow-hidden')
+            document.body.style.paddingRight = `${0}px`;
+        })
+
+        regionSubmit.addEventListener('click', () => {
+            regionWrapper.classList.remove('active')
+            regionOverlay.classList.remove('active')
+            document.body.classList.remove('overflow-hidden')
+            document.body.style.paddingRight = `${0}px`;
+        })
+    } catch (e) {
+        console.warn('error')
+    }
+}
+
+// ampers calc
+
+const ampers = document.querySelector('.ampers')
+
+if (ampers) {
+    const ampersCheckboxes = ampers.querySelectorAll('.ampers-wrapper');
+
+    ampersCheckboxes.forEach((item, idx) => {
+        const allCheckboxes = item.querySelectorAll('.ampers-checkbox')
+
+        if (!idx) {
+            allCheckboxes.forEach(elem => {
+                elem.addEventListener('change', () => {
+                    allCheckboxes.forEach(i => i.classList.remove('active'))
+                    elem.classList.add('active')
+
+                    if (elem.dataset.change) {
+                        ampers.querySelector('[data-custom]').innerHTML = 'Введите мощность'
+                    } else {
+                        ampers.querySelector('[data-custom]').innerHTML = 'Номинальный ток, Ампер'
+                    }
+                })
+            })
+        } else {
+            allCheckboxes.forEach(elem => {
+                elem.addEventListener('change', () => {
+                    allCheckboxes.forEach(i => i.classList.remove('active'))
+                    elem.classList.add('active')
+                })
+            })
+        }
+    })
+
+    const ampersType = ampers.querySelector('[data-type]')
+    let type_value = '1'
+
+    ampersType.querySelectorAll('.ampers-checkbox').forEach(item => {
+        item.addEventListener('change', () => {
+            type_value = item.querySelector('input').value
+
+            generateResult()
+        })
+    })
+
+    const phaseType = ampers.querySelector('[data-phase]')
+    let phase_value = '220'
+
+    phaseType.querySelectorAll('.ampers-checkbox').forEach(item => {
+        item.addEventListener('change', () => {
+            phase_value = item.querySelector('input').value
+
+            generateResult()
+        })
+    })
+
+    const currentType = ampers.querySelector('.ampers-current')
+    let current_value = 0
+    currentType.value = 0;
+
+    currentType.addEventListener('input', () => {
+        current_value = currentType.value;
+
+        generateResult()
+    })
+
+    function num(e) {
+        return (e % 1) === 0 ? e.toFixed(0) : e.toFixed(2);
+    }
+
+    function generateResult() {
+        if (String(current_value) && String(phase_value) && String(type_value)) {
+            console.log(current_value, phase_value, type_value)
+
+            const result = ampers.querySelector('.calculator__power span:first-child')
+            const result_postfix = ampers.querySelector('.calculator__power span:last-child')
+
+            switch (type_value) {
+                case '1':
+                    if (phase_value == 380) {
+                        result.innerHTML = num(current_value * +phase_value * 1.73);
+                    } else {
+                        result.innerHTML = num(current_value * +phase_value);
+                    }
+
+                    result_postfix.innerHTML = 'Вт'
+
+                    break;
+                case '2':
+                    if (phase_value == 380) {
+                        result.innerHTML = num(current_value / (+phase_value * 1.73));
+                    } else {
+                        result.innerHTML = num(current_value / +phase_value);
+                    }
+
+                    result_postfix.innerHTML = 'А'
+
+                    break;
+            }
+        }
+    }
+
+    generateResult()
+}
+
+
+// for scrollspy
+new bootstrap.ScrollSpy(document.body, {
+    target: '#navbar-example2',
+    offset: 20
+})
+
+// for arenda reviews slider
+
+const reviewsSlider = document.querySelector('.reviews')
+
+function maskForReviewsSlider(reviews) {
+    const rects = reviews.querySelector('.container').getBoundingClientRect()
+    const width = rects.width
+    const x = rects.x
+    const slider = reviews.querySelector('.reviews .swiffy-slider')
+    slider.style.maskImage = `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="${document.body.clientWidth}" height="500"><rect x="0" y="0" width="${x}" height="500" fill="rgba(0,0,0,0.2)" /><rect x="${x}" y="0" width="${width}" height="500" fill="white" /><rect x="${width + x}" y="0" width="${document.body.clientWidth - width - x}" height="500" fill="rgba(0,0,0,0.2)" /></svg>')`
+    slider.querySelector('.slider-container').style.paddingLeft = `${x + 16}px`
+    slider.querySelector('.slider-container').style.paddingRight = `${x + 16}px`
+
+    console.log(slider.querySelector('.slider-container').style.paddingLeft)
+
+    if (document.body.clientWidth > 1280) {
+        slider.style.setProperty('--swiffy-slider-item-count', "unset");
+
+        reviews.querySelectorAll('.reviews__slide').forEach(item => {
+            item.style.minWidth = '406px'
+        })
+
+        console.log('changed')
+    }
+
+    window.onresize = () => maskForReviewsSlider(reviewsSlider)
+}
+
+if (reviewsSlider) {
+    maskForReviewsSlider(reviewsSlider)
+}

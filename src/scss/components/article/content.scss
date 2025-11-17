@@ -12,11 +12,6 @@
   h1 {
     font-weight: 900;
     line-height: 44px;
-    scroll-margin-top: 1rem;
-
-    @media (max-width: 992px) {
-      scroll-margin-top: 9rem;
-    }
 
     @media (max-width: 768px) {
       font-size: 2rem;
@@ -30,11 +25,6 @@
 
   h2 {
     font-size: 1.5rem;
-    scroll-margin-top: 1rem;
-
-    @media (max-width: 992px) {
-      scroll-margin-top: 9rem;
-    }
   }
 
   h3 {
@@ -56,16 +46,33 @@
       font-size: 1.125rem;
       color: var(--bs-blue);
       line-height: 1.5;
+      margin: 1rem 0;
 
       @media (max-width: 768px) {
         font-size: 1rem;
-        line-height: 1.5;
       }
 
       a {
         text-decoration: underline;
         color: var(--orange-color);
       }
+    }
+
+    &:first-child ul,
+    ol {
+      font-size: 1.125rem;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 700;
     }
   }
 }
@@ -101,6 +108,12 @@
 .article-anchors {
   background: var(--light-background);
   height: fit-content;
+  position: sticky;
+  top: 1rem;
+
+  @media (max-width: 992px) {
+    top: 9rem
+  }
 
   a {
     color: var(--bs-gray);

@@ -60,16 +60,14 @@
       color: #1f3246;
       transition: all 0.3s ease;
     }
-
-    &:hover {
-      .player {
-        color: var(--player-yellow-color);
-      }
-    }
   }
 
   &:hover {
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+
+    .player {
+      color: var(--player-yellow-color);
+    }
   }
 
   &__wrapper {

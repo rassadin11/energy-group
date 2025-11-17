@@ -27,6 +27,15 @@
     }
   }
 
+  &__wrapper {
+    max-height: 200px;
+    min-height: 200px;
+  }
+
+  &__text-size {
+    min-height: 40%;
+  }
+
   &>.container {
     max-width: 1360px;
 
@@ -42,7 +51,7 @@
     background: transparent;
     margin-left: 1rem;
     padding-left: 1.5rem;
-    padding-right: 1.3rem;
+    padding-right: 0.5rem;
     margin-right: 1rem;
 
     @media (max-width: 1300px) {
@@ -75,6 +84,7 @@
   &__block {
     background: var(--bs-white);
     transition: all 0.3s ease;
+    z-index: 1000;
 
     .deliver-link {
       transition: all .3s ease;

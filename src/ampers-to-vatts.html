@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+@include('partials/head.html')
+
+<body data-category="about-company">
+  <div class="headers w-100">
+    @include('partials/pre-header.html') @include('partials/header.html')
+  </div>
+
+  <main class="main">
+    @include('partials/ampers-to-vatts/breadcrumbs.html')
+
+    <section class="container ampers mt-6 mb-10 pb-lg-10 tabs position-relative">
+      <h1 class="mb-0 vacancy-header fw-extrabold">Калькулятор перевода амперы в киловатты</h1>
+
+      <div class="row mt-md-7 mt-0 calculator gy-5">
+        <div class="col-md-8 col-12">
+          <div class="patrol-calculator__block p-lg-6 p-4 rounded-md-6 rounded-4">
+            <h2 class="fw-bold mb-0">
+              <span>Калькулятор</span>
+            </h2>
+
+            <p class="text-dark-gray mt-lg-6 mt-4 mb-lg-0 mb-4">Выберите что хотите рассчитать</p>
+
+            <div class="row gx-6 ampers-wrapper patrol-calculator__info mt-lg-3 mt-0 mb-lg-0 mb-4"
+              data-type="ampers-type">
+              <div class="col-lg-6 col-12">
+                <label for="radio1"
+                  class="form-check ampers-checkbox resume-overlay__input form-check-inline radio-button overflow-hidden w-100 rounded-3 active">
+                  <div class="px-md-4 py-md-3 p-3 d-flex align-items-center gap-2">
+                    <input class="form-check-input" type="radio" name="type" id="radio1" value="1" checked>
+                    <p class="form-check-label lh-base">Мощность</p>
+                  </div>
+                </label>
+              </div>
+
+              <div class="col-lg-6 col-12">
+                <label for="radio2" data-change="text"
+                  class="form-check ampers-checkbox resume-overlay__input form-check-inline radio-button overflow-hidden w-100 rounded-3">
+                  <div class="px-md-4 py-md-3 p-3 d-flex align-items-center gap-2">
+                    <input class="form-check-input" type="radio" name="type" id="radio2" value="2">
+                    <p class="form-check-label lh-base">Силу тока</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <p class="text-dark-gray mt-lg-6 mt-4 mb-lg-0 mb-4">Тип сети</p>
+
+            <div class="row gx-6 ampers-wrapper patrol-calculator__info mt-lg-3 mt-0" data-phase="ampers-phase">
+              <div class="col-lg-6 col-12">
+                <label for="radio3"
+                  class="form-check ampers-checkbox resume-overlay__input form-check-inline radio-button overflow-hidden w-100 rounded-3 active">
+                  <div class="px-md-4 py-md-3 p-3 d-flex align-items-center gap-2">
+                    <input class="form-check-input" type="radio" name="net" id="radio3" value="220" checked>
+                    <p class="form-check-label lh-base">1-а фазная, 220 В</p>
+                  </div>
+                </label>
+              </div>
+
+              <div class="col-lg-6 col-12">
+                <label for="radio4"
+                  class="form-check ampers-checkbox resume-overlay__input form-check-inline radio-button overflow-hidden w-100 rounded-3">
+                  <div class="px-md-4 py-md-3 p-3 d-flex align-items-center gap-2">
+                    <input class="form-check-input" type="radio" name="net" id="radio4" value="380">
+                    <p class="form-check-label lh-base">2-х фазная, 380 В</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <p class="text-dark-gray mt-lg-6 mt-4 mb-lg-0 mb-4" data-custom="custom text">Номинальный ток, Ампер</p>
+            <input type="number" placeholder="Введите номинальный ток"
+              class="w-100 block-params__input px-3 pe-md-9 pe-7 py-md-4 py-3 rounded-3 mt-lg-3 resume-overlay__input ampers-current">
+
+            <p class="mt-md-6 mt-4 lh-base text-gray patrol-calculator__description">Полученный результат не отражает
+              реальный расход топлива, он даёт приблизительное представление о потреблении. Реальные значения
+              индивидуальны для каждого конкретного генератора и зависят от ряда факторов.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 col-12">
+          <div class="bg-secondary p-md-6 p-4 rounded-md-6 rounded-4 d-flex flex-column h-fit">
+            <p class="text-dark-gray">Результат</p>
+            <p class="calculator__power result-value fw-bold fs-2 mt-2"><span>22</span> <span>Вт</span></p>
+            <p class="mt-md-4 mt-2 text-dark-gray lh-base result-description">Мощность нагрузки при номинальном токе 100
+              Ампер в
+              однофазной сети и
+              напряжении
+              220 Вольт</p>
+            <button class="btn btn-primary py-12 w-100 fw-bold mt-md-4 mt-8">Задать вопрос</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="lh-base big-p mt-md-10 mt-6 pt-md-0 pt-2 text-dark-gray">При выборе / покупке генератора смотрят не
+        только на его
+        стоимость, но и на расход топлива. В отличие от другой техники, скорость вращения коленчатого вала
+        электростанции остается относительно фиксированной. Это позволяет определить расход дизельного топлива при
+        разных нагрузках, а значит, запастись горючим на определённые период и вычислить стоимость электроснабжения.</p>
+
+      <p class="lh-base big-p fw-bold mt-md-6 mt-4">Факторы, влияющие на расход топлива дизельного генератора:</p>
+      <ul class="article-list p-0 mt-md-4 mt-3">
+        <li class="mt-2">Мощность – чем выше, тем экономичнее двигатель при расчете потребления на каждый киловатт</li>
+        <li class="mt-2">Состояние поршневой группы – износ увеличивает расход, ведь падает компрессия, следственно, и
+          КПД
+        </li>
+        <li class="mt-2">Настройка двигателя: своевременность впрыска, зазоры клапанов</li>
+        <li class="mt-2">Тип и качество ДТ: зимнее, летнее</li>
+        <li class="mt-2">Температура окружающего воздуха – затраты на прогрев двигателя зимой будут выше</li>
+        <li class="mt-2">Нагрузка – обычно энергопотребление динамичное, поэтому берут приблизительное среднее значение
+          за
+          весь рабочий цикл</li>
+        <li class="mt-2">Высота относительно уровня моря, состояние трущихся компонентов мотора и прочие факторы также
+          вносят свои коррективы.</li>
+      </ul>
+    </section>
+  </main>
+
+  @include('partials/ampers-to-vatts/popup.html') @include('partials/footer.html')
+  @include('partials/popup-book.html') @include('partials/popup-recall.html')
+</body>
+
+</html>

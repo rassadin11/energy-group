@@ -64,6 +64,10 @@ textarea:focus:-ms-input-placeholder {
   &__description {
     color: var(--bs-white-opacity);
     line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 
     &.small {
       font-size: 0.75rem;

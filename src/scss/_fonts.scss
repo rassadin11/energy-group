@@ -1,8 +1,7 @@
-@font-face {
-  font-family: "Adjusted Arial Fallback";
-  src: local(Arial);
-  size-adjust: 100%;
-  ascent-override: normal;
-  descent-override: normal;
-  line-gap-override: normal;
-}
+// Overpass font family
+@include font-face("Overpass", "overpass-thin", 100, normal);
+@include font-face("Overpass", "overpass-light", 300, normal);
+@include font-face("Overpass", "overpass-regular", 400, normal);
+@include font-face("Overpass", "overpass-semibold", 600, normal);
+@include font-face("Overpass", "overpass-bold", 700, normal);
+@include font-face("Overpass", "overpass-extrabold", 800, normal);

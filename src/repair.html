@@ -9,8 +9,8 @@
 
   <main class="main to-page">
     <section class="dgu-block position-relative overflow-hidden lh-base">
-      <div class="position-absolute z-0 overflow-hidden w-100 h-100">
-        <img loading="lazy" src="./img/to/to-background.jpg" alt="background"
+      <div class="position-absolute z-0 overflow-hidden w-100 h-100 repair-background">
+        <img loading="lazy" src="./img/repair/background.png" alt="background"
           class="w-100 h-100 object-fit-cover position-relative">
       </div>
       <div class="container position-relative d-flex justify-content-between h-100 pt-10 large-p">
@@ -64,7 +64,7 @@
           <div class="col-md-6 col-sm-12">
             <div class="d-flex flex-column justify-content-between h-100">
               <h2 class="fw-bold lh-sm">Стоимость услуг по ремонту дизельных генераторов</h2>
-              <p>
+              <p class="d-md-block d-none">
                 <button class="btn btn-warning py-3 px-5 fw-semibold open-popup-recall">
                   Рассчитать стоимость
                 </button>
@@ -72,196 +72,290 @@
             </div>
           </div>
           <div class="deliver__description lh-base col-md-6 col-sm-12 ">
-            <p class="dgu__description lh-base">При своевременном обслуживании оборудования вы исключите его непростой и
-              дорогостоящий ремонт. Каждая ДГУ поставляется с документацией, где указан перечень и периодичность
-              выполняемых технических работ, причем выполнять их разрешается только высококвалифицированным
-              специалистам. При своевременном обслуживании оборудования вы исключите его непростой и
-              дорогостоящий ремонт. Каждая ДГУ поставляется с документацией, где указан перечень и периодичность
-              выполняемых технических работ, причем выполнять их разрешается только высококвалифицированным
-              специалистам.</p>
+            <p class="dgu__description lh-base">Текст написан с помощью ИИ: Стоимость ремонта дизельного генератора
+              формируется под влиянием нескольких ключевых факторов: это характер и сложность самой неисправности,
+              стоимость требуемых запасных частей и уровень их доступности на рынке, а также объем необходимых трудовых
+              затрат, который напрямую зависит от модели агрегата и его моторесурса. Таким образом, итоговая цена
+              складывается индивидуально после тщательной диагностики, которая и позволяет оценить масштаб работ и дать
+              точный расчет.</p>
           </div>
         </div>
       </div>
     </div>
 
-    <section class="container">
-      <div class="row">
-
+    <section class="container my-md-10">
+      <div class="row repair-table">
         <div class="col-md-6 col-sm-12 mt-md-0 mt-4 dgu__tarifs">
           <div class="rounded-4 border py-md-3 py-2 overflow-hidden dgu__background">
             <div
               class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
-              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2 pe-6">
-                Установка генератора
+              <p class="col-lg-6 col-md-8 d-flex gap-md-3 gap-2 pe-6">
+                Диагностика
               </p>
-              <p
-                class="col-lg-6 col-md-4 d-flex align-items-md-center gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4 text-nowrap">
-                <svg class="ruble">
-                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
-                </svg>
-                <span class="fw-bold">от 6 000 ₽ </span>
-              </p>
+              <div class="col-lg-6 col-md-4 d-flex gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4">
+                <div>
+                  <svg class="ruble">
+                    <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                  </svg>
+                </div>
+                <p class="fw-bold">Бесплатно <span class="d-md-inline d-none">(при отказе от ремонта в нашем СЦ – 6000 ₽
+                    – 8000 ₽)</span> </p>
+              </div>
             </div>
 
             <div
               class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
-              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2 pe-6">
-                Установка блока АВР, автоматика, автозапуск
+              <p class="col-lg-6 col-md-8 d-flex gap-md-3 gap-2 pe-6">
+                Замена свечи зажигания
               </p>
-              <p
-                class="col-lg-6 col-md-4 d-flex align-items-md-center gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4 text-nowrap">
-                <svg class="ruble">
-                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
-                </svg>
-                <span class="fw-bold">от 10 000 ₽ </span>
-              </p>
+              <div class="col-lg-6 col-md-4 d-flex gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4">
+                <div>
+                  <svg class="ruble">
+                    <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                  </svg>
+                </div>
+                <span class="fw-bold text-nowrap">400 ₽ </span>
+              </div>
             </div>
 
             <div
               class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
-              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2 pe-6">
-                Установка GSM модема для удаленного управления
+              <p class="col-lg-6 col-md-8 d-flex gap-md-3 gap-2 pe-6">
+                Ремонт системы впуска
               </p>
-              <p
-                class="col-lg-6 col-md-4 d-flex align-items-md-center gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4 text-nowrap">
-                <svg class="ruble">
-                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
-                </svg>
-                <span class="fw-bold">от 6 000 ₽ </span>
-              </p>
+              <div class="col-lg-6 col-md-4 d-flex gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4">
+                <div>
+                  <svg class="ruble">
+                    <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                  </svg>
+                </div>
+                <span class="fw-bold text-nowrap">от 800 ₽ </span>
+              </div>
             </div>
 
             <div
               class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
-              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2 pe-6">
-                Установка дымохода
+              <p class="col-lg-6 col-md-8 d-flex gap-md-3 gap-2 pe-6">
+                Замена щеток
               </p>
-              <p
-                class="col-lg-6 col-md-4 d-flex align-items-md-center gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4 text-nowrap">
-                <svg class="ruble">
-                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
-                </svg>
-                <span class="fw-bold">от 5 000 ₽ </span>
-              </p>
+              <div class="col-lg-6 col-md-4 d-flex gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4">
+                <div>
+                  <svg class="ruble">
+                    <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                  </svg>
+                </div>
+                <span class="fw-bold text-nowrap">от 500 ₽ </span>
+              </div>
             </div>
 
             <div
               class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
-              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2 pe-6">
-                Стоимость пусконаладки генератора
+              <p class="col-lg-6 col-md-8 d-flex gap-md-3 gap-2 pe-6">
+                Замена AVR
               </p>
-              <p
-                class="col-lg-6 col-md-4 d-flex align-items-md-center gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4 text-nowrap">
-                <svg class="ruble">
-                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
-                </svg>
-                <span class="fw-bold">от 30 000 ₽ </span>
-              </p>
+              <div class="col-lg-6 col-md-4 d-flex gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4">
+                <div>
+                  <svg class="ruble">
+                    <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                  </svg>
+                </div>
+                <span class="fw-bold text-nowrap">от 500 ₽ </span>
+              </div>
             </div>
 
+            <div
+              class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
+              <p class="col-lg-6 col-md-8 d-flex gap-md-3 gap-2 pe-6">
+                Ремонт системы выпуска
+              </p>
+              <div class="col-lg-6 col-md-4 d-flex gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4">
+                <div>
+                  <svg class="ruble">
+                    <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                  </svg>
+                </div>
+                <span class="fw-bold text-nowrap">от 800 ₽ </span>
+              </div>
+            </div>
+
+            <div
+              class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
+              <p class="col-lg-6 col-md-8 d-flex gap-md-3 gap-2 pe-6">
+                Ремонт диодного моста
+              </p>
+              <div class="col-lg-6 col-md-4 d-flex gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4">
+                <div>
+                  <svg class="ruble">
+                    <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                  </svg>
+                </div>
+                <span class="fw-bold text-nowrap">от 600 ₽ </span>
+              </div>
+            </div>
+
+            <div
+              class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
+              <p class="col-lg-6 col-md-8 d-flex gap-md-3 gap-2 pe-6">
+                Замена датчика уровня масла
+              </p>
+              <div class="col-lg-6 col-md-4 d-flex gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4">
+                <div>
+                  <svg class="ruble">
+                    <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                  </svg>
+                </div>
+                <span class="fw-bold text-nowrap">от 200 ₽ </span>
+              </div>
+            </div>
+            <div
+              class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
+              <p class="col-lg-6 col-md-8 d-flex gap-md-3 gap-2 pe-6">
+                Ремонт храпового механизма
+              </p>
+              <div class="col-lg-6 col-md-4 d-flex gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4">
+                <div>
+                  <svg class="ruble">
+                    <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                  </svg>
+                </div>
+                <span class="fw-bold text-nowrap">от 1 200 ₽ </span>
+              </div>
+            </div>
+            <div
+              class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
+              <p class="col-lg-6 col-md-8 d-flex gap-md-3 gap-2 pe-6">
+                Ремонт стартера
+              </p>
+              <div class="col-lg-6 col-md-4 d-flex gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4">
+                <div>
+                  <svg class="ruble">
+                    <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                  </svg>
+                </div>
+                <span class="fw-bold text-nowrap">от 450 ₽ </span>
+              </div>
+            </div>
             <div class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-base">
-              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2 pe-6">
-                Выезд на объект
+              <p class="col-lg-6 col-md-8 d-flex gap-md-3 gap-2 pe-6">
+                Замена сетевого выпрямителя
               </p>
-              <p
-                class="col-lg-6 col-md-4 d-flex align-items-md-center gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4 text-nowrap">
-                <svg class="ruble">
-                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
-                </svg>
-                <span class="fw-bold">от 2 000 ₽ </span>
-              </p>
+              <div class="col-lg-6 col-md-4 d-flex gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4">
+                <div>
+                  <svg class="ruble">
+                    <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                  </svg>
+                </div>
+                <span class="fw-bold text-nowrap">от 1 000 ₽ </span>
+              </div>
             </div>
-          </div>
-
-          <div class="mt-5 d-md-none d-block w-100">
-            <button class="btn btn-warning py-3 px-5 fw-semibold open-popup-recall d-block w-100">
-              Рассчитать стоимость
-            </button>
           </div>
         </div>
-        <div class="col-md-6 col-sm-12 mt-md-0 mt-4 dgu__tarifs">
-          <div class="rounded-4 border py-md-3 py-2 overflow-hidden dgu__background">
+        <div class="col-md-6 col-sm-12 mt-md-0 dgu__tarifs">
+          <div class="rounded-md-6 rounded-4 border py-md-3 py-2 overflow-hidden dgu__background">
             <div
               class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
-              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2 pe-6">
-                Установка генератора
+              <p class="col-lg-6 col-md-8 d-flex gap-md-3 gap-2 pe-6 pb-1">
+                Тестирование топливной системы, включая снятие ТНВД и форсунок, тестирование на стенде и установка
+                обратно (без стоимости ремонта ТНВД)
               </p>
-              <p
-                class="col-lg-6 col-md-4 d-flex align-items-md-center gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4 text-nowrap">
-                <svg class="ruble">
-                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
-                </svg>
-                <span class="fw-bold">от 6 000 ₽ </span>
-              </p>
+              <div class="col-lg-6 col-md-4 d-flex gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4">
+                <div>
+                  <svg class="ruble">
+                    <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                  </svg>
+                </div>
+                <span class="fw-bold text-nowrap">от 15 000 ₽ </span>
+              </div>
             </div>
 
             <div
               class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
-              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2 pe-6">
-                Установка блока АВР, автоматика, автозапуск
+              <p class="col-lg-6 col-md-8 d-flex gap-md-3 gap-2 pe-6">
+                Замена контрольной панели (пульта управления)
               </p>
-              <p
-                class="col-lg-6 col-md-4 d-flex align-items-md-center gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4 text-nowrap">
-                <svg class="ruble">
-                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
-                </svg>
-                <span class="fw-bold">от 10 000 ₽ </span>
-              </p>
+              <div class="col-lg-6 col-md-4 d-flex gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4">
+                <div>
+                  <svg class="ruble">
+                    <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                  </svg>
+                </div>
+                <span class="fw-bold text-nowrap">от 4 000 ₽ </span>
+              </div>
             </div>
 
             <div
               class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
-              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2 pe-6">
-                Установка GSM модема для удаленного управления
+              <p class="col-lg-6 col-md-8 d-flex gap-md-3 gap-2 pe-6">
+                Замена генератора переменного тока, альтернатора (без стоимости генератора)
               </p>
-              <p
-                class="col-lg-6 col-md-4 d-flex align-items-md-center gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4 text-nowrap">
-                <svg class="ruble">
-                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
-                </svg>
-                <span class="fw-bold">от 6 000 ₽ </span>
-              </p>
+              <div class="col-lg-6 col-md-4 d-flex gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4">
+                <div>
+                  <svg class="ruble">
+                    <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                  </svg>
+                </div>
+                <span class="fw-bold text-nowrap">от 15 000 ₽ </span>
+              </div>
             </div>
 
             <div
               class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
-              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2 pe-6">
-                Установка дымохода
+              <p class="col-lg-6 col-md-8 d-flex gap-md-3 gap-2 pe-6">
+                Замена регулятора напряжения генератора переменного тока
               </p>
-              <p
-                class="col-lg-6 col-md-4 d-flex align-items-md-center gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4 text-nowrap">
-                <svg class="ruble">
-                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
-                </svg>
-                <span class="fw-bold">от 5 000 ₽ </span>
-              </p>
+              <div class="col-lg-6 col-md-4 d-flex gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4">
+                <div>
+                  <svg class="ruble">
+                    <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                  </svg>
+                </div>
+                <span class="fw-bold text-nowrap">от 2 000 ₽ </span>
+              </div>
             </div>
 
             <div
               class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
-              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2 pe-6">
-                Стоимость пусконаладки генератора
+              <p class="col-lg-6 col-md-8 d-flex gap-md-3 gap-2 pe-6">
+                Замена подогревателя охлаждающей жидкости
               </p>
-              <p
-                class="col-lg-6 col-md-4 d-flex align-items-md-center gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4 text-nowrap">
-                <svg class="ruble">
-                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
-                </svg>
-                <span class="fw-bold">от 30 000 ₽ </span>
+              <div class="col-lg-6 col-md-4 d-flex gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4">
+                <div>
+                  <svg class="ruble">
+                    <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                  </svg>
+                </div>
+                <span class="fw-bold text-nowrap">от 2 000 ₽ </span>
+              </div>
+            </div>
+
+            <div
+              class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-bottom">
+              <p class="col-lg-6 col-md-8 d-flex gap-md-3 gap-2 pe-6">
+                Замена зарядного (подзарядного) устройства
               </p>
+              <div class="col-lg-6 col-md-4 d-flex gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4">
+                <div>
+                  <svg class="ruble">
+                    <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                  </svg>
+                </div>
+                <span class="fw-bold text-nowrap">от 2 000 ₽ </span>
+              </div>
             </div>
 
             <div class="d-flex py-3 px-md-6 px-4 justify-content-md-start justify-content-between lh-base border-base">
-              <p class="col-lg-6 col-md-8 d-flex align-items-center gap-md-3 gap-2 pe-6">
-                Выезд на объект
+              <p class="col-lg-6 col-md-8 d-flex gap-md-3 gap-2 pe-6 text-nowrap">
+                Замена двигателя
               </p>
-              <p
-                class="col-lg-6 col-md-4 d-flex align-items-md-center gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4 text-nowrap">
-                <svg class="ruble">
-                  <use xlink:href="./img/svg/sprite.svg#ruble"></use>
-                </svg>
-                <span class="fw-bold">от 2 000 ₽ </span>
-              </p>
+              <div class="col-lg-6 col-md-4 d-flex gap-md-3 gap-2 flex-md-row flex-row-reverse ps-4"
+                bis_skin_checked="1">
+                <div bis_skin_checked="1">
+                  <svg class="ruble">
+                    <use xlink:href="./img/svg/sprite.svg#ruble"></use>
+                  </svg>
+                </div>
+                <span class="fw-bold text-end">Зависит от&nbsp;мощности </span>
+              </div>
             </div>
           </div>
         </div>
@@ -269,13 +363,13 @@
     </section>
 
     <section class="projects mb-lg-0 mt-6 dgu__background pt-md-10 pb-md-8 mb-md-10 to__background-paddings">
-      <div class="container mt-md-7 pt-md-0 mb-xxl-8 article-slider delivery-slider">
+      <div class="container pt-md-0 mb-xxl-8 article-slider delivery-slider">
         <h2 class="fw-bold mb-md-8 mb-4 ps-md-0 ps-4">
           Фотогалерея
         </h2>
 
         <div class="swiffy-slider slider-item-show2 slider-item-reveal slider-nav-visible px-lg-0 px-4">
-          <ul class="slider-container dgu rounded-md-6 rounded-4">
+          <ul class="slider-container dgu rounded-md-6 rounded-4 px-0">
             <li>
               <div class="h-100 dgu__height rounded-md-6 rounded-4 overflow-hidden">
                 <img src="./img/to/slider1.webp" class="h-100 w-100 object-fit-cover" loading="lazy" alt="photo">
@@ -320,7 +414,7 @@
       </div>
     </section>
 
-    <section class="container montash">
+    <section class="container my-md-10 my-5 py-5">
       <h2 class="fw-bold">
         Мы являемся официальным дилером следующих брендов
       </h2>
@@ -469,7 +563,7 @@
           <img loading="lazy" decoding="async" src="./img/form_person.png" alt="person form"
             class="big-form__person-image position-absolute" />
           <h2 class="fw-bold">
-            Оставьте заявку на расчёт стоимости ТО
+            Оставьте заявку на расчёт стоимости
           </h2>
           <p class="mt-md-6 mt-4 big-form__description">
             Заполните форму и мы свяжемся с вами в ближайшее время
@@ -503,7 +597,7 @@
           </p>
         </div>
         <div class="delivery-contacts__item text-end mt-md-0 mt-5">
-          <h2 class="title fw-bold mb-md-4 mb-2">+7 (495) ХХХ-ХХ-ХХ</h2>
+          <div class="title phone-title fw-bold mb-md-4 mb-2">+7 (495) ХХХ-ХХ-ХХ</div>
           <p class="delivery-contacts__description">
             <a href="mailto:zakaz@generator-energy.ru" class="text-orange">zakaz@generator-energy.ru</a>
           </p>

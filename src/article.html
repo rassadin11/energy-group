@@ -9,7 +9,338 @@
 
   <main class="main">
     @include('partials/article/breadcrumbs.html')
-    @include('partials/article/content.html')
+    <div class="container mt-md-8 mt-5 article-grid d-grid">
+      <h1 class="mb-0" id="beginning">
+        Двигатели Yanmar: история производителя, характеристики, модельный ряд
+      </h1>
+    </div>
+    <section class="container article-grid d-grid gap-6 mt-md-8 mt-5">
+      <div class="article-grid__item">
+        <img src="./img/article/preview.jpg" alt="preview" class="article__preview w-100" loading="lazy" />
+
+        <div class="article__info info-article d-flex justify-content-between align-items-center mt-6">
+          <div class="info-article__wrapper d-flex align-items-center gap-3">
+            <img src="./img/article/avatar.jpg" alt="avatar" loading="lazy" />
+            <div class="info-article__wrap">
+              <p class="info-article__name fw-semibold">Динар Маркетолог</p>
+
+              <div class="info-article__mobile d-flex d-lg-none gap-3">
+                <p class="info-article__text m-0">Обновлено: 7 мая 2025</p>
+                <div class="d-flex align-center gap-3">
+                  <svg class="clock">
+                    <use xlink:href="./img/svg/sprite.svg#clock"></use>
+                  </svg>
+                  <p class="info-article__text m-0">5 мин</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="info-article__wrapper d-lg-flex d-none align-center gap-6">
+            <div class="d-flex align-center gap-3">
+              <svg class="pencil">
+                <use xlink:href="./img/svg/sprite.svg#pencil"></use>
+              </svg>
+              <p class="info-article__text m-0">Обновлено: 7 мая 2025</p>
+            </div>
+            <div class="d-flex align-center gap-3">
+              <svg class="clock">
+                <use xlink:href="./img/svg/sprite.svg#clock"></use>
+              </svg>
+              <p class="info-article__text m-0">5 мин</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-md-8 mt-5">
+          Машиностроительная корпорация Yanmar Diesel Engine Co более века
+          производит двигатели внутреннего сгорания: компактные, долговечные, тихие,
+          экономичные. Под брендом выпускают вездеходы, инженерную,
+          сельскохозяйственную технику, навесное и прицепное оборудование к ней, а
+          также мотопомпы, лодки и генераторы.
+        </p>
+
+        <h2 class="mt-md-9 mt-8 pt-2 fw-bold" id="history">История бренда</h2>
+        <p class="mt-md-6 mt-3">
+          Японский предприниматель Магокичи Ямаока в 1912 году основывает Yamaoka
+          Hatsudoki Kosakusho, которая производит бензиновые двигатели.
+          Через 9 лет запускает линию сборки нефтяных силовых агрегатов,
+          а в 1930 году компания презентует двухтактные вертикальные ДВС.
+          Для выпуска жизнеспособных малолитражных агрегатов открывает завод
+          AMAGASAKI, в начале Второй мировой войны — НАГАХАМА, а после её завершения
+          и восстановления пострадавших мощностей — ещё один — в Нагахаре.
+        </p>
+        <p class="mt-md-6 mt-3">
+          1961 год — компания открывает офис в Осаке. Спустя 5 лет запускает
+          производство мотокультиваторов, затем — мототракторов, в 1971-м –
+          миниатюрных экскаваторов, к 1980-м – презентует двигатель 16ZL мощностью 5
+          000 л. с.. Корпорация развивается: открывает:
+        </p>
+
+        <ul class="article-list p-0 mt-md-6 mt-5">
+          <li class="mt-2">исследовательские центры, в том числе в Москве;</li>
+          <li class="mt-2">
+            департаменты в Бразилии, Таиланде, США, 4 странах Европы;
+          </li>
+          <li class="mt-2">музей, заводы в Китае, США и Индии.</li>
+        </ul>
+
+        <p class="mt-md-6 mt-3">
+          Параллельно получает многочисленные награды, совершенствует и расширяет
+          ассортимент продукции: тракторы, экскаваторы, морские двигатели, насосное
+          оборудование для антарктических станций, роботы-экскаваторы. Если к 1992
+          году корпорация произвела 1 млн. двигателей, то 2019 году их число
+          превысило 10 млн. штук.
+        </p>
+
+        <h3 class="fw-bold mt-md-9 mt-8 pt-2">Вам может быть интересно</h3>
+
+        <div class="article__cards cards-article mt-md-4 mt-3 gap-md-6 gap-3 d-flex flex-md-row flex-column">
+          <a href="#" class="cards-article__item rounded-md-6 rounded-4 d-flex align-items-center gap-3 p-3">
+            <img src="./img/article/generator.jpg" alt="generator" loading="lazy" />
+            <p>Дизельный генератор Yanmar YTG 15 T-E</p>
+          </a>
+          <a href="#" class="cards-article__item rounded-md-6 rounded-4 d-flex align-items-center gap-3 p-3">
+            <img src="./img/article/generator.jpg" alt="generator" loading="lazy" />
+            <p>Дизельный генератор Yanmar YTG 15 T-E</p>
+          </a>
+        </div>
+
+        <h2 class="mt-md-9 mt-8 pt-2 fw-bold" id="characteristicks">
+          Основные характеристики двигателей Yanmar
+        </h2>
+
+        <p class="mt-md-6 mt-3">
+          Японцы производят обширный ассортимент силовых установок мощностью 4,5 -
+          500 кВт на природном газе, дизеле, биотопливе. Тип охлаждения: воздушное,
+          жидкостное. Преимущества силовых агрегатов Yanmar:
+        </p>
+
+        <ul class="p-0 mt-2">
+          <li class="mt-4">
+            <p>
+              <strong>Отказоустойчивость.</strong> Полный цикл производства на
+              собственных заводах со строгим контролем качества увеличивают
+              межсервисные интервалы и моторесурс компонентов двигателя.
+            </p>
+          </li>
+          <li class="mt-4">
+            <p>
+              <strong>Надёжность.</strong> Рассчитаны на длительное бесперебойное
+              функционирование при любых нагрузках.
+            </p>
+          </li>
+          <li class="mt-4">
+            <p>
+              <strong>Экологичность.</strong> Спроектированы с соблюдением
+              стандартов токсичности США (EPA Tier IV) и Евросоюза (EU Stage V).
+            </p>
+          </li>
+          <li class="mt-4">
+            <p>
+              <strong>Экономичность.</strong> Инновационная система впрыска
+              благодаря ML-форсункам экономит топливо.
+            </p>
+          </li>
+          <li class="mt-4">
+            <p>
+              <strong>Компактность, вес.</strong> Дизельные двигатели Yanmar
+              компактные, весят меньше, чем у конкурентов.
+            </p>
+          </li>
+          <li class="mt-4">
+            <p>
+              <strong>Широкий выбор.</strong> Подходят для разной техники:
+              строительная, с/х техника, морской прогулочный и грузовой транспорт,
+              генераторы, промышленные энергетические установки.
+            </p>
+          </li>
+        </ul>
+
+        <p class="mt-md-6 mt-3">
+          Страна производитель двигателей Yanmar – Япония и Китай, отдельные литые
+          детали отливают в Индонезии, часть тракторов делают в Таиланде.
+        </p>
+
+        <a href="#" id="article-video" data-iframe="true"
+          data-src="https://rutube.ru/play/embed/85a6ab2db98dfda4735d247bd21fc0eb"
+          class="position-relative overflow-hidden w-100 mt-md-9 mt-8 pt-2 d-block article-video rounded-md-6 rounded-4"
+          data-lg-id="a5110d4b-b50a-46b6-9e69-b6f1e21cd6d9">
+          <img src="https://rutube.ru/api/video/85a6ab2db98dfda4735d247bd21fc0eb/thumbnail/?redirect=1"
+            alt="Rutube Video" class="object-fit-cover position-absolute w-100 h-100" loading="lazy" />
+          <svg class="position-absolute player top-50 start-50 translate-middle z-3">
+            <use xlink:href="./img/svg/sprite.svg#player2"></use>
+          </svg>
+        </a>
+
+        <h2 class="mt-md-9 mt-8 pt-2 fw-bold" id="models">Модельный ряд Yanmar</h2>
+        <p class="mt-md-4 mt-3">
+          Компания поставляет двигатели, адаптированные под разные условия
+          эксплуатации.
+        </p>
+
+        <p class="fw-bold mt-md-6 mt-5">Морская техника.</p>
+        <p>Назначение – яхты, прогулочные, рыболовные, коммерческие суда.</p>
+
+        <ul class="article-list p-0 mt-md-6 mt-3">
+          <li class="mt-2">3JH, 4JH – малолитражные морские суда.</li>
+          <li class="mt-2">6LY, 8LV – средне- и крупнотонажные грузовые суда.</li>
+        </ul>
+
+        <p class="fw-bold mt-md-6 mt-5">Промышленная техника.</p>
+        <p>Сферы эксплуатации: сельскохозяйственная, строительная техника.</p>
+
+        <ul class="article-list p-0 mt-6">
+          <li class="mt-2">
+            TNV – легкие строительные (экскаваторы, погрузчики) и
+            почвообрабатывающие машины (тракторы, комбайны).
+          </li>
+          <li class="mt-2">TNV Turbo – мощная индустриальная техника.</li>
+        </ul>
+
+        <p class="fw-bold mt-md-6 mt-5">Генераторы.</p>
+        <p>
+          Устройства для организации основного и резервного электропитания бытовых и
+          промышленных объектов. Характеризуются устойчивостью к перегрузкам,
+          стабильной подачей качественной электрической энергии.
+        </p>
+
+        <p class="fw-bold mt-md-6 mt-5">Энергетические установки.</p>
+        <p>
+          Гибридные электростанции и портативные энергетические комплексы с
+          дизельными двигателями разной мощности в различном исполнении.
+        </p>
+
+        <h2 class="mt-md-9 mt-8 pt-2 fw-bold" id="companies">
+          Энерджи Групп поставщик продукции Yanmar с 2015
+        </h2>
+
+        <p class="mt-md-4 mt-3">
+          Компания Энерджи Групп с 2015 года занимается организацией систем
+          автономного снабжения любых объектов. Для этих и иных целей мы поставляем
+          двигатели Yanmar и запчасти к ним на отечественный рынок. В ассортименте
+          есть
+          <a href="#">дизельные генераторы с двигателями Yanmar</a> для бытовой или
+          промышленной эксплуатации, включая рассчитанные на суровые климатические
+          условия. Также проводим <a href="#">пуско-наладочные работы</a>,
+          техническое обслуживание и ремонтируем генераторные установки с гарантией.
+        </p>
+        <p class="mt-md-6 mt-3">
+          Компания Yanmar выпустила 10+ млн. долговечных стабильных двигателей,
+          каждая линейка которых вбирает в себя инновации и становится лучше.
+          Научно-исследовательские центры и новшества только укрепляют позицию
+          корпорации на мировом рынке.
+        </p>
+
+        <p class="fw-bold mt-md-10 mt-8 pt-2" id="sources">Источники</p>
+        <p class="article-sources mt-md-4 mt-3">
+          <a href="#">Боргман И. И. Электричество // Энциклопедический словарь Брокгауза и
+            Ефрона : в 86 т. (82 т. и 4 доп.). — СПб., 1890—1907. «Электричество» —
+            статья в Малой советской энциклопедии; 2 издание; 1937—1947 гг.</a>
+        </p>
+
+        <div class="article__info info-article d-flex justify-content-between align-items-center mt-6">
+          <div class="info-article__wrapper d-flex align-items-center gap-3">
+            <img src="./img/article/avatar.jpg" alt="avatar" loading="lazy" />
+            <div class="info-article__wrap">
+              <p class="info-article__name fw-semibold">Динар Маркетолог</p>
+
+              <div class="info-article__mobile d-flex d-lg-none gap-3">
+                <p class="info-article__text m-0">Обновлено: 7 мая 2025</p>
+                <div class="d-flex align-center gap-3">
+                  <svg class="clock">
+                    <use xlink:href="./img/svg/sprite.svg#clock"></use>
+                  </svg>
+                  <p class="info-article__text m-0">5 мин</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="info-article__wrapper d-lg-flex d-none align-center gap-6">
+            <div class="d-flex align-center gap-3">
+              <svg class="pencil">
+                <use xlink:href="./img/svg/sprite.svg#pencil"></use>
+              </svg>
+              <p class="info-article__text m-0">Обновлено: 7 мая 2025</p>
+            </div>
+            <div class="d-flex align-center gap-3">
+              <svg class="clock">
+                <use xlink:href="./img/svg/sprite.svg#clock"></use>
+              </svg>
+              <p class="info-article__text m-0">5 мин</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-4 article-conclusion">
+          Маркетолог — это специалист, который занимается изучением рынка,
+          продвижением товаров или услуг и привлечением клиентов. Его главная задача
+          — помочь компании увеличить продажи и прибыль через эффективные
+          маркетинговые стратегии.
+        </p>
+
+        <div class="article__socials socials-article d-flex flex-lg-row flex-column gap-lg-6 gap-4 mt-lg-9 mt-6">
+          <div class="socials-article__block rounded-md-6 rounded-4 w-100 p-md-6 d-flex align-items-center gap-2">
+            <button class="d-flex w-100 align-items-center gap-3 py-4 h-100 justify-content-center">
+              <svg class="like">
+                <use xlink:href="./img/svg/sprite.svg#like"></use>
+              </svg>
+              <span>20</span>
+            </button>
+            <button class="d-flex w-100 align-items-center gap-3 py-4 h-100 justify-content-center">
+              <svg class="dislike">
+                <use xlink:href="./img/svg/sprite.svg#like"></use>
+              </svg>
+              <span>4</span>
+            </button>
+          </div>
+          <div
+            class="socials-article__block rounded-md-6 rounded-4 w-100 p-md-6 p-3 d-flex flex-md-row flex-column justify-content-between align-items-center">
+            <p class="fw-bold socials-article__title m-md-0 mb-3">Поделиться</p>
+
+            <div class="d-flex gap-md-3 gap-2 align-items-center article-socials">
+              <a href="#" class="socials-article__icon d-md-inline d-flex justify-content-center p-4">
+                <svg class="icon_telegram">
+                  <use xlink:href="./img/svg/sprite.svg#telegram"></use>
+                </svg>
+              </a>
+
+              <a href="#" class="socials-article__icon d-md-inline d-flex justify-content-center p-4">
+                <svg class="icon_whatsapp">
+                  <use xlink:href="./img/svg/sprite.svg#whatsapp"></use>
+                </svg>
+              </a>
+
+              <a href="#" class="socials-article__icon d-md-inline d-flex justify-content-center p-4">
+                <svg class="icon_vk">
+                  <use xlink:href="./img/svg/sprite.svg#vk"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav id="navbar-example2"
+        class="article-grid__item article-anchors navbar rounded-md-6 rounded-4 d-md-block d-none">
+        <ul class="article-anchors__list navbar-nav nav p-6 flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#beginning">Начало</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#history">История бренда</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#characteristicks">Основные характеристики</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#models">Модельный ряд Yanmar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#companies">Поставщики</a>
+          </li>
+          <li><a class="nav-link" href="#sources">Источники</a></li>
+        </ul>
+      </nav>
+    </section>
 
     <section class="projects popular-slider no-background mb-lg-0 mb-3">
       <div class="container pt-md-9 mt-md-6 mt-9 pt-3 mb-xxl-10 article-slider slider">

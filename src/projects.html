@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+@include('partials/head.html')
+
+<body data-category="video">
+  <div class="headers w-100">
+    @include('partials/pre-header.html') @include('partials/header.html')
+  </div>
+
+  <main class="main">
+    @include('partials/projects/breadcrumbs.html')
+
+    <section class="container reviews-page mt-md-8 mt-5 mb-md-10 pb-md-10 mb-9 pb-3">
+      <h1 class="mb-0 vacancy-header">Проекты</h1>
+
+      <div
+        class="catalog-order__slider d-md-block d-none catalog__slider slider-catalog__wrapper position-relative w-100 overflow-hidden mt-4">
+        <div
+          class="position-absolute start-0 top-50 translate-middle-y slider-catalog__fade-wrapper h-100 d-flex justify-content-start align-items-center">
+          <div class="slider-catalog__fade reverse z-1 position-absolute top-0 end-0 h-100 w-100"></div>
+          <button
+            class="btn bg-extra-light position-relative z-2 rounded-circle slider-catalog__arrow nav-btn slider-catalog__prev-arrow">
+            <svg class="default-icon">
+              <use href="./img/svg/sprite.svg#default-arrow"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="slider-catalog d-flex gap-2" id="slider-catalog">
+          <button class="btn border-0 slider-catalog__slide px-4 bg-extra-light fw-semibold text-nowrap">Все</button>
+          <button class="btn border-0 slider-catalog__slide px-4 bg-extra-light fw-semibold text-nowrap">до 12
+            кВт</button>
+          <button class="btn border-0 slider-catalog__slide px-4 bg-extra-light fw-semibold text-nowrap">12-30
+            кВт</button>
+          <button class="btn border-0 slider-catalog__slide px-4 bg-extra-light fw-semibold text-nowrap">30-50
+            кВт</button>
+          <button class="btn border-0 slider-catalog__slide px-4 bg-extra-light fw-semibold text-nowrap">50-100
+            кВт</button>
+          <button class="btn border-0 slider-catalog__slide px-4 bg-extra-light fw-semibold text-nowrap">100-150
+            кВт</button>
+          <button class="btn border-0 slider-catalog__slide px-4 bg-extra-light fw-semibold text-nowrap">150-200
+            кВт</button>
+          <button class="btn border-0 slider-catalog__slide px-4 bg-extra-light fw-semibold text-nowrap">200-300
+            кВт</button>
+          <button class="btn border-0 slider-catalog__slide px-4 bg-extra-light fw-semibold text-nowrap">300-500
+            кВт</button>
+          <button class="btn border-0 slider-catalog__slide px-4 bg-extra-light fw-semibold text-nowrap">500-800 кВт
+          </button>
+          <button class="btn border-0 slider-catalog__slide px-4 bg-extra-light fw-semibold text-nowrap">48
+            кВт</button>
+          <button class="btn border-0 slider-catalog__slide px-4 bg-extra-light fw-semibold text-nowrap">50
+            кВт</button>
+          <button class="btn border-0 slider-catalog__slide px-4 bg-extra-light fw-semibold text-nowrap">60
+            кВт</button>
+          <button class="btn border-0 slider-catalog__slide px-4 bg-extra-light fw-semibold text-nowrap">70
+            кВт</button>
+          <button class="btn border-0 slider-catalog__slide px-4 bg-extra-light fw-semibold text-nowrap">75
+            кВт</button>
+          <button class="btn border-0 slider-catalog__slide px-4 bg-extra-light fw-semibold text-nowrap">80
+            кВт</button>
+        </div>
+        <div
+          class="position-absolute end-0 top-50 translate-middle-y slider-catalog__fade-wrapper h-100 d-flex justify-content-end align-items-center">
+          <div class="slider-catalog__fade z-1 position-absolute top-0 end-0 h-100 w-100"></div>
+          <button
+            class="btn bg-extra-light position-relative z-2 rounded-circle slider-catalog__arrow nav-btn slider-catalog__next-arrow">
+            <svg class="default-icon">
+              <use href="./img/svg/sprite.svg#default-arrow"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="d-md-flex gap-4 mt-8 d-none">
+        <div class="select-container custom-dropdown big-block">
+          <div
+            class="select-display custom-select p-3 overlay w-100 rounded-2 position-relative catalog__select d-flex align-items-center justify-content-between">
+            <span class="selected-value no-title">Отрасль</span>
+            <span class="select-arrow">
+              <svg class="default-icon arrow text-dark-gray">
+                <use href="./img/svg/sprite.svg#default-arrow"></use>
+              </svg>
+            </span>
+          </div>
+          <div class="dropdown-container-wrapper mb-8 pb-4 position-absolute w-100">
+            <div class="dropdown-container w-100 rounded-2 overlay">
+              <div class="dropdown-options mb-1">
+                <div class="dropdown-option py-2 px-3" data-value="down">Дизельные генераторы</div>
+                <div class="dropdown-option py-2 px-3" data-value="popular">Бензиновые генераторы</div>
+                <div class="dropdown-option py-2 px-3" data-value="230/400 B">Газовые генераторы</div>
+              </div>
+              <input type="hidden" name="engine" value="">
+            </div>
+          </div>
+        </div>
+
+        <div class="select-container custom-dropdown big-block">
+          <div
+            class="select-display custom-select p-3 overlay w-100 rounded-2 position-relative catalog__select d-flex align-items-center justify-content-between">
+            <span class="selected-value no-title">Регион</span>
+            <span class="select-arrow">
+              <svg class="default-icon arrow text-dark-gray">
+                <use href="./img/svg/sprite.svg#default-arrow"></use>
+              </svg>
+            </span>
+          </div>
+          <div class="dropdown-container-wrapper mb-8 pb-4 position-absolute w-100">
+            <div class="dropdown-container w-100 rounded-2 overlay">
+              <div class="dropdown-options mb-1">
+                <div class="dropdown-option py-2 px-3" data-value="popular">Москва</div>
+                <div class="dropdown-option py-2 px-3" data-value="popular">Казань</div>
+                <div class="dropdown-option py-2 px-3" data-value="popular">Набережные Челны</div>
+                <div class="dropdown-option py-2 px-3" data-value="popular">Уфа</div>
+                <div class="dropdown-option py-2 px-3" data-value="popular">Ульяновск</div>
+              </div>
+              <input type="hidden" name="engine" value="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-md-none d-flex gap-2 mt-3 projects-buttons__mobile">
+        <button class="btn border flex-fill fw-bold power-show-popup">Мощность</button>
+        <button class="btn border flex-fill fw-bold industry-show-popup">Отрасль</button>
+        <button class="btn border flex-fill fw-bold region-show-popup">Регион</button>
+      </div>
+
+      <div class="reviews-page__videos d-grid gap-md-6 gap-4 mt-md-8 mt-5">
+        <div class="video-review rounded-md-6 rounded-4 overflow-hidden d-flex flex-column h-100 position-relative">
+          <div class="projects-project__image rounded-md-6 rounded-4 overflow-hidden">
+            <img src="./img/projects/picture1.webp" alt="picture1" class="w-100 object-fit-cover">
+          </div>
+
+          <div class="video-review__wrapper mt-4 px-md-6 pb-md-6 px-4 pb-4 d-flex flex-column">
+            <p class="semibold">ДГУ 160 кВт в контейнере ПБК «Север» для компании по производству мяса
+            </p>
+
+            <div class="mt-4 d-flex gap-2 flex-column" bis_skin_checked="1">
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Регион:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>Саранск</span>
+              </div>
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Дата:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>27&nbsp;марта 2025</span>
+              </div>
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Мощность:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>160 кВт</span>
+              </div>
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Отрасль:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>Пищевая промышленность</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-review rounded-md-6 rounded-4 overflow-hidden d-flex flex-column h-100 position-relative">
+          <div class="projects-project__image rounded-md-6 rounded-4 overflow-hidden">
+            <img src="./img/projects/picture2.webp" alt="picture1" class="w-100 object-fit-cover">
+          </div>
+
+          <div class="video-review__wrapper mt-4 px-md-6 pb-md-6 px-4 pb-4 d-flex flex-column">
+            <p class="semibold">ДГУ 160 кВт в контейнере ПБК «Север» для компании по производству мяса
+            </p>
+
+            <div class="mt-4 d-flex gap-2 flex-column" bis_skin_checked="1">
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Регион:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>Саранск</span>
+              </div>
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Дата:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>27&nbsp;марта 2025</span>
+              </div>
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Мощность:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>160 кВт</span>
+              </div>
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Отрасль:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>Пищевая промышленность</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-review rounded-md-6 rounded-4 overflow-hidden d-flex flex-column h-100 position-relative">
+          <div class="projects-project__image rounded-md-6 rounded-4 overflow-hidden">
+            <img src="./img/projects/picture3.webp" alt="picture1" class="w-100 object-fit-cover">
+          </div>
+
+          <div class="video-review__wrapper mt-4 px-md-6 pb-md-6 px-4 pb-4 d-flex flex-column">
+            <p class="semibold">ДГУ 160 кВт в контейнере ПБК «Север» для компании по производству мяса
+            </p>
+
+            <div class="mt-4 d-flex gap-2 flex-column" bis_skin_checked="1">
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Регион:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>Саранск</span>
+              </div>
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Дата:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>27&nbsp;марта 2025</span>
+              </div>
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Мощность:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>160 кВт</span>
+              </div>
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Отрасль:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>Пищевая промышленность</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-review rounded-md-6 rounded-4 overflow-hidden d-flex flex-column h-100 position-relative">
+          <div class="projects-project__image rounded-md-6 rounded-4 overflow-hidden">
+            <img src="./img/projects/picture4.webp" alt="picture1" class="w-100 object-fit-cover">
+          </div>
+
+          <div class="video-review__wrapper mt-4 px-md-6 pb-md-6 px-4 pb-4 d-flex flex-column">
+            <p class="semibold">ДГУ 160 кВт в контейнере ПБК «Север» для компании по производству мяса
+            </p>
+
+            <div class="mt-4 d-flex gap-2 flex-column" bis_skin_checked="1">
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Регион:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>Саранск</span>
+              </div>
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Дата:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>27&nbsp;марта 2025</span>
+              </div>
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Мощность:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>160 кВт</span>
+              </div>
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Отрасль:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>Пищевая промышленность</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-review rounded-md-6 rounded-4 overflow-hidden d-flex flex-column h-100 position-relative">
+          <div class="projects-project__image rounded-md-6 rounded-4 overflow-hidden">
+            <img src="./img/projects/picture5.webp" alt="picture1" class="w-100 object-fit-cover">
+          </div>
+
+          <div class="video-review__wrapper mt-4 px-md-6 pb-md-6 px-4 pb-4 d-flex flex-column">
+            <p class="semibold">ДГУ 160 кВт в контейнере ПБК «Север» для компании по производству мяса
+            </p>
+
+            <div class="mt-4 d-flex gap-2 flex-column" bis_skin_checked="1">
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Регион:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>Саранск</span>
+              </div>
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Дата:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>27&nbsp;марта 2025</span>
+              </div>
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Мощность:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>160 кВт</span>
+              </div>
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Отрасль:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>Пищевая промышленность</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-review rounded-md-6 rounded-4 overflow-hidden d-flex flex-column h-100 position-relative">
+          <div class="projects-project__image rounded-md-6 rounded-4 overflow-hidden">
+            <img src="./img/projects/picture6.webp" alt="picture1" class="w-100 object-fit-cover">
+          </div>
+
+          <div class="video-review__wrapper mt-4 px-md-6 pb-md-6 px-4 pb-4 d-flex flex-column">
+            <p class="semibold">ДГУ 160 кВт в контейнере ПБК «Север» для компании по производству мяса
+            </p>
+
+            <div class="mt-4 d-flex gap-2 flex-column" bis_skin_checked="1">
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Регион:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>Саранск</span>
+              </div>
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Дата:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>27&nbsp;марта 2025</span>
+              </div>
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Мощность:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>160 кВт</span>
+              </div>
+              <div class="projects-project__list list-project d-flex gap-2 align-items-center" bis_skin_checked="1">
+                <span class="text-dark-gray">Отрасль:</span>
+                <div class="flex-fill list-project__border h-fit mt-2" bis_skin_checked="1"></div>
+                <span>Пищевая промышленность</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="position-fixed power-overlay-wrap projects-overlays">
+      <div class="params-overlay__wrapper power-overlay__wrapper position-fixed"></div>
+      <div
+        class="power-overlay params-overlay px-md-8 py-md-8 py-5 px-4 position-fixed rounded-4 w-100 projects-overlay">
+        <div
+          class="d-flex justify-content-between align-items-center position-relative params-overlay__header power-overlay__header pb-lg-0 pb-5">
+          <p class="fw-bold overlay-title">Мощность</p>
+          <svg class="mobile-cross cross-place projects-overlay__cross">
+            <use xlink:href="./img/svg/sprite.svg#mobile-cross"></use>
+          </svg>
+        </div>
+
+        <div class="flex-fill">
+          <div class="d-flex flex-column pb-3 mt-4">
+            <div class="form-check form-check-inline radio-button radio-button d-flex align-items-center gap-2 py-1">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="radio1" value="option1" checked>
+              <label class="form-check-label mt-2" for="radio1">Все</label>
+            </div>
+            <div class="form-check form-check-inline radio-button radio-button d-flex align-items-center gap-2 py-1">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="radio2" value="option1">
+              <label class="form-check-label mt-2" for="radio2">до 12 кВт</label>
+            </div>
+            <div class="form-check form-check-inline radio-button radio-button d-flex align-items-center gap-2 py-1">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="radio3" value="option1">
+              <label class="form-check-label mt-2" for="radio3">12-30 кВт</label>
+            </div>
+            <div class="form-check form-check-inline radio-button radio-button d-flex align-items-center gap-2 py-1">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="radio4" value="option1">
+              <label class="form-check-label mt-2" for="radio4">30-50 кВт</label>
+            </div>
+            <div class="form-check form-check-inline radio-button radio-button d-flex align-items-center gap-2 py-1">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="radio5" value="option1">
+              <label class="form-check-label mt-2" for="radio5">50-100 кВт</label>
+            </div>
+            <div class="form-check form-check-inline radio-button radio-button d-flex align-items-center gap-2 py-1">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="radio6" value="option1">
+              <label class="form-check-label mt-2" for="radio6">100-150 кВт</label>
+            </div>
+            <div class="form-check form-check-inline radio-button radio-button d-flex align-items-center gap-2 py-1">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="radio7" value="option1">
+              <label class="form-check-label mt-2" for="radio7">150-200 кВт</label>
+            </div>
+            <div class="form-check form-check-inline radio-button radio-button d-flex align-items-center gap-2 py-1">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="radio8" value="option1">
+              <label class="form-check-label mt-2" for="radio8">200-300 кВт</label>
+            </div>
+            <div class="form-check form-check-inline radio-button radio-button d-flex align-items-center gap-2 py-1">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="radio9" value="option1">
+              <label class="form-check-label mt-2" for="radio9">300-500 кВт</label>
+            </div>
+            <div class="form-check form-check-inline radio-button radio-button d-flex align-items-center gap-2 py-1">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="radio10" value="option1">
+              <label class="form-check-label mt-2" for="radio10">500-800 кВт</label>
+            </div>
+            <div class="form-check form-check-inline radio-button radio-button d-flex align-items-center gap-2 py-1">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="radio11" value="option1">
+              <label class="form-check-label mt-2" for="radio11">800-1000 кВт</label>
+            </div>
+            <div class="form-check form-check-inline radio-button radio-button d-flex align-items-center gap-2 py-1">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="radio12" value="option1">
+              <label class="form-check-label mt-2" for="radio12">1000-1500 кВт</label>
+            </div>
+            <div class="form-check form-check-inline radio-button radio-button d-flex align-items-center gap-2 py-1">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="radio13" value="option1">
+              <label class="form-check-label mt-2" for="radio13">Больше 3000 кВт</label>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-warning w-100 py-3 fw-semibold mt-5 power-overlay__submit">
+          Применить
+        </button>
+      </div>
+    </div>
+
+    <div class="position-fixed industry-overlay-wrap projects-overlays">
+      <div class="params-overlay__wrapper industry-overlay__wrapper position-fixed"></div>
+      <div
+        class="industry-overlay params-overlay px-md-8 py-md-8 py-5 px-4 position-fixed rounded-4 w-100 projects-overlay">
+        <div
+          class="d-flex justify-content-between align-items-center position-relative params-overlay__header industry-overlay__header pb-lg-0 pb-5">
+          <p class="fw-bold overlay-title">Отрасль</p>
+          <svg class="mobile-cross cross-place projects-overlay__cross">
+            <use xlink:href="./img/svg/sprite.svg#mobile-cross"></use>
+          </svg>
+        </div>
+
+        <div class="flex-fill">
+          <div class="d-flex flex-column pb-3 mt-4">
+            <div class="form-check form-check-inline radio-button radio-button d-flex align-items-center gap-2 py-1">
+              <input class="form-check-input" type="radio" name="exampleRadios1" id="radio1_3" value="option1" checked>
+              <label class="form-check-label mt-2" for="radio1_3">Дизельные генераторы</label>
+            </div>
+            <div class="form-check form-check-inline radio-button radio-button d-flex align-items-center gap-2 py-1">
+              <input class="form-check-input" type="radio" name="exampleRadios1" id="radio2_3" value="option1">
+              <label class="form-check-label mt-2" for="radio2_3">Бензиновые генераторы</label>
+            </div>
+            <div class="form-check form-check-inline radio-button radio-button d-flex align-items-center gap-2 py-1">
+              <input class="form-check-input" type="radio" name="exampleRadios1" id="radio3_3" value="option1">
+              <label class="form-check-label mt-2" for="radio3_3">Газовые генераторы</label>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-warning w-100 py-3 fw-semibold mt-5 industry-overlay__submit">
+          Применить
+        </button>
+      </div>
+    </div>
+
+    <div class="position-fixed region-overlay-wrap projects-overlays">
+      <div class="params-overlay__wrapper region-overlay__wrapper position-fixed"></div>
+      <div
+        class="region-overlay params-overlay px-md-8 py-md-8 py-5 px-4 position-fixed rounded-4 w-100 projects-overlay">
+        <div
+          class="d-flex justify-content-between align-items-center position-relative params-overlay__header region-overlay__header pb-lg-0 pb-5">
+          <p class="fw-bold overlay-title">Регион</p>
+          <svg class="mobile-cross cross-place projects-overlay__cross">
+            <use xlink:href="./img/svg/sprite.svg#mobile-cross"></use>
+          </svg>
+        </div>
+
+        <div class="flex-fill">
+          <div class="d-flex flex-column pb-3 mt-4">
+            <div class="form-check form-check-inline radio-button radio-button d-flex align-items-center gap-2 py-1">
+              <input class="form-check-input" type="radio" name="exampleRadios2" id="radio1_2" value="option1" checked>
+              <label class="form-check-label mt-2" for="radio1_2">Москва</label>
+            </div>
+            <div class="form-check form-check-inline radio-button radio-button d-flex align-items-center gap-2 py-1">
+              <input class="form-check-input" type="radio" name="exampleRadios2" id="radio2_2" value="option1">
+              <label class="form-check-label mt-2" for="radio2_2">Казань</label>
+            </div>
+            <div class="form-check form-check-inline radio-button radio-button d-flex align-items-center gap-2 py-1">
+              <input class="form-check-input" type="radio" name="exampleRadios2" id="radio3_2" value="option1">
+              <label class="form-check-label mt-2" for="radio3_2">Набережные Челны</label>
+            </div>
+            <div class="form-check form-check-inline radio-button radio-button d-flex align-items-center gap-2 py-1">
+              <input class="form-check-input" type="radio" name="exampleRadios2" id="radio4_2" value="option1">
+              <label class="form-check-label mt-2" for="radio4_2">Уфа</label>
+            </div>
+            <div class="form-check form-check-inline radio-button radio-button d-flex align-items-center gap-2 py-1">
+              <input class="form-check-input" type="radio" name="exampleRadios2" id="radio5_2" value="option1">
+              <label class="form-check-label mt-2" for="radio5_2">Ульяновск</label>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-warning w-100 py-3 fw-semibold mt-5 region-overlay__submit">
+          Применить
+        </button>
+      </div>
+    </div>
+  </main>
+
+  @include('partials/footer.html') @include('partials/popup-book.html')
+  @include('partials/popup-recall.html')
+</body>
+
+</html>
