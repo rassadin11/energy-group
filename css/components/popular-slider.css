@@ -28,6 +28,10 @@
 .popular-slider.no-background .popular-slider__block {
   border: 1px solid #e7e9eb;
 }
+.popular-slider__wrapper {
+  max-height: 200px;
+  min-height: 200px;
+}
 .popular-slider__text-size {
   min-height: 40%;
 }

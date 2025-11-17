@@ -20673,6 +20673,10 @@ input[type=number] {
 .popular-slider.no-background .popular-slider__block {
   border: 1px solid #e7e9eb;
 }
+.popular-slider__wrapper {
+  max-height: 200px;
+  min-height: 200px;
+}
 .popular-slider__text-size {
   min-height: 40%;
 }
@@ -21065,6 +21069,10 @@ textarea:focus:-ms-input-placeholder {
 .big-form__description {
   color: var(--bs-white-opacity);
   line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .big-form__description.small {
   font-size: 0.75rem;
@@ -22349,18 +22357,6 @@ textarea:focus:-ms-input-placeholder {
   width: 27px;
   min-height: 27px;
   height: 27px;
-}
-
-.ghost-slide {
-  width: 40%;
-  pointer-events: none;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-@media (max-width: 1280px) {
-  .ghost-slide {
-    display: none;
-  }
 }
 
 .reviews .container {
