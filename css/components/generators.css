@@ -106,10 +106,12 @@
 .tab-card:not(.type):hover .tab-card__background-image {
   opacity: 0.15;
 }
-.tab-card:not(.type):hover .tab-card__variants p {
+.tab-card:not(.type):hover .tab-card__variants p a {
   color: var(--bs-white);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
-.tab-card:not(.type):hover .tab-card__variants p:hover {
+.tab-card:not(.type):hover .tab-card__variants p a:hover {
   color: var(--bs-yellow);
   text-decoration: underline;
 }
