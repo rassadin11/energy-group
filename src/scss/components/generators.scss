@@ -107,8 +107,9 @@
       opacity: 0.15;
     }
 
-    .tab-card__variants p {
+    .tab-card__variants p a {
       color: var(--bs-white);
+      transition: all .3s ease;
 
       &:hover {
         color: var(--bs-yellow);
