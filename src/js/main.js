@@ -125,6 +125,7 @@ attrLayouts.forEach(item => {
     if (item.dataset.position.includes('element')) {
         const layouts = item.dataset.layout.split(",")
         let itemTitle;
+        let itemHref = item.href
 
         if (item.querySelector("a")) {
             itemTitle = item.querySelector("a").innerHTML.replace(/\s+/g, ' ').replace('&nbsp;', " ").trim()
@@ -134,13 +135,13 @@ attrLayouts.forEach(item => {
 
         if (layouts.length === 1) {
             if (mobileMenu[+layouts[0]]) {
-                mobileMenu[+layouts[0]] = [...mobileMenu[+layouts[0]], [itemTitle]]
+                mobileMenu[+layouts[0]] = [...mobileMenu[+layouts[0]], [itemTitle, null, itemHref]]
             } else {
                 mobileMenu[+layouts[0]] = [[itemTitle]]
             }
         } else {
             if (mobileMenu[+layouts[0]]) {
-                mobileMenu[+layouts[0]] = [...mobileMenu[+layouts[0]], [itemTitle, +layouts[1]]]
+                mobileMenu[+layouts[0]] = [...mobileMenu[+layouts[0]], [itemTitle, +layouts[1], itemHref]]
             } else {
                 mobileMenu[+layouts[0]] = [[itemTitle, +layouts[1]]]
             }
@@ -171,7 +172,7 @@ function menuGenerator(elements, mainMenuField) {
         } else {
             mainMenuField.insertAdjacentHTML(`beforeend`, `
                 <li class="nav-item">
-                    <a href="#" class="py-lg-3 py-2 d-block"><span>${elements[i][0]}</span></a>
+                    <a href="${elements[i][2]}" class="py-lg-3 py-2 d-block"><span>${elements[i][0]}</span></a>
                 </li>
             `)
         }
@@ -234,7 +235,6 @@ arrowBack.addEventListener('click', () => {
         m_history.pop();
 
         let elements;
-
 
         if (!m_history.length) {
             arrowBack.classList.remove('active')

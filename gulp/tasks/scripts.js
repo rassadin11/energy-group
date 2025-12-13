@@ -15,6 +15,13 @@ export const scripts = () => {
       mode: app.isProd ? 'production' : 'development',
       output: {
         filename: 'main.js',
+        environment: {
+          module: false,
+          dynamicImport: false,
+        },
+        library: {
+          type: 'window'
+        }
       },
       module: {
         rules: [{
