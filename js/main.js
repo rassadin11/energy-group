@@ -345,15 +345,17 @@ attrLayouts.forEach(item => {
     }
   }
 });
+console.log(mobileMenu);
 
 // click catalogue mobile
 
 function menuGenerator(elements, mainMenuField) {
   mainMenuField.innerHTML = '';
+  console.log(elements);
   if (!elements) return;
   if (mobileTitle && elements) mobileTitle.innerHTML = elements[0];
   for (let i = 1; i < elements.length; i++) {
-    if (elements[i].length === 2) {
+    if (elements[i][1]) {
       mainMenuField.insertAdjacentHTML(`beforeend`, `
                 <li class="header-menu__item nav-item menu__dropdown position-relative" data-layout="${elements[i][1]}">
                     <span class="nav-link py-lg-2 py-3 d-lg-block d-flex justify-content-between align-items-center">
