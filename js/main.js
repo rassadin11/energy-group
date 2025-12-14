@@ -1604,19 +1604,40 @@ if (accordionItems) {
     // когда аккордеон открывается
     collapse.addEventListener("show.bs.collapse", () => {
       item.classList.add("active");
+      // Убираем класс collapsed для правильного отображения стрелки
+      if (button) {
+        button.classList.remove("collapsed");
+        button.setAttribute("aria-expanded", "true");
+      }
     });
 
     // когда аккордеон закрывается
     collapse.addEventListener("hide.bs.collapse", () => {
       item.classList.remove("active");
+      // Добавляем класс collapsed для правильного отображения стрелки
+      if (button) {
+        button.classList.add("collapsed");
+        button.setAttribute("aria-expanded", "false");
+      }
     });
 
     // делаем весь accordion-item кликабельным
     item.addEventListener("click", e => {
-      // если клик был не на кнопке, триггерим клик на кнопке
+      // если клик был не на кнопке, переключаем аккордеон
       if (button && !button.contains(e.target)) {
         e.preventDefault();
-        button.click();
+        e.stopPropagation();
+
+        // Используем Bootstrap Collapse API для переключения состояния
+        if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+          const bsCollapse = bootstrap.Collapse.getInstance(collapse) || new bootstrap.Collapse(collapse, {
+            toggle: false
+          });
+          bsCollapse.toggle();
+        } else {
+          // Fallback: вызываем клик на кнопке
+          button.click();
+        }
       }
     });
   });
