@@ -7396,7 +7396,7 @@ textarea.form-control-lg {
   --bs-accordion-btn-icon-width: 14px;
   --bs-accordion-btn-icon-transform: rotate(-180deg);
   --bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
-  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.29266 7.70721C6.48019 7.89468 6.73449 8 6.99966 8C7.26482 8 7.51913 7.89468 7.70666 7.70721L13.3637 2.05021C13.4592 1.95797 13.5353 1.84762 13.5878 1.72562C13.6402 1.60361 13.6678 1.47239 13.6689 1.33961C13.6701 1.20684 13.6448 1.07516 13.5945 0.95226C13.5442 0.829364 13.4699 0.717711 13.3761 0.623818C13.2822 0.529926 13.1705 0.455673 13.0476 0.405392C12.9247 0.355111 12.793 0.329809 12.6603 0.330963C12.5275 0.332117 12.3963 0.359703 12.2743 0.412112C12.1522 0.464521 12.0419 0.540703 11.9497 0.636213L6.99966 5.58621L2.04966 0.636213C1.86105 0.454055 1.60845 0.35326 1.34626 0.355539C1.08406 0.357817 0.833247 0.462986 0.647839 0.648394C0.462431 0.833802 0.357261 1.08462 0.354983 1.34681C0.352704 1.60901 0.453498 1.86161 0.635657 2.05021L6.29266 7.70721Z' fill='white'/%3e%3c/svg%3e");
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.29266 7.70721C6.48019 7.89468 6.73449 8 6.99966 8C7.26482 8 7.51913 7.89468 7.70666 7.70721L13.3637 2.05021C13.4592 1.95797 13.5353 1.84762 13.5878 1.72562C13.6402 1.60361 13.6678 1.47239 13.6689 1.33961C13.6701 1.20684 13.6448 1.07516 13.5945 0.95226C13.5442 0.829364 13.4699 0.717711 13.3761 0.623818C13.2822 0.529926 13.1705 0.455673 13.0476 0.405392C12.9247 0.355111 12.793 0.329809 12.6603 0.330963C12.5275 0.332117 12.3963 0.359703 12.2743 0.412112C12.1522 0.464521 12.0419 0.540703 11.9497 0.636213L6.99966 5.58621L2.04966 0.636213C1.86105 0.454055 1.60845 0.35326 1.34626 0.355539C1.08406 0.357817 0.833247 0.462986 0.647839 0.648394C0.462431 0.833802 0.357261 1.08462 0.354983 1.34681C0.352704 1.60901 0.453498 1.86161 0.635657 2.05021L6.29266 7.70721Z' fill='white'/%3e%3c/svg%3e") ;
   --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(6, 27, 49, 0.25);
   --bs-accordion-body-padding-x: 30px;
   --bs-accordion-body-padding-y: 1.25rem;
@@ -7528,7 +7528,7 @@ textarea.form-control-lg {
 
 [data-bs-theme=dark] .accordion-button::after {
   --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='rgb%28105.6, 118.2, 131.4%29'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='rgb%28105.6, 118.2, 131.4%29'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='rgb%28105.6, 118.2, 131.4%29'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") ;
 }
 
 .breadcrumb {

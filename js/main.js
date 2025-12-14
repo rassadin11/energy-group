@@ -345,13 +345,11 @@ attrLayouts.forEach(item => {
     }
   }
 });
-console.log(mobileMenu);
 
 // click catalogue mobile
 
 function menuGenerator(elements, mainMenuField) {
   mainMenuField.innerHTML = '';
-  console.log(elements);
   if (!elements) return;
   if (mobileTitle && elements) mobileTitle.innerHTML = elements[0];
   for (let i = 1; i < elements.length; i++) {
@@ -1601,6 +1599,7 @@ const accordionItems = document.querySelectorAll(".accordion-item");
 if (accordionItems) {
   accordionItems.forEach(item => {
     const collapse = item.querySelector(".accordion-collapse");
+    const button = item.querySelector(".accordion-button");
 
     // когда аккордеон открывается
     collapse.addEventListener("show.bs.collapse", () => {
@@ -1610,6 +1609,15 @@ if (accordionItems) {
     // когда аккордеон закрывается
     collapse.addEventListener("hide.bs.collapse", () => {
       item.classList.remove("active");
+    });
+
+    // делаем весь accordion-item кликабельным
+    item.addEventListener("click", e => {
+      // если клик был не на кнопке, триггерим клик на кнопке
+      if (button && !button.contains(e.target)) {
+        e.preventDefault();
+        button.click();
+      }
     });
   });
 }
