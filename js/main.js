@@ -2585,7 +2585,9 @@ if (accordions.length) {
       item.querySelector('button').click();
       if (item.classList.contains('active')) {
         accordions.forEach(elem => {
-          elem.querySelector('button').click();
+          if (elem !== item) {
+            elem.querySelector('button').click();
+          }
         });
       }
     });
