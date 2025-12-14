@@ -2,6 +2,7 @@
   .accordion-item {
     background-color: var(--extra-light-background);
     transition: all .3s ease;
+    cursor: pointer;
 
     &:not(.active) {
       background-color: var(--bs-white);
