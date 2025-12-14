@@ -23070,6 +23070,9 @@ textarea:focus:-ms-input-placeholder {
 .article-grid__item .h6 {
   font-weight: 700;
 }
+.article-grid__item img {
+  width: 100%;
+}
 
 .article-list li {
   position: relative;
@@ -24565,7 +24568,7 @@ textarea:focus:-ms-input-placeholder {
 .map-inactive.show {
   background: var(--bs-warning);
   opacity: 0.3;
-  z-index: 10000;
+  z-index: 100;
   visibility: visible;
   height: 600px !important;
   cursor: pointer;

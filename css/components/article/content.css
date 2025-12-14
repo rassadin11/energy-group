@@ -75,6 +75,9 @@
 .article-grid__item h6 {
   font-weight: 700;
 }
+.article-grid__item img {
+  width: 100%;
+}
 
 .article-list li {
   position: relative;

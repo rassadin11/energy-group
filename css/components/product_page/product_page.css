@@ -273,7 +273,7 @@
 .map-inactive.show {
   background: var(--bs-warning);
   opacity: 0.3;
-  z-index: 10000;
+  z-index: 100;
   visibility: visible;
   height: 600px !important;
   cursor: pointer;
