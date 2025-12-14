@@ -2575,24 +2575,6 @@ function maskForReviewsSlider(reviews) {
 if (reviewsSlider) {
   maskForReviewsSlider(reviewsSlider);
 }
-
-// accordions buttons
-
-const accordions = document.querySelectorAll('.accordion-item');
-if (accordions.length) {
-  accordions.forEach(item => {
-    item.addEventListener('click', () => {
-      item.querySelector('button').click();
-      if (item.classList.contains('active')) {
-        accordions.forEach(elem => {
-          if (elem !== item) {
-            elem.querySelector('button').click();
-          }
-        });
-      }
-    });
-  });
-}
 })();
 
 var __webpack_export_target__ = window;
