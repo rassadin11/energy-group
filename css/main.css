@@ -22556,6 +22556,7 @@ textarea:focus:-ms-input-placeholder {
   background-color: var(--extra-light-background);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 .tabs .accordion-item:not(.active) {
   background-color: var(--bs-white);
