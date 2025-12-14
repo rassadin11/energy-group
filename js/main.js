@@ -2583,6 +2583,11 @@ if (accordions.length) {
   accordions.forEach(item => {
     item.addEventListener('click', () => {
       item.querySelector('button').click();
+      if (item.classList.contains('active')) {
+        accordions.forEach(elem => {
+          elem.querySelector('button').click();
+        });
+      }
     });
   });
 }
