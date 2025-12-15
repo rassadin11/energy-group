@@ -1705,7 +1705,7 @@ if (accordionItems) {
             if (button && !button.contains(e.target)) {
                 e.preventDefault();
                 e.stopPropagation();
-                
+
                 // Используем Bootstrap Collapse API для переключения состояния
                 if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
                     const bsCollapse = bootstrap.Collapse.getInstance(collapse) || new bootstrap.Collapse(collapse, { toggle: false });
@@ -2878,6 +2878,8 @@ function initCalculatorPricing() {
     const fuelEl = document.querySelector('.info-calculator__block:nth-child(3) .info-calculator__price');
     const discountEl = document.querySelector('.info-calculator__block:nth-child(2) .info-calculator__price');
 
+    if (!termDropdown) return;
+
     const powerKvaOrder = ['25', '37.5', '62.5', '75', '125', '150', '181.25', '250', '300', '400', '462.5', '625'];
     const powerKwOrder = ['20', '30', '50', '60', '100', '120', '145', '200', '240', '320', '370', '500'];
     const termValueToIndex = { '1': 0, '2': 1, '3-10': 2, '11-30': 3, '31+': 4 };
@@ -3011,6 +3013,8 @@ function initCalculatorPricing() {
     bindUpdate(termOptions);
     bindUpdate(kvaOptions);
     bindUpdate(kwOptions);
+
+    kvaOptions[0].click()
 
     if (!termHidden.value && termOptions[0]) {
         termOptions[0].click();
