@@ -154,6 +154,7 @@
   filter: none;
   border-radius: 50%;
   border: 1px solid #e2e2e2;
+  z-index: 1000;
 }
 .popular-slider__arrows-wrapper .slider-nav:hover::after {
   background-color: var(--bs-yellow);
