@@ -1652,19 +1652,38 @@ if (accordionItems) {
         // когда аккордеон открывается
         collapse.addEventListener("show.bs.collapse", () => {
             item.classList.add("active");
+            // Убираем класс collapsed для правильного отображения стрелки
+            if (button) {
+                button.classList.remove("collapsed");
+                button.setAttribute("aria-expanded", "true");
+            }
         });
 
         // когда аккордеон закрывается
         collapse.addEventListener("hide.bs.collapse", () => {
             item.classList.remove("active");
+            // Добавляем класс collapsed для правильного отображения стрелки
+            if (button) {
+                button.classList.add("collapsed");
+                button.setAttribute("aria-expanded", "false");
+            }
         });
 
         // делаем весь accordion-item кликабельным
         item.addEventListener("click", (e) => {
-            // если клик был не на кнопке, триггерим клик на кнопке
+            // если клик был не на кнопке, переключаем аккордеон
             if (button && !button.contains(e.target)) {
                 e.preventDefault();
-                button.click();
+                e.stopPropagation();
+                
+                // Используем Bootstrap Collapse API для переключения состояния
+                if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+                    const bsCollapse = bootstrap.Collapse.getInstance(collapse) || new bootstrap.Collapse(collapse, { toggle: false });
+                    bsCollapse.toggle();
+                } else {
+                    // Fallback: вызываем клик на кнопке
+                    button.click();
+                }
             }
         });
     });
@@ -2778,3 +2797,196 @@ function maskForReviewsSlider(reviews) {
 if (reviewsSlider) {
     maskForReviewsSlider(reviewsSlider)
 }
+
+// Calculator (КВА -> КВт) synchronization for custom dropdowns
+(function syncCalculatorDropdowns() {
+    const kvaDropdown = document.querySelector('.custom-dropdown[data-select="kva"]');
+    const kwDropdown = document.querySelector('.custom-dropdown[data-select="kw"]');
+
+    if (!kvaDropdown || !kwDropdown) return;
+
+    let isSyncing = false;
+
+    // helper to safely click counterpart without endless loop
+    const syncByIndex = (fromDropdown, toDropdown, sourceOption) => {
+        const sourceOptions = Array.from(fromDropdown.querySelectorAll('.dropdown-option'));
+        const targetOptions = Array.from(toDropdown.querySelectorAll('.dropdown-option'));
+        const idx = sourceOptions.indexOf(sourceOption);
+
+        if (idx === -1 || !targetOptions[idx]) return;
+
+        isSyncing = true;
+        targetOptions[idx].click();
+        setTimeout(() => {
+            isSyncing = false;
+        }, 0);
+    };
+
+    // click on КВА option -> click corresponding КВт option (same index)
+    kvaDropdown.querySelectorAll('.dropdown-option').forEach(option => {
+        option.addEventListener('click', () => {
+            if (isSyncing) return;
+            syncByIndex(kvaDropdown, kwDropdown, option);
+        });
+    });
+
+    // click on КВт option -> click corresponding КВА option (same index)
+    kwDropdown.querySelectorAll('.dropdown-option').forEach(option => {
+        option.addEventListener('click', () => {
+            if (isSyncing) return;
+            syncByIndex(kwDropdown, kvaDropdown, option);
+        });
+    });
+})();
+
+// Calculator pricing and term handling
+function initCalculatorPricing() {
+    const termDropdown = document.querySelector('.custom-dropdown[data-select="term"]');
+    const kvaDropdown = document.querySelector('.custom-dropdown[data-select="kva"]');
+    const kwDropdown = document.querySelector('.custom-dropdown[data-select="kw"]');
+    const priceEl = document.querySelector('.info-calculator__block:nth-child(1) .info-calculator__price');
+    const fuelEl = document.querySelector('.info-calculator__block:nth-child(3) .info-calculator__price');
+    const discountEl = document.querySelector('.info-calculator__block:nth-child(2) .info-calculator__price');
+
+    const powerKvaOrder = ['25', '37.5', '62.5', '75', '125', '150', '181.25', '250', '300', '400', '462.5', '625'];
+    const powerKwOrder = ['20', '30', '50', '60', '100', '120', '145', '200', '240', '320', '370', '500'];
+    const termValueToIndex = { '1': 0, '2': 1, '3-10': 2, '11-30': 3, '31+': 4 };
+
+    const priceTable = [
+        [9000, 10000, 13000, 13000, 15000, 17000, 19000, 22000, 25000, 32000, 36000, null],
+        [4000, 5000, 7000, 7000, 8000, 9000, 10000, 11500, 13000, 16500, 18500, null],
+        [3500, 4000, 4700, 4700, 6000, 6800, 7500, 8500, 9500, 12000, 14500, null],
+        [3300, 3700, 4300, 4300, 5700, 6400, 7000, 8000, 9100, 11300, 13200, 16500],
+        [3000, 3400, 4000, 4000, 5300, 5900, 6500, 7700, 8700, 10700, 12700, 16000],
+    ];
+    const fuelConsumption = [3.5, 5.9, 8.1, 8.8, 14, 12.1, 21, 28.4, 21, 48.6, 63.7, null];
+    const discountTable = [
+        // 1 день
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        // 2 дня
+        [55.6, 50.0, 46.2, 46.2, 46.7, 47.1, 47.4, 47.7, 48.0, 48.4, null, null],
+        // от 3 до 10
+        [61.1, 60.0, 63.8, 63.8, 60.0, 60.0, 60.5, 61.4, 62.0, 62.5, null, null],
+        // от 11 до 30
+        [63.3, 63.0, 66.9, 66.9, 62.0, 62.4, 63.2, 63.6, 63.6, 64.7, null, null],
+        // от 31 дня
+        [66.7, 66.0, 69.2, 69.2, 64.7, 65.3, 65.8, 65.0, 65.2, 66.6, 64.7, 3],
+    ];
+
+    const termHidden = termDropdown.querySelector('input[type="hidden"]');
+    const kvaHidden = kvaDropdown.querySelector('input[type="hidden"]');
+    const kwHidden = kwDropdown.querySelector('input[type="hidden"]');
+
+    const termOptions = Array.from(termDropdown.querySelectorAll('.dropdown-option'));
+    const kvaOptions = Array.from(kvaDropdown.querySelectorAll('.dropdown-option'));
+    const kwOptions = Array.from(kwDropdown.querySelectorAll('.dropdown-option'));
+
+    const kvaOptionsRoot = kvaDropdown.querySelector('.dropdown-options');
+    const kwOptionsRoot = kwDropdown.querySelector('.dropdown-options');
+
+    const kva625Option = kvaDropdown.querySelector('.dropdown-option[data-value="625"]');
+    const kw500Option = kwDropdown.querySelector('.dropdown-option[data-value="500"]');
+
+    const formatPrice = (value) => `${value.toLocaleString('ru-RU')} ₽`;
+    const formatFuel = (value) => `${value.toLocaleString('ru-RU')} л/ч.`;
+    const formatDiscount = (value) => `${value.toLocaleString('ru-RU', { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%`;
+
+    const getTermIndex = () => termValueToIndex[termHidden.value] ?? 0;
+
+    const getPowerIndex = () => {
+        if (kvaHidden.value) {
+            const idx = powerKvaOrder.indexOf(kvaHidden.value);
+            if (idx !== -1) return idx;
+        }
+
+        if (kwHidden.value) {
+            const idx = powerKwOrder.indexOf(kwHidden.value);
+            if (idx !== -1) return idx;
+        }
+
+        return -1;
+    };
+
+    const selectPowerByValue = (value) => {
+        const option = kvaDropdown.querySelector(`.dropdown-option[data-value="${value}"]`);
+        if (option) option.click();
+    };
+
+    const enforce625Availability = () => {
+        const termIdx = getTermIndex();
+        const disallow625 = termIdx <= 2;
+        const hasKva625 = kva625Option && kvaOptionsRoot.contains(kva625Option);
+
+        if (disallow625 && hasKva625) {
+            if (kvaHidden.value === '625' || kwHidden.value === '500') {
+                selectPowerByValue('462.5');
+            }
+
+            if (kva625Option && kva625Option.parentNode) {
+                kva625Option.parentNode.removeChild(kva625Option);
+            }
+
+            if (kw500Option && kw500Option.parentNode) {
+                kw500Option.parentNode.removeChild(kw500Option);
+            }
+        } else if (!disallow625 && !hasKva625 && kva625Option && kw500Option) {
+            kvaOptionsRoot.appendChild(kva625Option);
+            kwOptionsRoot.appendChild(kw500Option);
+        }
+    };
+
+    const updatePrice = () => {
+        enforce625Availability();
+
+        const powerIdx = getPowerIndex();
+        if (powerIdx === -1) {
+            priceEl.textContent = '—';
+            fuelEl.textContent = '—';
+            discountEl.textContent = '—';
+            return;
+        }
+
+        const termIdx = getTermIndex();
+        const price = priceTable[termIdx]?.[powerIdx];
+        const fuel = fuelConsumption[powerIdx];
+        const discount = discountTable[termIdx]?.[powerIdx];
+
+        if (typeof price === 'number') {
+            priceEl.textContent = `от ${formatPrice(price)}`;
+        } else {
+            priceEl.textContent = '—';
+        }
+
+        if (typeof fuel === 'number') {
+            fuelEl.textContent = `от ${formatFuel(fuel)}`;
+        } else {
+            fuelEl.textContent = '—';
+        }
+
+        if (typeof discount === 'number') {
+            discountEl.textContent = `${formatDiscount(discount)}`;
+        } else {
+            discountEl.textContent = '—';
+        }
+    };
+
+    const bindUpdate = (options) => {
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                setTimeout(updatePrice, 0);
+            });
+        });
+    };
+
+    bindUpdate(termOptions);
+    bindUpdate(kvaOptions);
+    bindUpdate(kwOptions);
+
+    if (!termHidden.value && termOptions[0]) {
+        termOptions[0].click();
+    }
+
+    updatePrice();
+};
+
+initCalculatorPricing();
