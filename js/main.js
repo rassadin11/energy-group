@@ -2674,6 +2674,7 @@ function initCalculatorPricing() {
   const priceEl = document.querySelector('.info-calculator__block:nth-child(1) .info-calculator__price');
   const fuelEl = document.querySelector('.info-calculator__block:nth-child(3) .info-calculator__price');
   const discountEl = document.querySelector('.info-calculator__block:nth-child(2) .info-calculator__price');
+  if (!termDropdown) return;
   const powerKvaOrder = ['25', '37.5', '62.5', '75', '125', '150', '181.25', '250', '300', '400', '462.5', '625'];
   const powerKwOrder = ['20', '30', '50', '60', '100', '120', '145', '200', '240', '320', '370', '500'];
   const termValueToIndex = {
