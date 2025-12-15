@@ -2786,6 +2786,7 @@ function initCalculatorPricing() {
   bindUpdate(termOptions);
   bindUpdate(kvaOptions);
   bindUpdate(kwOptions);
+  kvaOptions[0].click();
   if (!termHidden.value && termOptions[0]) {
     termOptions[0].click();
   }
