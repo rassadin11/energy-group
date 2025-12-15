@@ -1601,6 +1601,8 @@ if (reviewsFilterButtons) {
             const filtersObjects = document.querySelectorAll('[data-filter]')
             const podborka = document.querySelector('.podborki')
 
+            if (!filtersObjects.length || !podborka) return;
+
             if (item.dataset.category === 'about_product') {
                 filtersObjects.forEach(filter => {
                     if (filter.dataset.filter === 'about_product') {
@@ -1625,6 +1627,34 @@ if (reviewsFilterButtons) {
         })
     })
 }
+
+// catalog page filters switcher
+(function catalogFiltersSwitcher() {
+    const podborkiSection = document.querySelector('.catalog-podborki');
+    if (!podborkiSection) return;
+
+    const filtersButtons = podborkiSection.querySelectorAll('.reviews-page__filters button');
+    const linkBlocks = podborkiSection.querySelectorAll('.catalog-podborki__links');
+
+    if (!filtersButtons.length || !linkBlocks.length) return;
+
+    filtersButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = btn.dataset.category || '';
+
+            filtersButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            linkBlocks.forEach(block => {
+                if (block.dataset.podborka === target) {
+                    block.classList.remove('d-none');
+                } else {
+                    block.classList.add('d-none');
+                }
+            });
+        });
+    });
+})();
 
 // highlight links in header
 
