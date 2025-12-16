@@ -1019,6 +1019,8 @@ function activateCustomDropdowns() {
 
         // Update hidden input value
         hiddenInput.value = option.getAttribute('data-value');
+        const event = new Event('change');
+        hiddenInput.dispatchEvent(event);
 
         // Close dropdown
         dropdownContainer.classList.remove('active');
@@ -1036,6 +1038,9 @@ function activateCustomDropdowns() {
         });
       });
     });
+    hiddenInput.value = options[0].getAttribute('data-value');
+    const event = new Event('change');
+    hiddenInput.dispatchEvent(event);
   });
 }
 activateCustomDropdowns();
@@ -2803,6 +2808,7 @@ const catalogGoods = document.querySelector('.catalog-goods');
 if (catalogGoods && catalogSorting) {
   const sortingOptions = catalogSorting.querySelector('input[type="hidden"]');
   const goodsOptions = catalogGoods.querySelector('input[type="hidden"]');
+  console.log(sortingOptions);
   sortingOptions.addEventListener('change', () => {
     console.log(sortingOptions.value);
   });
