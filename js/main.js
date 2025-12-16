@@ -2795,6 +2795,25 @@ function initCalculatorPricing() {
 }
 ;
 initCalculatorPricing();
+
+// for catalog selects
+
+const catalogSorting = document.querySelector('.catalog-sorting');
+const catalogGoods = document.querySelector('.catalog-goods');
+if (catalogGoods && catalogSorting) {
+  const sortingOptions = catalogSorting.querySelectorAll('.dropdown-option');
+  const goodsOptions = catalogGoods.querySelectorAll('.dropdown-option');
+  sortingOptions.forEach(item => {
+    item.addEventListener('click', () => {
+      console.log(item.innerHTML);
+    });
+  });
+  goodsOptions.forEach(item => {
+    item.addEventListener('click', () => {
+      console.log(item.innerHTML);
+    });
+  });
+}
 })();
 
 var __webpack_export_target__ = window;
