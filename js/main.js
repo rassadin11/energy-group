@@ -2060,7 +2060,7 @@ if (nouisliders) {
     });
   });
 }
-if (document.body.clientWidth < 768) {
+if (document.body.clientWidth < 992) {
   // filters overlay
   try {
     const filtersWrapper = document.querySelector('.filters-overlay__wrapper');
@@ -2816,6 +2816,58 @@ if (catalogGoods && catalogSorting) {
     console.log(goodsOptions.value);
   });
 }
+
+// popup-filter-catalog positioning near catalog filters
+(function initCatalogFiltersPopup() {
+  if (document.body.clientWidth < 992) return;
+  const popup = document.querySelector('.popup-filter-catalog');
+  const filterBlocks = document.querySelectorAll('.catalog__filter.filter-catalog');
+  const catalogFilters = document.querySelector('.catalog-filters');
+  if (!popup || !filterBlocks.length || !catalogFilters) return;
+  popup.style.position = 'absolute';
+  let currentBlock = null;
+  const OFFSET_X = 12; // distance between popup and filter block
+
+  function movePopup(target) {
+    if (!target) return;
+    const rect = target.getBoundingClientRect();
+    const popupRect = popup.getBoundingClientRect();
+    const top = window.scrollY + rect.top + (rect.height - popupRect.height) / 2;
+    const left = catalogFilters.getBoundingClientRect().left + catalogFilters.getBoundingClientRect().width;
+    popup.style.top = `${Math.max(0, top)}px`;
+    popup.style.left = `${Math.max(0, left)}px`;
+  }
+  function handleChange(block) {
+    currentBlock = block;
+    popup.classList.remove('d-none');
+    movePopup(block);
+  }
+  filterBlocks.forEach(block => {
+    // listen to any value changes inside filter block
+    block.addEventListener('change', () => handleChange(block));
+    block.addEventListener('input', () => handleChange(block));
+  });
+
+  // track changes for nouislider sliders specifically
+  const sliders = document.querySelectorAll('.nouislider-slider');
+  sliders.forEach(slider => {
+    if (slider.noUiSlider) {
+      slider.noUiSlider.on('update', () => {
+        const block = slider.closest('.catalog__filter.filter-catalog');
+        if (block) {
+          handleChange(block);
+        }
+      });
+    }
+  });
+
+  // on resize keep popup near the last changed filter
+  window.addEventListener('resize', () => {
+    if (currentBlock) {
+      movePopup(currentBlock);
+    }
+  });
+})();
 })();
 
 var __webpack_export_target__ = window;
