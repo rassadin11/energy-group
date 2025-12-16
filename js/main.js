@@ -2801,17 +2801,13 @@ initCalculatorPricing();
 const catalogSorting = document.querySelector('.catalog-sorting');
 const catalogGoods = document.querySelector('.catalog-goods');
 if (catalogGoods && catalogSorting) {
-  const sortingOptions = catalogSorting.querySelectorAll('.dropdown-option');
-  const goodsOptions = catalogGoods.querySelectorAll('.dropdown-option');
-  sortingOptions.forEach(item => {
-    item.addEventListener('click', () => {
-      console.log(item.innerHTML);
-    });
+  const sortingOptions = catalogSorting.querySelector('input[type="hidden"]');
+  const goodsOptions = catalogGoods.querySelector('input[type="hidden"]');
+  sortingOptions.addEventListener('change', () => {
+    console.log(sortingOptions.value);
   });
-  goodsOptions.forEach(item => {
-    item.addEventListener('click', () => {
-      console.log(item.innerHTML);
-    });
+  goodsOptions.addEventListener('change', () => {
+    console.log(goodsOptions.value);
   });
 }
 })();
