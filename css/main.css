@@ -18952,6 +18952,7 @@ a {
   -ms-transform: translateY(-75%);
   transform: translateY(-75%);
   opacity: 1;
+  z-index: 1000;
 }
 .center-arrow:after {
   position: absolute;
