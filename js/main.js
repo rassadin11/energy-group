@@ -1967,7 +1967,6 @@ setTimeout(() => {
       const arrowIcon = toggleBtn.querySelector('.default-icon-arrow');
       let isExpanded = true;
       let contentHeight = contentWrapper.clientHeight;
-      console.log(contentWrapper, contentWrapper.clientHeight);
       function useContentHeight(value) {
         contentHeight = value;
       }
