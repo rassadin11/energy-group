@@ -72,7 +72,7 @@
       </div>
 
       <div class="row catalog-order__main-content gx-lg-6 gx-0 gy-4 px-lg-4 mt-md-2 pb-md-10 pb-8 border-bottom">
-        <div class="col-lg-3 col-12 ps-0 d-lg-block d-none">
+        <div class="col-lg-3 col-12 ps-0 d-lg-block d-none catalog-filters">
           <div class="catalog__filter filter-catalog pb-5 mt-md-4 border-bottom">
             <p class="fw-semibold">Категория</p>
             <div class="d-flex gap-1 align-items-center my-12">
@@ -769,6 +769,13 @@
             </label>
           </div>
 
+          <div class="popup-filter-catalog p-4 position-absolute d-none">
+            <p>Найдено товаров: 200</p>
+            <button class="btn btn-warning fw-semibold py-md-12 w-100 mt-3">
+              Показать
+            </button>
+          </div>
+
           <button class="btn btn-white mt-5 py-3 w-100 fw-semibold border border-1 rounded-md-3">
             Сбросить всё
           </button>
@@ -815,9 +822,9 @@
                 <div class="dropdown-container-wrapper mb-8 pb-4 position-absolute w-100">
                   <div class="dropdown-container w-100 rounded-2 overlay">
                     <div class="dropdown-options mb-1">
-                      <div class="dropdown-option py-2 px-3" data-value="230 B">24</div>
+                      <div class="dropdown-option py-2 px-3" data-value="24">24</div>
 
-                      <div class="dropdown-option py-2 px-3" data-value="230/400 B">30</div>
+                      <div class="dropdown-option py-2 px-3" data-value="30">30</div>
                     </div>
                     <input type="hidden" name="engine" value="">
                   </div>
@@ -826,7 +833,7 @@
             </div>
           </div>
 
-          <div class="d-md-none d-flex gap-2 item-catalog__mobile-buttons">
+          <div class="d-lg-none d-flex gap-2 item-catalog__mobile-buttons mt-lg-0 mt-md-6 mt-0">
             <button
               class="btn py-12 rounded-3 gap-2 border border-1 d-flex align-items-center flex-fill justify-content-center filters-show-popup">
               <svg class="medium-icon">

@@ -954,6 +954,8 @@ function activateCustomDropdowns() {
 
                 // Update hidden input value
                 hiddenInput.value = option.getAttribute('data-value');
+                const event = new Event('change');
+                hiddenInput.dispatchEvent(event)
 
                 // Close dropdown
                 dropdownContainer.classList.remove('active');
@@ -972,6 +974,10 @@ function activateCustomDropdowns() {
                 });
             });
         });
+
+        hiddenInput.value = options[0].getAttribute('data-value');
+        const event = new Event('change');
+        hiddenInput.dispatchEvent(event)
     });
 }
 
@@ -2002,6 +2008,8 @@ function scrollFilters(item, useContentHeight) {
 
     blockHeight = item.clientHeight
 
+    if (!btn) return;
+
     btn.addEventListener('click', () => {
         if (!btnInitialValue) btnInitialValue = btn.querySelector('span').innerHTML
 
@@ -2037,7 +2045,7 @@ setTimeout(() => {
             let isExpanded = true;
 
             let contentHeight = contentWrapper.clientHeight;
-            console.log(contentWrapper, contentWrapper.clientHeight)
+
             function useContentHeight(value) {
                 contentHeight = value;
             }
@@ -2144,7 +2152,7 @@ if (nouisliders) {
     })
 }
 
-if (document.body.clientWidth < 768) {
+if (document.body.clientWidth < 992) {
     // filters overlay
     try {
         const filtersWrapper = document.querySelector('.filters-overlay__wrapper')
@@ -3031,18 +3039,76 @@ const catalogSorting = document.querySelector('.catalog-sorting')
 const catalogGoods = document.querySelector('.catalog-goods')
 
 if (catalogGoods && catalogSorting) {
-    const sortingOptions = catalogSorting.querySelectorAll('.dropdown-option')
-    const goodsOptions = catalogGoods.querySelectorAll('.dropdown-option')
+    const sortingOptions = catalogSorting.querySelector('input[type="hidden"]')
+    const goodsOptions = catalogGoods.querySelector('input[type="hidden"]')
 
-    sortingOptions.forEach(item => {
-        item.addEventListener('click', () => {
-            console.log(item.innerHTML)
-        })
+    console.log(sortingOptions)
+    sortingOptions.addEventListener('change', () => {
+        console.log(sortingOptions.value)
     })
 
-    goodsOptions.forEach(item => {
-        item.addEventListener('click', () => {
-            console.log(item.innerHTML)
-        })
+    goodsOptions.addEventListener('change', () => {
+        console.log(goodsOptions.value)
     })
 }
+
+// popup-filter-catalog positioning near catalog filters
+(function initCatalogFiltersPopup() {
+    if (document.body.clientWidth < 992) return;
+
+    const popup = document.querySelector('.popup-filter-catalog');
+    const filterBlocks = document.querySelectorAll('.catalog__filter.filter-catalog');
+    const catalogFilters = document.querySelector('.catalog-filters');
+
+    if (!popup || !filterBlocks.length || !catalogFilters) return;
+
+    popup.style.position = 'absolute';
+
+    let currentBlock = null;
+    const OFFSET_X = 12; // distance between popup and filter block
+
+    function movePopup(target) {
+        if (!target) return;
+
+        const rect = target.getBoundingClientRect();
+        const popupRect = popup.getBoundingClientRect();
+
+        const top = window.scrollY + rect.top + (rect.height - popupRect.height) / 2;
+        const left = catalogFilters.getBoundingClientRect().left + catalogFilters.getBoundingClientRect().width
+
+        popup.style.top = `${Math.max(0, top)}px`;
+        popup.style.left = `${Math.max(0, left)}px`;
+    }
+
+    function handleChange(block) {
+        currentBlock = block;
+        popup.classList.remove('d-none');
+        movePopup(block);
+    }
+
+    filterBlocks.forEach(block => {
+        // listen to any value changes inside filter block
+        block.addEventListener('change', () => handleChange(block));
+        block.addEventListener('input', () => handleChange(block));
+    });
+
+    // track changes for nouislider sliders specifically
+    const sliders = document.querySelectorAll('.nouislider-slider');
+    sliders.forEach(slider => {
+        if (slider.noUiSlider) {
+            slider.noUiSlider.on('update', () => {
+                const block = slider.closest('.catalog__filter.filter-catalog');
+                if (block) {
+                    handleChange(block);
+                }
+            });
+        }
+    });
+
+    // on resize keep popup near the last changed filter
+    window.addEventListener('resize', () => {
+        if (currentBlock) {
+            movePopup(currentBlock);
+        }
+    });
+})();
