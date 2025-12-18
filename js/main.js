@@ -1935,6 +1935,7 @@ function scrollFilters(item, useContentHeight) {
   let expanded = false;
   let btnInitialValue = '';
   blockHeight = item.clientHeight;
+  if (!btn) return;
   btn.addEventListener('click', () => {
     if (!btnInitialValue) btnInitialValue = btn.querySelector('span').innerHTML;
     expanded = !expanded;
