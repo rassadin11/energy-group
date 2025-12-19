@@ -684,9 +684,6 @@ if (paramsBlock) {
         }
       });
     }
-    if (all_big_selects.length) {
-      changeSelects(all_big_selects, currentType, paramsOverlay);
-    }
     smallSyncContainers.forEach(container => {
       const syncKey = container.dataset.syncKey;
       const hiddenInput = container.querySelector('input[type="hidden"]');
@@ -702,6 +699,7 @@ if (paramsBlock) {
         return;
       }
       const optionToSelect = overlayContainer.querySelector(`.dropdown-option[data-value="${value}"]`) || Array.from(overlayContainer.querySelectorAll('.dropdown-option')).find(option => option.textContent.trim() === value);
+      console.log(hiddenInput, value);
       if (optionToSelect) {
         optionToSelect.click();
       }
@@ -1038,7 +1036,6 @@ function activateCustomDropdowns() {
         });
       });
     });
-    hiddenInput.value = options[0].getAttribute('data-value');
     const event = new Event('change');
     hiddenInput.dispatchEvent(event);
   });
