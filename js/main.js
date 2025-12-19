@@ -2048,6 +2048,9 @@ if (nouisliders) {
       parentWrapper.querySelector('.min-input').value = Math.round(+vals[0]);
       parentWrapper.querySelector('.max-input').value = Math.round(+vals[1]);
     });
+    sliderRange.on('change', vals => {
+      $(".max-input", parentWrapper).trigger('change', vals);
+    });
     parentWrapper.querySelector('.min-input').addEventListener('input', e => {
       const value = e.target.value;
       sliderRange.set([value, null]);
