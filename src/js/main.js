@@ -1134,7 +1134,9 @@ allGenerators.forEach(generator => {
 
         tabs[activeBtn].classList.remove('d-none')
         tabs[activeBtn].classList.add('d-flex')
-        tabs[activeBtn].classList.add('d-lg-grid')
+        if (activeBtn <= 1) {
+            tabs[activeBtn].classList.add('d-lg-grid')
+        }
     }
 })
 

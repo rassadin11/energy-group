@@ -86,6 +86,16 @@
   transition: all 0.3s ease;
   overflow: hidden;
 
+  &.by-type {
+    @media (max-width: 768px) {
+      flex: 0 0 50% !important;
+    }
+
+    @media (max-width: 550px) {
+      flex: 0 0 75% !important;
+    }
+  }
+
   &__background-image {
     position: absolute;
     width: 100%;
@@ -126,6 +136,12 @@
       transition: color 0.3s ease;
       word-break: break-word;
     }
+  }
+}
+
+.tab-image {
+  @media (max-width: 1200px) {
+    width: 100%;
   }
 }
 
