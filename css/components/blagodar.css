@@ -1,1 +1,32 @@
-.zoom{width:33px;height:33px}.blagodar-image__wrapper{cursor:pointer}.blagodar-image__wrapper:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:0 0;-webkit-transition:.3s;transition:.3s}.blagodar-image__wrapper .zoom{opacity:0;visibility:hidden}.blagodar-image__wrapper:hover:before{background:rgba(6,27,49,.5)}.blagodar-image__wrapper:hover .zoom{opacity:1;visibility:visible}
+.zoom {
+  width: 33px;
+  height: 33px;
+}
+
+.blagodar-image__wrapper {
+  cursor: pointer;
+}
+.blagodar-image__wrapper:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.blagodar-image__wrapper .zoom {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+}
+.blagodar-image__wrapper:hover:before {
+  background: rgba(6, 27, 49, 0.5);
+}
+.blagodar-image__wrapper:hover .zoom {
+  opacity: 1;
+  visibility: visible;
+}/*# sourceMappingURL=blagodar.css.map */

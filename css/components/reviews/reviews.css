@@ -1,1 +1,105 @@
-@charset "UTF-8";.reviews-page h1{font-weight:900}.reviews-page__filter{border-radius:3rem;border:1px solid var(--border-gray);background:var(--bs-white);-webkit-transition:.3s;transition:.3s;color:var(--bs-primary)}.reviews-page__filter.active{background:#1f3246;border:1px solid #1f3246;color:var(--bs-white)}.reviews-page__filter a{color:inherit}.reviews-page__filter span{background-color:var(--yellow-color);font-size:.75rem;padding:1px 6px}.reviews-page__videos{-ms-grid-columns:1fr 1fr 1fr;grid-template-columns:1fr 1fr 1fr}@media (max-width:992px){.reviews-page__videos{-ms-grid-columns:1fr 1fr;grid-template-columns:1fr 1fr}}@media (max-width:700px){.reviews-page__videos{-ms-grid-columns:1fr;grid-template-columns:1fr}}.video-review{background:var(--bs-white);border:1px solid var(--border-light);-webkit-transition:.3s;transition:.3s}.video-review__video{min-height:225px}.video-review__video .player{color:#1f3246;-webkit-transition:.3s;transition:.3s}.video-review:hover{-webkit-box-shadow:0 10px 30px rgba(0,0,0,.1);box-shadow:0 10px 30px rgba(0,0,0,.1)}.video-review:hover .player{color:var(--player-yellow-color)}.video-review__wrapper p{line-height:1.5}.video-review__wrapper p:first-child{font-size:1.125rem}.video-review__wrapper .about-wrapper__description{display:block;display:-webkit-box;max-width:400px;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis}@media (max-width:550px){.reviews-page__filter{font-size:.875rem}.video-review__video{min-height:184px}.video-review__wrapper p:first-child{font-size:1rem}.video-review__wrapper .about-wrapper__description{font-size:.875rem;-webkit-line-clamp:4}.video-review__wrapper .about-wrapper__description.date{font-size:.75rem}}
+@charset "UTF-8";
+.reviews-page h1 {
+  font-weight: 900;
+}
+.reviews-page__filter {
+  border-radius: 3rem;
+  border: 1px solid var(--border-gray);
+  background: var(--bs-white);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: var(--bs-primary);
+}
+@media (max-width: 550px) {
+  .reviews-page__filter {
+    font-size: 0.875rem;
+  }
+}
+.reviews-page__filter.active {
+  background: #1F3246;
+  border: 1px solid #1F3246;
+  color: var(--bs-white);
+}
+.reviews-page__filter a {
+  color: inherit;
+}
+.reviews-page__filter span {
+  background-color: var(--yellow-color);
+  font-size: 0.75rem;
+  padding: 1px 6px;
+}
+.reviews-page__videos {
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+@media (max-width: 992px) {
+  .reviews-page__videos {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 700px) {
+  .reviews-page__videos {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+
+.video-review {
+  background: var(--bs-white);
+  border: 1px solid var(--border-light);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.video-review__video {
+  min-height: 225px;
+}
+@media (max-width: 550px) {
+  .video-review__video {
+    min-height: 184px;
+  }
+}
+.video-review__video .player {
+  color: #1f3246;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.video-review:hover {
+  -webkit-box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+.video-review:hover .player {
+  color: var(--player-yellow-color);
+}
+.video-review__wrapper p {
+  line-height: 1.5;
+}
+.video-review__wrapper p:first-child {
+  font-size: 1.125rem;
+}
+@media (max-width: 550px) {
+  .video-review__wrapper p:first-child {
+    font-size: 1rem;
+  }
+}
+.video-review__wrapper .about-wrapper__description {
+  display: block;
+  display: -webkit-box;
+  max-width: 400px;
+  -webkit-line-clamp: 3;
+  /* количество строк */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 550px) {
+  .video-review__wrapper .about-wrapper__description {
+    font-size: 0.875rem;
+    -webkit-line-clamp: 4;
+  }
+}
+@media (max-width: 550px) {
+  .video-review__wrapper .about-wrapper__description.date {
+    font-size: 0.75rem;
+  }
+}/*# sourceMappingURL=reviews.css.map */

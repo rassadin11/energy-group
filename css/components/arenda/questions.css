@@ -1,1 +1,18 @@
-.questions__wrapper{-ms-grid-columns:1fr auto;grid-template-columns:1fr auto;border:1px solid #ffbc38}.questions__phone{max-width:448px;background:var(--bs-background)}.questions__phone-link{font-size:2rem;color:var(--bs-yellow)}.questions__text{font-size:1.125rem}
+.questions__wrapper {
+  -ms-grid-columns: 1fr auto;
+  grid-template-columns: 1fr auto;
+  border: 1px solid #ffbc38;
+}
+
+.questions__phone {
+  max-width: 448px;
+  background: var(--bs-background);
+}
+
+.questions__phone-link {
+  font-size: 2rem;
+  color: var(--bs-yellow);
+}
+.questions__text {
+  font-size: 1.125rem;
+}/*# sourceMappingURL=questions.css.map */

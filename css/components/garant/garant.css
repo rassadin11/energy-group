@@ -1,1 +1,39 @@
-@media (min-width:768px){.garant-accordion__item button{cursor:default}.garant-accordion__item button::after{display:none!important}}.garant-page .accordion-item li{font-size:1rem}.garant-page .big-p{font-size:1.125rem!important}@media (max-width:768px){.garant-page .accordion-item li{font-size:.875rem}.garant-page .big-p{font-size:1rem!important}.garant-page .garant-title{font-size:1.25rem}.garant-form__title{font-size:1rem!important}.garant-form__text{font-size:.875rem!important}}
+@media (min-width: 768px) {
+  .garant-accordion__item button {
+    cursor: default;
+  }
+  .garant-accordion__item button::after {
+    display: none !important;
+  }
+}
+
+.garant-page .accordion-item li {
+  font-size: 1rem;
+}
+@media (max-width: 768px) {
+  .garant-page .accordion-item li {
+    font-size: 0.875rem;
+  }
+}
+.garant-page .big-p {
+  font-size: 1.125rem !important;
+}
+@media (max-width: 768px) {
+  .garant-page .big-p {
+    font-size: 1rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .garant-page .garant-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .garant-form__title {
+    font-size: 1rem !important;
+  }
+  .garant-form__text {
+    font-size: 0.875rem !important;
+  }
+}/*# sourceMappingURL=garant.css.map */

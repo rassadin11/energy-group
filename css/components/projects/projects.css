@@ -1,1 +1,137 @@
-.list-project__border{border-bottom:1px dashed #cdd1d6}.projects-project__image img{max-height:248px}.projects-buttons__mobile button{font-size:.875rem}.projects-overlay{min-height:auto;top:inherit;max-height:67vh;bottom:0;overflow:auto}.projects-overlay__cross{color:#b5bbc2}.projects-overlays{z-index:100}@media (max-width:1350px){.projects .projects-slider-wrapper.swiffy-slider{--swiffy-slider-item-count:3.3}}@media (max-width:650px){.projects .projects-slider-wrapper.swiffy-slider{--swiffy-slider-item-count:2}}@media (max-width:768px){.list-project *{font-size:.875rem!important}.projects-project__image img{max-height:208px}.project .title{font-size:1.125rem}.project .medium-icon{width:1rem;height:1rem}}.project-description{background:var(--extra-light-background)}.project-description__title{font-size:1.5rem}.project-gallery{cursor:pointer}.project-gallery__info{padding:6px .75rem;border-radius:3rem;background:var(--extra-light-background);top:1.5rem;left:1.5rem}.project-gallery__info p{font-size:.875rem;margin-top:3px}.project-content__video{height:464px}@media (max-width:550px){.project-content__video{height:187px}}.project-buttons button:first-child{background:var(--extra-light-background)}.project-contacts{-ms-grid-columns:1fr 1fr 1fr 1fr;grid-template-columns:1fr 1fr 1fr 1fr}@media (max-width:992px){.projects .projects-slider-wrapper.swiffy-slider{--swiffy-slider-item-count:2.7}.project-contacts{-ms-grid-columns:1fr 1fr;grid-template-columns:1fr 1fr}}@media (max-width:768px){.project-description__title{font-size:1.125rem!important}.project-description *{font-size:.875rem}.project-gallery__info p{font-size:.75rem}.project-gallery__info{top:.75rem;padding:6px 8px}.project-contacts{-ms-grid-columns:1fr;grid-template-columns:1fr}}
+.list-project__border {
+  border-bottom: 1px dashed #CDD1D6;
+}
+@media (max-width: 768px) {
+  .list-project * {
+    font-size: 0.875rem !important;
+  }
+}
+
+.projects-project__image img {
+  max-height: 248px;
+}
+@media (max-width: 768px) {
+  .projects-project__image img {
+    max-height: 208px;
+  }
+}
+
+.projects-buttons__mobile button {
+  font-size: 0.875rem;
+}
+
+.projects-overlay {
+  min-height: auto;
+  top: inherit;
+  max-height: 67vh;
+  bottom: 0;
+  overflow: auto;
+}
+.projects-overlay__cross {
+  color: #B5BBC2;
+}
+
+.projects-overlays {
+  z-index: 100;
+}
+
+@media (max-width: 1350px) {
+  .projects .projects-slider-wrapper.swiffy-slider {
+    --swiffy-slider-item-count: 3.3;
+  }
+}
+@media (max-width: 992px) {
+  .projects .projects-slider-wrapper.swiffy-slider {
+    --swiffy-slider-item-count: 2.7;
+  }
+}
+@media (max-width: 650px) {
+  .projects .projects-slider-wrapper.swiffy-slider {
+    --swiffy-slider-item-count: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .project .title {
+    font-size: 1.125rem;
+  }
+}
+@media (max-width: 768px) {
+  .project .medium-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.project-description {
+  background: var(--extra-light-background);
+}
+.project-description__title {
+  font-size: 1.5rem;
+}
+@media (max-width: 768px) {
+  .project-description__title {
+    font-size: 1.125rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .project-description * {
+    font-size: 0.875rem;
+  }
+}
+
+.project-gallery {
+  cursor: pointer;
+}
+.project-gallery__info {
+  padding: 6px 0.75rem;
+  border-radius: 3rem;
+  background: var(--extra-light-background);
+  top: 1.5rem;
+  left: 1.5rem;
+}
+.project-gallery__info p {
+  font-size: 0.875rem;
+  margin-top: 3px;
+}
+@media (max-width: 768px) {
+  .project-gallery__info p {
+    font-size: 0.75rem;
+  }
+}
+@media (max-width: 768px) {
+  .project-gallery__info {
+    top: 0.75rem;
+    padding: 6px 8px;
+  }
+}
+
+.project-content__video {
+  height: 464px;
+}
+@media (max-width: 550px) {
+  .project-content__video {
+    height: 187px;
+  }
+}
+
+.project-buttons button:first-child {
+  background: var(--extra-light-background);
+}
+
+.project-contacts {
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+@media (max-width: 992px) {
+  .project-contacts {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .project-contacts {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}/*# sourceMappingURL=projects.css.map */

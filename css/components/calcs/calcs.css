@@ -1,1 +1,59 @@
-.calcs__cards{-ms-grid-columns:1fr 1fr;grid-template-columns:1fr 1fr}@media (max-width:768px){.calcs__cards{-ms-grid-columns:1fr;grid-template-columns:1fr}}.card-calc{border:1px solid var(--border-light);-ms-grid-columns:1fr 1fr;grid-template-columns:1fr 1fr}.card-calc__image{border-radius:.5rem;overflow:hidden}.card-calc__image img{-o-object-fit:cover;object-fit:cover;width:100%;max-height:270px;height:100%}.card-calc__content p{font-size:1.125rem;line-height:1.5}.card-calc__content button{padding-top:6px;padding-bottom:6px}@media (max-width:768px){.card-calc__content{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.card-calc__content p{font-size:1rem;-webkit-box-flex:1;-ms-flex:1 1 auto;flex:1 1 auto}.card-calc__content button{font-size:.875rem}}
+.calcs__cards {
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 768px) {
+  .calcs__cards {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+
+.card-calc {
+  border: 1px solid var(--border-light);
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+.card-calc__image {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.card-calc__image img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  max-height: 270px;
+  height: 100%;
+}
+.card-calc__content p {
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .card-calc__content p {
+    font-size: 1rem;
+  }
+}
+.card-calc__content button {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+@media (max-width: 768px) {
+  .card-calc__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .card-calc__content p {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+  }
+  .card-calc__content button {
+    font-size: 0.875rem;
+  }
+}/*# sourceMappingURL=calcs.css.map */

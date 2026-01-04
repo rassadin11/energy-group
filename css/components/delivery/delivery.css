@@ -1,1 +1,170 @@
-.delivery-slider .swiffy-slider .slider-container{grid-auto-columns:40%}.delivery-slider .swiffy-slider .slider-container>*{min-height:380px}@media (max-width:1450px){.delivery-slider .swiffy-slider .slider-container>*{min-height:auto}.delivery-slider .swiffy-slider .slider-container{grid-auto-columns:calc(42% - 53.3333px);padding-left:1rem;padding-right:1rem}.delivery-slider .swiffy-slider .slider-container img{width:100%}}@media (max-width:1300px){.delivery-slider .swiffy-slider .slider-container{grid-auto-columns:calc(50% - 53.3333px)}}@media (max-width:650px){.delivery-slider .swiffy-slider .slider-container{grid-auto-columns:calc(65% - 53.3333px);grid-gap:.75rem}}@media (max-width:500px){.delivery-slider .swiffy-slider .slider-container{grid-auto-columns:calc(90.5% - 53.3333px)}}.deliver__description{-ms-grid-columns:1fr 1fr;grid-template-columns:1fr 1fr;font-size:1.125rem}@media (max-width:550px){.deliver h2{font-size:1.25rem!important}.deliver__description{font-size:1rem!important}}@media (max-width:992px){.deliver__description{-ms-grid-columns:1fr;grid-template-columns:1fr}}.deliver__description p{font-size:1.125rem}.deliver .news-slider a{-webkit-transition:.3s;transition:.3s}.deliver .news-slider:hover a{color:var}.deliver-info{background:var(--light-background)}.deliver-info__wrapper{-ms-grid-columns:1fr 1fr;grid-template-columns:1fr 1fr}@media (max-width:768px){.deliver .news-slider{border:1px solid!important}.deliver-header{font-size:1.5rem}.deliver .popular-slider__block:hover{-webkit-box-shadow:none!important;box-shadow:none!important}.deliver-info__wrapper{-ms-grid-columns:1fr;grid-template-columns:1fr}}.deliver-info__item{background:var(--extra-light-background)}.deliver-info__description{color:var(--bs-gray)}.deliver-info__description.none{font-size:1rem}.deliver-logistika{-ms-grid-columns:1fr 1fr 1fr 1fr;grid-template-columns:1fr 1fr 1fr 1fr}@media (max-width:992px){.deliver-logistika{-ms-grid-columns:1fr 1fr;grid-template-columns:1fr 1fr}}.deliver-logistika__item{background:var(--extra-light-background)}@media (max-width:550px){.deliver__description p{font-size:1rem!important}.deliver-info__description.none,.deliver-logistika__item p{font-size:.875rem}}.delivery-contacts{background:var(--extra-light-background)}.delivery-contacts__description{font-size:1.125rem}@media (max-width:768px){.deliver-logistika{-ms-grid-columns:1fr;grid-template-columns:1fr}.delivery-contacts__description{font-size:1rem}.delivery-contacts__item{text-align:center!important}.delivery-contacts__item h2{font-size:1.5rem}}@media (max-width:550px){.delivery-contacts__item h2{font-size:1.25rem}}
+.delivery-slider .swiffy-slider .slider-container {
+  grid-auto-columns: 40%;
+}
+.delivery-slider .swiffy-slider .slider-container > * {
+  min-height: 380px;
+}
+@media (max-width: 1450px) {
+  .delivery-slider .swiffy-slider .slider-container > * {
+    min-height: auto;
+  }
+}
+@media (max-width: 1450px) {
+  .delivery-slider .swiffy-slider .slider-container {
+    grid-auto-columns: calc(42% - 53.3333px);
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .delivery-slider .swiffy-slider .slider-container img {
+    width: 100%;
+  }
+}
+@media (max-width: 1300px) {
+  .delivery-slider .swiffy-slider .slider-container {
+    grid-auto-columns: calc(50% - 53.3333px);
+  }
+}
+@media (max-width: 650px) {
+  .delivery-slider .swiffy-slider .slider-container {
+    grid-auto-columns: calc(65% - 53.3333px);
+    grid-gap: 0.75rem;
+  }
+}
+@media (max-width: 500px) {
+  .delivery-slider .swiffy-slider .slider-container {
+    grid-auto-columns: calc(90.5% - 53.3333px);
+  }
+}
+
+@media (max-width: 550px) {
+  .deliver h2 {
+    font-size: 1.25rem !important;
+  }
+}
+.deliver__description {
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  font-size: 1.125rem;
+}
+@media (max-width: 550px) {
+  .deliver__description {
+    font-size: 1rem !important;
+  }
+}
+@media (max-width: 992px) {
+  .deliver__description {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+.deliver__description p {
+  font-size: 1.125rem;
+}
+@media (max-width: 550px) {
+  .deliver__description p {
+    font-size: 1rem !important;
+  }
+}
+.deliver .news-slider a {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.deliver .news-slider:hover a {
+  color: var;
+}
+@media (max-width: 768px) {
+  .deliver .news-slider {
+    border: 1px solid var(--border-light) !important;
+  }
+}
+@media (max-width: 768px) {
+  .deliver-header {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .deliver .popular-slider__block:hover {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.deliver-info {
+  background: var(--light-background);
+}
+.deliver-info__wrapper {
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 768px) {
+  .deliver-info__wrapper {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+.deliver-info__item {
+  background: var(--extra-light-background);
+}
+.deliver-info__description {
+  color: var(--bs-gray);
+}
+.deliver-info__description.none {
+  font-size: 1rem;
+}
+@media (max-width: 550px) {
+  .deliver-info__description.none {
+    font-size: 0.875rem;
+  }
+}
+
+.deliver-logistika {
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+@media (max-width: 992px) {
+  .deliver-logistika {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .deliver-logistika {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+.deliver-logistika__item {
+  background: var(--extra-light-background);
+}
+@media (max-width: 550px) {
+  .deliver-logistika__item p {
+    font-size: 0.875rem;
+  }
+}
+
+.delivery-contacts {
+  background: var(--extra-light-background);
+}
+.delivery-contacts__description {
+  font-size: 1.125rem;
+}
+@media (max-width: 768px) {
+  .delivery-contacts__description {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .delivery-contacts__item {
+    text-align: center !important;
+  }
+}
+@media (max-width: 768px) {
+  .delivery-contacts__item h2 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 550px) {
+  .delivery-contacts__item h2 {
+    font-size: 1.25rem;
+  }
+}/*# sourceMappingURL=delivery.css.map */

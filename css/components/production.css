@@ -1,1 +1,54 @@
-.production__image{border-radius:1.5rem 1.5rem 0 0;min-height:328px}.blocks-production{-ms-grid-columns:1fr 1fr;grid-template-columns:1fr 1fr;margin-top:-2rem}.blocks-production__block{background:var(--bs-white);border:1px solid rgba(6,27,49,.1)}.blocks-production__block img{width:50%;-o-object-fit:cover;object-fit:cover;border-radius:.5rem}@media (max-width:768px){.blocks-production{-ms-grid-columns:1fr;grid-template-columns:1fr;margin-top:-1.5rem}.blocks-production__block img{max-height:142px}}.blocks-production__block p{font-size:1.25rem}@media (max-width:550px){.blocks-production__block p{font-size:1rem}.blocks-production__block>div{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}}
+.production__image {
+  border-radius: 1.5rem 1.5rem 0 0;
+  min-height: 328px;
+}
+
+.blocks-production {
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  margin-top: -2rem;
+}
+@media (max-width: 768px) {
+  .blocks-production {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    margin-top: -1.5rem;
+  }
+}
+.blocks-production__block {
+  background: var(--bs-white);
+  border: 1px solid rgba(6, 27, 49, 0.1);
+}
+.blocks-production__block img {
+  width: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+@media (max-width: 768px) {
+  .blocks-production__block img {
+    max-height: 142px;
+  }
+}
+.blocks-production__block p {
+  font-size: 1.25rem;
+}
+@media (max-width: 550px) {
+  .blocks-production__block p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 550px) {
+  .blocks-production__block > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}/*# sourceMappingURL=production.css.map */
