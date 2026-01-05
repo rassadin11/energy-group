@@ -48,9 +48,9 @@ a {
       padding-right: 0 !important;
       padding-left: 0 !important;
 
-      &>.tabs-header,
-      &>.title,
-      &>.title-description {
+      & > .tabs-header,
+      & > .title,
+      & > .title-description {
         padding-right: 1rem !important;
         padding-left: 1rem !important;
       }
@@ -82,7 +82,7 @@ a {
 }
 
 .headers {
-  z-index: 1000;
+  z-index: 1100;
 }
 
 .article-slider.container {
@@ -180,14 +180,14 @@ br {
 
 @media (max-width: 768px) {
   .repair-table {
-    &>div:first-child>div {
+    & > div:first-child > div {
       border-bottom-left-radius: 0 !important;
       border-bottom-right-radius: 0 !important;
       padding-bottom: 0 !important;
       border-bottom: transparent !important;
     }
 
-    &>div:last-child>div {
+    & > div:last-child > div {
       border-top-left-radius: 0 !important;
       border-top-right-radius: 0 !important;
     }

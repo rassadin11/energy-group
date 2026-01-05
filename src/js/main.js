@@ -3114,3 +3114,140 @@ if (catalogGoods && catalogSorting) {
         }
     });
 })();
+
+// compare page
+
+function observeVisibility(element, callback) {
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            callback(entry.isIntersecting, entry);
+        },
+        {
+            root: null,        // viewport
+            threshold: 0       // хоть 1px виден
+        }
+    );
+
+    observer.observe(element);
+
+    return observer;
+}
+
+// Использование
+const block = document.querySelector('.compare-slider');
+
+if (block) {
+    const slider = block.querySelector('.container.slider');
+    let height = slider.offsetHeight;
+
+    observeVisibility(block, (isVisible) => {
+        if (!isVisible) {
+            block.style.height = `${height}px`;
+            slider.classList.add('compare-mini');
+        } else {
+            slider.classList.remove('compare-mini');
+            block.style.height = '';
+        }
+    });
+}
+
+// активные слайды
+const slider = document.querySelector('.compare-slider .swiffy-slider');
+
+function showActiveComparison() {
+    let visibleSlides = slider.querySelectorAll(".slider-container .slide-visible");
+    let activeSlideIndex = Array.from(slider.querySelector(".slider-container").children).indexOf(visibleSlides[0]);
+
+    let activeSlides = []
+
+    for (let i = 0; i < visibleSlides.length; i++) {
+        activeSlides.push(i + activeSlideIndex)
+    }
+
+    // for table
+
+    const tableItems = document.querySelectorAll('.compare-table__item')
+
+    tableItems.forEach(elem => {
+        const tableItemElements = elem.querySelectorAll('.item-table__element')
+
+        tableItemElements.forEach((item, idx) => {
+            if (activeSlides.findIndex(i => i === idx) > -1) {
+                item.classList.remove('d-none')
+                item.classList.remove('border-0')
+            } else {
+                item.classList.add('d-none')
+                item.classList.add('border-0')
+            }
+        })
+    })
+}
+
+showActiveComparison()
+
+// remove slides
+
+const comparisonSlides = slider.querySelectorAll('li')
+
+if (document.clientWidth > 992) {
+    if (comparisonSlides.length <= 4) {
+        slider.querySelectorAll('.slider-nav').forEach(item => item.classList.add('d-none'))
+    } else {
+        slider.querySelectorAll('.slider-nav').forEach(item => item.classList.remove('d-none'))
+    }
+}
+
+setTimeout(() => {
+    comparisonSlides.forEach(item => {
+        console.log(item.querySelector('.compare-slider__remove'))
+
+        item.querySelector('.compare-slider__remove').addEventListener('click', () => {
+            console.log(true)
+        })
+    })
+}, 0)
+
+swiffyslider.onSlideEnd(slider, () => {
+    let visibleSlides = slider.querySelectorAll(".slider-container .slide-visible");
+    let activeSlideIndex = Array.from(slider.querySelector(".slider-container").children).indexOf(visibleSlides[0]);
+
+    let activeSlides = []
+
+    for (let i = 0; i < visibleSlides.length; i++) {
+        activeSlides.push(i + activeSlideIndex)
+    }
+
+    // for table
+
+    const tableItems = document.querySelectorAll('.compare-table__item')
+
+    tableItems.forEach(elem => {
+        const tableItemElements = elem.querySelectorAll('.item-table__element')
+
+        tableItemElements.forEach((item, idx) => {
+            if (activeSlides.findIndex(i => i === idx) > -1) {
+                item.classList.remove('d-none')
+                item.classList.remove('border-0')
+            } else {
+                item.classList.add('d-none')
+                item.classList.add('border-0')
+            }
+        })
+    })
+});
+
+const tableItems = document.querySelectorAll('.compare-table__item')
+
+if (document.clientWidth > 992) {
+    tableItems.forEach(elem => {
+        const tableItemElements = elem.querySelectorAll('.item-table__element')
+
+        tableItemElements.forEach((item, idx) => {
+            if (idx <= 3) {
+                item.classList.remove('d-none')
+            } else {
+                item.classList.add('d-none')
+            }
+        })
+    })
+}

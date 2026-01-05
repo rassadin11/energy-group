@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+  @include('partials/head.html')
+
+  <body data-category="compare">
+    <div class="headers w-100">
+      @include('partials/pre-header.html') @include('partials/header.html')
+    </div>
+
+    <main class="main compare">
+      @include('partials/compare/breadcrumbs.html')
+
+      <section class="container reviews-page mt-md-8 mt-5">
+        <h1 class="mb-0 vacancy-header">Сравнение товаров</h1>
+
+        <div class="d-flex compare__info info-compare mt-6 gap-md-6 gap-2">
+          <div
+            class="info-compare__item item-compare d-inline-flex align-items-md-end align-items-center gap-md-12 gap-1"
+          >
+            <svg class="default-icon icon-color">
+              <use xlink:href="./img/svg/sprite.svg#compare-amount"></use>
+            </svg>
+            <span class="mt-md-0 mt-1">6 товаров</span>
+          </div>
+          <button
+            class="info-compare__item btn p-0 item-compare d-flex align-items-end gap-md-12 gap-1"
+          >
+            <svg class="default-icon icon-color">
+              <use xlink:href="./img/svg/sprite.svg#compare-trash"></use>
+            </svg>
+            <span class="d-block">Удалить все</span>
+          </button>
+          <button
+            class="info-compare__item btn p-0 item-compare d-flex align-items-end gap-md-12 gap-1"
+          >
+            <svg class="default-icon icon-color">
+              <use xlink:href="./img/svg/sprite.svg#compare-add"></use>
+            </svg>
+            <span class="d-block">Добавить товар</span>
+          </button>
+        </div>
+      </section>
+
+      <section
+        class="projects popular-slider bg-white buy-page__slider-recomendation compare-slider d-block mt-8"
+      >
+        <div class="container slider">
+          <div
+            class="swiffy-slider slider-nav-animation projects-slider-wrapper slider-item-snap slider-item-nosnap-center slider-item-show4 slider-nav-visible"
+          >
+            <ul class="slider-container compare popular-slider mt-lg-9 pb-lg-9 mt-md-7 pb-md-7 mt-4 pb-4">
+              <li
+                class="popular-slider__block rounded-md-6 rounded-4 d-flex flex-column gap-md-4 gap-2 overflow-hidden news-slider rounded-md-6 rounded-4 p-md-6 p-4"
+              >
+                  <span class="text-gray text-center d-md-none d-block slider-counter">1 из 5</span>
+                <div class="d-flex flex-column gap-md-4 gap-2 compare-slider__wrapper">
+                  <picture>
+                    <source
+                      srcset="./img/product_page/slider-container1.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      src="./img/product_page/slider-container1.jpg"
+                      alt="project"
+                      class="object-fit-cover"
+                      width="100%"
+                    />
+                  </picture>
+
+                  <div class="d-flex flex-column gap-md-4 gap-2 compare-slider__fixed-info">
+                    <div
+                      class="about-wrapper__description flex-fill mt-1 default-p flex-fill"
+                    >
+                      Дизельный генератор Genmac G30IS
+                    </div>
+
+                    <span class="fw-semibold big-p d-block">1 077 193 ₽</span>
+                  </div>
+                </div>
+                <div class="d-flex gap-2 flex-md-row flex-column">
+                      <button
+                        class="btn btn-warning fw-semibold flex-fill rounded-3"
+                      >
+                        Купить
+                      </button>
+                      <button
+                        class="p-2 compare-slider__remove rounded-3 btn btn-secondary"
+                      >
+                        <svg class="default-icon">
+                          <use
+                            xlink:href="./img/svg/sprite.svg#compare-trash"
+                          />
+                        </svg>
+                      </button>
+                </div>
+              </li>
+              <li
+                class="popular-slider__block rounded-md-6 rounded-4 d-flex flex-column gap-md-4 gap-2 overflow-hidden news-slider rounded-md-6 rounded-4 p-md-6 p-4"
+              >
+              <span class="text-gray text-center d-md-none d-block slider-counter">2 из 5</span>
+                <div class="d-flex flex-column gap-md-4 gap-2 compare-slider__wrapper">
+                  <picture>
+                    <source
+                      srcset="./img/product_page/slider-container1.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      src="./img/product_page/slider-container1.jpg"
+                      alt="project"
+                      class="object-fit-cover"
+                      width="100%"
+                    />
+                  </picture>
+
+                  <div class="d-flex flex-column gap-md-4 gap-2 compare-slider__fixed-info">
+                    <div
+                      class="about-wrapper__description flex-fill mt-1 default-p flex-fill"
+                    >
+                      Дизельный генератор Genmac G30IS
+                    </div>
+
+                    <span class="fw-semibold big-p d-block">1 077 193 ₽</span>
+                  </div>
+                </div>
+                <div class="d-flex gap-2 flex-md-row flex-column">
+                      <button
+                        class="btn btn-warning fw-semibold flex-fill rounded-3"
+                      >
+                        Купить
+                      </button>
+                      <button
+                        class="p-2 compare-slider__remove rounded-3 btn btn-secondary"
+                      >
+                        <svg class="default-icon">
+                          <use
+                            xlink:href="./img/svg/sprite.svg#compare-trash"
+                          />
+                        </svg>
+                      </button>
+                </div>
+              </li>
+              <li
+                class="popular-slider__block rounded-md-6 rounded-4 d-flex flex-column gap-md-4 gap-2 overflow-hidden news-slider rounded-md-6 rounded-4 p-md-6 p-4"
+              >
+              <span class="text-gray text-center d-md-none d-block slider-counter">3 из 5</span>
+                <div class="d-flex flex-column gap-md-4 gap-2 compare-slider__wrapper">
+                  <picture>
+                    <source
+                      srcset="./img/product_page/slider-container1.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      src="./img/product_page/slider-container1.jpg"
+                      alt="project"
+                      class="object-fit-cover"
+                      width="100%"
+                    />
+                  </picture>
+
+                  <div class="d-flex flex-column gap-md-4 gap-2 compare-slider__fixed-info">
+                    <div
+                      class="about-wrapper__description flex-fill mt-1 default-p flex-fill"
+                    >
+                      Дизельный генератор Genmac G30IS
+                    </div>
+
+                    <span class="fw-semibold big-p d-block">1 077 193 ₽</span>
+                  </div>
+                </div>
+                <div class="d-flex gap-2 flex-md-row flex-column">
+                      <button
+                        class="btn btn-warning fw-semibold flex-fill rounded-3"
+                      >
+                        Купить
+                      </button>
+                      <button
+                        class="p-2 compare-slider__remove rounded-3 btn btn-secondary"
+                      >
+                        <svg class="default-icon">
+                          <use
+                            xlink:href="./img/svg/sprite.svg#compare-trash"
+                          />
+                        </svg>
+                      </button>
+                </div>
+              </li>
+              <li
+                class="popular-slider__block rounded-md-6 rounded-4 d-flex flex-column gap-md-4 gap-2 overflow-hidden news-slider rounded-md-6 rounded-4 p-md-6 p-4"
+              >
+              <span class="text-gray text-center d-md-none d-block slider-counter">4 из 5</span>
+                <div class="d-flex flex-column gap-md-4 gap-2 compare-slider__wrapper">
+                  <picture>
+                    <source
+                      srcset="./img/product_page/slider-container1.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      src="./img/product_page/slider-container1.jpg"
+                      alt="project"
+                      class="object-fit-cover"
+                      width="100%"
+                    />
+                  </picture>
+
+                  <div class="d-flex flex-column gap-md-4 gap-2 compare-slider__fixed-info">
+                    <div
+                      class="about-wrapper__description flex-fill mt-1 default-p flex-fill"
+                    >
+                      Дизельный генератор Genmac G30IS
+                    </div>
+
+                    <span class="fw-semibold big-p d-block">1 077 193 ₽</span>
+                  </div>
+                </div>
+                <div class="d-flex gap-2 flex-md-row flex-column">
+                      <button
+                        class="btn btn-warning fw-semibold flex-fill rounded-3"
+                      >
+                        Купить
+                      </button>
+                      <button
+                        class="p-2 compare-slider__remove rounded-3 btn btn-secondary"
+                      >
+                        <svg class="default-icon">
+                          <use
+                            xlink:href="./img/svg/sprite.svg#compare-trash"
+                          />
+                        </svg>
+                      </button>
+                </div>
+              </li>
+              <li
+                class="popular-slider__block rounded-md-6 rounded-4 d-flex flex-column gap-md-4 gap-2 overflow-hidden news-slider rounded-md-6 rounded-4 p-md-6 p-4"
+              >
+              <span class="text-gray text-center d-md-none d-block slider-counter">5 из 5</span>
+                <div class="d-flex flex-column gap-md-4 gap-2 compare-slider__wrapper">
+                  <picture>
+                    <source
+                      srcset="./img/product_page/slider-container1.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      src="./img/product_page/slider-container1.jpg"
+                      alt="project"
+                      class="object-fit-cover"
+                      width="100%"
+                    />
+                  </picture>
+
+                  <div class="d-flex flex-column gap-md-4 gap-2 compare-slider__fixed-info">
+                    <div
+                      class="about-wrapper__description flex-fill mt-1 default-p flex-fill"
+                    >
+                      Дизельный генератор Genmac G30IS
+                    </div>
+
+                    <span class="fw-semibold big-p d-block">1 077 193 ₽</span>
+                  </div>
+                </div>
+                <div class="d-flex gap-2 flex-md-row flex-column">
+                      <button
+                        class="btn btn-warning fw-semibold flex-fill rounded-3"
+                      >
+                        Купить
+                      </button>
+                      <button
+                        class="p-2 compare-slider__remove rounded-3 btn btn-secondary"
+                      >
+                        <svg class="default-icon">
+                          <use
+                            xlink:href="./img/svg/sprite.svg#compare-trash"
+                          />
+                        </svg>
+                      </button>
+                </div>
+              </li>
+            </ul>
+
+            <button
+              type="button"
+              class="slider-nav center-arrow d-lg-block d-none position-absolute left"
+            ></button>
+            <button
+              type="button"
+              class="slider-nav slider-nav-next d-lg-block d-none center-arrow position-absolute right"
+            ></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="container compare-info reviews-page mt-md-10 mt-5 mb-10 pb-10">
+        <div class="compare-info__wrapper">
+          <h2 class="mb-0 vacancy-header fw-semibold mt-md-0 mt-8">Характеристики</h2>
+
+        <div class="d-flex gap-md-6 gap-4 flex-md-row flex-column">
+          <label class="search-field mt-md-6 mt-4 py-2 px-4 bg-light rounded-3 d-block position-relative">
+            <svg class="search-field__icon default-icon" aria-hidden="true">
+              <use xlink:href="./img/svg/sprite.svg#search"></use>
+            </svg>
+
+            <input
+              type="text"
+              class="form-control search-field__input bg-transparent border-0"
+              placeholder="Например мощность"
+            >
+          </label>
+          <label class="filter-catalog__header mt-md-6 mt-0 header-filter d-md-inline-flex d-flex justify-content-between align-items-center gap-12 form-check-label" for="flexSwitchCheck">
+            <span class="fw-semibold mt-1">Только отличия</span>
+            <div class="form-check form-switch">
+              <input class="form-check-input border-0" type="checkbox" role="switch" id="flexSwitchCheck">
+            </div>
+          </label>
+        </div>
+
+        <div class="compare-table border border-1 rounded-4 mt-md-8 mt-4 overflow-hidden">
+          <div class="compare-table__item item-table py-md-4 py-3">
+            <span class="item-table__preview ps-md-6 ps-4">
+              Номинальная мощность
+            </span>
+            <div class="d-flex justify-content-between">
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                13 кВт / 16 кВа
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                24 кВт / 30 кВа
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                20 кВт / 25 кВа
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4 pe-6">
+                20 кВт / 25 кВа
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4 pe-6">
+                20 кВт / 25 кВа
+              </span>
+            </div>
+          </div>
+          <div class="compare-table__item item-table py-md-4 py-3">
+            <span class="item-table__preview ps-md-6 ps-4">
+              Бренд
+            </span>
+            <div class="d-flex justify-content-between">
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Pramac
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Genmac
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Genese
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4 pe-6">
+                Firman
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Genese
+              </span>
+            </div>
+          </div>
+          <div class="compare-table__item item-table py-md-4 py-3">
+            <span class="item-table__preview ps-md-6 ps-4">
+              Двигатель
+            </span>
+            <div class="d-flex justify-content-between">
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Yanmar
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                IVECO
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                YangDong
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4 pe-6">
+                Firman
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Yanmar
+              </span>
+            </div>
+          </div>
+
+          <div class="compare-table__item item-table py-md-4 py-3">
+            <span class="item-table__preview ps-md-6 ps-4">
+              Номинальная мощность
+            </span>
+            <div class="d-flex justify-content-between">
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                13 кВт / 16 кВа
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                24 кВт / 30 кВа
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                20 кВт / 25 кВа
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4 pe-6">
+                20 кВт / 25 кВа
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4 pe-6">
+                20 кВт / 25 кВа
+              </span>
+            </div>
+          </div>
+          <div class="compare-table__item item-table py-md-4 py-3">
+            <span class="item-table__preview ps-md-6 ps-4">
+              Бренд
+            </span>
+            <div class="d-flex justify-content-between">
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Pramac
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Genmac
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Genese
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4 pe-6">
+                Firman
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Genese
+              </span>
+            </div>
+          </div>
+          <div class="compare-table__item item-table py-md-4 py-3">
+            <span class="item-table__preview ps-md-6 ps-4">
+              Двигатель
+            </span>
+            <div class="d-flex justify-content-between">
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Yanmar
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                IVECO
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                YangDong
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4 pe-6">
+                Firman
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Yanmar
+              </span>
+            </div>
+          </div>
+
+          <div class="compare-table__item item-table py-md-4 py-3">
+            <span class="item-table__preview ps-md-6 ps-4">
+              Номинальная мощность
+            </span>
+            <div class="d-flex justify-content-between">
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                13 кВт / 16 кВа
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                24 кВт / 30 кВа
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                20 кВт / 25 кВа
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4 pe-6">
+                20 кВт / 25 кВа
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4 pe-6">
+                20 кВт / 25 кВа
+              </span>
+            </div>
+          </div>
+          <div class="compare-table__item item-table py-md-4 py-3">
+            <span class="item-table__preview ps-md-6 ps-4">
+              Бренд
+            </span>
+            <div class="d-flex justify-content-between">
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Pramac
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Genmac
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Genese
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4 pe-6">
+                Firman
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Genese
+              </span>
+            </div>
+          </div>
+          <div class="compare-table__item item-table py-md-4 py-3">
+            <span class="item-table__preview ps-md-6 ps-4">
+              Двигатель
+            </span>
+            <div class="d-flex justify-content-between">
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Yanmar
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                IVECO
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                YangDong
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4 pe-6">
+                Firman
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Yanmar
+              </span>
+            </div>
+          </div>
+
+          <div class="compare-table__item item-table py-md-4 py-3">
+            <span class="item-table__preview ps-md-6 ps-4">
+              Номинальная мощность
+            </span>
+            <div class="d-flex justify-content-between">
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                13 кВт / 16 кВа
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                24 кВт / 30 кВа
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                20 кВт / 25 кВа
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4 pe-6">
+                20 кВт / 25 кВа
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4 pe-6">
+                20 кВт / 25 кВа
+              </span>
+            </div>
+          </div>
+          <div class="compare-table__item item-table py-md-4 py-3">
+            <span class="item-table__preview ps-md-6 ps-4">
+              Бренд
+            </span>
+            <div class="d-flex justify-content-between">
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Pramac
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Genmac
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Genese
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4 pe-6">
+                Firman
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Genese
+              </span>
+            </div>
+          </div>
+          <div class="compare-table__item item-table py-md-4 py-3">
+            <span class="item-table__preview ps-md-6 ps-4">
+              Двигатель
+            </span>
+            <div class="d-flex justify-content-between">
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Yanmar
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                IVECO
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                YangDong
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4 pe-6">
+                Firman
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Yanmar
+              </span>
+            </div>
+          </div>
+
+          <div class="compare-table__item item-table py-md-4 py-3">
+            <span class="item-table__preview ps-md-6 ps-4">
+              Номинальная мощность
+            </span>
+            <div class="d-flex justify-content-between">
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                13 кВт / 16 кВа
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                24 кВт / 30 кВа
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                20 кВт / 25 кВа
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4 pe-6">
+                20 кВт / 25 кВа
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4 pe-6">
+                20 кВт / 25 кВа
+              </span>
+            </div>
+          </div>
+          <div class="compare-table__item item-table py-md-4 py-3">
+            <span class="item-table__preview ps-md-6 ps-4">
+              Бренд
+            </span>
+            <div class="d-flex justify-content-between">
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Pramac
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Genmac
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Genese
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4 pe-6">
+                Firman
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Genese
+              </span>
+            </div>
+          </div>
+          <div class="compare-table__item item-table py-md-4 py-3">
+            <span class="item-table__preview ps-md-6 ps-4">
+              Двигатель
+            </span>
+            <div class="d-flex justify-content-between">
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Yanmar
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                IVECO
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                YangDong
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4 pe-6">
+                Firman
+              </span>
+              <span class="item-table__element flex-fill mt-1 ps-md-6 ps-4">
+                Yanmar
+              </span>
+            </div>
+          </div>
+        </div>
+      </section
+    </main>
+
+    @include('partials/footer.html') @include('partials/popup-book.html')
+    @include('partials/popup-recall.html')
+  </body>
+</html>
