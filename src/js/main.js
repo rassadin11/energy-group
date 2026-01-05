@@ -3238,16 +3238,14 @@ swiffyslider.onSlideEnd(slider, () => {
 
 const tableItems = document.querySelectorAll('.compare-table__item')
 
-if (document.clientWidth > 992) {
-    tableItems.forEach(elem => {
-        const tableItemElements = elem.querySelectorAll('.item-table__element')
+tableItems.forEach(elem => {
+    const tableItemElements = elem.querySelectorAll('.item-table__element')
 
-        tableItemElements.forEach((item, idx) => {
-            if (idx <= 3) {
-                item.classList.remove('d-none')
-            } else {
-                item.classList.add('d-none')
-            }
-        })
+    tableItemElements.forEach((item, idx) => {
+        if (idx <= 3) {
+            item.classList.remove('d-none')
+        } else {
+            item.classList.add('d-none')
+        }
     })
-}
+})
