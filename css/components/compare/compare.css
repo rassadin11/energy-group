@@ -153,6 +153,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .info-compare__item span {
+    font-size: 0.75rem;
+  }
+}
+
 .compare-mini {
   position: fixed;
   top: 0;

@@ -2939,10 +2939,12 @@ showActiveComparison();
 // remove slides
 
 const comparisonSlides = slider.querySelectorAll('li');
-if (comparisonSlides.length <= 4) {
-  slider.querySelectorAll('.slider-nav').forEach(item => item.classList.add('d-none'));
-} else {
-  slider.querySelectorAll('.slider-nav').forEach(item => item.classList.remove('d-none'));
+if (document.clientWidth > 992) {
+  if (comparisonSlides.length <= 4) {
+    slider.querySelectorAll('.slider-nav').forEach(item => item.classList.add('d-none'));
+  } else {
+    slider.querySelectorAll('.slider-nav').forEach(item => item.classList.remove('d-none'));
+  }
 }
 setTimeout(() => {
   comparisonSlides.forEach(item => {
@@ -2977,16 +2979,18 @@ swiffyslider.onSlideEnd(slider, () => {
   });
 });
 const tableItems = document.querySelectorAll('.compare-table__item');
-tableItems.forEach(elem => {
-  const tableItemElements = elem.querySelectorAll('.item-table__element');
-  tableItemElements.forEach((item, idx) => {
-    if (idx <= 3) {
-      item.classList.remove('d-none');
-    } else {
-      item.classList.add('d-none');
-    }
+if (document.clientWidth > 992) {
+  tableItems.forEach(elem => {
+    const tableItemElements = elem.querySelectorAll('.item-table__element');
+    tableItemElements.forEach((item, idx) => {
+      if (idx <= 3) {
+        item.classList.remove('d-none');
+      } else {
+        item.classList.add('d-none');
+      }
+    });
   });
-});
+}
 })();
 
 var __webpack_export_target__ = window;
